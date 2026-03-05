@@ -79,8 +79,8 @@ export const translations: Record<SupportedLanguage, Record<string, string>> = {
     'auth.hasAccount': 'Already have an account?',
     'nav.language': 'Interface Language',
 
-    // Placement Test
-    'placement.title': 'Placement Test',
+    // Diagnostic Test
+    'placement.title': 'Diagnostic Test',
     'placement.description': 'Answer these questions to find your level. Don\'t worry if you don\'t know the answer - just skip it!',
     'placement.start': 'Start Test',
     'placement.skip': 'Skip',

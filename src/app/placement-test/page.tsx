@@ -93,7 +93,7 @@ export default function PlacementTestPage() {
         </p>
 
         <div className="bg-white rounded-2xl shadow-md p-6 mb-8 text-left max-w-md mx-auto">
-          <h3 className="font-semibold text-gray-800 mb-3">What to expect:</h3>
+          <h3 className="font-semibold text-gray-800 mb-3">What to expect from this diagnostic:</h3>
           <ul className="space-y-2 text-sm text-gray-600">
             <li>📝 30 questions across 6 difficulty levels</li>
             <li>⏱️ Takes about 10-15 minutes</li>

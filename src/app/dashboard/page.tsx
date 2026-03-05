@@ -55,7 +55,7 @@ export default function DashboardPage() {
             href="/placement-test"
             className="mt-4 sm:mt-0 px-6 py-3 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition flex items-center gap-2"
           >
-            Take Placement Test <ArrowRight className="w-4 h-4" />
+            Take Diagnostic Test <ArrowRight className="w-4 h-4" />
           </Link>
         )}
       </div>
