@@ -17,6 +17,7 @@ export default function ReadingPage() {
   const [phase, setPhase] = useState<'list' | 'read' | 'quiz' | 'result'>('list');
   const [questionIndex, setQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [quizKey, setQuizKey] = useState(0);
 
   const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
   const passages = getReadingPassagesByLevel(selectedLevel);
@@ -30,17 +31,21 @@ export default function ReadingPage() {
     setPhase('read');
     setQuestionIndex(0);
     setScore(0);
+    setQuizKey(0);
   };
 
   const handleStartQuiz = () => setPhase('quiz');
 
   const handleAnswer = (correct: boolean) => {
-    if (correct) setScore(score + 1);
-    if (questionIndex < activePassage!.questions.length - 1) {
-      setQuestionIndex(questionIndex + 1);
-    } else {
-      setPhase('result');
-    }
+    if (correct) setScore((s) => s + 1);
+    setTimeout(() => {
+      if (questionIndex < activePassage!.questions.length - 1) {
+        setQuestionIndex((i) => i + 1);
+        setQuizKey((k) => k + 1);
+      } else {
+        setPhase('result');
+      }
+    }, 1500);
   };
 
   const handleBack = () => {
@@ -157,19 +162,16 @@ export default function ReadingPage() {
     const question = activePassage.questions[questionIndex];
     return (
       <div className="max-w-2xl mx-auto px-4 py-8">
-        <ProgressBar current={questionIndex + 1} total={activePassage.questions.length} />
-        <div className="mt-6 bg-white rounded-2xl p-8">
-          <p className="text-xs text-gray-400 mb-2">
-            Question {questionIndex + 1} of {activePassage.questions.length}
-          </p>
-          <h2 className="text-xl font-bold text-gray-800 mb-6">{question.question}</h2>
-          {question.questionTranslations?.[uiLanguage] && (
-            <p className="text-sm text-gray-400 -mt-4 mb-6">{question.questionTranslations[uiLanguage]}</p>
+        <ProgressBar current={questionIndex + 1} total={activePassage.questions.length} label={`Question ${questionIndex + 1} of ${activePassage.questions.length}`} />
+        <div className="mt-6" key={quizKey}>
+          {question.questionTranslations?.[uiLanguage] && uiLanguage !== 'en' && (
+            <p className="text-sm text-gray-400 mb-3 text-center">{question.questionTranslations[uiLanguage]}</p>
           )}
           <MultipleChoice
             question={question.question}
             options={question.options || []}
             correctAnswer={question.correctAnswer}
+            explanation={question.explanation}
             onAnswer={handleAnswer}
           />
         </div>
