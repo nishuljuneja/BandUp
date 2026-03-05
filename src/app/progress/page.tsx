@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
@@ -62,7 +63,12 @@ const skillConfig: { key: SkillType; label: string; icon: React.ElementType; col
 ];
 
 export default function ProgressPage() {
-  const { profile, uiLanguage, loading } = useAppStore();
+  const { profile, uiLanguage, loading, refreshProfile } = useAppStore();
+
+  // Always re-fetch fresh profile from Firestore when progress page mounts
+  useEffect(() => {
+    refreshProfile();
+  }, [refreshProfile]);
 
   if (loading) {
     return (

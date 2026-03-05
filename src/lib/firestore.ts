@@ -174,19 +174,26 @@ export async function addXP(uid: string, amount: number): Promise<void> {
   });
 }
 
-export async function updateStreak(uid: string): Promise<void> {
+export async function updateStreak(uid: string): Promise<{ streak: number; lastActiveDate: string }> {
   const profile = await getUserProfile(uid);
-  if (!profile) return;
+  if (!profile) return { streak: 0, lastActiveDate: new Date().toISOString().split('T')[0] };
 
   const today = new Date().toISOString().split('T')[0];
   const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
 
-  if (profile.lastActiveDate === today) return;
+  if (profile.lastActiveDate === today) return { streak: profile.streak, lastActiveDate: today };
 
   const newStreak = profile.lastActiveDate === yesterday ? profile.streak + 1 : 1;
   await updateDoc(doc(db, 'users', uid), {
     streak: newStreak,
     lastActiveDate: today,
+  });
+  return { streak: newStreak, lastActiveDate: today };
+}
+
+export async function incrementWordsLearned(uid: string, count: number = 1): Promise<void> {
+  await updateDoc(doc(db, 'users', uid), {
+    wordsLearned: increment(count),
   });
 }
 

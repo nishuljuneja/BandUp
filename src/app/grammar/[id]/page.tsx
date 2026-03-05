@@ -64,7 +64,6 @@ export default function GrammarLessonPage() {
         };
         updateUserProfile(profile.uid, updates).catch(() => {});
         addXP(profile.uid, score * 10).catch(() => {});
-        updateStreak(profile.uid).catch(() => {});
         saveLessonProgress(profile.uid, {
           lessonId: lessonId,
           lessonType: 'grammar',
@@ -75,8 +74,18 @@ export default function GrammarLessonPage() {
           bestScore: pct,
           completed: pct >= 70,
         }).catch(() => {});
-        // Update local store immediately
-        setProfile({ ...profile, ...updates, xp: profile.xp + score * 10 });
+        // Update local store with streak
+        updateStreak(profile.uid).then((streakData) => {
+          setProfile({
+            ...profile,
+            ...updates,
+            xp: profile.xp + score * 10,
+            streak: streakData.streak,
+            lastActiveDate: streakData.lastActiveDate,
+          });
+        }).catch(() => {
+          setProfile({ ...profile, ...updates, xp: profile.xp + score * 10 });
+        });
       }
     }
   }, [exerciseIndex, roundExercises.length, score, profile, lessonId, setProfile]);

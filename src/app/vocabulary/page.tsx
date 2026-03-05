@@ -7,7 +7,7 @@ import { allVocabulary, getVocabularyByLevel, getVocabularyByIds } from '@/conte
 import { Flashcard, LevelBadge, FillBlank, MultipleChoice, ScoreCard, ProgressBar } from '@/components/Exercises';
 import { BookOpen, Search, Filter, RotateCcw, Brain } from 'lucide-react';
 import type { CEFRLevel, VocabularyWord } from '@/lib/firestore';
-import { updateUserProfile, addXP, updateStreak, updateVocabularyProgress } from '@/lib/firestore';
+import { updateUserProfile, addXP, updateStreak, updateVocabularyProgress, incrementWordsLearned } from '@/lib/firestore';
 
 /**
  * Try to find the target word (or common inflections) inside a sentence.
@@ -211,17 +211,32 @@ export default function VocabularyPage() {
         setDrillDone(true);
         // Persist vocabulary progress
         if (profile) {
-          const finalScore = drillScore; // score already updated by handleDrillAnswer
+          const finalScore = drillScore;
           const pct = Math.round((finalScore / drillWords.length) * 100);
           const newVocabScore = Math.max(profile.skillScores.vocabulary, pct);
-          const updates = {
-            wordsLearned: profile.wordsLearned + drillWords.length,
+          const skillUpdates = {
             skillScores: { ...profile.skillScores, vocabulary: newVocabScore },
           };
-          updateUserProfile(profile.uid, updates).catch(() => {});
+          updateUserProfile(profile.uid, skillUpdates).catch(() => {});
+          incrementWordsLearned(profile.uid, drillWords.length).catch(() => {});
           addXP(profile.uid, finalScore * 5).catch(() => {});
-          updateStreak(profile.uid).catch(() => {});
-          setProfile({ ...profile, ...updates, xp: profile.xp + finalScore * 5 });
+          updateStreak(profile.uid).then((streakData) => {
+            setProfile({
+              ...profile,
+              ...skillUpdates,
+              wordsLearned: profile.wordsLearned + drillWords.length,
+              xp: profile.xp + finalScore * 5,
+              streak: streakData.streak,
+              lastActiveDate: streakData.lastActiveDate,
+            });
+          }).catch(() => {
+            setProfile({
+              ...profile,
+              ...skillUpdates,
+              wordsLearned: profile.wordsLearned + drillWords.length,
+              xp: profile.xp + finalScore * 5,
+            });
+          });
         }
       } else {
         setDrillIndex((i) => i + 1);
@@ -239,12 +254,24 @@ export default function VocabularyPage() {
         const word = flashcardWords[flashcardIndex];
         if (word) markWordStudied(profile.uid, word.id);
 
-        const newWordsLearned = profile.wordsLearned + 1;
-        const updates = { wordsLearned: newWordsLearned };
-        updateUserProfile(profile.uid, updates).catch(() => {});
-        updateStreak(profile.uid).catch(() => {});
+        incrementWordsLearned(profile.uid, 1).catch(() => {});
         addXP(profile.uid, quality >= 3 ? 5 : 2).catch(() => {});
-        setProfile({ ...profile, ...updates, xp: profile.xp + (quality >= 3 ? 5 : 2) });
+        const xpGain = quality >= 3 ? 5 : 2;
+        updateStreak(profile.uid).then((streakData) => {
+          setProfile({
+            ...profile,
+            wordsLearned: profile.wordsLearned + 1,
+            xp: profile.xp + xpGain,
+            streak: streakData.streak,
+            lastActiveDate: streakData.lastActiveDate,
+          });
+        }).catch(() => {
+          setProfile({
+            ...profile,
+            wordsLearned: profile.wordsLearned + 1,
+            xp: profile.xp + xpGain,
+          });
+        });
       }
       if (flashcardIndex < flashcardWords.length - 1) {
         setFlashcardIndex(flashcardIndex + 1);
@@ -262,9 +289,18 @@ export default function VocabularyPage() {
       if (profile && word) {
         // Update spaced repetition progress in Firestore
         updateVocabularyProgress(profile.uid, word.id, quality).catch(() => {});
-        updateStreak(profile.uid).catch(() => {});
         addXP(profile.uid, quality >= 3 ? 5 : 2).catch(() => {});
-        setProfile({ ...profile, xp: profile.xp + (quality >= 3 ? 5 : 2) });
+        const xpGain = quality >= 3 ? 5 : 2;
+        updateStreak(profile.uid).then((streakData) => {
+          setProfile({
+            ...profile,
+            xp: profile.xp + xpGain,
+            streak: streakData.streak,
+            lastActiveDate: streakData.lastActiveDate,
+          });
+        }).catch(() => {
+          setProfile({ ...profile, xp: profile.xp + xpGain });
+        });
       }
       setReviewedCount((c) => c + 1);
       if (quality >= 3) setReviewKnewCount((c) => c + 1);

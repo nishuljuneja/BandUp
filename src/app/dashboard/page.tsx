@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
@@ -8,7 +9,12 @@ import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, Arr
 import StudyPlan from '@/components/StudyPlan';
 
 export default function DashboardPage() {
-  const { profile, uiLanguage, loading } = useAppStore();
+  const { profile, uiLanguage, loading, refreshProfile } = useAppStore();
+
+  // Always re-fetch fresh profile from Firestore when dashboard mounts
+  useEffect(() => {
+    refreshProfile();
+  }, [refreshProfile]);
 
   if (loading) {
     return (

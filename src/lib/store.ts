@@ -20,6 +20,7 @@ interface AppState {
   setLoading: (loading: boolean) => void;
   setUILanguage: (lang: SupportedLanguage) => void;
   toggleSidebar: () => void;
+  refreshProfile: () => Promise<void>;
   initAuth: () => () => void; // returns unsubscribe function
 }
 
@@ -40,6 +41,14 @@ export const useAppStore = create<AppState>((set, get) => ({
     }
   },
   toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
+
+  refreshProfile: async () => {
+    const { user } = get();
+    if (user) {
+      const fresh = await getUserProfile(user.uid);
+      if (fresh) set({ profile: fresh });
+    }
+  },
 
   initAuth: () => {
     // Restore language preference
