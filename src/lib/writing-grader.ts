@@ -44,6 +44,12 @@ const GRAMMAR_PATTERNS: ErrorPattern[] = [
   // Subject-verb agreement
   { pattern: /\b(I|we|they|you)\s+(is|was|has)\b/gi, type: 'grammar', suggestion: 'Use "am/are/were/have" with this subject', explanation: 'Subject-verb agreement error: the subject and verb don\'t match in number.' },
   { pattern: /\b(he|she|it)\s+(are|were|have)\b/gi, type: 'grammar', suggestion: 'Use "is/was/has" with this subject', explanation: 'Subject-verb agreement error: singular subject needs a singular verb.' },
+  // Singular subject + "and have/are" (e.g. "It is big and have..." → "has")
+  { pattern: /\b(he|she|it)\s+\w+\b[^.!?]*\band\s+have\b/gi, type: 'grammar', suggestion: 'Use "has" — the subject is singular (he/she/it)', explanation: 'When the subject is he, she, or it, use "has" instead of "have", even after "and".' },
+  { pattern: /\b(he|she|it)\s+\w+\b[^.!?]*\band\s+are\b/gi, type: 'grammar', suggestion: 'Use "is" — the subject is singular (he/she/it)', explanation: 'When the subject is he, she, or it, use "is" instead of "are", even after "and".' },
+  // Singular nouns followed by "have" instead of "has"
+  { pattern: /\b(the\s+(?:house|room|city|school|car|building|office|shop|place|country|company|team|book|phone|table|dog|cat|child|garden|kitchen|park|hotel|hospital|restaurant|college|village|town|flat|apartment|movie|film|song|game|website|app))\s+have\b/gi, type: 'grammar', suggestion: 'Use "has" with a singular noun', explanation: 'Singular nouns take "has", not "have". E.g. "The house has 4 rooms."' },
+  { pattern: /\b(my\s+(?:house|room|home|city|school|car|building|office|shop|place|country|company|team|book|phone|table|dog|cat|child|garden|kitchen|park|hotel|flat|apartment|friend|brother|sister|mother|father|wife|husband))\s+have\b/gi, type: 'grammar', suggestion: 'Use "has" with a singular noun', explanation: 'Singular nouns take "has", not "have". E.g. "My house has 4 rooms."' },
   // Common Indian English errors
   { pattern: /\b(I|he|she|we|they)\s+am\s+having\b/gi, type: 'grammar', suggestion: '"I have" or "I am eating/doing..."', explanation: '"Having" is often misused. Use "have" for possession and "am/is/are + verb-ing" for actions.' },
   { pattern: /\byesterday\s+I\s+(go|eat|come|do|make|take|see|give|get|buy|run|write|read)\b/gi, type: 'grammar', suggestion: 'Use past tense after "yesterday"', explanation: 'When describing past events, use the past tense form of the verb.' },
