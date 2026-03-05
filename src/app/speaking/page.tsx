@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { Mic, MicOff, Play, Pause, ChevronLeft, CheckCircle, Volume2, RotateCcw } from 'lucide-react';
 import { LevelBadge } from '@/components/Exercises';
 import { speakingExercises, type SpeakingExercise } from '@/content/speaking-exercises';
+import { useIndianVoice } from '@/lib/useIndianVoice';
 import type { CEFRLevel } from '@/lib/firestore';
 
 type Phase = 'list' | 'exercise';
@@ -19,49 +20,16 @@ export default function SpeakingPage() {
   // Practice state
   const [currentStep, setCurrentStep] = useState(0);
   const [isListening, setIsListening] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [results, setResults] = useState<Record<number, { spoken: string; match: number }>>({});
   const [rolePlayStep, setRolePlayStep] = useState(0);
 
   const recognitionRef = useRef<ReturnType<typeof createRecognition> | null>(null);
-  const synthRef = useRef<SpeechSynthesis | null>(null);
-  const indianVoiceRef = useRef<SpeechSynthesisVoice | null>(null);
+
+  // TTS — shared Indian-English voice hook
+  const { speak, stop: stopSpeech, isPlaying } = useIndianVoice();
 
   const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
-
-  useEffect(() => {
-    synthRef.current = window.speechSynthesis;
-
-    // Find the best Indian English voice available
-    const pickIndianVoice = () => {
-      const voices = synthRef.current?.getVoices() ?? [];
-      // Priority: en-IN voices first, then en-GB (closer to Indian accent than en-US)
-      const enIN = voices.filter((v) => v.lang === 'en-IN' || v.lang.startsWith('en-IN'));
-      if (enIN.length > 0) {
-        // Prefer voices with "India" or "Hindi" in the name
-        indianVoiceRef.current =
-          enIN.find((v) => /india|hindi|rishi|aditi|kajal/i.test(v.name)) || enIN[0];
-        return;
-      }
-      // Fallback: en-GB is closer to Indian pronunciation than en-US
-      const enGB = voices.find((v) => v.lang === 'en-GB');
-      if (enGB) {
-        indianVoiceRef.current = enGB;
-        return;
-      }
-      indianVoiceRef.current = null;
-    };
-
-    pickIndianVoice();
-    // Voices may load asynchronously in some browsers
-    synthRef.current?.addEventListener?.('voiceschanged', pickIndianVoice);
-
-    return () => {
-      synthRef.current?.cancel();
-      synthRef.current?.removeEventListener?.('voiceschanged', pickIndianVoice);
-    };
-  }, []);
 
   const filteredExercises = selectedLevel === 'all'
     ? speakingExercises
@@ -78,21 +46,6 @@ export default function SpeakingPage() {
     r.maxAlternatives = 1;
     return r;
   }
-
-  const speak = useCallback((text: string, rate = 0.9) => {
-    if (!synthRef.current) return;
-    synthRef.current.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.rate = rate;
-    u.lang = 'en-IN';
-    if (indianVoiceRef.current) {
-      u.voice = indianVoiceRef.current;
-    }
-    u.onstart = () => setIsPlaying(true);
-    u.onend = () => setIsPlaying(false);
-    u.onerror = () => setIsPlaying(false);
-    synthRef.current.speak(u);
-  }, []);
 
   const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
 
@@ -142,7 +95,7 @@ export default function SpeakingPage() {
 
   const handleBack = () => {
     stopListening();
-    synthRef.current?.cancel();
+    stopSpeech();
     setPhase('list');
     setExercise(null);
   };

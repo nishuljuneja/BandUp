@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { Headphones, Play, Pause, RotateCcw, CheckCircle, XCircle, Volume2, ChevronLeft } from 'lucide-react';
 import { LevelBadge, ScoreCard } from '@/components/Exercises';
 import { listeningExercises, type ListeningExercise } from '@/content/listening-exercises';
+import { useIndianVoice } from '@/lib/useIndianVoice';
 import type { CEFRLevel } from '@/lib/firestore';
 
 type Phase = 'list' | 'exercise' | 'result';
@@ -29,63 +30,14 @@ export default function ListeningPage() {
   const [compAnswers, setCompAnswers] = useState<Record<number, string>>({});
   const [compSubmitted, setCompSubmitted] = useState(false);
 
-  // TTS state
-  const [isPlaying, setIsPlaying] = useState(false);
-  const synthRef = useRef<SpeechSynthesis | null>(null);
-  const indianVoiceRef = useRef<SpeechSynthesisVoice | null>(null);
-
-  useEffect(() => {
-    synthRef.current = window.speechSynthesis;
-
-    const pickIndianVoice = () => {
-      const voices = synthRef.current?.getVoices() ?? [];
-      const enIN = voices.filter((v) => v.lang.startsWith('en-IN'));
-      if (enIN.length) {
-        const preferred = enIN.find((v) =>
-          /india|hindi|rishi|aditi|kajal/i.test(v.name)
-        );
-        indianVoiceRef.current = preferred ?? enIN[0];
-        return;
-      }
-      const enGB = voices.find((v) => v.lang.startsWith('en-GB'));
-      if (enGB) { indianVoiceRef.current = enGB; return; }
-      indianVoiceRef.current = null;
-    };
-
-    pickIndianVoice();
-    synthRef.current.addEventListener('voiceschanged', pickIndianVoice);
-
-    return () => {
-      synthRef.current?.removeEventListener('voiceschanged', pickIndianVoice);
-      synthRef.current?.cancel();
-    };
-  }, []);
+  // TTS — shared Indian-English voice hook
+  const { speak, stop: stopSpeech, isPlaying } = useIndianVoice();
 
   const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
   const filteredExercises = selectedLevel === 'all'
     ? listeningExercises
     : listeningExercises.filter((e) => e.level === selectedLevel);
-
-  const speak = useCallback((text: string, rate?: number) => {
-    if (!synthRef.current) return;
-    synthRef.current.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = rate ?? 0.9;
-    utterance.lang = 'en-IN';
-    if (indianVoiceRef.current) {
-      utterance.voice = indianVoiceRef.current;
-    }
-    utterance.onstart = () => setIsPlaying(true);
-    utterance.onend = () => setIsPlaying(false);
-    utterance.onerror = () => setIsPlaying(false);
-    synthRef.current.speak(utterance);
-  }, []);
-
-  const stopSpeech = useCallback(() => {
-    synthRef.current?.cancel();
-    setIsPlaying(false);
-  }, []);
 
   const startExercise = (ex: ListeningExercise) => {
     setExercise(ex);
