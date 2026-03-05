@@ -627,7 +627,9 @@ export default function VocabularyPage() {
                     <p className="text-gray-600">
                       {word.meaning[uiLanguage] || word.meaning.en}
                     </p>
-                    <p className="text-sm text-gray-400 mt-1 italic">&ldquo;{word.example}&rdquo;</p>
+                    {word.example && (
+                      <p className="text-sm text-gray-400 mt-1 italic">&ldquo;{word.example}&rdquo;</p>
+                    )}
                     {word.exampleTranslation[uiLanguage] && (
                       <p className="text-xs text-gray-400 mt-0.5">
                         → {word.exampleTranslation[uiLanguage]}
