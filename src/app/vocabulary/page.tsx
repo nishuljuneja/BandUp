@@ -16,7 +16,7 @@ export default function VocabularyPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [flashcardIndex, setFlashcardIndex] = useState(0);
 
-  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
   const words = getVocabularyByLevel(selectedLevel).filter((w) =>
     searchQuery

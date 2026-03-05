@@ -74,6 +74,34 @@ const writingPrompts: WritingPrompt[] = [
     minWords: 150,
     maxWords: 350,
   },
+  {
+    id: 'w-b2-2',
+    level: 'B2',
+    title: 'Report: A Local Event',
+    instruction: 'Write a report about a recent event in your city (festival, sports match, or cultural event). Include what happened, who was there, and your evaluation.',
+    hint: 'Use formal language and organise with subheadings: Introduction, Description, Evaluation.',
+    minWords: 150,
+    maxWords: 350,
+  },
+  {
+    id: 'w-c1-1',
+    level: 'C1',
+    title: 'Critical Essay: Data Privacy in India',
+    instruction: 'Write a well-structured essay analysing the tension between digital innovation and individual privacy in India. Reference Aadhaar, UPI, or the Digital Personal Data Protection Act.',
+    hint: 'Present multiple perspectives. Use advanced linking words: "notwithstanding", "conversely", "insofar as".',
+    minWords: 200,
+    maxWords: 450,
+    sampleAnswer: 'India\'s digital transformation has been nothing short of revolutionary. The Aadhaar biometric identification system, covering over 1.3 billion residents, has streamlined access to government services and financial inclusion. Similarly, the Unified Payments Interface (UPI) has democratised digital transactions, processing billions monthly.\n\nHowever, this rapid digitisation raises profound questions about individual privacy. The Supreme Court\'s 2017 Puttaswamy judgement unequivocally established privacy as a fundamental right, yet the subsequent Digital Personal Data Protection Act of 2023 has drawn criticism for granting the state broad exemptions.\n\nNotwithstanding these concerns, proponents argue that a regulatory framework—however imperfect—is preferable to the legal vacuum that preceded it. Conversely, civil liberties advocates contend that without robust safeguards, centralised databases become instruments of surveillance rather than empowerment.\n\nIn conclusion, India must strike a delicate balance: harnessing technology for inclusive development while ensuring that the constitutional promise of privacy is not sacrificed at the altar of efficiency.',
+  },
+  {
+    id: 'w-c1-2',
+    level: 'C1',
+    title: 'Formal Proposal: Workplace Improvement',
+    instruction: 'Write a formal proposal to your company\'s management suggesting improvements to employee well-being and productivity. Include an analysis of the current situation, specific recommendations, and expected outcomes.',
+    hint: 'Use formal register, hedging language ("It would appear that..."), and clear section structure.',
+    minWords: 200,
+    maxWords: 450,
+  },
 ];
 
 export default function WritingPage() {
@@ -115,7 +143,7 @@ export default function WritingPage() {
 
         {/* Level Filter */}
         <div className="flex flex-wrap gap-2 mb-6">
-          {(['all', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as const).map((level) => (
+          {(['all', 'A1', 'A2', 'B1', 'B2', 'C1'] as const).map((level) => (
             <button
               key={level}
               onClick={() => setSelectedLevel(level)}

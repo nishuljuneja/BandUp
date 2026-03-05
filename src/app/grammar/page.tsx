@@ -12,7 +12,7 @@ export default function GrammarPage() {
   const { profile, uiLanguage } = useAppStore();
   const currentLevel = profile?.currentLevel || 'A1';
 
-  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">

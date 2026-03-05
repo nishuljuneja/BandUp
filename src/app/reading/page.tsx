@@ -18,7 +18,7 @@ export default function ReadingPage() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
 
-  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
   const passages = getReadingPassagesByLevel(selectedLevel);
 
   const readingTimeMinutes = activePassage

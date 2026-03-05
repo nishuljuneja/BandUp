@@ -271,6 +271,84 @@ Despite these hurdles, the trajectory remains positive. Indian startups are incr
       },
     ],
   },
+
+  // ==================== C1 ====================
+  {
+    id: 'c1-read-01',
+    level: 'C1',
+    title: 'The Right to Privacy in the Digital Age',
+    content: `In August 2017, a nine-judge bench of the Supreme Court of India unanimously declared that the right to privacy is a fundamental right protected under the Indian Constitution. The landmark judgement in Justice K. S. Puttaswamy v. Union of India was precipitated by challenges to Aadhaar, the world's largest biometric identification system, which assigns a unique twelve-digit number to every resident.
+
+The ruling established that privacy encompasses bodily autonomy, informational self-determination, and the sanctity of personal choices—including what one eats, whom one associates with, and how one expresses identity. Writing for the majority, Justice D. Y. Chandrachud observed that "the right to privacy is an intrinsic part of the right to life and personal liberty under Article 21."
+
+Yet the practical implications have proved far more complex than the legal pronouncement itself. The subsequent Personal Data Protection Bill underwent multiple drafts over five years before evolving into the Digital Personal Data Protection Act of 2023. Critics argue that the legislation grants the government sweeping exemptions, permitting state agencies to process personal data without consent on grounds of national security. Proponents counter that a regulatory framework, however imperfect, is preferable to the legal vacuum that preceded it.
+
+Meanwhile, India's data economy continues to expand at a staggering pace. With over 800 million internet users—most accessing the web via affordable smartphones—the country generates vast quantities of data daily. Fintech applications, e-commerce platforms, and telemedicine services have been transformative, particularly for rural populations historically excluded from formal banking and healthcare. However, this digitisation has also introduced new vulnerabilities: data breaches, algorithmic discrimination, and the pervasive surveillance architecture enabled by cross-linked databases.
+
+The tension between technological progress and individual privacy is unlikely to be resolved definitively. What the Puttaswamy judgement accomplished was to shift the burden of justification onto the state, requiring that any intrusion into privacy satisfy the tests of legality, necessity, and proportionality. Whether future legislation and judicial interpretation will uphold this standard remains one of the defining questions of Indian constitutional governance in the twenty-first century.`,
+    wordCount: 290,
+    topic: 'Law & Technology',
+    indianContext: true,
+    vocabulary: ['unanimous', 'precipitated', 'biometric', 'autonomy', 'self-determination', 'sanctity', 'intrinsic', 'sweeping', 'exemptions', 'proportionality'],
+    questions: [
+      {
+        id: 'c1-r1-q1',
+        type: 'multiple-choice',
+        question: 'What was the immediate catalyst for the Supreme Court ruling on the right to privacy?',
+        questionTranslations: {
+          hi: 'निजता के अधिकार पर सुप्रीम कोर्ट के फैसले का तात्कालिक कारण क्या था?',
+          ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
+        },
+        options: [
+          'A petition against social media companies',
+          'Challenges to the Aadhaar biometric ID system',
+          'A data breach at a government agency',
+          'International pressure from the United Nations',
+        ],
+        correctAnswer: 'Challenges to the Aadhaar biometric ID system',
+        explanation: 'The passage states the judgement "was precipitated by challenges to Aadhaar."',
+      },
+      {
+        id: 'c1-r1-q2',
+        type: 'multiple-choice',
+        question: 'According to the passage, what is a major criticism of the Digital Personal Data Protection Act of 2023?',
+        questionTranslations: {
+          hi: '2023 के डिजिटल व्यक्तिगत डेटा संरक्षण अधिनियम की एक प्रमुख आलोचना क्या है?',
+          ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
+        },
+        options: [
+          'It is too strict on businesses',
+          'It does not cover rural populations',
+          'It grants the government broad exemptions to process data without consent',
+          'It was passed without parliamentary debate',
+        ],
+        correctAnswer: 'It grants the government broad exemptions to process data without consent',
+        explanation: 'The passage mentions critics argue the legislation "grants the government sweeping exemptions, permitting state agencies to process personal data without consent."',
+      },
+      {
+        id: 'c1-r1-q3',
+        type: 'true-false',
+        question: 'The Puttaswamy judgement placed the burden on citizens to prove that their privacy was violated.',
+        questionTranslations: {
+          hi: 'पुट्टस्वामी फैसले ने नागरिकों पर यह साबित करने का बोझ डाला कि उनकी निजता का उल्लंघन हुआ।',
+          ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
+        },
+        correctAnswer: 'False',
+        explanation: 'The passage says the judgement "shift[ed] the burden of justification onto the state," not onto citizens.',
+      },
+      {
+        id: 'c1-r1-q4',
+        type: 'short-answer',
+        question: 'What three tests must any intrusion into privacy satisfy, according to the Puttaswamy standard?',
+        questionTranslations: {
+          hi: 'पुट्टस्वामी मानक के अनुसार, निजता में किसी भी हस्तक्षेप को कौन से तीन परीक्षण पास करने होंगे?',
+          ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
+        },
+        correctAnswer: 'Legality, necessity, and proportionality.',
+        explanation: 'The passage concludes that any intrusion must "satisfy the tests of legality, necessity, and proportionality."',
+      },
+    ],
+  },
 ];
 
 export function getReadingPassagesByLevel(level: string): ReadingPassage[] {
