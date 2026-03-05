@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { LevelBadge, ProgressBar } from '@/components/Exercises';
-import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, ArrowRight } from 'lucide-react';
+import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, ArrowRight, ClipboardCheck } from 'lucide-react';
 
 export default function DashboardPage() {
   const { profile, uiLanguage, loading } = useAppStore();
@@ -150,6 +150,29 @@ export default function DashboardPage() {
           <div className="flex items-center gap-3">
             <ProgressBar current={0} total={2} />
           </div>
+        </div>
+      </div>
+
+      {/* Tests Section */}
+      <div className="mt-8 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <ClipboardCheck className="w-6 h-6 text-amber-600" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800">Track Your Progress with Tests</h3>
+              <p className="text-sm text-gray-500 mt-1">
+                Take a quick test to see how your English level has improved over time. Compare results and spot trends.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/tests"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 text-white rounded-xl font-medium hover:bg-amber-600 transition-colors whitespace-nowrap"
+          >
+            Take a Test <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </div>
