@@ -20,7 +20,44 @@ export default function GrammarLessonPage() {
   const [phase, setPhase] = useState<'learn' | 'practice' | 'result'>('learn');
   const [exerciseIndex, setExerciseIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [answered, setAnswered] = useState(false); // true once current question is answered
+  const [answered, setAnswered] = useState(false);
+
+  const exercises = lesson?.exercises ?? [];
+
+  // Advance to next exercise (called by the user via Next button)
+  // MUST be declared before any conditional returns (Rules of Hooks)
+  const advanceExercise = useCallback(() => {
+    setAnswered(false);
+    if (exerciseIndex < exercises.length - 1) {
+      setExerciseIndex(exerciseIndex + 1);
+    } else {
+      setPhase('result');
+      // Persist progress
+      if (profile) {
+        const pct = Math.round((score / exercises.length) * 100);
+        const newGrammarScore = Math.max(profile.skillScores.grammar, pct);
+        const updates = {
+          lessonsCompleted: profile.lessonsCompleted + 1,
+          skillScores: { ...profile.skillScores, grammar: newGrammarScore },
+        };
+        updateUserProfile(profile.uid, updates).catch(() => {});
+        addXP(profile.uid, score * 10).catch(() => {});
+        updateStreak(profile.uid).catch(() => {});
+        saveLessonProgress(profile.uid, {
+          lessonId: lessonId,
+          lessonType: 'grammar',
+          userId: profile.uid,
+          score: pct,
+          timeSpentSeconds: 0,
+          attempts: 1,
+          bestScore: pct,
+          completed: pct >= 70,
+        }).catch(() => {});
+        // Update local store immediately
+        setProfile({ ...profile, ...updates, xp: profile.xp + score * 10 });
+      }
+    }
+  }, [exerciseIndex, exercises.length, score, profile, lessonId, setProfile]);
 
   if (!lesson) {
     return (
@@ -32,7 +69,6 @@ export default function GrammarLessonPage() {
   }
 
   const title = lesson.titleTranslations[uiLanguage] || lesson.title;
-  const exercises = lesson.exercises;
   const currentExercise = exercises[exerciseIndex];
 
   // Learn Phase - Show explanation
@@ -110,40 +146,6 @@ export default function GrammarLessonPage() {
       </div>
     );
   }
-
-  // Advance to next exercise (called by the user via Next button)
-  const advanceExercise = useCallback(() => {
-    setAnswered(false);
-    if (exerciseIndex < exercises.length - 1) {
-      setExerciseIndex(exerciseIndex + 1);
-    } else {
-      setPhase('result');
-      // Persist progress
-      if (profile) {
-        const pct = Math.round((score / exercises.length) * 100);
-        const newGrammarScore = Math.max(profile.skillScores.grammar, pct);
-        const updates = {
-          lessonsCompleted: profile.lessonsCompleted + 1,
-          skillScores: { ...profile.skillScores, grammar: newGrammarScore },
-        };
-        updateUserProfile(profile.uid, updates).catch(() => {});
-        addXP(profile.uid, score * 10).catch(() => {});
-        updateStreak(profile.uid).catch(() => {});
-        saveLessonProgress(profile.uid, {
-          lessonId: lessonId,
-          lessonType: 'grammar',
-          userId: profile.uid,
-          score: pct,
-          timeSpentSeconds: 0,
-          attempts: 1,
-          bestScore: pct,
-          completed: pct >= 70,
-        }).catch(() => {});
-        // Update local store immediately
-        setProfile({ ...profile, ...updates, xp: profile.xp + score * 10 });
-      }
-    }
-  }, [exerciseIndex, exercises.length, score, profile, lessonId, setProfile]);
 
   // Practice Phase
   if (phase === 'practice' && currentExercise) {
