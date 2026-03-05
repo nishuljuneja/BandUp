@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
-import { PenTool, CheckCircle, AlertCircle, Send } from 'lucide-react';
+import { PenTool, CheckCircle, AlertCircle, Send, Star, ChevronDown, ChevronUp, AlertTriangle } from 'lucide-react';
 import { LevelBadge } from '@/components/Exercises';
 import type { CEFRLevel } from '@/lib/firestore';
+import { gradeWriting, type GradingResult, type WritingMistake } from '@/lib/writing-grader';
 
 interface WritingPrompt {
   id: string;
@@ -111,6 +112,9 @@ export default function WritingPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showSample, setShowSample] = useState(false);
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel | 'all'>('all');
+  const [gradingResult, setGradingResult] = useState<GradingResult | null>(null);
+  const [showMistakes, setShowMistakes] = useState(true);
+  const [showBreakdown, setShowBreakdown] = useState(false);
 
   const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
 
@@ -118,13 +122,27 @@ export default function WritingPage() {
     ? writingPrompts
     : writingPrompts.filter((p) => p.level === selectedLevel);
 
-  const handleSubmit = () => setSubmitted(true);
+  const handleSubmit = () => {
+    if (!selectedPrompt) return;
+    const result = gradeWriting(
+      text,
+      selectedPrompt.level,
+      selectedPrompt.instruction,
+      selectedPrompt.minWords,
+      selectedPrompt.maxWords,
+    );
+    setGradingResult(result);
+    setSubmitted(true);
+  };
 
   const handleBack = () => {
     setSelectedPrompt(null);
     setText('');
     setSubmitted(false);
     setShowSample(false);
+    setGradingResult(null);
+    setShowMistakes(true);
+    setShowBreakdown(false);
   };
 
   // ── PROMPT SELECTION ──
@@ -227,49 +245,149 @@ export default function WritingPage() {
           </div>
         </div>
       ) : (
-        <div className="space-y-4">
-          <div className="bg-green-50 border border-green-200 rounded-xl p-5">
-            <div className="flex items-center gap-2 mb-2">
-              <CheckCircle className="w-5 h-5 text-green-600" />
-              <h3 className="font-bold text-green-800">Submitted!</h3>
+        <div className="space-y-5">
+          {/* Score Hero */}
+          {gradingResult && (
+            <div className={`rounded-2xl p-6 border ${
+              gradingResult.score >= 7 ? 'bg-green-50 border-green-200' :
+              gradingResult.score >= 5 ? 'bg-yellow-50 border-yellow-200' :
+              'bg-red-50 border-red-200'
+            }`}>
+              <div className="flex items-center gap-5">
+                {/* Score circle */}
+                <div className={`w-20 h-20 rounded-full flex flex-col items-center justify-center flex-shrink-0 ${
+                  gradingResult.score >= 7 ? 'bg-green-600' :
+                  gradingResult.score >= 5 ? 'bg-yellow-500' :
+                  'bg-red-500'
+                } text-white`}>
+                  <span className="text-2xl font-extrabold leading-none">{gradingResult.score}</span>
+                  <span className="text-xs opacity-80">/10</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className={`text-lg font-bold ${
+                    gradingResult.score >= 7 ? 'text-green-800' :
+                    gradingResult.score >= 5 ? 'text-yellow-800' :
+                    'text-red-800'
+                  }`}>{gradingResult.summary}</h3>
+                  <p className="text-sm text-gray-500 mt-1">You wrote {wordCount} words for a {selectedPrompt.level} level prompt.</p>
+                </div>
+              </div>
             </div>
-            <p className="text-green-700 text-sm mb-3">
-              Great job! You wrote {wordCount} words. AI-powered feedback will be available soon.
-            </p>
-            <div className="bg-white rounded-lg p-4 text-gray-700 whitespace-pre-line text-sm">
-              {text}
-            </div>
+          )}
+
+          {/* Your Writing */}
+          <div className="bg-white rounded-xl border border-gray-200 p-5">
+            <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Your Writing</h4>
+            <div className="text-gray-700 whitespace-pre-line text-sm leading-relaxed">{text}</div>
           </div>
 
-          {/* Quick Self-Check */}
-          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <AlertCircle className="w-5 h-5 text-yellow-600" />
-              <h3 className="font-bold text-yellow-800">Self-Check Checklist</h3>
+          {/* Mistakes */}
+          {gradingResult && gradingResult.mistakes.length > 0 && (
+            <div className="bg-white rounded-xl border border-red-100 overflow-hidden">
+              <button
+                onClick={() => setShowMistakes(!showMistakes)}
+                className="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition"
+              >
+                <div className="flex items-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-red-500" />
+                  <span className="font-semibold text-gray-800">
+                    Mistakes Found ({gradingResult.mistakes.length})
+                  </span>
+                </div>
+                {showMistakes ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+              </button>
+              {showMistakes && (
+                <div className="px-5 pb-4 space-y-3">
+                  {gradingResult.mistakes.map((m, i) => (
+                    <div key={i} className="rounded-lg bg-red-50 border border-red-100 p-3">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className={`text-xs font-semibold uppercase px-2 py-0.5 rounded-full ${
+                          m.type === 'grammar' ? 'bg-purple-100 text-purple-700' :
+                          m.type === 'spelling' ? 'bg-blue-100 text-blue-700' :
+                          m.type === 'punctuation' ? 'bg-orange-100 text-orange-700' :
+                          'bg-gray-100 text-gray-600'
+                        }`}>
+                          {m.type}
+                        </span>
+                        <span className="text-sm font-mono text-red-700">&ldquo;{m.text}&rdquo;</span>
+                      </div>
+                      <p className="text-sm text-gray-700">
+                        <span className="font-medium">Suggestion:</span> {m.suggestion}
+                      </p>
+                      <p className="text-xs text-gray-500 mt-0.5">{m.explanation}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-            <ul className="space-y-2 text-sm text-yellow-800">
-              <li className="flex items-start gap-2">
-                <input type="checkbox" className="mt-1 accent-yellow-600" />
-                <span>Did you use proper capitalization and punctuation?</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <input type="checkbox" className="mt-1 accent-yellow-600" />
-                <span>Are your verb tenses consistent?</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <input type="checkbox" className="mt-1 accent-yellow-600" />
-                <span>Did you use articles (a, an, the) correctly?</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <input type="checkbox" className="mt-1 accent-yellow-600" />
-                <span>Does each sentence express a complete thought?</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <input type="checkbox" className="mt-1 accent-yellow-600" />
-                <span>Did you avoid direct translation from your mother tongue?</span>
-              </li>
-            </ul>
-          </div>
+          )}
+
+          {/* Strengths & Improvements */}
+          {gradingResult && (
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-green-50 rounded-xl border border-green-200 p-4">
+                <h4 className="flex items-center gap-2 text-sm font-semibold text-green-800 mb-3">
+                  <CheckCircle className="w-4 h-4" /> Strengths
+                </h4>
+                <ul className="space-y-1.5">
+                  {gradingResult.strengths.map((s, i) => (
+                    <li key={i} className="text-sm text-green-700 flex items-start gap-1.5">
+                      <Star className="w-3.5 h-3.5 mt-0.5 text-green-500 flex-shrink-0" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-amber-50 rounded-xl border border-amber-200 p-4">
+                <h4 className="flex items-center gap-2 text-sm font-semibold text-amber-800 mb-3">
+                  <AlertCircle className="w-4 h-4" /> Areas to Improve
+                </h4>
+                <ul className="space-y-1.5">
+                  {gradingResult.improvements.map((s, i) => (
+                    <li key={i} className="text-sm text-amber-700 flex items-start gap-1.5">
+                      <span className="text-amber-400 flex-shrink-0 mt-0.5">•</span>
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+
+          {/* Score Breakdown */}
+          {gradingResult && (
+            <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button
+                onClick={() => setShowBreakdown(!showBreakdown)}
+                className="w-full flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition"
+              >
+                <span className="font-semibold text-gray-800">Score Breakdown</span>
+                {showBreakdown ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+              </button>
+              {showBreakdown && (
+                <div className="px-5 pb-5 space-y-3">
+                  {([
+                    { label: 'Grammar', value: gradingResult.breakdown.grammar, color: 'bg-purple-500' },
+                    { label: 'Spelling', value: gradingResult.breakdown.spelling, color: 'bg-blue-500' },
+                    { label: 'Punctuation', value: gradingResult.breakdown.punctuation, color: 'bg-orange-500' },
+                    { label: 'Vocabulary', value: gradingResult.breakdown.vocabulary, color: 'bg-teal-500' },
+                    { label: 'Structure', value: gradingResult.breakdown.structure, color: 'bg-indigo-500' },
+                    { label: 'Task Adherence', value: gradingResult.breakdown.taskAdherence, color: 'bg-pink-500' },
+                  ]).map(({ label, value, color }) => (
+                    <div key={label}>
+                      <div className="flex items-center justify-between text-sm mb-1">
+                        <span className="text-gray-600">{label}</span>
+                        <span className="font-semibold text-gray-800">{value}/10</span>
+                      </div>
+                      <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                        <div className={`h-full ${color} rounded-full transition-all`} style={{ width: `${value * 10}%` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Sample Answer */}
           {selectedPrompt.sampleAnswer && (
@@ -288,9 +406,17 @@ export default function WritingPage() {
             </div>
           )}
 
-          <button onClick={handleBack} className="px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition">
-            Try Another Prompt
-          </button>
+          <div className="flex gap-3">
+            <button
+              onClick={() => { setSubmitted(false); setGradingResult(null); }}
+              className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition"
+            >
+              Edit &amp; Resubmit
+            </button>
+            <button onClick={handleBack} className="px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition">
+              Try Another Prompt
+            </button>
+          </div>
         </div>
       )}
     </div>
