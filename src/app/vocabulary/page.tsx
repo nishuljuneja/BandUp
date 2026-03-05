@@ -8,6 +8,68 @@ import { Flashcard, LevelBadge, FillBlank, MultipleChoice, ScoreCard, ProgressBa
 import { BookOpen, Search, Filter } from 'lucide-react';
 import type { CEFRLevel, VocabularyWord } from '@/lib/firestore';
 
+/**
+ * Try to find the target word (or common inflections) inside a sentence.
+ * Returns { sentence: string (with _____ inserted), matched: string (the form found), alts: string[] }.
+ * If no match is found, returns null.
+ */
+function blankOutWord(
+  sentence: string,
+  baseWord: string
+): { sentence: string; matched: string; alts: string[] } | null {
+  const w = baseWord.toLowerCase();
+  // Generate common inflected forms to try
+  const variants: string[] = [w];
+  // -s / -es
+  variants.push(w + 's', w + 'es');
+  // -ed
+  if (w.endsWith('e')) {
+    variants.push(w + 'd');
+  } else if (/[^aeiou]y$/.test(w)) {
+    variants.push(w.slice(0, -1) + 'ied');
+  } else if (/[^aeiou][aeiou][^aeiouwxy]$/.test(w)) {
+    variants.push(w + w.slice(-1) + 'ed');
+  }
+  variants.push(w + 'ed');
+  // -ing
+  if (w.endsWith('e') && !w.endsWith('ee')) {
+    variants.push(w.slice(0, -1) + 'ing');
+  } else if (/[^aeiou][aeiou][^aeiouwxy]$/.test(w)) {
+    variants.push(w + w.slice(-1) + 'ing');
+  }
+  variants.push(w + 'ing');
+  // -er / -est
+  if (w.endsWith('e')) {
+    variants.push(w + 'r', w + 'st');
+  } else if (/[^aeiou]y$/.test(w)) {
+    variants.push(w.slice(0, -1) + 'ier', w.slice(0, -1) + 'iest');
+  }
+  variants.push(w + 'er', w + 'est');
+  // -ly
+  variants.push(w + 'ly');
+  // -tion / -ness
+  variants.push(w + 'tion', w + 'ness');
+  // un-
+  if (w.startsWith('un')) variants.push(w.slice(2));
+
+  // Sort longest first so we match the most specific form
+  const unique = [...new Set(variants)].sort((a, b) => b.length - a.length);
+
+  for (const form of unique) {
+    const escaped = form.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`\\b${escaped}\\b`, 'i');
+    const match = sentence.match(re);
+    if (match) {
+      const actual = match[0]; // preserve original casing
+      const blanked = sentence.replace(re, '_____');
+      // Collect alternative accepted answers: both the matched form and the base word
+      const alts = [actual.toLowerCase(), w].filter((v, i, arr) => arr.indexOf(v) === i && v !== actual.toLowerCase());
+      return { sentence: blanked, matched: actual, alts: alts.map(a => a) };
+    }
+  }
+  return null;
+}
+
 /** Fisher-Yates shuffle (returns new array) */
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -215,19 +277,28 @@ export default function VocabularyPage() {
             <>
               <ProgressBar current={drillIndex + 1} total={drillWords.length} label="Fill in the Blanks" />
               <div className="mt-6" key={drillKey}>
-                <FillBlank
-                  question={
-                    drillWords[drillIndex].example
-                      ? drillWords[drillIndex].example.replace(
-                          new RegExp(`\\b${drillWords[drillIndex].word}\\b`, 'i'),
-                          '_____'
-                        )
-                      : `The word is _____.`
-                  }
-                  correctAnswer={drillWords[drillIndex].word}
-                  explanation={`${drillWords[drillIndex].word} — ${drillWords[drillIndex].meaning[uiLanguage] || drillWords[drillIndex].meaning.en}`}
-                  onAnswer={advanceDrill}
-                />
+                {(() => {
+                  const w = drillWords[drillIndex];
+                  const result = w.example ? blankOutWord(w.example, w.word) : null;
+                  const question = result
+                    ? result.sentence
+                    : `Use the correct word: _____.`;
+                  const correctAns = result ? result.matched : w.word;
+                  const altAnswers = result
+                    ? [w.word, ...(result.alts || [])]
+                    : [];
+                  return (
+                    <FillBlank
+                      question={question}
+                      correctAnswer={correctAns}
+                      acceptedAnswers={altAnswers}
+                      definition={w.meaning[uiLanguage] || w.meaning.en}
+                      partOfSpeech={w.partOfSpeech}
+                      explanation={`${w.word} — ${w.meaning[uiLanguage] || w.meaning.en}${w.example ? `\nExample: "${w.example}"` : ''}`}
+                      onAnswer={advanceDrill}
+                    />
+                  );
+                })()}
               </div>
             </>
           ) : (

@@ -151,46 +151,104 @@ export function MultipleChoice({ question, options, correctAnswer, explanation, 
 interface FillBlankProps {
   question: string; // Contains _____ for the blank
   correctAnswer: string;
+  acceptedAnswers?: string[]; // alternative accepted forms
   explanation?: string;
+  definition?: string; // shown as clue
+  partOfSpeech?: string;
   onAnswer: (correct: boolean) => void;
 }
 
-export function FillBlank({ question, correctAnswer, explanation, onAnswer }: FillBlankProps) {
+export function FillBlank({ question, correctAnswer, acceptedAnswers, explanation, definition, partOfSpeech, onAnswer }: FillBlankProps) {
   const [answer, setAnswer] = useState('');
   const [showResult, setShowResult] = useState(false);
+  const [hintRevealed, setHintRevealed] = useState(0); // 0 = none, 1 = first letter, 2 = two letters
   const { uiLanguage } = useAppStore();
 
-  const isCorrect = answer.trim().toLowerCase() === correctAnswer.toLowerCase();
+  const accepted = [correctAnswer, ...(acceptedAnswers || [])].map(a => a.trim().toLowerCase());
+  const isCorrect = accepted.includes(answer.trim().toLowerCase());
 
   const handleSubmit = () => {
     setShowResult(true);
     onAnswer(isCorrect);
   };
 
+  const revealHint = () => {
+    setHintRevealed((h) => Math.min(h + 1, Math.min(2, correctAnswer.length)));
+  };
+
   const parts = question.split('_____');
+  const wordLen = correctAnswer.length;
+
+  // Build letter dashes like _ _ _ _ with revealed letters
+  const letterHint = Array.from({ length: wordLen }, (_, i) =>
+    i < hintRevealed ? correctAnswer[i] : '_'
+  ).join(' ');
+
+  const posLabel: Record<string, string> = {
+    noun: 'Noun', verb: 'Verb', adjective: 'Adj', adverb: 'Adv',
+    preposition: 'Prep', conjunction: 'Conj', determiner: 'Det',
+    pronoun: 'Pron', exclamation: 'Excl', interjection: 'Excl',
+  };
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-white rounded-2xl shadow-md p-6">
-      <div className="text-lg text-gray-800 mb-4">
+    <div className="w-full max-w-lg mx-auto bg-white rounded-2xl shadow-md p-6 space-y-4">
+      {/* Clue: definition + POS */}
+      {(definition || partOfSpeech) && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
+          <div className="flex items-start gap-2">
+            <span className="text-amber-500 text-lg mt-0.5">💡</span>
+            <div className="flex-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-xs font-semibold text-amber-700 uppercase tracking-wide">Clue</span>
+                {partOfSpeech && (
+                  <span className="text-xs px-2 py-0.5 bg-amber-200/60 text-amber-800 rounded-full font-medium">
+                    {posLabel[partOfSpeech.toLowerCase()] || partOfSpeech}
+                  </span>
+                )}
+              </div>
+              {definition && <p className="text-sm text-amber-900 mt-1">{definition}</p>}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Sentence with blank */}
+      <div className="text-lg text-gray-800 leading-relaxed">
         <span>{parts[0]}</span>
         <input
           type="text"
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && !showResult && handleSubmit()}
+          onKeyDown={(e) => e.key === 'Enter' && !showResult && answer.trim() && handleSubmit()}
           disabled={showResult}
-          className={`inline-block w-32 mx-1 px-3 py-1 border-b-2 text-center text-lg font-medium focus:outline-none transition-colors ${
+          className={`inline-block mx-1 px-3 py-1 border-b-2 text-center text-lg font-medium focus:outline-none transition-colors ${
             showResult
               ? isCorrect
                 ? 'border-green-500 text-green-700 bg-green-50'
                 : 'border-red-500 text-red-700 bg-red-50'
               : 'border-indigo-400 focus:border-indigo-600'
           }`}
-          placeholder="?"
+          style={{ width: `${Math.max(wordLen * 14, 80)}px` }}
+          placeholder={hintRevealed > 0 ? correctAnswer.slice(0, hintRevealed) + '...' : '?'}
           autoFocus
         />
         <span>{parts[1] || ''}</span>
       </div>
+
+      {/* Letter count + hint button */}
+      {!showResult && (
+        <div className="flex items-center justify-between text-sm">
+          <span className="text-gray-400 font-mono tracking-widest">{letterHint}</span>
+          <button
+            type="button"
+            onClick={revealHint}
+            disabled={hintRevealed >= Math.min(2, wordLen)}
+            className="text-indigo-500 hover:text-indigo-700 disabled:text-gray-300 font-medium text-sm transition"
+          >
+            {hintRevealed === 0 ? 'Show hint' : hintRevealed < 2 ? 'More hint' : 'Hint used'}
+          </button>
+        </div>
+      )}
 
       {!showResult && (
         <button
@@ -203,7 +261,7 @@ export function FillBlank({ question, correctAnswer, explanation, onAnswer }: Fi
       )}
 
       {showResult && (
-        <div className={`mt-4 p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+        <div className={`p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
           <p className="text-sm font-medium mb-1">
             {isCorrect ? t('common.correct', uiLanguage) : `${t('common.incorrect', uiLanguage)} — Answer: ${correctAnswer}`}
           </p>
