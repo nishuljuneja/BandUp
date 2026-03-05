@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
-import { allVocabulary, getVocabularyByLevel } from '@/content/vocabulary';
+import { allVocabulary, getVocabularyByLevel, getVocabularyByIds } from '@/content/vocabulary';
 import { Flashcard, LevelBadge, FillBlank, MultipleChoice, ScoreCard, ProgressBar } from '@/components/Exercises';
-import { BookOpen, Search, Filter } from 'lucide-react';
+import { BookOpen, Search, Filter, RotateCcw, Brain } from 'lucide-react';
 import type { CEFRLevel, VocabularyWord } from '@/lib/firestore';
-import { updateUserProfile, addXP, updateStreak } from '@/lib/firestore';
+import { updateUserProfile, addXP, updateStreak, updateVocabularyProgress } from '@/lib/firestore';
 
 /**
  * Try to find the target word (or common inflections) inside a sentence.
@@ -81,8 +81,29 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-type Mode = 'browse' | 'flashcards' | 'fill-blanks' | 'quiz';
+type Mode = 'browse' | 'flashcards' | 'fill-blanks' | 'quiz' | 'review';
 const DRILL_SIZE = 10; // questions per round
+const REVIEW_SIZE = 15; // flashcards per review session
+
+// ── Studied-words tracking via localStorage ──
+const STUDIED_KEY_PREFIX = 'speakeasy-studied-';
+
+function getStudiedWordIds(uid: string): string[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(STUDIED_KEY_PREFIX + uid);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+}
+
+function markWordStudied(uid: string, wordId: string) {
+  if (typeof window === 'undefined') return;
+  const ids = getStudiedWordIds(uid);
+  if (!ids.includes(wordId)) {
+    ids.push(wordId);
+    localStorage.setItem(STUDIED_KEY_PREFIX + uid, JSON.stringify(ids));
+  }
+}
 
 export default function VocabularyPage() {
   const { profile, uiLanguage, setProfile } = useAppStore();
@@ -92,6 +113,30 @@ export default function VocabularyPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [flashcardIndex, setFlashcardIndex] = useState(0);
   const [shuffleSeed, setShuffleSeed] = useState(0); // bump to reshuffle
+
+  // Review mode state
+  const [reviewWords, setReviewWords] = useState<VocabularyWord[]>([]);
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [reviewedCount, setReviewedCount] = useState(0);
+  const [reviewKnewCount, setReviewKnewCount] = useState(0);
+
+  // Read ?mode=review from URL on mount
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('mode') === 'review') {
+      setMode('review');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Load review words once profile is available when in review mode
+  useEffect(() => {
+    if (mode === 'review' && profile) {
+      loadReviewWords();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode, profile]);
 
   // Drill / quiz state
   const [drillIndex, setDrillIndex] = useState(0);
@@ -152,8 +197,12 @@ export default function VocabularyPage() {
   const handleDrillAnswer = useCallback(
     (correct: boolean) => {
       if (correct) setDrillScore((s) => s + 1);
+      // Mark word as studied for review
+      if (profile && drillWords[drillIndex]) {
+        markWordStudied(profile.uid, drillWords[drillIndex].id);
+      }
     },
-    []
+    [profile, drillWords, drillIndex]
   );
 
   const advanceDrill = useCallback(
@@ -186,6 +235,10 @@ export default function VocabularyPage() {
   const handleFlashcardRate = useCallback(
     (quality: number) => {
       if (profile) {
+        // Mark word as studied for review
+        const word = flashcardWords[flashcardIndex];
+        if (word) markWordStudied(profile.uid, word.id);
+
         const newWordsLearned = profile.wordsLearned + 1;
         const updates = { wordsLearned: newWordsLearned };
         updateUserProfile(profile.uid, updates).catch(() => {});
@@ -199,7 +252,31 @@ export default function VocabularyPage() {
         setFlashcardIndex(0);
       }
     },
-    [profile, setProfile, flashcardIndex, flashcardWords.length]
+    [profile, setProfile, flashcardIndex, flashcardWords.length, flashcardWords]
+  );
+
+  // Handle review flashcard rating — updates spaced repetition in Firestore
+  const handleReviewRate = useCallback(
+    (quality: number) => {
+      const word = reviewWords[reviewIndex];
+      if (profile && word) {
+        // Update spaced repetition progress in Firestore
+        updateVocabularyProgress(profile.uid, word.id, quality).catch(() => {});
+        updateStreak(profile.uid).catch(() => {});
+        addXP(profile.uid, quality >= 3 ? 5 : 2).catch(() => {});
+        setProfile({ ...profile, xp: profile.xp + (quality >= 3 ? 5 : 2) });
+      }
+      setReviewedCount((c) => c + 1);
+      if (quality >= 3) setReviewKnewCount((c) => c + 1);
+
+      if (reviewIndex < reviewWords.length - 1) {
+        setReviewIndex((i) => i + 1);
+      } else {
+        // Finished all review cards — stay on summary
+        setReviewIndex(reviewWords.length); // triggers summary view
+      }
+    },
+    [profile, setProfile, reviewWords, reviewIndex]
   );
 
   const switchMode = (m: Mode) => {
@@ -214,7 +291,27 @@ export default function VocabularyPage() {
       setDrillDone(false);
       setDrillKey(0);
     }
+    if (m === 'review') {
+      loadReviewWords();
+    }
   };
+
+  const loadReviewWords = useCallback(() => {
+    if (!profile) { setReviewWords([]); return; }
+    const studiedIds = getStudiedWordIds(profile.uid);
+    if (studiedIds.length === 0) { setReviewWords([]); return; }
+    const studied = getVocabularyByIds(studiedIds);
+    // Fisher-Yates shuffle
+    const arr = [...studied];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    setReviewWords(arr.slice(0, REVIEW_SIZE));
+    setReviewIndex(0);
+    setReviewedCount(0);
+    setReviewKnewCount(0);
+  }, [profile]);
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -239,6 +336,7 @@ export default function VocabularyPage() {
             { key: 'flashcards', label: 'Flashcards' },
             { key: 'fill-blanks', label: 'Fill Blanks' },
             { key: 'quiz', label: 'Quiz' },
+            { key: 'review', label: '🔄 Review' },
           ] as { key: Mode; label: string }[]).map(({ key, label }) => (
             <button
               key={key}
@@ -293,6 +391,84 @@ export default function VocabularyPage() {
             example={currentWord.example}
             onRate={handleFlashcardRate}
           />
+        </div>
+      )}
+
+      {/* Review Mode */}
+      {mode === 'review' && (
+        <div className="py-8">
+          {reviewWords.length === 0 ? (
+            <div className="text-center py-16">
+              <Brain className="w-16 h-16 mx-auto mb-4 text-gray-300" />
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">No words to review yet</h3>
+              <p className="text-gray-400 mb-6">
+                Study some words first using Flashcards, Fill Blanks, or Quiz mode.<br />
+                Then come back here to review them!
+              </p>
+              <button
+                onClick={() => switchMode('flashcards')}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition"
+              >
+                Start Learning
+              </button>
+            </div>
+          ) : reviewIndex >= reviewWords.length ? (
+            /* Review complete summary */
+            <div className="max-w-md mx-auto text-center">
+              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Brain className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">Review Complete!</h3>
+                <p className="text-gray-500 mb-6">
+                  You reviewed {reviewedCount} word{reviewedCount !== 1 ? 's' : ''}
+                </p>
+                <div className="flex justify-center gap-8 mb-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-green-600">{reviewKnewCount}</div>
+                    <div className="text-sm text-gray-400">Knew it</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-orange-500">{reviewedCount - reviewKnewCount}</div>
+                    <div className="text-sm text-gray-400">Need practice</div>
+                  </div>
+                </div>
+                <div className="flex gap-3 justify-center">
+                  <button
+                    onClick={() => { loadReviewWords(); }}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition"
+                  >
+                    <RotateCcw className="w-4 h-4" />
+                    Review Again
+                  </button>
+                  <button
+                    onClick={() => switchMode('browse')}
+                    className="px-5 py-2.5 bg-gray-100 text-gray-600 rounded-xl font-medium hover:bg-gray-200 transition"
+                  >
+                    Back to Browse
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* Active review flashcard */
+            <>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-400 mb-4">
+                <span className="flex items-center gap-1.5">
+                  <Brain className="w-4 h-4" />
+                  Review: {reviewIndex + 1} / {reviewWords.length}
+                </span>
+              </div>
+              <Flashcard
+                front={reviewWords[reviewIndex].word}
+                back={reviewWords[reviewIndex].meaning[uiLanguage] || reviewWords[reviewIndex].meaning.en}
+                pronunciation={reviewWords[reviewIndex].pronunciation}
+                partOfSpeech={reviewWords[reviewIndex].partOfSpeech}
+                example={reviewWords[reviewIndex].example}
+                onRate={handleReviewRate}
+              />
+            </>
+          )}
         </div>
       )}
 

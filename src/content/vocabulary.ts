@@ -242,6 +242,15 @@ export function searchVocabulary(query: string): VocabularyWord[] {
   );
 }
 
+export function getVocabularyById(id: string): VocabularyWord | undefined {
+  return allVocabulary.find((w) => w.id === id);
+}
+
+export function getVocabularyByIds(ids: string[]): VocabularyWord[] {
+  const idSet = new Set(ids);
+  return allVocabulary.filter((w) => idSet.has(w.id));
+}
+
 export { allVocabulary, oxfordVocabulary, oxford3000, oxford5000 };
 
 export function formatOxfordWord(
