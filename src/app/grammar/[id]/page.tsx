@@ -20,7 +20,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-const EXERCISES_PER_ROUND = 4;
+const EXERCISES_PER_ROUND = 10;
 
 export default function GrammarLessonPage() {
   const params = useParams();
