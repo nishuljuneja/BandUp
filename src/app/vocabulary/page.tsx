@@ -1,31 +1,118 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { allVocabulary, getVocabularyByLevel } from '@/content/vocabulary';
-import { Flashcard, LevelBadge } from '@/components/Exercises';
+import { Flashcard, LevelBadge, FillBlank, MultipleChoice, ScoreCard, ProgressBar } from '@/components/Exercises';
 import { BookOpen, Search, Filter } from 'lucide-react';
 import type { CEFRLevel, VocabularyWord } from '@/lib/firestore';
+
+/** Fisher-Yates shuffle (returns new array) */
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+type Mode = 'browse' | 'flashcards' | 'fill-blanks' | 'quiz';
+const DRILL_SIZE = 10; // questions per round
 
 export default function VocabularyPage() {
   const { profile, uiLanguage } = useAppStore();
   const currentLevel = profile?.currentLevel || 'A1';
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(currentLevel);
-  const [mode, setMode] = useState<'browse' | 'flashcards'>('browse');
+  const [mode, setMode] = useState<Mode>('browse');
   const [searchQuery, setSearchQuery] = useState('');
   const [flashcardIndex, setFlashcardIndex] = useState(0);
+  const [shuffleSeed, setShuffleSeed] = useState(0); // bump to reshuffle
+
+  // Drill / quiz state
+  const [drillIndex, setDrillIndex] = useState(0);
+  const [drillScore, setDrillScore] = useState(0);
+  const [drillDone, setDrillDone] = useState(false);
+  const [drillKey, setDrillKey] = useState(0); // forces component remount between questions
 
   const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
-  const words = getVocabularyByLevel(selectedLevel).filter((w) =>
+  const browseWords = getVocabularyByLevel(selectedLevel).filter((w) =>
     searchQuery
       ? w.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
         w.meaning.en.toLowerCase().includes(searchQuery.toLowerCase())
       : true
   );
 
-  const currentWord = words[flashcardIndex];
+  // Shuffled words for flashcard mode — reshuffles on level change or explicit reshuffle
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const flashcardWords = useMemo(() => shuffle(getVocabularyByLevel(selectedLevel)), [selectedLevel, shuffleSeed]);
+
+  // Drill words (fill-blanks & quiz) — pick DRILL_SIZE random words that have definitions
+  const drillWords = useMemo(() => {
+    const eligible = getVocabularyByLevel(selectedLevel).filter(
+      (w) => w.example && w.meaning.en && w.meaning.en !== w.word
+    );
+    return shuffle(eligible).slice(0, DRILL_SIZE);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedLevel, shuffleSeed]);
+
+  // Generate multiple-choice distractors from same level
+  const quizOptions = useMemo(() => {
+    const allLevel = getVocabularyByLevel(selectedLevel).filter(
+      (w) => w.meaning.en && w.meaning.en !== w.word
+    );
+    return drillWords.map((word) => {
+      const others = shuffle(
+        allLevel.filter((w) => w.id !== word.id)
+      )
+        .slice(0, 3)
+        .map((w) => w.meaning[uiLanguage] || w.meaning.en);
+      const correct = word.meaning[uiLanguage] || word.meaning.en;
+      return shuffle([correct, ...others]);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [drillWords, uiLanguage]);
+
+  const currentWord = mode === 'flashcards' ? flashcardWords[flashcardIndex] : browseWords[flashcardIndex];
+
+  const resetDrill = useCallback(() => {
+    setDrillIndex(0);
+    setDrillScore(0);
+    setDrillDone(false);
+    setDrillKey(0);
+    setShuffleSeed((s) => s + 1);
+  }, []);
+
+  const advanceDrill = useCallback(
+    (correct: boolean) => {
+      if (correct) setDrillScore((s) => s + 1);
+      setTimeout(() => {
+        if (drillIndex + 1 >= drillWords.length) {
+          setDrillDone(true);
+        } else {
+          setDrillIndex((i) => i + 1);
+          setDrillKey((k) => k + 1);
+        }
+      }, 1200);
+    },
+    [drillIndex, drillWords.length]
+  );
+
+  const switchMode = (m: Mode) => {
+    setMode(m);
+    setFlashcardIndex(0);
+    if (m === 'flashcards' || m === 'fill-blanks' || m === 'quiz') {
+      setShuffleSeed((s) => s + 1);
+    }
+    if (m === 'fill-blanks' || m === 'quiz') {
+      setDrillIndex(0);
+      setDrillScore(0);
+      setDrillDone(false);
+      setDrillKey(0);
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -44,23 +131,23 @@ export default function VocabularyPage() {
         </div>
 
         {/* Mode Toggle */}
-        <div className="flex bg-gray-100 rounded-lg p-1">
-          <button
-            onClick={() => setMode('browse')}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition ${
-              mode === 'browse' ? 'bg-white shadow text-indigo-600' : 'text-gray-500'
-            }`}
-          >
-            Browse
-          </button>
-          <button
-            onClick={() => { setMode('flashcards'); setFlashcardIndex(0); }}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition ${
-              mode === 'flashcards' ? 'bg-white shadow text-indigo-600' : 'text-gray-500'
-            }`}
-          >
-            Flashcards
-          </button>
+        <div className="flex bg-gray-100 rounded-lg p-1 flex-wrap gap-1">
+          {([
+            { key: 'browse', label: 'Browse' },
+            { key: 'flashcards', label: 'Flashcards' },
+            { key: 'fill-blanks', label: 'Fill Blanks' },
+            { key: 'quiz', label: 'Quiz' },
+          ] as { key: Mode; label: string }[]).map(({ key, label }) => (
+            <button
+              key={key}
+              onClick={() => switchMode(key)}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition ${
+                mode === key ? 'bg-white shadow text-indigo-600' : 'text-gray-500'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -71,7 +158,7 @@ export default function VocabularyPage() {
           return (
             <button
               key={level}
-              onClick={() => { setSelectedLevel(level); setFlashcardIndex(0); }}
+              onClick={() => { setSelectedLevel(level); setFlashcardIndex(0); setShuffleSeed(s => s + 1); }}
               className={`px-4 py-2 rounded-xl text-sm font-medium transition ${
                 selectedLevel === level
                   ? 'bg-indigo-600 text-white'
@@ -85,25 +172,106 @@ export default function VocabularyPage() {
       </div>
 
       {/* Flashcard Mode */}
-      {mode === 'flashcards' && words.length > 0 && currentWord && (
+      {mode === 'flashcards' && flashcardWords.length > 0 && currentWord && (
         <div className="py-8">
-          <div className="text-center text-sm text-gray-400 mb-4">
-            {flashcardIndex + 1} / {words.length}
+          <div className="flex items-center justify-center gap-4 text-sm text-gray-400 mb-4">
+            <span>{flashcardIndex + 1} / {flashcardWords.length}</span>
+            <button
+              onClick={() => { setShuffleSeed(s => s + 1); setFlashcardIndex(0); }}
+              className="text-indigo-500 hover:text-indigo-700 font-medium transition"
+            >
+              ↻ Shuffle
+            </button>
           </div>
           <Flashcard
             front={currentWord.word}
             back={currentWord.meaning[uiLanguage] || currentWord.meaning.en}
             pronunciation={currentWord.pronunciation}
+            partOfSpeech={currentWord.partOfSpeech}
             example={currentWord.example}
             onRate={(quality) => {
               // TODO: Save spaced repetition progress
-              if (flashcardIndex < words.length - 1) {
+              if (flashcardIndex < flashcardWords.length - 1) {
                 setFlashcardIndex(flashcardIndex + 1);
               } else {
                 setFlashcardIndex(0);
               }
             }}
           />
+        </div>
+      )}
+
+      {/* Fill in the Blanks Mode */}
+      {mode === 'fill-blanks' && (
+        <div className="py-8">
+          {drillDone ? (
+            <ScoreCard
+              score={drillScore}
+              total={drillWords.length}
+              onRetry={resetDrill}
+              onContinue={() => switchMode('browse')}
+            />
+          ) : drillWords.length > 0 ? (
+            <>
+              <ProgressBar current={drillIndex + 1} total={drillWords.length} label="Fill in the Blanks" />
+              <div className="mt-6" key={drillKey}>
+                <FillBlank
+                  question={
+                    drillWords[drillIndex].example
+                      ? drillWords[drillIndex].example.replace(
+                          new RegExp(`\\b${drillWords[drillIndex].word}\\b`, 'i'),
+                          '_____'
+                        )
+                      : `The word is _____.`
+                  }
+                  correctAnswer={drillWords[drillIndex].word}
+                  explanation={`${drillWords[drillIndex].word} — ${drillWords[drillIndex].meaning[uiLanguage] || drillWords[drillIndex].meaning.en}`}
+                  onAnswer={advanceDrill}
+                />
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-12 text-gray-400">
+              <p>Not enough words with example sentences at this level.</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Multiple Choice Quiz Mode */}
+      {mode === 'quiz' && (
+        <div className="py-8">
+          {drillDone ? (
+            <ScoreCard
+              score={drillScore}
+              total={drillWords.length}
+              onRetry={resetDrill}
+              onContinue={() => switchMode('browse')}
+            />
+          ) : drillWords.length > 0 && quizOptions[drillIndex] ? (
+            <>
+              <ProgressBar current={drillIndex + 1} total={drillWords.length} label="Vocabulary Quiz" />
+              <div className="mt-6" key={drillKey}>
+                <MultipleChoice
+                  question={`What does "${drillWords[drillIndex].word}" mean?`}
+                  options={quizOptions[drillIndex]}
+                  correctAnswer={
+                    drillWords[drillIndex].meaning[uiLanguage] || drillWords[drillIndex].meaning.en
+                  }
+                  explanation={
+                    drillWords[drillIndex].example
+                      ? `Example: "${drillWords[drillIndex].example}"`
+                      : undefined
+                  }
+                  onAnswer={advanceDrill}
+                />
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-12 text-gray-400">
+              <p>Not enough words with definitions at this level.</p>
+            </div>
+          )}
         </div>
       )}
 
@@ -124,7 +292,7 @@ export default function VocabularyPage() {
 
           {/* Word List */}
           <div className="space-y-3">
-            {words.map((word) => (
+            {browseWords.map((word) => (
               <div
                 key={word.id}
                 className="bg-white rounded-xl p-4 border border-gray-100 hover:shadow-md transition-shadow"
@@ -162,7 +330,7 @@ export default function VocabularyPage() {
               </div>
             ))}
 
-            {words.length === 0 && (
+            {browseWords.length === 0 && (
               <div className="text-center py-12 text-gray-400">
                 <BookOpen className="w-12 h-12 mx-auto mb-3 opacity-50" />
                 <p>No words found for this level yet.</p>

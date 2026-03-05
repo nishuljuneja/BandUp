@@ -5,7 +5,7 @@ import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { grammarLessons, getGrammarLessonsByLevel } from '@/content/grammar-lessons';
 import { LevelBadge } from '@/components/Exercises';
-import { Brain, CheckCircle, Lock, ArrowRight } from 'lucide-react';
+import { Brain, CheckCircle, ArrowRight } from 'lucide-react';
 import type { CEFRLevel } from '@/lib/firestore';
 
 export default function GrammarPage() {
@@ -28,7 +28,6 @@ export default function GrammarPage() {
 
       {levels.map((level) => {
         const lessons = getGrammarLessonsByLevel(level);
-        const isUnlocked = levels.indexOf(level) <= levels.indexOf(currentLevel);
 
         if (lessons.length === 0) return null;
 
@@ -39,7 +38,6 @@ export default function GrammarPage() {
               <h2 className="text-lg font-semibold text-gray-700">
                 {t(`level.${level}`, uiLanguage)}
               </h2>
-              {!isUnlocked && <Lock className="w-4 h-4 text-gray-400" />}
             </div>
 
             <div className="space-y-3">
@@ -50,12 +48,8 @@ export default function GrammarPage() {
                 return (
                   <Link
                     key={lesson.id}
-                    href={isUnlocked ? `/grammar/${lesson.id}` : '#'}
-                    className={`block bg-white rounded-xl p-5 border transition-shadow ${
-                      isUnlocked
-                        ? 'border-gray-100 hover:shadow-md cursor-pointer'
-                        : 'border-gray-100 opacity-50 cursor-not-allowed'
-                    }`}
+                    href={`/grammar/${lesson.id}`}
+                    className="block bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md cursor-pointer transition-shadow"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex-1">
@@ -66,11 +60,7 @@ export default function GrammarPage() {
                         <span className="text-xs text-gray-400">
                           {lesson.exercises.length} {t('common.exercise', uiLanguage).toLowerCase()}s
                         </span>
-                        {isUnlocked ? (
-                          <ArrowRight className="w-5 h-5 text-gray-400" />
-                        ) : (
-                          <Lock className="w-5 h-5 text-gray-300" />
-                        )}
+                        <ArrowRight className="w-5 h-5 text-gray-400" />
                       </div>
                     </div>
                   </Link>

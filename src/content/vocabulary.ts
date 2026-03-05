@@ -1,6 +1,7 @@
 import { type VocabularyWord, type CEFRLevel, type SupportedLanguage } from '../lib/firestore';
 import oxfordData from './oxford-3000.json';
 import oxford5000Extra from './oxford-5000-extra.json';
+import wordDefsRaw from './word-definitions.json';
 
 // ------------------------------------------------------------------
 // Oxford 3000 (A1-B2) + Oxford 5000 extra (B2-C1) word lists
@@ -13,19 +14,28 @@ interface OxfordEntry {
   level: string;
 }
 
+// Definitions fetched from the Free Dictionary API
+const wordDefs: Record<string, { d: string; e: string; p: string }> = wordDefsRaw as Record<string, { d: string; e: string; p: string }>;
+
 const emptyTranslations: Record<SupportedLanguage, string> = {
   en: '', hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '',
 };
 
+function cleanWord(w: string): string {
+  return w.split(/[,/]/)[0].trim().toLowerCase();
+}
+
 function oxfordToVocabularyWord(entry: OxfordEntry, index: number): VocabularyWord {
   const levelMap: Record<string, CEFRLevel> = { A1: 'A1', A2: 'A2', B1: 'B1', B2: 'B2', C1: 'C1', C2: 'C2' };
+  const key = cleanWord(entry.word);
+  const def = wordDefs[key];
   return {
     id: `ox3k-${index}`,
     word: entry.word,
     partOfSpeech: entry.pos,
     level: levelMap[entry.level] || 'A1',
-    meaning: { ...emptyTranslations, en: entry.word },
-    example: '',
+    meaning: { ...emptyTranslations, en: def?.d || entry.word },
+    example: def?.e || '',
     exampleTranslation: { ...emptyTranslations },
     pronunciation: '',
     tags: [],

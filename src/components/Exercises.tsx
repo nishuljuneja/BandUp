@@ -10,18 +10,18 @@ interface FlashcardProps {
   front: string;
   back: string;
   pronunciation?: string;
+  partOfSpeech?: string;
   example?: string;
   onRate: (quality: number) => void; // 0-5 SM-2 rating
 }
 
-export function Flashcard({ front, back, pronunciation, example, onRate }: FlashcardProps) {
+export function Flashcard({ front, back, pronunciation, partOfSpeech, example, onRate }: FlashcardProps) {
   const [flipped, setFlipped] = useState(false);
-  const { uiLanguage } = useAppStore();
 
   return (
     <div className="w-full max-w-lg mx-auto">
       <div
-        className="relative h-64 cursor-pointer flashcard-container"
+        className="relative h-72 cursor-pointer flashcard-container"
         onClick={() => setFlipped(!flipped)}
       >
         <div
@@ -33,12 +33,18 @@ export function Flashcard({ front, back, pronunciation, example, onRate }: Flash
             {pronunciation && (
               <p className="text-sm text-gray-400 mt-2">{pronunciation}</p>
             )}
+            {partOfSpeech && (
+              <p className="text-xs text-indigo-400 mt-1 italic">{partOfSpeech}</p>
+            )}
             <p className="text-xs text-gray-400 mt-4">Tap to reveal</p>
           </div>
 
           {/* Back */}
           <div className="absolute inset-0 bg-indigo-50 rounded-2xl flex flex-col items-center justify-center p-6 flashcard-back border-2 border-indigo-200 shadow-lg">
-            <p className="text-2xl font-bold text-indigo-800">{back}</p>
+            <p className="text-xl font-bold text-indigo-800 text-center">{back}</p>
+            {partOfSpeech && (
+              <p className="text-xs text-indigo-400 mt-1 italic">{partOfSpeech}</p>
+            )}
             {example && (
               <p className="text-sm text-gray-600 mt-3 italic text-center">&ldquo;{example}&rdquo;</p>
             )}
@@ -46,36 +52,23 @@ export function Flashcard({ front, back, pronunciation, example, onRate }: Flash
         </div>
       </div>
 
-      {/* Rating buttons - only show when flipped */}
+      {/* Know / Don't Know buttons - only show when flipped */}
       {flipped && (
-        <div className="mt-6 space-y-2">
-          <p className="text-center text-sm text-gray-500">How well did you know this?</p>
-          <div className="flex justify-center gap-2">
-            <button
-              onClick={() => { onRate(1); setFlipped(false); }}
-              className="px-4 py-2 bg-red-100 text-red-700 rounded-lg text-sm font-medium hover:bg-red-200 transition"
-            >
-              Didn&apos;t know
-            </button>
-            <button
-              onClick={() => { onRate(3); setFlipped(false); }}
-              className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-lg text-sm font-medium hover:bg-yellow-200 transition"
-            >
-              Hard
-            </button>
-            <button
-              onClick={() => { onRate(4); setFlipped(false); }}
-              className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-200 transition"
-            >
-              Good
-            </button>
-            <button
-              onClick={() => { onRate(5); setFlipped(false); }}
-              className="px-4 py-2 bg-green-100 text-green-700 rounded-lg text-sm font-medium hover:bg-green-200 transition"
-            >
-              Easy
-            </button>
-          </div>
+        <div className="mt-6 flex justify-center gap-6">
+          <button
+            onClick={(e) => { e.stopPropagation(); onRate(1); setFlipped(false); }}
+            className="flex items-center gap-2 px-8 py-3 bg-red-50 text-red-600 rounded-xl text-base font-semibold hover:bg-red-100 border-2 border-red-200 transition"
+          >
+            <XCircle className="w-6 h-6" />
+            Didn&apos;t Know
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); onRate(5); setFlipped(false); }}
+            className="flex items-center gap-2 px-8 py-3 bg-green-50 text-green-600 rounded-xl text-base font-semibold hover:bg-green-100 border-2 border-green-200 transition"
+          >
+            <CheckCircle className="w-6 h-6" />
+            Knew It
+          </button>
         </div>
       )}
     </div>

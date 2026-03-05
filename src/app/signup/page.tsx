@@ -35,7 +35,7 @@ export default function SignupPage() {
     setLoading(true);
     try {
       await signUpWithEmail(email, password, name, uiLanguage);
-      router.push('/placement-test');
+      router.push('/onboarding');
     } catch (err: any) {
       const code = err?.code || '';
       if (code === 'auth/email-already-in-use') setError('An account with this email already exists.');
@@ -51,7 +51,7 @@ export default function SignupPage() {
     setLoading(true);
     try {
       await signInWithGoogle();
-      router.push('/placement-test');
+      router.push('/onboarding');
     } catch (err: any) {
       setError('Google sign-in failed. Please try again.');
     } finally {
