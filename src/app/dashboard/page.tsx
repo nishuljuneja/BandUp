@@ -5,6 +5,7 @@ import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { LevelBadge, ProgressBar } from '@/components/Exercises';
 import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, ArrowRight, ClipboardCheck } from 'lucide-react';
+import StudyPlan from '@/components/StudyPlan';
 
 export default function DashboardPage() {
   const { profile, uiLanguage, loading } = useAppStore();
@@ -82,6 +83,11 @@ export default function DashboardPage() {
           <div className="text-3xl font-bold text-gray-800">{profile.lessonsCompleted}</div>
           <div className="text-sm text-gray-500">{t('common.lessonsCompleted', uiLanguage)}</div>
         </div>
+      </div>
+
+      {/* Study Plan */}
+      <div className="mb-8">
+        <StudyPlan />
       </div>
 
       {/* Progress CTA */}
