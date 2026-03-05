@@ -9,7 +9,7 @@ import { logOut } from '@/lib/auth';
 import {
   BookOpen, Brain, Headphones, MessageSquare, PenTool, Trophy,
   Home, User, Menu, X, Globe, LogOut, Flame, TrendingUp, ChevronDown, ClipboardCheck,
-  Sparkles, Award, BarChart3,
+  Sparkles, Award, BarChart3, Gamepad2,
 } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
@@ -45,6 +45,7 @@ export default function Navbar() {
     { href: '/writing', label: t('nav.writing', uiLanguage), icon: PenTool },
     { href: '/tests', label: 'Tests', icon: ClipboardCheck },
     { href: '/achievements', label: 'Achievements', icon: Award },
+    { href: '/games', label: 'Games', icon: Gamepad2 },
     { href: '/leaderboard', label: t('nav.leaderboard', uiLanguage), icon: Trophy },
     { href: '/analytics', label: 'Weak Areas', icon: BarChart3 },
     { href: '/progress', label: 'Progress', icon: TrendingUp },
