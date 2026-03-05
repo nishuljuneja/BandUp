@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "EngLearn - Learn English for India",
-    template: "%s | EngLearn",
+    default: "SpeakEasy - Learn English for India",
+    template: "%s | SpeakEasy",
   },
   description:
     "Master English step by step with lessons in your language. Built for India. CEFR-based proficiency levels from A1 to C2.",
@@ -35,20 +35,20 @@ export const metadata: Metadata = {
     "IELTS preparation",
     "spoken english india",
   ],
-  authors: [{ name: "EngLearn" }],
-  creator: "EngLearn",
-  metadataBase: new URL("https://englearnapp.com"),
+  authors: [{ name: "SpeakEasy" }],
+  creator: "SpeakEasy",
+  metadataBase: new URL("https://speakeasyapp.in"),
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "EngLearn",
-    title: "EngLearn - Learn English for India",
+    siteName: "SpeakEasy",
+    title: "SpeakEasy - Learn English for India",
     description:
       "Master English step by step with lessons in your language. Built for India. CEFR-based proficiency levels from A1 to C2.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "EngLearn - Learn English for India",
+    title: "SpeakEasy - Learn English for India",
     description:
       "Master English step by step with lessons in your language. Built for India.",
   },

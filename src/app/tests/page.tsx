@@ -10,7 +10,7 @@ import Link from 'next/link';
 import type { CEFRLevel } from '@/lib/firestore';
 
 const LEVEL_ORDER: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
-const STORAGE_KEY = 'englearn-test-history';
+const STORAGE_KEY = 'speakeasy-test-history';
 
 interface TestHistoryEntry {
   date: string;

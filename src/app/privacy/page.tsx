@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - EngLearn',
-  description: 'Privacy policy for EngLearn, the English learning app built for India.',
+  title: 'Privacy Policy - SpeakEasy',
+  description: 'Privacy policy for SpeakEasy, the English learning app built for India.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">1. Introduction</h2>
           <p>
-            Welcome to EngLearn (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;). We are committed to protecting your privacy.
+            Welcome to SpeakEasy (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;). We are committed to protecting your privacy.
             This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our
             English learning application.
           </p>
@@ -121,8 +121,8 @@ export default function PrivacyPolicyPage() {
           </ul>
           <p className="mt-2">
             To exercise any of these rights, please contact us at{' '}
-            <a href="mailto:support@englearnapp.com" className="text-indigo-600 hover:underline">
-              support@englearnapp.com
+            <a href="mailto:support@speakeasyapp.in" className="text-indigo-600 hover:underline">
+              support@speakeasyapp.in
             </a>.
           </p>
         </section>
@@ -148,8 +148,8 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">11. Contact Us</h2>
           <p>
             If you have any questions about this Privacy Policy, please contact us at{' '}
-            <a href="mailto:support@englearnapp.com" className="text-indigo-600 hover:underline">
-              support@englearnapp.com
+            <a href="mailto:support@speakeasyapp.in" className="text-indigo-600 hover:underline">
+              support@speakeasyapp.in
             </a>.
           </p>
         </section>

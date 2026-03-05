@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - EngLearn',
-  description: 'Terms of service for EngLearn, the English learning app built for India.',
+  title: 'Terms of Service - SpeakEasy',
+  description: 'Terms of service for SpeakEasy, the English learning app built for India.',
 };
 
 export default function TermsOfServicePage() {
@@ -16,7 +16,7 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">1. Acceptance of Terms</h2>
           <p>
-            By accessing or using EngLearn (&ldquo;the App&rdquo;), you agree to be bound by these Terms of Service.
+            By accessing or using SpeakEasy (&ldquo;the App&rdquo;), you agree to be bound by these Terms of Service.
             If you do not agree to these terms, please do not use the App.
           </p>
         </section>
@@ -24,7 +24,7 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">2. Description of Service</h2>
           <p>
-            EngLearn is a free English learning platform designed for learners in India. The App provides
+            SpeakEasy is a free English learning platform designed for learners in India. The App provides
             vocabulary building, grammar lessons, reading comprehension, listening practice, speaking exercises,
             writing activities, and proficiency testing based on the CEFR framework (A1–C2).
           </p>
@@ -58,7 +58,7 @@ export default function TermsOfServicePage() {
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">5. Intellectual Property</h2>
           <p>
             All content, features, and functionality of the App — including but not limited to text, graphics,
-            logos, icons, exercises, and software — are owned by EngLearn and are protected by applicable intellectual
+            logos, icons, exercises, and software — are owned by SpeakEasy and are protected by applicable intellectual
             property laws. You may not reproduce, distribute, or create derivative works from our content without
             explicit permission.
           </p>
@@ -117,7 +117,7 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">10. Limitation of Liability</h2>
           <p>
-            To the fullest extent permitted by applicable law, EngLearn shall not be liable for any indirect,
+            To the fullest extent permitted by applicable law, SpeakEasy shall not be liable for any indirect,
             incidental, special, consequential, or punitive damages, or any loss of profits or data, arising
             out of or in connection with your use of the App.
           </p>
@@ -135,8 +135,8 @@ export default function TermsOfServicePage() {
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">12. Contact Us</h2>
           <p>
             If you have any questions about these Terms, please contact us at{' '}
-            <a href="mailto:support@englearnapp.com" className="text-indigo-600 hover:underline">
-              support@englearnapp.com
+            <a href="mailto:support@speakeasyapp.in" className="text-indigo-600 hover:underline">
+              support@speakeasyapp.in
             </a>.
           </p>
         </section>
