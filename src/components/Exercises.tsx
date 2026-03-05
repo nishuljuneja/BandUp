@@ -177,8 +177,9 @@ export function FillBlank({ question, correctAnswer, acceptedAnswers, explanatio
   const [hintRevealed, setHintRevealed] = useState(0); // 0 = none, 1 = first letter, 2 = two letters
   const { uiLanguage } = useAppStore();
 
-  const accepted = [correctAnswer, ...(acceptedAnswers || [])].map(a => a.trim().toLowerCase());
-  const isCorrect = accepted.includes(answer.trim().toLowerCase());
+  const norm = (s: string) => s.trim().toLowerCase().replace(/[.!?,;:]+$/, '');
+  const accepted = [correctAnswer, ...(acceptedAnswers || [])].map(a => norm(a));
+  const isCorrect = accepted.includes(norm(answer));
 
   const handleSubmit = () => {
     setShowResult(true);
