@@ -110,31 +110,7 @@ export default function DashboardPage() {
         </div>
       </Link>
 
-      {/* Study Plan */}
-      <div className="mb-8">
-        <StudyPlan />
-      </div>
-
-      {/* Progress CTA */}
-      <Link
-        href="/progress"
-        className="block mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-2xl p-5 hover:shadow-md transition-shadow group"
-      >
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center">
-              <Trophy className="w-5 h-5 text-indigo-600" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">View Your Full Progress</h3>
-              <p className="text-sm text-gray-500">See skills breakdown, milestones, and more</p>
-            </div>
-          </div>
-          <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 transition-colors" />
-        </div>
-      </Link>
-
-      {/* Skills Grid */}
+      {/* Skills Grid (Continue Learning) */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">{t('dashboard.continueLesson', uiLanguage)}</h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {skills.map((skill) => {
@@ -162,6 +138,30 @@ export default function DashboardPage() {
           );
         })}
       </div>
+
+      {/* Study Plan */}
+      <div className="mb-8">
+        <StudyPlan />
+      </div>
+
+      {/* Progress CTA */}
+      <Link
+        href="/progress"
+        className="block mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-2xl p-5 hover:shadow-md transition-shadow group"
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center">
+              <Trophy className="w-5 h-5 text-indigo-600" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">View Your Full Progress</h3>
+              <p className="text-sm text-gray-500">See skills breakdown, milestones, and more</p>
+            </div>
+          </div>
+          <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 transition-colors" />
+        </div>
+      </Link>
 
       {/* Quick Actions */}
       <div className="grid sm:grid-cols-2 gap-4">
