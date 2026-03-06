@@ -183,7 +183,7 @@ export default function GamesPage() {
             </div>
             <h2 className="text-xl font-bold mb-1">Unjumble</h2>
             <p className="text-white/80 text-sm">
-              Unscramble 7 letters and find as many words as you can!
+              Make a 7 letter word
             </p>
           </div>
           <div className="p-5">

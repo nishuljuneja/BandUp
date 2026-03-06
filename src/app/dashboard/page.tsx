@@ -80,7 +80,7 @@ export default function DashboardPage() {
             </div>
             <h3 className="font-bold text-gray-800">Unjumble</h3>
           </div>
-          <p className="text-xs text-gray-500 mb-3">Unscramble 7 letters &amp; find words</p>
+          <p className="text-xs text-gray-500 mb-3">Make a 7 letter word</p>
           <span className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 group-hover:text-indigo-800 transition">
             Play <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </span>
