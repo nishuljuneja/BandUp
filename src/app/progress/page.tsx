@@ -48,9 +48,9 @@ function getNextMilestone(xp: number): { target: number; label: string } {
 
 // Level progression percentage
 function levelProgress(level: string): { pct: number; next: string } {
-  const order = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  const order = ['A1', 'A2', 'B1', 'B2', 'C1'];
   const idx = order.indexOf(level);
-  return { pct: Math.round(((idx + 1) / order.length) * 100), next: order[idx + 1] || 'C2' };
+  return { pct: Math.round(((idx + 1) / order.length) * 100), next: order[idx + 1] || 'C1' };
 }
 
 const skillConfig: { key: SkillType; label: string; icon: React.ElementType; color: string; bg: string; href: string }[] = [

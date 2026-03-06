@@ -48,7 +48,6 @@ export default function Home() {
     { id: 'B1', color: 'from-blue-400 to-blue-600' },
     { id: 'B2', color: 'from-purple-400 to-purple-600' },
     { id: 'C1', color: 'from-orange-400 to-orange-600' },
-    { id: 'C2', color: 'from-red-400 to-red-600' },
   ];
 
   return (
@@ -103,11 +102,11 @@ export default function Home() {
       {/* CEFR Levels */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">6 Levels, One Clear Path</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">5 Levels, One Clear Path</h2>
           <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
             Based on the internationally recognised CEFR framework. Take a placement test to find your starting point.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {levels.map((level) => (
               <div key={level.id} className={`bg-gradient-to-br ${level.color} rounded-2xl p-6 text-white text-center shadow-lg hover:scale-105 transition-transform cursor-pointer`}>
                 <div className="text-3xl font-black mb-2">{level.id}</div>

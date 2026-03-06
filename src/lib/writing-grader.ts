@@ -254,7 +254,6 @@ function assessVocabulary(words: string[], level: CEFRLevel): { score: number; f
     'B1': { good: 0.45, great: 0.60 },
     'B2': { good: 0.50, great: 0.65 },
     'C1': { good: 0.55, great: 0.70 },
-    'C2': { good: 0.60, great: 0.75 },
   };
 
   const t = thresholds[level];

@@ -221,57 +221,15 @@ export const placementQuestions: PlacementQuestion[] = [
     options: ['portrayal', 'display', 'depiction', 'exhibition'],
     correctAnswer: 'portrayal',
   },
-
-  // ===== C2 - Proficient =====
-  {
-    id: 'p-c2-1',
-    level: 'C2',
-    question: 'The philosopher\'s argument, though seemingly _____, contained a fundamental logical flaw.',
-    type: 'multiple-choice',
-    options: ['cogent', 'coherent', 'cognisant', 'congruent'],
-    correctAnswer: 'cogent',
-  },
-  {
-    id: 'p-c2-2',
-    level: 'C2',
-    question: 'The juxtaposition of urban _____ and rural simplicity forms the crux of the narrative.',
-    type: 'multiple-choice',
-    options: ['opulence', 'opacity', 'obstinacy', 'obsolescence'],
-    correctAnswer: 'opulence',
-  },
-  {
-    id: 'p-c2-3',
-    level: 'C2',
-    question: 'Her speech was so _____ that even her detractors were compelled to applaud.',
-    type: 'multiple-choice',
-    options: ['eloquent', 'elusive', 'elaborate', 'eligible'],
-    correctAnswer: 'eloquent',
-  },
-  {
-    id: 'p-c2-4',
-    level: 'C2',
-    question: 'The policy change was met with _____ from various stakeholders across the spectrum.',
-    type: 'multiple-choice',
-    options: ['ambivalence', 'ambulance', 'amplitude', 'ambiguity'],
-    correctAnswer: 'ambivalence',
-  },
-  {
-    id: 'p-c2-5',
-    level: 'C2',
-    question: 'The author\'s prose style is characterised by a _____ wit that belies the gravity of the subject.',
-    type: 'multiple-choice',
-    options: ['sardonic', 'sanguine', 'sacrosanct', 'salubrious'],
-    correctAnswer: 'sardonic',
-  },
 ];
 
 // Scoring: assign level based on highest level where user got 3+ of 5 correct
 export function calculatePlacementLevel(
   answers: { questionId: string; correct: boolean }[]
 ): CEFRLevel {
-  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
-  const scoreByLevel: Record<CEFRLevel, number> = {
-    A1: 0, A2: 0, B1: 0, B2: 0, C1: 0, C2: 0,
+  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
+  const scoreByLevel: Record<string, number> = {
+    A1: 0, A2: 0, B1: 0, B2: 0, C1: 0,
   };
 
   answers.forEach(({ questionId, correct }) => {

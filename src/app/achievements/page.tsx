@@ -33,7 +33,7 @@ interface Badge {
 }
 
 // Helper for level ordering checks
-const LEVEL_ORDER: Record<string, number> = { A1: 0, A2: 1, B1: 2, B2: 3, C1: 4, C2: 5 };
+const LEVEL_ORDER: Record<string, number> = { A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
 const atOrAbove = (current: string, target: string) =>
   (LEVEL_ORDER[current] ?? 0) >= (LEVEL_ORDER[target] ?? 99);
 
@@ -295,13 +295,7 @@ const BADGES: Badge[] = [
     progress: (p) => atOrAbove(p.currentLevel, 'C1') ? 100 : 0,
     requirement: 'Reach C1', category: 'level',
   },
-  {
-    id: 'level-c2', title: 'Native-Level', description: 'Reach level C2 — mastery!',
-    icon: GraduationCap, color: 'text-yellow-700', bg: 'bg-yellow-100', border: 'border-yellow-400',
-    check: (p) => atOrAbove(p.currentLevel, 'C2'),
-    progress: (p) => atOrAbove(p.currentLevel, 'C2') ? 100 : 0,
-    requirement: 'Reach C2', category: 'level',
-  },
+
   {
     id: 'level-test', title: 'Tested & Proven', description: 'Complete the placement test',
     icon: Target, color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-300',

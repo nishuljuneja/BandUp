@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | SpeakEasy",
   },
   description:
-    "Master English step by step with lessons in your language. Built for India. CEFR-based proficiency levels from A1 to C2.",
+    "Master English step by step with lessons in your language. Built for India. CEFR-based proficiency levels from A1 to C1.",
   keywords: [
     "learn english",
     "english for india",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "SpeakEasy",
     title: "SpeakEasy - Learn English for India",
     description:
-      "Master English step by step with lessons in your language. Built for India. CEFR-based proficiency levels from A1 to C2.",
+      "Master English step by step with lessons in your language. Built for India. CEFR-based proficiency levels from A1 to C1.",
   },
   twitter: {
     card: "summary_large_image",

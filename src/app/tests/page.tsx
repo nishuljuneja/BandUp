@@ -9,7 +9,7 @@ import { SkipForward, ArrowRight, ArrowLeft, ClipboardCheck, TrendingUp, Trendin
 import Link from 'next/link';
 import type { CEFRLevel } from '@/lib/firestore';
 
-const LEVEL_ORDER: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+const LEVEL_ORDER: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 const STORAGE_KEY = 'speakeasy-test-history';
 
 interface TestHistoryEntry {
@@ -120,7 +120,6 @@ export default function TestsPage() {
       B1: { correct: 0, total: 0 },
       B2: { correct: 0, total: 0 },
       C1: { correct: 0, total: 0 },
-      C2: { correct: 0, total: 0 },
     };
     finalAnswers.forEach(({ questionId, correct }) => {
       const q = placementQuestions.find((p) => p.id === questionId);

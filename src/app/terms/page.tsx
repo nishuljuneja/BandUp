@@ -26,7 +26,7 @@ export default function TermsOfServicePage() {
           <p>
             SpeakEasy is a free English learning platform designed for learners in India. The App provides
             vocabulary building, grammar lessons, reading comprehension, listening practice, speaking exercises,
-            writing activities, and proficiency testing based on the CEFR framework (A1–C2).
+            writing activities, and proficiency testing based on the CEFR framework (A1–C1).
           </p>
         </section>
 
