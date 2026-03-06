@@ -23,7 +23,7 @@ export default function GamesPage() {
 
       {/* Game Cards */}
       <div className="grid sm:grid-cols-2 gap-6">
-        {/* Word Puzzle */}
+        {/* Daily Un-Jumble */}
         <Link
           href="/games/word-puzzle"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
@@ -35,7 +35,7 @@ export default function GamesPage() {
                 Daily Challenge
               </span>
             </div>
-            <h2 className="text-xl font-bold mb-1">Word Puzzle</h2>
+            <h2 className="text-xl font-bold mb-1">Daily Un-Jumble</h2>
             <p className="text-white/80 text-sm">
               Unscramble 7 letters and find as many words as you can!
             </p>

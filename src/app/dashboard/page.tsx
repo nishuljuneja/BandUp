@@ -67,6 +67,29 @@ export default function DashboardPage() {
         )}
       </div>
 
+      {/* Daily Un-Jumble CTA */}
+      <div className="mb-8 bg-gradient-to-r from-violet-50 to-indigo-50 border border-violet-200 rounded-2xl p-5">
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-md">
+              <Gamepad2 className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800">Daily Un-Jumble</h3>
+              <p className="text-sm text-gray-500 mt-1">
+                Find the 7-letter word from scrambled letters. Compete on today&apos;s leaderboard!
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/games/word-puzzle"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition-colors whitespace-nowrap"
+          >
+            Play Now <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+
       {/* Stats Row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 text-center">
@@ -203,29 +226,6 @@ export default function DashboardPage() {
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 text-white rounded-xl font-medium hover:bg-amber-600 transition-colors whitespace-nowrap"
           >
             Take a Test <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
-
-      {/* Games CTA */}
-      <div className="mt-6 bg-gradient-to-r from-violet-50 to-indigo-50 border border-violet-200 rounded-2xl p-5">
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-md">
-              <Gamepad2 className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-800">Word Puzzle</h3>
-              <p className="text-sm text-gray-500 mt-1">
-                Find the 7-letter word from scrambled letters. Compete on today&apos;s leaderboard!
-              </p>
-            </div>
-          </div>
-          <Link
-            href="/games/word-puzzle"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition-colors whitespace-nowrap"
-          >
-            Play Now <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
