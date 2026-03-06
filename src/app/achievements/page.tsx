@@ -297,7 +297,7 @@ const BADGES: Badge[] = [
   },
 
   {
-    id: 'level-test', title: 'Tested & Proven', description: 'Complete the placement test',
+    id: 'level-test', title: 'Tested & Proven', description: 'Complete the diagnostic test',
     icon: Target, color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-300',
     check: (p) => p.placementTestCompleted,
     progress: (p) => p.placementTestCompleted ? 100 : 0,

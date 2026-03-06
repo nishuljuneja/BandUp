@@ -104,7 +104,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">5 Levels, One Clear Path</h2>
           <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
-            Based on the internationally recognised CEFR framework. Take a placement test to find your starting point.
+            Based on the internationally recognised CEFR framework. Take a diagnostic test to find your starting point.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {levels.map((level) => (
