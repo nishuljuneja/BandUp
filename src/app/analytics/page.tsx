@@ -127,7 +127,7 @@ export default function AnalyticsPage() {
           <BarChart3 className="w-6 h-6 text-indigo-600" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">Weak Areas & Analytics</h1>
+          <h1 className="text-2xl font-bold text-gray-800">Growth Areas & Analytics</h1>
           <p className="text-gray-500 text-sm">Personalized insights to improve faster</p>
         </div>
       </div>

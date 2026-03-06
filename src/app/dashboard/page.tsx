@@ -286,7 +286,7 @@ export default function DashboardPage() {
               <BarChart3 className="w-5 h-5 text-indigo-600" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">Weak Areas</h3>
+              <h3 className="font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">Growth Areas</h3>
               <p className="text-sm text-gray-500">See personalized insights & tips</p>
             </div>
           </div>
