@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { LevelBadge, ProgressBar } from '@/components/Exercises';
-import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, ArrowRight, ClipboardCheck, Sparkles, Award, BarChart3, Gamepad2 } from 'lucide-react';
+import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, ArrowRight, ClipboardCheck, Sparkles, Award, BarChart3, Gamepad2, LetterText, Skull, Shuffle } from 'lucide-react';
 import StudyPlan from '@/components/StudyPlan';
 
 export default function DashboardPage() {
@@ -67,27 +67,58 @@ export default function DashboardPage() {
         )}
       </div>
 
-      {/* Daily Un-Jumble CTA */}
-      <div className="mb-8 bg-gradient-to-r from-violet-50 to-indigo-50 border border-violet-200 rounded-2xl p-5">
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-md">
-              <Gamepad2 className="w-6 h-6 text-white" />
+      {/* Games Row */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        {/* Daily Un-Jumble */}
+        <Link
+          href="/games/word-puzzle"
+          className="group bg-gradient-to-br from-violet-50 to-indigo-50 border border-violet-200 rounded-2xl p-5 hover:shadow-md transition-all"
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-sm">
+              <LetterText className="w-5 h-5 text-white" />
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-800">Daily Un-Jumble</h3>
-              <p className="text-sm text-gray-500 mt-1">
-                Find the 7-letter word from scrambled letters. Compete on today&apos;s leaderboard!
-              </p>
-            </div>
+            <h3 className="font-bold text-gray-800">Daily Un-Jumble</h3>
           </div>
-          <Link
-            href="/games/word-puzzle"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition-colors whitespace-nowrap"
-          >
-            Play Now <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+          <p className="text-xs text-gray-500 mb-3">Unscramble 7 letters &amp; find words</p>
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 group-hover:text-indigo-800 transition">
+            Play <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </Link>
+
+        {/* Hangman */}
+        <Link
+          href="/games/hangman"
+          className="group bg-gradient-to-br from-rose-50 to-red-50 border border-rose-200 rounded-2xl p-5 hover:shadow-md transition-all"
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-red-600 rounded-xl flex items-center justify-center shadow-sm">
+              <Skull className="w-5 h-5 text-white" />
+            </div>
+            <h3 className="font-bold text-gray-800">Hangman</h3>
+          </div>
+          <p className="text-xs text-gray-500 mb-3">Guess the word letter by letter</p>
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-rose-600 group-hover:text-rose-800 transition">
+            Play <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </Link>
+
+        {/* Sentence Scramble */}
+        <Link
+          href="/games/sentence-scramble"
+          className="group bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 rounded-2xl p-5 hover:shadow-md transition-all"
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-sm">
+              <Shuffle className="w-5 h-5 text-white" />
+            </div>
+            <h3 className="font-bold text-gray-800">Sentence Scramble</h3>
+          </div>
+          <p className="text-xs text-gray-500 mb-3">Reorder words to build sentences</p>
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 group-hover:text-cyan-800 transition">
+            Play <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </Link>
       </div>
 
       {/* Stats Row */}
