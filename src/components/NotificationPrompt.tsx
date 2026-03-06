@@ -129,7 +129,7 @@ export default function NotificationPrompt() {
     <>
       {/* Initial permission banner */}
       {showBanner && (
-        <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 bg-white rounded-2xl shadow-xl border border-gray-200 p-5 z-50 animate-slide-up">
+        <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 bg-white rounded-2xl shadow-xl border border-gray-200 p-5 z-[9999] isolate pointer-events-auto animate-slide-up">
           <button
             onClick={() => setShowBanner(false)}
             className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
