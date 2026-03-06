@@ -5,14 +5,16 @@ import { useAppStore } from '@/lib/store';
 import { t, LANGUAGES } from '@/lib/i18n';
 import { logOut } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
-import { User, Trophy, BookOpen, Target, Calendar, Medal, Settings, LogOut, Globe, Flame } from 'lucide-react';
+import { User, Trophy, BookOpen, Target, Calendar, Medal, Settings, LogOut, Globe, Flame, Mail } from 'lucide-react';
+import { updateUserProfile } from '@/lib/firestore';
 import { LevelBadge } from '@/components/Exercises';
 import type { CEFRLevel } from '@/lib/firestore';
 
 export default function ProfilePage() {
   const router = useRouter();
-  const { user, profile, uiLanguage, setUILanguage } = useAppStore();
+  const { user, profile, uiLanguage, setUILanguage, setProfile } = useAppStore();
   const [showSettings, setShowSettings] = useState(false);
+  const [emailToggling, setEmailToggling] = useState(false);
 
   const handleLogout = async () => {
     await logOut();
@@ -100,6 +102,41 @@ export default function ProfilePage() {
               ))}
             </select>
           </div>
+          {/* Email Reminders Toggle */}
+          <div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-gray-500" />
+                <div>
+                  <p className="text-sm font-medium text-gray-700">Daily Streak Reminder</p>
+                  <p className="text-xs text-gray-400">Get an email if you haven&apos;t practised today</p>
+                </div>
+              </div>
+              <button
+                disabled={emailToggling}
+                onClick={async () => {
+                  if (!profile) return;
+                  setEmailToggling(true);
+                  const newVal = !profile.emailReminders;
+                  try {
+                    await updateUserProfile(profile.uid, { emailReminders: newVal });
+                    setProfile({ ...profile, emailReminders: newVal });
+                  } catch { /* ignore */ }
+                  setEmailToggling(false);
+                }}
+                className={`relative w-12 h-7 rounded-full transition-colors ${
+                  profile?.emailReminders ? 'bg-indigo-600' : 'bg-gray-300'
+                } ${emailToggling ? 'opacity-50' : ''}`}
+              >
+                <span
+                  className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform ${
+                    profile?.emailReminders ? 'translate-x-5' : 'translate-x-0'
+                  }`}
+                />
+              </button>
+            </div>
+          </div>
+
           <button onClick={handleLogout} className="flex items-center gap-2 text-red-500 hover:text-red-700 font-medium">
             <LogOut className="w-4 h-4" /> Sign Out
           </button>

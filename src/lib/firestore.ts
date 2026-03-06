@@ -41,6 +41,7 @@ export interface UserProfile {
   lessonsCompleted: number;
   wordsLearned: number;
   placementTestCompleted: boolean;
+  emailReminders?: boolean; // opt-in daily streak email
 }
 
 export interface VocabularyWord {
