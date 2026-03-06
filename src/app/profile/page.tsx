@@ -103,34 +103,38 @@ export default function ProfilePage() {
             </select>
           </div>
           {/* Email Reminders Toggle */}
-          <div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-gray-500" />
-                <div>
+          <div className="py-2">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3 min-w-0">
+                <Mail className="w-5 h-5 text-indigo-500 shrink-0" />
+                <div className="min-w-0">
                   <p className="text-sm font-medium text-gray-700">Daily Streak Reminder</p>
                   <p className="text-xs text-gray-400">Get an email if you haven&apos;t practised today</p>
                 </div>
               </div>
               <button
+                type="button"
+                role="switch"
+                aria-checked={profile?.emailReminders !== false}
                 disabled={emailToggling}
                 onClick={async () => {
                   if (!profile) return;
                   setEmailToggling(true);
-                  const newVal = !profile.emailReminders;
+                  const currentlyOn = profile.emailReminders !== false;
+                  const newVal = !currentlyOn;
                   try {
                     await updateUserProfile(profile.uid, { emailReminders: newVal });
                     setProfile({ ...profile, emailReminders: newVal });
                   } catch { /* ignore */ }
                   setEmailToggling(false);
                 }}
-                className={`relative w-12 h-7 rounded-full transition-colors ${
-                  profile?.emailReminders ? 'bg-indigo-600' : 'bg-gray-300'
-                } ${emailToggling ? 'opacity-50' : ''}`}
+                className={`relative shrink-0 inline-flex h-7 w-12 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
+                  profile?.emailReminders !== false ? 'bg-indigo-600' : 'bg-gray-300'
+                } ${emailToggling ? 'opacity-50 cursor-wait' : ''}`}
               >
                 <span
-                  className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform ${
-                    profile?.emailReminders ? 'translate-x-5' : 'translate-x-0'
+                  className={`pointer-events-none inline-block h-6 w-6 rounded-full bg-white shadow-md ring-0 transition-transform duration-200 ease-in-out ${
+                    profile?.emailReminders !== false ? 'translate-x-5' : 'translate-x-0'
                   }`}
                 />
               </button>
