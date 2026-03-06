@@ -7,9 +7,8 @@ import { t } from '@/lib/i18n';
 import { LANGUAGES } from '@/lib/i18n';
 import { logOut } from '@/lib/auth';
 import {
-  BookOpen, Brain, Headphones, MessageSquare, PenTool, Trophy,
-  Home, User, Menu, X, Globe, LogOut, Flame, ChevronDown, ClipboardCheck,
-  Award, Gamepad2,
+  Trophy, Home, User, Menu, X, Globe, LogOut, Flame, ChevronDown, ClipboardCheck,
+  Award, Gamepad2, GraduationCap,
 } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
@@ -36,15 +35,10 @@ export default function Navbar() {
 
   const navItems = [
     { href: '/dashboard', label: t('nav.dashboard', uiLanguage), icon: Home },
-    { href: '/vocabulary', label: t('nav.vocabulary', uiLanguage), icon: BookOpen },
-    { href: '/grammar', label: t('nav.grammar', uiLanguage), icon: Brain },
-    { href: '/reading', label: t('nav.reading', uiLanguage), icon: BookOpen },
-    { href: '/listening', label: t('nav.listening', uiLanguage), icon: Headphones },
-    { href: '/speaking', label: t('nav.speaking', uiLanguage), icon: MessageSquare },
-    { href: '/writing', label: t('nav.writing', uiLanguage), icon: PenTool },
+    { href: '/learning', label: 'Learning', icon: GraduationCap },
     { href: '/tests', label: 'Tests', icon: ClipboardCheck },
-    { href: '/achievements', label: 'Achievements', icon: Award },
     { href: '/games', label: 'Games', icon: Gamepad2 },
+    { href: '/achievements', label: 'Achievements', icon: Award },
     { href: '/leaderboard', label: t('nav.leaderboard', uiLanguage), icon: Trophy },
   ];
 
