@@ -19,6 +19,7 @@ const levelInfo: Record<CEFRLevel, { name: string; description: string }> = {
   B1: { name: 'Intermediate', description: 'Opinions, plans, connected paragraphs' },
   B2: { name: 'Upper Intermediate', description: 'Abstract topics, fluent discussions, detailed texts' },
   C1: { name: 'Advanced', description: 'Complex texts, nuanced arguments, flexible language' },
+  C2: { name: 'Mastery', description: 'Near-native fluency, subtle nuances, academic proficiency' },
 };
 
 const allLevels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
