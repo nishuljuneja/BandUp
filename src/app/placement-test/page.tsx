@@ -109,6 +109,29 @@ export default function PlacementTestPage() {
         >
           {t('placement.start', uiLanguage)} →
         </button>
+
+        {/* Skip option for users who want to jump straight in */}
+        <div className="mt-4">
+          <button
+            onClick={async () => {
+              // Set default level A1 and go to dashboard
+              if (user && profile) {
+                try {
+                  const { updateDoc, doc } = await import('firebase/firestore');
+                  const { db } = await import('@/lib/firebase');
+                  await updateDoc(doc(db, 'users', user.uid), { currentLevel: 'A1' });
+                  setProfile({ ...profile, currentLevel: 'A1' });
+                } catch (err) {
+                  console.error('Failed to set default level:', err);
+                }
+              }
+              window.location.href = '/dashboard';
+            }}
+            className="text-gray-400 hover:text-indigo-600 text-sm font-medium transition-colors"
+          >
+            Skip for now — start at A1
+          </button>
+        </div>
       </div>
     );
   }
