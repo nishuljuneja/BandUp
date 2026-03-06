@@ -1,12 +1,12 @@
 {
   "a": {
-    "d": "To do with position or direction; In, on, at, by, towards, onto.",
-    "e": "Stand a tiptoe.",
-    "p": "preposition"
+    "d": "Used before a noun to refer to someone or something for the first time or to indicate one of a particular group.",
+    "e": "She is a teacher.",
+    "p": "determiner"
   },
   "about": {
-    "d": "On the subject of; concerning.",
-    "e": "Tell me about your day.",
+    "d": "On the subject of; concerning; approximately.",
+    "e": "Tell me about yourself.",
     "p": "preposition"
   },
   "above": {
@@ -105,8 +105,8 @@
     "p": "noun"
   },
   "all": {
-    "d": "Used to refer to the whole quantity or extent of something; every one of.",
-    "e": "The butter is all.",
+    "d": "Used to refer to the whole quantity or extent of a group or thing.",
+    "e": "All the students were present.",
     "p": "determiner"
   },
   "also": {
@@ -140,9 +140,9 @@
     "p": "noun"
   },
   "another": {
-    "d": "An additional one of the same kind.",
-    "e": "There is one sterling and here is another",
-    "p": "pronoun"
+    "d": "Used to refer to an additional person or thing of the same type.",
+    "e": "Would you like another cup of tea?",
+    "p": "determiner"
   },
   "answer": {
     "d": "A response to a question, letter, or situation.",
@@ -150,9 +150,9 @@
     "p": "noun"
   },
   "any": {
-    "d": "To even the slightest extent, at all.",
-    "e": "I will not remain here any longer.",
-    "p": "adverb"
+    "d": "Used to refer to one or some of a thing, no matter how much or how many.",
+    "e": "Do you have any questions?",
+    "p": "determiner"
   },
   "any more": {
     "d": "(in positive constructions) Now, from now on.",
@@ -310,8 +310,8 @@
     "p": "adjective"
   },
   "at": {
-    "d": "In, near, or in the general vicinity of a particular place.",
-    "e": "Caesar was at Rome;  at the corner of Fourth Street and Vine;  at Jim’s house",
+    "d": "Expressing location or arrival in a particular place or position.",
+    "e": "She is at home.",
     "p": "preposition"
   },
   "athlete": {
@@ -620,8 +620,8 @@
     "p": "verb"
   },
   "both": {
-    "d": "Used to refer to two people or things together.",
-    "e": "Both my parents are teachers.",
+    "d": "Used to refer to two people or things, regarded and identified together.",
+    "e": "Both answers are correct.",
     "p": "determiner"
   },
   "bottle": {
@@ -745,9 +745,9 @@
     "p": "verb"
   },
   "by": {
-    "d": "Along a path which runs past the speaker.",
-    "e": "I watched as it passed by.",
-    "p": "adverb"
+    "d": "Indicating the means of achieving something; near or beside; not later than.",
+    "e": "The book was written by her.",
+    "p": "preposition"
   },
   "bye": {
     "d": "The position of a person or team in a tournament or competition who draws no opponent in a particular round so advances to the next round unopposed, or is awarded points for a win in a league table; also the phantom opponent of such a person or team.",
@@ -1155,8 +1155,8 @@
     "p": "verb"
   },
   "could": {
-    "d": "(auxiliary verb, defective) To know how to; to be able to.",
-    "e": "She can speak English, French, and German.   I can play football.   Can you remember your fifth birthday?",
+    "d": "Past tense of 'can'; used to indicate possibility or to make polite requests.",
+    "e": "Could you help me?",
     "p": "verb"
   },
   "country": {
@@ -1380,9 +1380,9 @@
     "p": "noun"
   },
   "down": {
-    "d": "To knock (someone or something) down; to cause to come down, to fell.",
-    "e": "A single rifle shot downed the mighty beast.",
-    "p": "verb"
+    "d": "Toward or in a lower place or position; from a higher to a lower point.",
+    "e": "He walked down the stairs.",
+    "p": "adverb"
   },
   "downstairs": {
     "d": "A floor lower than the current one.",
@@ -1535,8 +1535,8 @@
     "p": "adverb"
   },
   "every": {
-    "d": "Used to refer to all members of a group without exception.",
-    "e": "He goes to the temple every Sunday.",
+    "d": "Used to refer to all the individual members of a group without exception.",
+    "e": "Every student passed the exam.",
     "p": "determiner"
   },
   "everybody": {
@@ -1805,9 +1805,9 @@
     "p": "noun"
   },
   "for": {
-    "d": "intended to belong to or be used by; because of",
+    "d": "Intended to belong to or be used by; having as a purpose or reason.",
     "e": "This gift is for you.",
-    "p": "prep."
+    "p": "preposition"
   },
   "forget": {
     "d": "To unintentionally not do, neglect.",
@@ -1860,8 +1860,8 @@
     "p": "adjective"
   },
   "from": {
-    "d": "Used to indicate source or provenance.",
-    "e": "I got a letter from my brother.",
+    "d": "Indicating the point in space or time at which a journey, process, or action starts.",
+    "e": "He traveled from London to Paris.",
     "p": "preposition"
   },
   "from a1 to b2 level.": {
@@ -2060,9 +2060,9 @@
     "p": "verb"
   },
   "he": {
-    "d": "The game of tag, or it, in which the player attempting to catch the others is called \"he\".",
-    "e": "Is your cat a he or a she?",
-    "p": "noun"
+    "d": "Used to refer to a man or boy previously mentioned or easily identified.",
+    "e": "He went to the store.",
+    "p": "pronoun"
   },
   "head": {
     "d": "The upper part of the human body containing the brain, eyes, ears, nose, and mouth.",
@@ -2095,9 +2095,9 @@
     "p": "verb"
   },
   "her": {
-    "d": "A female person or animal.",
-    "e": "I think this bird is a him, but it may be a her.",
-    "p": "noun"
+    "d": "Belonging to or associated with a female person or animal previously mentioned.",
+    "e": "Her dress is beautiful.",
+    "p": "determiner"
   },
   "here": {
     "d": "In, at, or to this place or position.",
@@ -2120,14 +2120,14 @@
     "p": "adjective"
   },
   "him": {
-    "d": "Honorific alternative letter-case form of him, sometimes used when referring to God or another important figure who is understood from context.",
-    "e": "I think this bird is a him, but it may be a her.",
+    "d": "Used as the object of a verb or preposition to refer to a male person previously mentioned.",
+    "e": "I told him the news.",
     "p": "pronoun"
   },
   "his": {
-    "d": "The word \"hi\" used as a greeting.",
-    "e": "I didn't even get a hi.",
-    "p": "noun"
+    "d": "Belonging to or associated with a male person or animal previously mentioned.",
+    "e": "His car is parked outside.",
+    "p": "determiner"
   },
   "history": {
     "d": "The aggregate of past events.",
@@ -2190,8 +2190,8 @@
     "p": "noun"
   },
   "how": {
-    "d": "To what degree.",
-    "e": "How often do you practice?",
+    "d": "In what way or manner; to what extent or degree.",
+    "e": "How are you?",
     "p": "adverb"
   },
   "however": {
@@ -2235,8 +2235,8 @@
     "p": "noun"
   },
   "if": {
-    "d": "In the event that a statement is true (a programming statement that acts in a similar manner).",
-    "e": "If A, then B, else C.",
+    "d": "On the condition or supposition that; in the event that.",
+    "e": "If it rains, we will stay inside.",
     "p": "conjunction"
   },
   "imagine": {
@@ -2255,8 +2255,8 @@
     "p": "verb"
   },
   "in": {
-    "d": "Expressing the situation of being enclosed or surrounded by something.",
-    "e": "She is in the kitchen.",
+    "d": "Expressing the situation of being enclosed or surrounded by something; during a period of time.",
+    "e": "She lives in London.",
     "p": "preposition"
   },
   "include": {
@@ -2295,8 +2295,8 @@
     "p": "verb"
   },
   "into": {
-    "d": "Indicates transition into another form or substance.",
-    "e": "I carved the piece of driftwood into a sculpture of a whale.",
+    "d": "Expressing movement or action with the result that someone or something becomes enclosed or surrounded.",
+    "e": "She walked into the room.",
     "p": "preposition"
   },
   "introduce": {
@@ -2310,14 +2310,14 @@
     "p": "noun"
   },
   "it": {
-    "d": "The person who chases and tries to catch the other players in the playground game of tag.",
-    "e": "In the next game, Adam and Tom will be it…",
-    "p": "noun"
+    "d": "Used to refer to a thing previously mentioned or easily identified.",
+    "e": "It is raining outside.",
+    "p": "pronoun"
   },
   "its": {
-    "d": "One who is neither a he nor a she; a creature; a dehumanized being.",
-    "e": "",
-    "p": "noun"
+    "d": "Belonging to or associated with a thing previously mentioned or easily identified.",
+    "e": "The dog wagged its tail.",
+    "p": "determiner"
   },
   "jacket": {
     "d": "A piece of clothing worn on the upper body outside a shirt or blouse, often waist length to thigh length.",
@@ -2630,8 +2630,8 @@
     "p": "noun"
   },
   "may": {
-    "d": "To gather may, or flowers in general.",
-    "e": "you may smoke outside;  may I sit there?",
+    "d": "Used to express possibility or to ask for or give permission.",
+    "e": "It may rain later.",
     "p": "verb"
   },
   "maybe": {
@@ -2640,8 +2640,8 @@
     "p": "adverb"
   },
   "me": {
-    "d": "As the direct object of a verb.",
-    "e": "Can you hear me?",
+    "d": "Used by a speaker to refer to himself or herself as the object of a verb or preposition.",
+    "e": "She gave me a book.",
     "p": "pronoun"
   },
   "meal": {
@@ -2825,14 +2825,14 @@
     "p": "noun"
   },
   "must": {
-    "d": "(modal auxiliary, defective) To do with certainty; indicates that the speaker is certain that the subject will have executed the predicate.",
-    "e": "If it has rained all day, it must be very wet outside.",
+    "d": "Used to indicate that something is necessary, very important, or certain.",
+    "e": "You must wear a seatbelt.",
     "p": "verb"
   },
   "my": {
-    "d": "Used to express surprise, shock or amazement.",
-    "e": "My, what big teeth you have!",
-    "p": "interjection"
+    "d": "Belonging to or associated with the speaker.",
+    "e": "My name is Alex.",
+    "p": "determiner"
   },
   "name": {
     "d": "A word or set of words by which a person or thing is known.",
@@ -2910,9 +2910,9 @@
     "p": "numeral"
   },
   "no": {
-    "d": "A negating expression; an answer that shows disagreement or disapproval",
-    "e": "",
-    "p": "noun"
+    "d": "Not any; used to indicate that something is absent or not permitted.",
+    "e": "There is no milk left.",
+    "p": "determiner"
   },
   "no one": {
     "d": "Used in contrast to anyone, someone or everyone: not one person; nobody.",
@@ -2935,8 +2935,8 @@
     "p": "noun"
   },
   "not": {
-    "d": "Negates the meaning of the modified verb.",
-    "e": "Did you take out the trash? No, I did not.",
+    "d": "Used to form a negative phrase after verbs like 'do', 'be', 'have', and modals.",
+    "e": "She is not coming.",
     "p": "adverb"
   },
   "note": {
@@ -2975,13 +2975,13 @@
     "p": "noun"
   },
   "of": {
-    "d": "Expressing distance or motion.",
-    "e": "",
+    "d": "Expressing the relationship between a part and a whole; belonging to; connected with.",
+    "e": "A cup of tea.",
     "p": "preposition"
   },
   "off": {
-    "d": "Away from a place or position; no longer attached or connected.",
-    "e": "Please take your shoes off before entering.",
+    "d": "Away from a place or position; so as to be removed or separated.",
+    "e": "She took off her coat.",
     "p": "adverb"
   },
   "office": {
@@ -3010,7 +3010,7 @@
     "p": "adjective"
   },
   "on": {
-    "d": "Physically in contact with and supported by a surface.",
+    "d": "Physically in contact with and supported by a surface; about a particular topic.",
     "e": "The book is on the table.",
     "p": "preposition"
   },
@@ -3035,9 +3035,9 @@
     "p": "adjective"
   },
   "only": {
-    "d": "Without sibling; without a sibling of the same gender.",
-    "e": "He is their only son, in fact, an only child.",
-    "p": "adjective"
+    "d": "No more than; solely; just.",
+    "e": "I only have five minutes.",
+    "p": "adverb"
   },
   "open": {
     "d": "Allowing access; not closed or blocked.",
@@ -3055,8 +3055,8 @@
     "p": "adjective"
   },
   "or": {
-    "d": "Otherwise (a consequence of the condition that the previous is false).",
-    "e": "It's raining! Come inside or you'll catch a cold!",
+    "d": "Used to link alternatives or different possibilities.",
+    "e": "Would you like tea or coffee?",
     "p": "conjunction"
   },
   "orange": {
@@ -3070,14 +3070,14 @@
     "p": "verb"
   },
   "other": {
-    "d": "An other, another (person, etc), more often rendered as another.",
-    "e": "I'm afraid little Robbie does not always play well with others.",
-    "p": "noun"
+    "d": "Used to refer to a person or thing that is different from one already mentioned or known.",
+    "e": "Do you have any other questions?",
+    "p": "adjective"
   },
   "our": {
-    "d": "belonging to or connected with us",
-    "e": "Our school won the inter-school cricket tournament.",
-    "p": "det."
+    "d": "Belonging to or associated with the speaker and one or more other people.",
+    "e": "Our house is on the corner.",
+    "p": "determiner"
   },
   "out adv.": {
     "d": "Moving away from a place.",
@@ -3735,8 +3735,8 @@
     "p": "adjective"
   },
   "should": {
-    "d": "Used similarly to indicate determination or obligation in the second and third persons singular or plural.",
-    "e": "(determination): You shall go to the ball!",
+    "d": "Used to indicate obligation, duty, or correctness; also used to express expectation.",
+    "e": "You should study harder.",
     "p": "verb"
   },
   "show": {
@@ -3840,9 +3840,9 @@
     "p": "adverb"
   },
   "some": {
-    "d": "A certain number, at least two.",
-    "e": "Some enjoy spicy food, others prefer it milder.",
-    "p": "pronoun"
+    "d": "An unspecified amount or number of something.",
+    "e": "Would you like some water?",
+    "p": "determiner"
   },
   "somebody": {
     "d": "A recognised or important person, a celebrity.",
@@ -4165,14 +4165,14 @@
     "p": "noun"
   },
   "that": {
-    "d": "Introducing a subordinate clause expressing a reason or cause: because, in that.",
-    "e": "Be glad that you have enough to eat.",
-    "p": "conjunction"
+    "d": "Used to identify a specific person or thing observed by the speaker; also used to introduce a clause.",
+    "e": "That was a great movie.",
+    "p": "determiner"
   },
   "the": {
-    "d": "With a comparative or with more and a verb phrase, establishes a correlation with one or more other such comparatives.",
-    "e": "It looks weaker and weaker, the more I think about it.",
-    "p": "adverb"
+    "d": "Used before a noun to refer to a specific or previously mentioned person, place, or thing.",
+    "e": "The sun is shining.",
+    "p": "determiner"
   },
   "the first) det.": {
     "d": "A public road in a city or town.",
@@ -4185,13 +4185,13 @@
     "p": "noun"
   },
   "their": {
-    "d": "belonging to or connected with the people or things already mentioned",
-    "e": "The students completed their assignments on time.",
-    "p": "det."
+    "d": "Belonging to or associated with the people or things previously mentioned.",
+    "e": "Their house is very big.",
+    "p": "determiner"
   },
   "them": {
-    "d": "(singular) Him, her, or it; that one.",
-    "e": "I gave them the directions to the railway station.",
+    "d": "Used as the object of a verb or preposition to refer to two or more people or things previously mentioned.",
+    "e": "I saw them at the market.",
     "p": "pronoun"
   },
   "then": {
@@ -4205,8 +4205,8 @@
     "p": "adverb"
   },
   "they": {
-    "d": "There (especially as an expletive subject of be).",
-    "e": "Dogs may bark if they want to be fed.",
+    "d": "Used to refer to two or more people or things previously mentioned or easily identified.",
+    "e": "They arrived early.",
     "p": "pronoun"
   },
   "thing": {
@@ -4240,9 +4240,9 @@
     "p": "numeral"
   },
   "this": {
-    "d": "The thing, item, etc. being indicated.",
-    "e": "This isn't the item that I ordered.",
-    "p": "pronoun"
+    "d": "Used to identify a specific person or thing close at hand or being experienced.",
+    "e": "This book is interesting.",
+    "p": "determiner"
   },
   "thousand": {
     "d": "A numerical value equal to 1,000 = 10 × 100 = 103",
@@ -4285,8 +4285,8 @@
     "p": "noun"
   },
   "to": {
-    "d": "Indicating destination: In the direction of, and arriving at.",
-    "e": "We are walking to the shop.",
+    "d": "Expressing motion in the direction of something; used before a verb to form the infinitive.",
+    "e": "She went to school.",
     "p": "preposition"
   },
   "today": {
@@ -4455,18 +4455,18 @@
     "p": "conjunction"
   },
   "up": {
-    "d": "To increase or raise.",
-    "e": "If we up the volume, we may be able to hear what he says.",
-    "p": "verb"
+    "d": "Toward a higher place or position; from a lower to a higher point.",
+    "e": "She climbed up the hill.",
+    "p": "adverb"
   },
   "who": {
-    "d": "A person under discussion; a question of which person.",
-    "e": "It was a nice man who helped us.",
-    "p": "noun"
+    "d": "What or which person or people; used to introduce a clause giving more information about a person.",
+    "e": "Who is that?",
+    "p": "pronoun"
   },
   "why": {
-    "d": "For which cause, reason, or purpose (relative adverb).",
-    "e": "That's the reason why I did that.",
+    "d": "For what reason or purpose.",
+    "e": "Why did you leave?",
     "p": "adverb"
   },
   "wife": {
@@ -4475,8 +4475,8 @@
     "p": "noun"
   },
   "will": {
-    "d": "To try to make (something) happen by using one's will (intention).",
-    "e": "All the fans were willing their team to win the game.",
+    "d": "Used to express the future tense or indicate willingness and intention.",
+    "e": "I will call you tomorrow.",
     "p": "verb"
   },
   "win": {
@@ -4500,8 +4500,8 @@
     "p": "noun"
   },
   "with": {
-    "d": "In the company of; alongside, close to; near to.",
-    "e": "He went with his friends.",
+    "d": "Accompanied by; in the company of; having or possessing.",
+    "e": "She came with her friend.",
     "p": "preposition"
   },
   "without": {
@@ -4545,9 +4545,9 @@
     "p": "noun"
   },
   "would": {
-    "d": "Something that would happen, or would be the case, under different circumstances; a potentiality.",
-    "e": "",
-    "p": "noun"
+    "d": "Past tense of 'will'; used to indicate a conditional action, make polite requests, or talk about habits in the past.",
+    "e": "I would help if I could.",
+    "p": "verb"
   },
   "write": {
     "d": "To mark letters, words, or numbers on a surface with a pen or pencil.",
@@ -4585,9 +4585,9 @@
     "p": "adjective"
   },
   "yes": {
-    "d": "Used to express pleasure, joy, or great excitement.",
-    "e": "Our second goal of the match! Yes!",
-    "p": "interjection"
+    "d": "Used to give an affirmative response or to express agreement.",
+    "e": "Yes, I agree with you.",
+    "p": "exclamation"
   },
   "yesterday": {
     "d": "On the day before today.",
@@ -4605,9 +4605,9 @@
     "p": "adjective"
   },
   "your": {
-    "d": "belonging to or connected with the person being spoken to",
-    "e": "What is your favourite colour?",
-    "p": "det."
+    "d": "Belonging to or associated with the person or people that the speaker is addressing.",
+    "e": "Is this your pen?",
+    "p": "determiner"
   },
   "yourself": {
     "d": "You (singular); used emphatically, especially to indicate exclusiveness of the referent's participation in the predicate, i.e., that no one else is involved.",
@@ -6275,8 +6275,8 @@
     "p": "adjective"
   },
   "fan": {
-    "d": "A hand-held device consisting of concertinaed material, or slats of material, gathered together at one end, that may be opened out into the shape of a sector of a circle and waved back and forth in order to move air towards oneself and cool oneself.",
-    "e": "I am a big fan of libraries.",
+    "d": "A person who has a strong interest in or admiration for a particular person, sport, or art form.",
+    "e": "She is a big fan of cricket.",
     "p": "noun"
   },
   "farming": {
@@ -6575,9 +6575,9 @@
     "p": "noun"
   },
   "hers": {
-    "d": "A female person or animal.",
-    "e": "I think this bird is a him, but it may be a her.",
-    "p": "noun"
+    "d": "Used to refer to a thing or things belonging to or associated with a female person previously mentioned.",
+    "e": "The red coat is hers.",
+    "p": "pronoun"
   },
   "herself": {
     "d": "She; an intensive repetition of the female subject, often used to indicate the exclusiveness of that person as the only satisfier of the predicate.",
@@ -7090,8 +7090,8 @@
     "p": "noun"
   },
   "method": {
-    "d": "A subroutine or function belonging to a class or object, synonym of member function",
-    "e": "If one method doesn't work, you should ask a friend to help you.",
+    "d": "A particular procedure for accomplishing or approaching something, especially a systematic or established one.",
+    "e": "We need a new method to solve this problem.",
     "p": "noun"
   },
   "middle": {
@@ -7100,8 +7100,8 @@
     "p": "adjective"
   },
   "might": {
-    "d": "Used to indicate a desired past action that was not done.",
-    "e": "Hey man, you might have warned me about the thunderstorm.",
+    "d": "Past tense of 'may'; used to express possibility, especially a smaller chance.",
+    "e": "She might come to the party.",
     "p": "verb"
   },
   "mind": {
@@ -7275,8 +7275,8 @@
     "p": "noun"
   },
   "onto": {
-    "d": "Being an onto function with a codomain of (see below).",
-    "e": "The exponential function maps the set of real numbers onto the set of positive real numbers.",
+    "d": "Moving to a position on the surface of something.",
+    "e": "The cat jumped onto the table.",
     "p": "preposition"
   },
   "opportunity": {
@@ -8015,8 +8015,8 @@
     "p": "verb"
   },
   "shall": {
-    "d": "Used similarly to indicate determination or obligation in the second and third persons singular or plural.",
-    "e": "(determination): You shall go to the ball!",
+    "d": "Used to express the future tense, especially in formal contexts, or to make suggestions.",
+    "e": "Shall we go?",
     "p": "verb"
   },
   "shape": {
@@ -8325,9 +8325,9 @@
     "p": "adjective"
   },
   "such": {
-    "d": "Something being indicated that is similar to something else.",
-    "e": "Such behaviour is not acceptable in the classroom.",
-    "p": "noun"
+    "d": "Of the type previously mentioned or about to be mentioned; to so great a degree.",
+    "e": "I have never seen such beauty.",
+    "p": "determiner"
   },
   "suddenly": {
     "d": "Happening quickly and with little or no warning; in a sudden manner.",
@@ -8620,8 +8620,8 @@
     "p": "adjective"
   },
   "us": {
-    "d": "Me (in all contexts).",
-    "e": "Could you do that for us?",
+    "d": "Used as the object of a verb or preposition to refer to the speaker together with other people.",
+    "e": "She invited us to dinner.",
     "p": "pronoun"
   },
   "use": {
@@ -8790,8 +8790,8 @@
     "p": "noun"
   },
   "we": {
-    "d": "(personal) The plural form of you, including everyone being addressed.",
-    "e": "How are we all tonight?",
+    "d": "Used by a speaker to refer to himself or herself and one or more other people.",
+    "e": "We are going to the park.",
     "p": "pronoun"
   },
   "weak": {
@@ -8865,19 +8865,19 @@
     "p": "noun"
   },
   "when": {
-    "d": "The time at which something happens.",
-    "e": "A good article will cover the who, the what, the when, the where, the why and the how.",
-    "p": "noun"
+    "d": "At what time; at the time that; considering that.",
+    "e": "When did you arrive?",
+    "p": "adverb"
   },
   "where": {
-    "d": "While on the contrary; although; whereas.",
-    "e": "Where Susy has trouble coloring inside the lines, Johnny has already mastered shading.",
-    "p": "conjunction"
+    "d": "In or to what place or position.",
+    "e": "Where do you live?",
+    "p": "adverb"
   },
   "while": {
-    "d": "An uncertain duration of time, a period of time.",
-    "e": "He lectured for quite a long while.",
-    "p": "noun"
+    "d": "During the time that; at the same time as.",
+    "e": "I read while waiting for the bus.",
+    "p": "conjunction"
   },
   "white": {
     "d": "The standard denomination of the playing pieces of a board game deemed to belong to the white set, no matter what the actual colour.",
@@ -8890,8 +8890,8 @@
     "p": "noun"
   },
   "whose": {
-    "d": "(interrogative) That or those of whom or belonging to whom.",
-    "e": "Several people have lost their suitcases. Whose have you found?",
+    "d": "Belonging to or associated with which person; of whom or which.",
+    "e": "Whose bag is this?",
     "p": "pronoun"
   },
   "wide": {
@@ -8960,8 +8960,8 @@
     "p": "adverb"
   },
   "yours": {
-    "d": "Written at the end of a letter, before the signature.",
-    "e": "Yours sincerely,  Yours faithfully,  Yours,  Sincerely yours,",
+    "d": "Used to refer to a thing or things belonging to or associated with the person being addressed.",
+    "e": "This seat is yours.",
     "p": "pronoun"
   },
   "zero": {
@@ -9235,8 +9235,8 @@
     "p": "noun"
   },
   "concept": {
-    "d": "In generic programming, a description of supported operations on a type, including their syntax and semantics.",
-    "e": "The teacher explained the concept of gravity with a simple experiment.",
+    "d": "An abstract idea or a general notion.",
+    "e": "The concept of freedom is important.",
     "p": "noun"
   },
   "concern": {
@@ -10735,13 +10735,13 @@
     "p": "adverb"
   },
   "ought": {
-    "d": "Property; possession",
-    "e": "",
-    "p": "noun"
+    "d": "Used to indicate duty, correctness, or what is advisable (usually followed by 'to').",
+    "e": "You ought to apologize.",
+    "p": "verb"
   },
   "ours": {
-    "d": "That which belongs to us; the possessive case of we, used without a following noun.",
-    "e": "The house with the red door is ours.",
+    "d": "Used to refer to a thing or things belonging to or associated with the speaker and one or more other people.",
+    "e": "This garden is ours.",
     "p": "pronoun"
   },
   "outdoor": {
@@ -11770,8 +11770,8 @@
     "p": "noun"
   },
   "theirs": {
-    "d": "That which belongs to them; the possessive case of they, used without a following noun.",
-    "e": "The car parked outside is theirs.",
+    "d": "Used to refer to a thing or things belonging to or associated with two or more people previously mentioned.",
+    "e": "The choice was theirs.",
     "p": "pronoun"
   },
   "theme": {
@@ -14675,8 +14675,8 @@
     "p": "verb"
   },
   "whom": {
-    "d": "(relative) Used to refer to a previously mentioned person or people.",
-    "e": "He's a person with whom I work. (defining)",
+    "d": "Used instead of 'who' as the object of a verb or preposition.",
+    "e": "To whom did you speak?",
     "p": "pronoun"
   },
   "widely": {
@@ -16060,9 +16060,9 @@
     "p": "verb"
   },
   "exit": {
-    "d": "To end or terminate (a program, subroutine, etc.)",
-    "e": "He made his exit at the opportune time.",
-    "p": "verb"
+    "d": "A way out of a building, room, or vehicle; to go out of or leave a place.",
+    "e": "Please use the emergency exit.",
+    "p": "noun"
   },
   "exotic": {
     "d": "Foreign, especially in an exciting way.",
@@ -19015,8 +19015,8 @@
     "p": "adjective"
   },
   "compile": {
-    "d": "To use a compiler to process source code and produce executable code.",
-    "e": "After I compile this program I'll run it and see if it works.",
+    "d": "To produce a list or book by assembling information collected from other sources.",
+    "e": "She compiled a list of all the participants.",
     "p": "verb"
   },
   "complement": {
@@ -21395,8 +21395,8 @@
     "p": "verb"
   },
   "logic": {
-    "d": "The part of a system (usually electronic) that performs the boolean logic operations, short for logic gates or logic circuit.",
-    "e": "Fred is designing the logic for the new controller.",
+    "d": "Reasoning conducted according to strict principles of validity; a system of reasoning.",
+    "e": "His argument lacked logic.",
     "p": "noun"
   },
   "long-standing": {
@@ -24895,7 +24895,7 @@
     "p": "noun"
   },
   "can": {
-    "d": "To be able to; to have the ability or possibility to do something.",
+    "d": "Used to say that someone is able to do something or that something is possible.",
     "e": "She can speak three languages.",
     "p": "verb"
   },
@@ -24945,8 +24945,8 @@
     "p": "noun"
   },
   "mine": {
-    "d": "Used to refer to something belonging to or associated with the speaker.",
-    "e": "That blue bag is mine.",
+    "d": "Used to refer to a thing or things belonging to or associated with the speaker.",
+    "e": "That book is mine.",
     "p": "pronoun"
   },
   "minute": {
@@ -24960,8 +24960,8 @@
     "p": "conjunction"
   },
   "out": {
-    "d": "Moving or appearing to move away from a particular place.",
-    "e": "She went out to buy groceries.",
+    "d": "Moving or appearing to move away from a particular place, especially one that is enclosed.",
+    "e": "He went out of the room.",
     "p": "adverb"
   },
   "pension": {
@@ -25035,13 +25035,13 @@
     "p": "adjective"
   },
   "what": {
-    "d": "Asking for information about something.",
-    "e": "What is your favourite colour?",
+    "d": "Asking for information about something; the thing or things that.",
+    "e": "What is your name?",
     "p": "pronoun"
   },
   "which": {
-    "d": "Asking for information specifying one or more from a set.",
-    "e": "Which train should we take?",
+    "d": "Asking for information specifying one or more people or things from a set.",
+    "e": "Which one do you want?",
     "p": "pronoun"
   },
   "wind": {
@@ -25078,5 +25078,25 @@
     "d": "A long, narrow piece of cloth, paper, or other material.",
     "e": "Cut the paper into thin strips.",
     "p": "noun"
+  },
+  "an": {
+    "d": "Used before a word beginning with a vowel sound, same meaning as 'a'.",
+    "e": "He ate an apple.",
+    "p": "determiner"
+  },
+  "these": {
+    "d": "Used to identify specific people or things close at hand (plural of 'this').",
+    "e": "These shoes are comfortable.",
+    "p": "determiner"
+  },
+  "those": {
+    "d": "Used to identify specific people or things at a distance (plural of 'that').",
+    "e": "Those mountains are beautiful.",
+    "p": "determiner"
+  },
+  "each": {
+    "d": "Used to refer to every one of two or more people or things, regarded separately.",
+    "e": "Each child received a gift.",
+    "p": "determiner"
   }
 }
