@@ -44,12 +44,11 @@ const firestoreImport = () => import('@/lib/firestore');
 const gameFirestoreImport = () => import('@/lib/game-firestore');
 
 // ─── Word Pool ───────────────────────────────────────────────────────
-// Use words 4-8 letters, alphabetic only, that have definitions
+// Use only 7-letter words, alphabetic only, that have definitions
 const defs = definitions as Record<string, { d?: string; e?: string; p?: string }>;
 const WORD_POOL = allVocabulary.filter(
   (w) =>
-    w.word.length >= 4 &&
-    w.word.length <= 8 &&
+    w.word.length === 7 &&
     /^[a-z]+$/i.test(w.word) &&
     defs[w.word.toLowerCase()]?.d
 );
@@ -459,7 +458,7 @@ export default function HangmanPage() {
           <ul className="space-y-2 text-sm text-gray-600">
             <li className="flex items-start gap-2">
               <span className="text-rose-500 font-bold">1.</span>
-              A secret word is chosen (4-8 letters) from the Oxford vocabulary.
+              A secret 7-letter word is chosen from the Oxford vocabulary.
             </li>
             <li className="flex items-start gap-2">
               <span className="text-rose-500 font-bold">2.</span>
