@@ -52,11 +52,55 @@ export default function GamesPage() {
       let result: LeaderboardEntry[] = [];
 
       try {
+        const mod = await gameFirestoreImport();
+
         if (activeTab === 'unjumble') {
-          // Try Firestore first
-          const mod = await gameFirestoreImport();
-          // Un-Jumble leaderboard is keyed by targetWord, not date — use local
-          const local = getLocalLB('speakeasy-word-puzzle-lb', today);
+          const fs = await mod.getGameLeaderboardByDate(today);
+          if (fs.length > 0) {
+            result = fs.map((s) => ({
+              displayName: s.displayName,
+              metric: formatTime(s.adjustedTime),
+              secondary: s.hintsUsed > 0 ? `${s.hintsUsed} hints` : undefined,
+            }));
+          }
+        } else if (activeTab === 'hangman') {
+          const fs = await mod.getHangmanLeaderboard(today);
+          if (fs.length > 0) {
+            result = fs.map((s) => ({
+              displayName: s.displayName,
+              metric: `${s.wrongGuesses} wrong`,
+              secondary: formatTime(s.timeSeconds),
+            }));
+          }
+        } else {
+          const fs = await mod.getScrambleLeaderboard(today);
+          if (fs.length > 0) {
+            result = fs.map((s) => ({
+              displayName: s.displayName,
+              metric: formatTime(s.adjustedTime),
+              secondary: s.hintsUsed > 0 ? `${s.hintsUsed} hints` : undefined,
+            }));
+          }
+        }
+      } catch {}
+
+      // Fallback to localStorage if Firestore returned nothing
+      if (result.length === 0) {
+        const lbKey = activeTab === 'unjumble' ? 'speakeasy-word-puzzle-lb'
+          : activeTab === 'hangman' ? 'speakeasy-hangman-lb'
+          : 'speakeasy-scramble-lb';
+        const local = getLocalLB(lbKey, today);
+
+        if (activeTab === 'hangman') {
+          result = local
+            .filter((s: any) => s.won)
+            .sort((a: any, b: any) => (a.wrongGuesses ?? 99) - (b.wrongGuesses ?? 99) || (a.timeSeconds ?? 0) - (b.timeSeconds ?? 0))
+            .map((s: any) => ({
+              displayName: s.displayName || 'Player',
+              metric: `${s.wrongGuesses} wrong`,
+              secondary: formatTime(s.timeSeconds ?? 0),
+            }));
+        } else {
           result = local
             .sort((a: any, b: any) => (a.adjustedTime || 999) - (b.adjustedTime || 999))
             .map((s: any) => ({
@@ -64,53 +108,8 @@ export default function GamesPage() {
               metric: formatTime(s.adjustedTime ?? s.timeSeconds ?? 0),
               secondary: s.hintsUsed > 0 ? `${s.hintsUsed} hints` : undefined,
             }));
-        } else if (activeTab === 'hangman') {
-          try {
-            const mod = await gameFirestoreImport();
-            const fs = await mod.getHangmanLeaderboard(today);
-            if (fs.length > 0) {
-              result = fs.map((s) => ({
-                displayName: s.displayName,
-                metric: `${s.wrongGuesses} wrong`,
-                secondary: formatTime(s.timeSeconds),
-              }));
-            }
-          } catch {}
-          if (result.length === 0) {
-            const local = getLocalLB('speakeasy-hangman-lb', today);
-            result = local
-              .filter((s: any) => s.won)
-              .sort((a: any, b: any) => (a.wrongGuesses ?? 99) - (b.wrongGuesses ?? 99) || (a.timeSeconds ?? 0) - (b.timeSeconds ?? 0))
-              .map((s: any) => ({
-                displayName: s.displayName || 'Player',
-                metric: `${s.wrongGuesses} wrong`,
-                secondary: formatTime(s.timeSeconds ?? 0),
-              }));
-          }
-        } else {
-          try {
-            const mod = await gameFirestoreImport();
-            const fs = await mod.getScrambleLeaderboard(today);
-            if (fs.length > 0) {
-              result = fs.map((s) => ({
-                displayName: s.displayName,
-                metric: formatTime(s.adjustedTime),
-                secondary: s.hintsUsed > 0 ? `${s.hintsUsed} hints` : undefined,
-              }));
-            }
-          } catch {}
-          if (result.length === 0) {
-            const local = getLocalLB('speakeasy-scramble-lb', today);
-            result = local
-              .sort((a: any, b: any) => (a.adjustedTime || 999) - (b.adjustedTime || 999))
-              .map((s: any) => ({
-                displayName: s.displayName || 'Player',
-                metric: formatTime(s.adjustedTime ?? s.timeSeconds ?? 0),
-                secondary: s.hintsUsed > 0 ? `${s.hintsUsed} hints` : undefined,
-              }));
-          }
         }
-      } catch {}
+      }
 
       setEntries(result.slice(0, 10));
       setLoading(false);

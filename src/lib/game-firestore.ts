@@ -42,6 +42,20 @@ export async function getGameLeaderboard(
   return snapshot.docs.map((d) => d.data() as GameScore);
 }
 
+export async function getGameLeaderboardByDate(
+  date: string,
+  maxResults: number = 20
+): Promise<GameScore[]> {
+  const q = query(
+    collection(db, 'gameScores'),
+    where('date', '==', date),
+    orderBy('adjustedTime', 'asc'),
+    limit(maxResults)
+  );
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map((d) => d.data() as GameScore);
+}
+
 // ─── Hangman ─────────────────────────────────────────────────────────
 
 export interface HangmanScore {
