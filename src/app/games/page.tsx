@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
-import { Gamepad2, LetterText, ArrowRight, Trophy, Clock, Lightbulb, Skull, Heart } from 'lucide-react';
+import { Gamepad2, LetterText, ArrowRight, Trophy, Clock, Lightbulb, Skull, Heart, Shuffle } from 'lucide-react';
 
 export default function GamesPage() {
   const { uiLanguage } = useAppStore();
@@ -22,7 +22,7 @@ export default function GamesPage() {
       </div>
 
       {/* Game Cards */}
-      <div className="grid sm:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Daily Un-Jumble */}
         <Link
           href="/games/word-puzzle"
@@ -85,7 +85,7 @@ export default function GamesPage() {
             <div className="grid grid-cols-3 gap-3 mb-4">
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Heart className="w-4 h-4 text-red-400" />
-                6 Lives
+                8 Lives
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Lightbulb className="w-4 h-4 text-amber-500" />
@@ -101,6 +101,47 @@ export default function GamesPage() {
                 Play Now
               </span>
               <ArrowRight className="w-4 h-4 text-rose-400 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+        </Link>
+
+        {/* Sentence Scramble */}
+        <Link
+          href="/games/sentence-scramble"
+          className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
+        >
+          <div className="bg-gradient-to-br from-cyan-500 to-blue-600 p-6 text-white">
+            <div className="flex items-center justify-between mb-3">
+              <Shuffle className="w-10 h-10" />
+              <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">
+                Daily Challenge
+              </span>
+            </div>
+            <h2 className="text-xl font-bold mb-1">Sentence Scramble</h2>
+            <p className="text-white/80 text-sm">
+              Unscramble words to build the correct sentence!
+            </p>
+          </div>
+          <div className="p-5">
+            <div className="grid grid-cols-3 gap-3 mb-4">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Clock className="w-4 h-4 text-gray-400" />
+                Timed
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Lightbulb className="w-4 h-4 text-amber-500" />
+                3 Hints
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Trophy className="w-4 h-4 text-yellow-500" />
+                Leaderboard
+              </div>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-cyan-600 group-hover:text-cyan-800 transition">
+                Play Now
+              </span>
+              <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
         </Link>

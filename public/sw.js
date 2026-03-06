@@ -1,5 +1,5 @@
 // SpeakEasy Service Worker — cache-first for app shell, network-first for API/data
-const CACHE_NAME = 'speakeasy-v4';
+const CACHE_NAME = 'speakeasy-v5';
 const SHELL_ASSETS = [
   '/',
   '/dashboard',

@@ -78,3 +78,38 @@ export async function getHangmanLeaderboard(
   const snapshot = await getDocs(q);
   return snapshot.docs.map((d) => d.data() as HangmanScore);
 }
+
+// ─── Sentence Scramble ──────────────────────────────────────────────
+
+export interface ScrambleScore {
+  uid: string;
+  displayName: string;
+  sentencePreview: string;
+  timeSeconds: number;
+  adjustedTime: number; // time + hint penalties
+  hintsUsed: number;
+  moves: number;
+  wordCount: number;
+  date: string; // YYYY-MM-DD
+}
+
+export async function saveScrambleScore(data: ScrambleScore): Promise<void> {
+  await addDoc(collection(db, 'scrambleScores'), {
+    ...data,
+    createdAt: serverTimestamp(),
+  });
+}
+
+export async function getScrambleLeaderboard(
+  date: string,
+  maxResults: number = 20
+): Promise<ScrambleScore[]> {
+  const q = query(
+    collection(db, 'scrambleScores'),
+    where('date', '==', date),
+    orderBy('adjustedTime', 'asc'),
+    limit(maxResults)
+  );
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map((d) => d.data() as ScrambleScore);
+}
