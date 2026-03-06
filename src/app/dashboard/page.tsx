@@ -120,7 +120,7 @@ export default function DashboardPage() {
           </span>
         </Link>
 
-        {/* Word Match */}
+        {/* Pairs */}
         <Link
           href="/games/word-match"
           className="group bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-5 hover:shadow-md transition-all"
@@ -129,7 +129,7 @@ export default function DashboardPage() {
             <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-sm">
               <Layers className="w-5 h-5 text-white" />
             </div>
-            <h3 className="font-bold text-gray-800">Word Match</h3>
+            <h3 className="font-bold text-gray-800">Pairs</h3>
           </div>
           <p className="text-xs text-gray-500 mb-3">Match words with their definitions</p>
           <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 group-hover:text-emerald-800 transition">

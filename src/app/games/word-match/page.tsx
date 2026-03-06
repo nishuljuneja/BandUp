@@ -413,7 +413,7 @@ export default function WordMatchPage() {
           <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
             <Layers className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Word Match</h1>
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">Pairs</h1>
           <p className="text-gray-500">
             Flip cards to match words with their definitions. Test your memory!
           </p>

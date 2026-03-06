@@ -151,7 +151,7 @@ export default function GamesPage() {
     { key: 'unjumble', label: 'Unjumble', color: 'text-gray-600 hover:text-indigo-600', activeColor: 'text-indigo-700 border-indigo-600 bg-indigo-50' },
     { key: 'hangman', label: 'Hangman', color: 'text-gray-600 hover:text-rose-600', activeColor: 'text-rose-700 border-rose-600 bg-rose-50' },
     { key: 'scramble', label: 'Scramble', color: 'text-gray-600 hover:text-cyan-600', activeColor: 'text-cyan-700 border-cyan-600 bg-cyan-50' },
-    { key: 'wordmatch', label: 'Word Match', color: 'text-gray-600 hover:text-emerald-600', activeColor: 'text-emerald-700 border-emerald-600 bg-emerald-50' },
+    { key: 'wordmatch', label: 'Pairs', color: 'text-gray-600 hover:text-emerald-600', activeColor: 'text-emerald-700 border-emerald-600 bg-emerald-50' },
   ];
 
   return (
@@ -280,7 +280,7 @@ export default function GamesPage() {
           </div>
         </Link>
 
-        {/* Word Match */}
+        {/* Pairs */}
         <Link
           href="/games/word-match"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
@@ -292,7 +292,7 @@ export default function GamesPage() {
                 Daily Challenge
               </span>
             </div>
-            <h2 className="text-xl font-bold mb-1">Word Match</h2>
+            <h2 className="text-xl font-bold mb-1">Pairs</h2>
             <p className="text-white/80 text-sm">
               Flip cards to match words with their definitions!
             </p>
