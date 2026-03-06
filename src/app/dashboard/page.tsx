@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { LevelBadge, ProgressBar } from '@/components/Exercises';
-import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, ArrowRight, ClipboardCheck, Sparkles, Award, BarChart3, Gamepad2, LetterText, Skull, Shuffle } from 'lucide-react';
+import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, ArrowRight, ClipboardCheck, Sparkles, Award, BarChart3, Gamepad2, LetterText, Skull, Shuffle, Layers } from 'lucide-react';
 import StudyPlan from '@/components/StudyPlan';
 
 export default function DashboardPage() {
@@ -68,7 +68,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Games Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
         {/* Daily Un-Jumble */}
         <Link
           href="/games/word-puzzle"
@@ -116,6 +116,23 @@ export default function DashboardPage() {
           </div>
           <p className="text-xs text-gray-500 mb-3">Reorder words to build sentences</p>
           <span className="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 group-hover:text-cyan-800 transition">
+            Play <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </Link>
+
+        {/* Word Match */}
+        <Link
+          href="/games/word-match"
+          className="group bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-5 hover:shadow-md transition-all"
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-sm">
+              <Layers className="w-5 h-5 text-white" />
+            </div>
+            <h3 className="font-bold text-gray-800">Word Match</h3>
+          </div>
+          <p className="text-xs text-gray-500 mb-3">Match words with their definitions</p>
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 group-hover:text-emerald-800 transition">
             Play <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </span>
         </Link>

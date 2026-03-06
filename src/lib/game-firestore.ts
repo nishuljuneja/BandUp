@@ -127,3 +127,37 @@ export async function getScrambleLeaderboard(
   const snapshot = await getDocs(q);
   return snapshot.docs.map((d) => d.data() as ScrambleScore);
 }
+
+// ─── Word Match ─────────────────────────────────────────────────────
+
+export interface WordMatchScore {
+  uid: string;
+  displayName: string;
+  moves: number;
+  pairs: number;
+  timeSeconds: number;
+  difficulty: string;
+  date: string; // YYYY-MM-DD
+}
+
+export async function saveWordMatchScore(data: WordMatchScore): Promise<void> {
+  await addDoc(collection(db, 'wordMatchScores'), {
+    ...data,
+    createdAt: serverTimestamp(),
+  });
+}
+
+export async function getWordMatchLeaderboard(
+  date: string,
+  maxResults: number = 20
+): Promise<WordMatchScore[]> {
+  const q = query(
+    collection(db, 'wordMatchScores'),
+    where('date', '==', date),
+    orderBy('moves', 'asc'),
+    orderBy('timeSeconds', 'asc'),
+    limit(maxResults)
+  );
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map((d) => d.data() as WordMatchScore);
+}

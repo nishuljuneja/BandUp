@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
-import { Gamepad2, LetterText, ArrowRight, Trophy, Clock, Lightbulb, Skull, Heart, Shuffle, Crown, Medal } from 'lucide-react';
+import { Gamepad2, LetterText, ArrowRight, Trophy, Clock, Lightbulb, Skull, Heart, Shuffle, Crown, Medal, Layers, RotateCcw } from 'lucide-react';
 
 // Lazy-load Firestore
 const gameFirestoreImport = () => import('@/lib/game-firestore');
@@ -22,7 +22,7 @@ function getLocalLB(key: string, date: string): Record<string, unknown>[] {
   }
 }
 
-type GameTab = 'unjumble' | 'hangman' | 'scramble';
+type GameTab = 'unjumble' | 'hangman' | 'scramble' | 'wordmatch';
 
 interface LeaderboardEntry {
   displayName: string;
@@ -72,13 +72,22 @@ export default function GamesPage() {
               secondary: formatTime(s.timeSeconds),
             }));
           }
-        } else {
+        } else if (activeTab === 'scramble') {
           const fs = await mod.getScrambleLeaderboard(today);
           if (fs.length > 0) {
             result = fs.map((s) => ({
               displayName: s.displayName,
               metric: formatTime(s.adjustedTime),
               secondary: s.hintsUsed > 0 ? `${s.hintsUsed} hints` : undefined,
+            }));
+          }
+        } else if (activeTab === 'wordmatch') {
+          const fs = await mod.getWordMatchLeaderboard(today);
+          if (fs.length > 0) {
+            result = fs.map((s) => ({
+              displayName: s.displayName,
+              metric: `${s.moves} moves`,
+              secondary: formatTime(s.timeSeconds),
             }));
           }
         }
@@ -88,6 +97,7 @@ export default function GamesPage() {
       if (result.length === 0) {
         const lbKey = activeTab === 'unjumble' ? 'speakeasy-word-puzzle-lb'
           : activeTab === 'hangman' ? 'speakeasy-hangman-lb'
+          : activeTab === 'wordmatch' ? 'speakeasy-wordmatch-lb'
           : 'speakeasy-scramble-lb';
         const local = getLocalLB(lbKey, today);
 
@@ -98,6 +108,14 @@ export default function GamesPage() {
             .map((s: any) => ({
               displayName: s.displayName || 'Player',
               metric: `${s.wrongGuesses} wrong`,
+              secondary: formatTime(s.timeSeconds ?? 0),
+            }));
+        } else if (activeTab === 'wordmatch') {
+          result = local
+            .sort((a: any, b: any) => (a.moves ?? 999) - (b.moves ?? 999) || (a.timeSeconds ?? 0) - (b.timeSeconds ?? 0))
+            .map((s: any) => ({
+              displayName: s.displayName || 'Player',
+              metric: `${s.moves} moves`,
               secondary: formatTime(s.timeSeconds ?? 0),
             }));
         } else {
@@ -132,7 +150,8 @@ export default function GamesPage() {
   const tabs: { key: GameTab; label: string; color: string; activeColor: string }[] = [
     { key: 'unjumble', label: 'Un-Jumble', color: 'text-gray-600 hover:text-indigo-600', activeColor: 'text-indigo-700 border-indigo-600 bg-indigo-50' },
     { key: 'hangman', label: 'Hangman', color: 'text-gray-600 hover:text-rose-600', activeColor: 'text-rose-700 border-rose-600 bg-rose-50' },
-    { key: 'scramble', label: 'Sentence Scramble', color: 'text-gray-600 hover:text-cyan-600', activeColor: 'text-cyan-700 border-cyan-600 bg-cyan-50' },
+    { key: 'scramble', label: 'Scramble', color: 'text-gray-600 hover:text-cyan-600', activeColor: 'text-cyan-700 border-cyan-600 bg-cyan-50' },
+    { key: 'wordmatch', label: 'Word Match', color: 'text-gray-600 hover:text-emerald-600', activeColor: 'text-emerald-700 border-emerald-600 bg-emerald-50' },
   ];
 
   return (
@@ -149,7 +168,7 @@ export default function GamesPage() {
       </div>
 
       {/* Game Cards */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Daily Un-Jumble */}
         <Link
           href="/games/word-puzzle"
@@ -257,6 +276,43 @@ export default function GamesPage() {
                 Play Now
               </span>
               <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+        </Link>
+
+        {/* Word Match */}
+        <Link
+          href="/games/word-match"
+          className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
+        >
+          <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-6 text-white">
+            <div className="flex items-center justify-between mb-3">
+              <Layers className="w-10 h-10" />
+              <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">
+                Daily Challenge
+              </span>
+            </div>
+            <h2 className="text-xl font-bold mb-1">Word Match</h2>
+            <p className="text-white/80 text-sm">
+              Flip cards to match words with their definitions!
+            </p>
+          </div>
+          <div className="p-5">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <RotateCcw className="w-4 h-4 text-gray-400" />
+                Memory
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Lightbulb className="w-4 h-4 text-amber-500" />
+                3 Peeks
+              </div>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-emerald-600 group-hover:text-emerald-800 transition">
+                Play Now
+              </span>
+              <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
         </Link>
