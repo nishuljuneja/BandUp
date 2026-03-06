@@ -74,7 +74,7 @@ export default function StudyPlan() {
   const { profile } = useAppStore();
   if (!profile) return null;
 
-  const currentLevel = profile.currentLevel;
+  const currentLevel = profile.currentLevel ?? 'A1';
   const currentIdx = allLevels.indexOf(currentLevel);
 
   // Build milestones based on available content
