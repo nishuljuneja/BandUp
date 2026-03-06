@@ -244,7 +244,7 @@ const b2Test4: PracticeQuestion[] = [
 // ═══════════════════════════════════════════════════════════════════
 
 const c1Test1: PracticeQuestion[] = [
-  { id: 'c1-1-01', question: 'The government\'s _____ economic policies have drawn criticism.', options: ['austere', 'austerity', 'austerer', 'austerely'], correctAnswer: 'austerity' },
+  { id: 'c1-1-01', question: 'The government\'s _____ economic policies have drawn criticism.', options: ['austere', 'austerity', 'austerer', 'austerely'], correctAnswer: 'austere' },
   { id: 'c1-1-02', question: 'The allegations against the minister remain _____.', options: ['unsubstantiated', 'unsubstantial', 'insubstantial', 'disproven'], correctAnswer: 'unsubstantiated' },
   { id: 'c1-1-03', question: 'Not only did the company fail to innovate, _____ it also lost key talent.', options: ['and', 'but', 'so', 'yet'], correctAnswer: 'but' },
   { id: 'c1-1-04', question: 'The ruling _____ a precedent for future cases of this nature.', options: ['sets', 'makes', 'puts', 'gives'], correctAnswer: 'sets' },
