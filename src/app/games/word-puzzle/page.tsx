@@ -4,14 +4,39 @@ import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { allVocabulary } from '@/content/vocabulary';
-import type { VocabularyWord } from '@/lib/firestore';
-import type { GameScore } from '@/lib/game-firestore';
 import {
   LetterText, Clock, Lightbulb, Trophy, ArrowRight, RotateCcw,
   Shuffle, CheckCircle2, XCircle, Crown, Medal, Sparkles, ArrowLeft,
 } from 'lucide-react';
 
-// Lazy-load Firestore functions to avoid Turbopack module binding issues
+// Inline types to avoid importing from firestore modules (Turbopack issue)
+interface VocabularyWord {
+  id: string;
+  word: string;
+  meaning: Record<string, string>;
+  partOfSpeech: string;
+  level: string;
+  example: string;
+  exampleTranslation: Record<string, string>;
+  pronunciation: string;
+  audioUrl?: string;
+  imageUrl?: string;
+  tags: string[];
+  oxfordList: 'A' | 'B';
+}
+
+interface GameScore {
+  uid: string;
+  displayName: string;
+  targetWord: string;
+  timeSeconds: number;
+  adjustedTime: number;
+  hintsUsed: number;
+  wordsFound: number;
+  date: string;
+}
+
+// Lazy-load Firestore functions at runtime only
 const firestoreImport = () => import('@/lib/firestore');
 const gameFirestoreImport = () => import('@/lib/game-firestore');
 
