@@ -357,23 +357,23 @@ export interface GameScore {
   date: string; // YYYY-MM-DD
 }
 
-export async function saveGameScore(data: GameScore): Promise<void> {
+export const saveGameScore = async (data: GameScore): Promise<void> => {
   await addDoc(collection(db, 'gameScores'), {
     ...data,
     createdAt: serverTimestamp(),
   });
-}
+};
 
-export async function getGameLeaderboard(
+export const getGameLeaderboard = async (
   targetWord: string,
-  limitCount: number = 20
-): Promise<GameScore[]> {
+  maxResults: number = 20
+): Promise<GameScore[]> => {
   const q = query(
     collection(db, 'gameScores'),
     where('targetWord', '==', targetWord),
     orderBy('adjustedTime', 'asc'),
-    limit(limitCount)
+    limit(maxResults)
   );
   const snapshot = await getDocs(q);
   return snapshot.docs.map((d) => d.data() as GameScore);
-}
+};
