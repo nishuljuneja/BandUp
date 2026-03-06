@@ -8,8 +8,8 @@ import { LANGUAGES } from '@/lib/i18n';
 import { logOut } from '@/lib/auth';
 import {
   BookOpen, Brain, Headphones, MessageSquare, PenTool, Trophy,
-  Home, User, Menu, X, Globe, LogOut, Flame, TrendingUp, ChevronDown, ClipboardCheck,
-  Sparkles, Award, BarChart3, Gamepad2,
+  Home, User, Menu, X, Globe, LogOut, Flame, ChevronDown, ClipboardCheck,
+  Award, Gamepad2,
 } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
@@ -36,7 +36,6 @@ export default function Navbar() {
 
   const navItems = [
     { href: '/dashboard', label: t('nav.dashboard', uiLanguage), icon: Home },
-    { href: '/daily-practice', label: 'Daily Practice', icon: Sparkles },
     { href: '/vocabulary', label: t('nav.vocabulary', uiLanguage), icon: BookOpen },
     { href: '/grammar', label: t('nav.grammar', uiLanguage), icon: Brain },
     { href: '/reading', label: t('nav.reading', uiLanguage), icon: BookOpen },
@@ -47,8 +46,6 @@ export default function Navbar() {
     { href: '/achievements', label: 'Achievements', icon: Award },
     { href: '/games', label: 'Games', icon: Gamepad2 },
     { href: '/leaderboard', label: t('nav.leaderboard', uiLanguage), icon: Trophy },
-    { href: '/analytics', label: 'Weak Areas', icon: BarChart3 },
-    { href: '/progress', label: 'Progress', icon: TrendingUp },
   ];
 
   return (
