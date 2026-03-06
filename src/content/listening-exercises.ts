@@ -1,4 +1,5 @@
 import { type CEFRLevel } from '../lib/firestore';
+import { additionalListeningExercises } from './listening-exercises-extra';
 
 // ------------------------------------------------------------------
 // Listening Exercises — uses browser SpeechSynthesis API to read text
@@ -428,6 +429,7 @@ export const listeningExercises: ListeningExercise[] = [
     duration: '5 min',
     speechRate: 1.0,
   },
+  ...additionalListeningExercises,
 ];
 
 export function getListeningExercisesByLevel(level: string): ListeningExercise[] {

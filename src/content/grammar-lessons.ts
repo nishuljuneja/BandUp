@@ -1,4 +1,5 @@
 import { type GrammarLesson } from '../lib/firestore';
+import { additionalGrammarLessons } from './grammar-lessons-extra';
 
 // Comprehensive grammar lessons organized by CEFR level
 // Each level has structured lessons progressing from simple to complex
@@ -1903,6 +1904,7 @@ If + Past Simple → would have + past participle
       { id: 'c1-g2-ex14', type: 'correct-error', question: 'Find the error: "I wish the traffic in Delhi will improve soon."', correctAnswer: 'I wish the traffic in Delhi would improve soon.', explanation: '"I wish + would" for desires about future changes, not "will".', explanationTranslations: { hi: 'भविष्य में बदलाव की इच्छा: wish + would, "will" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
+  ...additionalGrammarLessons,
 ];
 
 export function getGrammarLessonsByLevel(level: string): GrammarLesson[] {
