@@ -13,6 +13,7 @@ export default function PricingPage() {
   const { user, profile, loading } = useAppStore();
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'canceled'>('idle');
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   // Read query params on mount
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function PricingPage() {
   const handleUpgrade = async () => {
     if (!user || !profile) return;
     setCheckoutLoading(true);
+    setErrorMsg(null);
     try {
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',
@@ -52,10 +54,12 @@ export default function PricingPage() {
         window.location.href = data.url;
       } else {
         console.error('Checkout error:', data.error);
+        setErrorMsg(data.error || 'Something went wrong. Please try again.');
         setCheckoutLoading(false);
       }
     } catch (err) {
       console.error('Checkout error:', err);
+      setErrorMsg('Network error. Please check your connection and try again.');
       setCheckoutLoading(false);
     }
   };
@@ -102,6 +106,11 @@ export default function PricingPage() {
         {status === 'canceled' && (
           <p className="text-amber-600 mt-3 text-sm">
             Checkout was canceled. You can try again whenever you&apos;re ready.
+          </p>
+        )}
+        {errorMsg && (
+          <p className="text-red-600 mt-3 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-2 inline-block">
+            {errorMsg}
           </p>
         )}
       </div>
