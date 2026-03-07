@@ -180,7 +180,7 @@ export default function GamesPage() {
           href="/games/word-puzzle"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
         >
-          <div className="bg-gradient-to-br from-violet-500 to-indigo-600 p-5 text-white">
+          <div className="bg-gradient-to-br from-violet-500 to-indigo-600 p-5 text-white min-h-[140px]">
             <div className="flex items-center justify-between mb-2">
               <LetterText className="w-8 h-8" />
               <span className="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">
@@ -217,7 +217,7 @@ export default function GamesPage() {
           href="/games/hangman"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
         >
-          <div className="bg-gradient-to-br from-rose-500 to-red-600 p-5 text-white">
+          <div className="bg-gradient-to-br from-rose-500 to-red-600 p-5 text-white min-h-[140px]">
             <div className="flex items-center justify-between mb-2">
               <Skull className="w-8 h-8" />
               <span className="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">
@@ -254,7 +254,7 @@ export default function GamesPage() {
           href="/games/sentence-scramble"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
         >
-          <div className="bg-gradient-to-br from-cyan-500 to-blue-600 p-5 text-white">
+          <div className="bg-gradient-to-br from-cyan-500 to-blue-600 p-5 text-white min-h-[140px]">
             <div className="flex items-center justify-between mb-2">
               <Shuffle className="w-8 h-8" />
               <span className="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">
@@ -291,7 +291,7 @@ export default function GamesPage() {
           href="/games/word-match"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
         >
-          <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-5 text-white">
+          <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-5 text-white min-h-[140px]">
             <div className="flex items-center justify-between mb-2">
               <Layers className="w-8 h-8" />
               <span className="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">
