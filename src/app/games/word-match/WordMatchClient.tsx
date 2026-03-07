@@ -7,7 +7,7 @@ import { allVocabulary } from '@/content/vocabulary';
 import definitions from '@/content/word-definitions.json';
 import {
   Clock, Trophy, RotateCcw, Crown, Medal, Sparkles,
-  ArrowLeft, Layers, Eye, Lock,
+  ArrowLeft, ArrowRight, Layers, Eye, Lock, Share2, UserPlus,
 } from 'lucide-react';
 import { isPro } from '@/lib/subscription';
 import { ProBadge } from '@/components/ProGate';
@@ -560,13 +560,34 @@ export default function WordMatchPage() {
           </div>
         </div>
 
+        {/* Sign up banner for anonymous users */}
+        {!profile && (
+          <Link
+            href="/signup"
+            className="flex items-center gap-3 mb-6 px-5 py-3 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl hover:shadow-md transition-all group"
+          >
+            <UserPlus className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+            <span className="text-sm font-medium text-gray-700 group-hover:text-emerald-700">Sign up to save your score &amp; compete on the leaderboard!</span>
+            <ArrowRight className="w-4 h-4 text-emerald-400 ml-auto flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        )}
+
         {/* Action buttons */}
-        <div className="grid sm:grid-cols-2 gap-4 mb-8">
+        <div className="grid sm:grid-cols-3 gap-4 mb-8">
           <button
             onClick={() => startGame(mode, difficulty)}
             className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-xl py-3.5 font-medium hover:from-emerald-600 hover:to-teal-700 transition shadow-lg"
           >
             <RotateCcw className="w-4 h-4" /> Play Again
+          </button>
+          <button
+            onClick={() => {
+              const text = `🃏 Pairs — I matched all ${totalPairs} pairs in ${moves} moves and ${formatTime(elapsed)}! Can you beat me?\n\nhttps://englishlearningapp-teal.vercel.app/games/word-match`;
+              if (navigator.share) { navigator.share({ text }); } else { navigator.clipboard.writeText(text); }
+            }}
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl py-3.5 font-medium hover:from-blue-600 hover:to-indigo-700 transition shadow-lg"
+          >
+            <Share2 className="w-4 h-4" /> Share Score
           </button>
           <Link
             href="/games"

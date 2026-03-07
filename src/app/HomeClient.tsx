@@ -4,10 +4,22 @@ import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { LANGUAGES } from '@/lib/i18n';
-import { BookOpen, Brain, Headphones, MessageSquare, Zap, Globe } from 'lucide-react';
+import { BookOpen, Brain, Headphones, MessageSquare, Zap, Globe, Gamepad2, LetterText, Skull, Shuffle, Layers, Volume2 } from 'lucide-react';
+import definitions from '@/content/word-definitions.json';
+
+// Deterministic Word of the Day — 6+ letters, changes daily
+function getWordOfTheDay() {
+  const defs = definitions as Record<string, { p?: string; d?: string; e?: string }>;
+  const longWords = Object.keys(defs).filter((w) => w.length >= 6 && defs[w].d && defs[w].e);
+  const today = new Date();
+  const dayIndex = today.getFullYear() * 366 + today.getMonth() * 31 + today.getDate();
+  const word = longWords[dayIndex % longWords.length];
+  return { word, ...defs[word] };
+}
 
 export default function Home() {
   const { uiLanguage, setUILanguage, user } = useAppStore();
+  const wotd = getWordOfTheDay();
 
   const features = [
     {
@@ -157,6 +169,72 @@ export default function Home() {
               <h3 className="font-semibold text-purple-800 mb-2">💼 Career-Focused</h3>
               <p className="text-sm text-purple-700">Special content for job interviews, business emails, presentations, and professional communication.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Word of the Day */}
+      <section className="py-16 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">📖 Word of the Day</h2>
+          <p className="text-center text-gray-500 mb-8">Learn a new word every day — no sign-up needed</p>
+          <div className="bg-white rounded-2xl shadow-md border border-indigo-100 p-8 text-center">
+            <div className="text-4xl font-black text-indigo-700 mb-2 tracking-wide">{wotd.word.toUpperCase()}</div>
+            {wotd.p && (
+              <span className="inline-block text-sm font-medium text-indigo-400 bg-indigo-50 px-3 py-0.5 rounded-full mb-4">{wotd.p}</span>
+            )}
+            <p className="text-lg text-gray-700 mb-3">{wotd.d}</p>
+            {wotd.e && (
+              <p className="text-sm text-gray-400 italic">&ldquo;{wotd.e}&rdquo;</p>
+            )}
+            <button
+              onClick={() => {
+                const utterance = new SpeechSynthesisUtterance(wotd.word);
+                utterance.lang = 'en-US';
+                speechSynthesis.speak(utterance);
+              }}
+              className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-200 transition"
+            >
+              <Volume2 className="w-4 h-4" /> Listen
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Try Our Games — No Sign-up Required */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">🎮 Try Our Games — Free, No Sign-up</h2>
+          <p className="text-center text-gray-500 mb-10">Play instantly. Challenge your friends. Sign up later to save your scores.</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/games/word-puzzle" className="group bg-gradient-to-br from-violet-50 to-indigo-50 border border-violet-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                <LetterText className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-1">Unjumble</h3>
+              <p className="text-xs text-gray-500">Find the 7-letter word from jumbled letters</p>
+            </Link>
+            <Link href="/games/hangman" className="group bg-gradient-to-br from-rose-50 to-red-50 border border-rose-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                <Skull className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-1">Hangman</h3>
+              <p className="text-xs text-gray-500">Guess the word letter by letter</p>
+            </Link>
+            <Link href="/games/sentence-scramble" className="group bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                <Shuffle className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-1">Scramble</h3>
+              <p className="text-xs text-gray-500">Reorder words to build sentences</p>
+            </Link>
+            <Link href="/games/word-match" className="group bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                <Layers className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-1">Pairs</h3>
+              <p className="text-xs text-gray-500">Match words with their definitions</p>
+            </Link>
           </div>
         </div>
       </section>

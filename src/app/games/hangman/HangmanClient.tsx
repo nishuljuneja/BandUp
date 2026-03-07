@@ -7,7 +7,7 @@ import { allVocabulary } from '@/content/vocabulary';
 import definitions from '@/content/word-definitions.json';
 import {
   Clock, Lightbulb, Trophy, RotateCcw, CheckCircle2,
-  Crown, Medal, Sparkles, ArrowLeft, Heart, Skull, Lock,
+  Crown, Medal, Sparkles, ArrowLeft, ArrowRight, Heart, Skull, Lock, Share2, UserPlus,
 } from 'lucide-react';
 import { isPro } from '@/lib/subscription';
 import { ProBadge } from '@/components/ProGate';
@@ -636,6 +636,18 @@ export default function HangmanPage() {
           </div>
         )}
 
+        {/* Sign up banner for anonymous users */}
+        {!profile && (
+          <Link
+            href="/signup"
+            className="flex items-center gap-3 mb-6 px-5 py-3 bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200 rounded-xl hover:shadow-md transition-all group"
+          >
+            <UserPlus className="w-5 h-5 text-rose-600 flex-shrink-0" />
+            <span className="text-sm font-medium text-gray-700 group-hover:text-rose-700">Sign up to save your score &amp; compete on the leaderboard!</span>
+            <ArrowRight className="w-4 h-4 text-rose-400 ml-auto flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        )}
+
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-3">
           <button
@@ -644,6 +656,16 @@ export default function HangmanPage() {
           >
             <RotateCcw className="w-4 h-4" />
             {mode === 'daily' ? 'Play Again' : 'New Word'}
+          </button>
+          <button
+            onClick={() => {
+              const result = state === 'won' ? `guessed "${targetWord.word.toUpperCase()}" with ${MAX_WRONG - wrongGuesses} lives left` : `couldn't crack "${targetWord.word.toUpperCase()}"`;
+              const text = `💀 Hangman — I ${result} in ${formatTime(elapsed)}! Can you beat me?\n\nhttps://englishlearningapp-teal.vercel.app/games/hangman`;
+              if (navigator.share) { navigator.share({ text }); } else { navigator.clipboard.writeText(text); }
+            }}
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-medium hover:bg-emerald-700 transition"
+          >
+            <Share2 className="w-4 h-4" /> Share Score
           </button>
           <Link
             href="/games"

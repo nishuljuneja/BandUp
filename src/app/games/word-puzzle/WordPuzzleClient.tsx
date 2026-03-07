@@ -7,7 +7,7 @@ import { allVocabulary } from '@/content/vocabulary';
 import gameDictionary from '@/content/game-dictionary.json';
 import {
   LetterText, Clock, Lightbulb, Trophy, ArrowRight, RotateCcw,
-  Shuffle, CheckCircle2, XCircle, Crown, Medal, Sparkles, ArrowLeft, Lock,
+  Shuffle, CheckCircle2, XCircle, Crown, Medal, Sparkles, ArrowLeft, Lock, Share2, UserPlus,
 } from 'lucide-react';
 import { isPro } from '@/lib/subscription';
 import { ProBadge } from '@/components/ProGate';
@@ -675,6 +675,18 @@ export default function WordPuzzlePage() {
         </div>
         )}
 
+        {/* Sign up banner for anonymous users */}
+        {!profile && (
+          <Link
+            href="/signup"
+            className="flex items-center gap-3 mb-6 px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-xl hover:shadow-md transition-all group"
+          >
+            <UserPlus className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+            <span className="text-sm font-medium text-gray-700 group-hover:text-indigo-700">Sign up to save your score &amp; compete on the leaderboard!</span>
+            <ArrowRight className="w-4 h-4 text-indigo-400 ml-auto flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        )}
+
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-3">
           <button
@@ -683,6 +695,15 @@ export default function WordPuzzlePage() {
           >
             <RotateCcw className="w-4 h-4" />
             {mode === 'daily' ? 'Play Again' : 'New Puzzle'}
+          </button>
+          <button
+            onClick={() => {
+              const text = `🧩 Unjumble — I found ${foundWords.length}/${allValid.length} words for "${targetWordObj.word.toUpperCase()}" in ${formatTime(elapsed)}! Can you beat me?\n\nhttps://englishlearningapp-teal.vercel.app/games/word-puzzle`;
+              if (navigator.share) { navigator.share({ text }); } else { navigator.clipboard.writeText(text); }
+            }}
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-medium hover:bg-emerald-700 transition"
+          >
+            <Share2 className="w-4 h-4" /> Share Score
           </button>
           <Link
             href="/games"

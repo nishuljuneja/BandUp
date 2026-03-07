@@ -7,7 +7,7 @@ import definitions from '@/content/word-definitions.json';
 import {
   Clock, Lightbulb, Trophy, RotateCcw, CheckCircle2,
   Crown, Medal, Sparkles, ArrowLeft, ArrowRight, Shuffle, XCircle,
-  Undo2, Eye, Type, Lock,
+  Undo2, Eye, Type, Lock, Share2, UserPlus,
 } from 'lucide-react';
 import { isPro } from '@/lib/subscription';
 import { ProBadge } from '@/components/ProGate';
@@ -761,6 +761,18 @@ export default function SentenceScramblePage() {
           </div>
         )}
 
+        {/* Sign up banner for anonymous users */}
+        {!profile && (
+          <Link
+            href="/signup"
+            className="flex items-center gap-3 mb-6 px-5 py-3 bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200 rounded-xl hover:shadow-md transition-all group"
+          >
+            <UserPlus className="w-5 h-5 text-cyan-600 flex-shrink-0" />
+            <span className="text-sm font-medium text-gray-700 group-hover:text-cyan-700">Sign up to save your score &amp; compete on the leaderboard!</span>
+            <ArrowRight className="w-4 h-4 text-cyan-400 ml-auto flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        )}
+
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-3">
           <button
@@ -769,6 +781,15 @@ export default function SentenceScramblePage() {
           >
             <RotateCcw className="w-4 h-4" />
             {mode === 'daily' ? 'Play Again' : 'Next Sentence'}
+          </button>
+          <button
+            onClick={() => {
+              const text = `🔀 Scramble — I unscrambled a ${currentSentence.wordCount}-word sentence in ${formatTime(elapsed)}! Can you beat me?\n\nhttps://englishlearningapp-teal.vercel.app/games/sentence-scramble`;
+              if (navigator.share) { navigator.share({ text }); } else { navigator.clipboard.writeText(text); }
+            }}
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-medium hover:bg-emerald-700 transition"
+          >
+            <Share2 className="w-4 h-4" /> Share Score
           </button>
           <Link
             href="/games"
