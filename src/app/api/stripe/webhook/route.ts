@@ -26,8 +26,24 @@ async function getUidFromCustomer(customerId: string): Promise<string | null> {
 }
 
 /** Extract subscription expiry date */
-function getExpiryDate(subscription: Stripe.Subscription): string {
-  const periodEnd = subscription.items.data[0]?.current_period_end;
+function getExpiryDate(subscription: unknown): string {
+  // Handle different Stripe API versions — look in multiple places
+  const sub = subscription as Record<string, unknown>;
+  let periodEnd: number | undefined;
+
+  // Try subscription.current_period_end (older API versions)
+  if (typeof sub.current_period_end === 'number') {
+    periodEnd = sub.current_period_end;
+  }
+  // Try subscription.items.data[0].current_period_end
+  if (!periodEnd) {
+    const items = sub.items as { data?: Array<Record<string, unknown>> } | undefined;
+    const firstItem = items?.data?.[0];
+    if (firstItem && typeof firstItem.current_period_end === 'number') {
+      periodEnd = firstItem.current_period_end;
+    }
+  }
+
   const ms = periodEnd ? periodEnd * 1000 : Date.now() + 365 * 24 * 60 * 60 * 1000;
   return new Date(ms).toISOString().split('T')[0];
 }
@@ -61,12 +77,21 @@ export async function POST(req: NextRequest) {
         if (!uid) break;
 
         const subscriptionId = session.subscription as string;
-        const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+        let expiry: string;
+        try {
+          const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+          expiry = getExpiryDate(subscription);
+        } catch (subErr) {
+          console.warn(`[Stripe] Could not retrieve subscription ${subscriptionId}, using 1-year fallback:`, subErr);
+          const fallback = new Date();
+          fallback.setFullYear(fallback.getFullYear() + 1);
+          expiry = fallback.toISOString().split('T')[0];
+        }
 
         await db.collection('users').doc(uid).update({
           subscriptionTier: 'pro',
           subscriptionStatus: 'active',
-          subscriptionExpiry: getExpiryDate(subscription),
+          subscriptionExpiry: expiry,
           stripeCustomerId: session.customer as string,
           stripeSubscriptionId: subscriptionId,
           paymentFailedAt: null,
@@ -352,8 +377,11 @@ export async function POST(req: NextRequest) {
         break;
     }
   } catch (err) {
-    console.error(`[Stripe] Error processing ${event.type}:`, err);
-    return NextResponse.json({ error: 'Webhook handler failed' }, { status: 500 });
+    const errMsg = err instanceof Error ? err.message : String(err);
+    const errStack = err instanceof Error ? err.stack : '';
+    console.error(`[Stripe] Error processing ${event.type}: ${errMsg}`);
+    console.error(errStack);
+    return NextResponse.json({ error: `Webhook handler failed: ${errMsg}` }, { status: 500 });
   }
 
   return NextResponse.json({ received: true });
