@@ -365,7 +365,7 @@ function ReferralCard({
 
   const progressToNext = referralCount % 3;
   const nextRewardAt = (referralRewardsClaimed + 1) * 3;
-  const shareUrl = `https://speakeasyapp.in/signup?ref=${referralCode}`;
+  const shareUrl = `https://englishlearningapp-teal.vercel.app/signup?ref=${referralCode}`;
 
   const handleCopy = async () => {
     try {
