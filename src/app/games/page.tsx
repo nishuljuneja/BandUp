@@ -16,7 +16,11 @@ function getLocalLB(key: string, date: string): Record<string, unknown>[] {
   try {
     const raw = localStorage.getItem(key);
     const all: Record<string, unknown>[] = raw ? JSON.parse(raw) : [];
-    return all.filter((s) => s.date === date).slice(0, 20);
+    // Try today first, then fall back to most recent scores
+    const todayScores = all.filter((s) => s.date === date);
+    if (todayScores.length > 0) return todayScores.slice(0, 20);
+    // Return most recent scores if nothing today
+    return all.slice(-20);
   } catch {
     return [];
   }
@@ -91,7 +95,9 @@ export default function GamesPage() {
             }));
           }
         }
-      } catch {}
+      } catch (err) {
+        console.warn('Leaderboard Firestore error:', err);
+      }
 
       // Fallback to localStorage if Firestore returned nothing
       if (result.length === 0) {
@@ -174,26 +180,26 @@ export default function GamesPage() {
           href="/games/word-puzzle"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
         >
-          <div className="bg-gradient-to-br from-violet-500 to-indigo-600 p-6 text-white">
-            <div className="flex items-center justify-between mb-3">
-              <LetterText className="w-10 h-10" />
-              <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">
-                Daily Challenge
+          <div className="bg-gradient-to-br from-violet-500 to-indigo-600 p-5 text-white">
+            <div className="flex items-center justify-between mb-2">
+              <LetterText className="w-8 h-8" />
+              <span className="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">
+                Daily
               </span>
             </div>
-            <h2 className="text-xl font-bold mb-1">Unjumble</h2>
-            <p className="text-white/80 text-sm">
+            <h2 className="text-lg font-bold mb-1">Unjumble</h2>
+            <p className="text-white/80 text-xs leading-snug">
               Make a 7 letter word
             </p>
           </div>
-          <div className="p-5">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Clock className="w-4 h-4 text-gray-400" />
+          <div className="p-4">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-1.5 text-xs text-gray-600 whitespace-nowrap">
+                <Clock className="w-3.5 h-3.5 text-gray-400" />
                 Timed
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Lightbulb className="w-4 h-4 text-amber-500" />
+              <div className="flex items-center gap-1.5 text-xs text-gray-600 whitespace-nowrap">
+                <Lightbulb className="w-3.5 h-3.5 text-amber-500" />
                 Hints
               </div>
             </div>
@@ -211,26 +217,26 @@ export default function GamesPage() {
           href="/games/hangman"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
         >
-          <div className="bg-gradient-to-br from-rose-500 to-red-600 p-6 text-white">
-            <div className="flex items-center justify-between mb-3">
-              <Skull className="w-10 h-10" />
-              <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">
-                Daily Challenge
+          <div className="bg-gradient-to-br from-rose-500 to-red-600 p-5 text-white">
+            <div className="flex items-center justify-between mb-2">
+              <Skull className="w-8 h-8" />
+              <span className="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">
+                Daily
               </span>
             </div>
-            <h2 className="text-xl font-bold mb-1">Hangman</h2>
-            <p className="text-white/80 text-sm">
-              Guess the word before the hangman is complete!
+            <h2 className="text-lg font-bold mb-1">Hangman</h2>
+            <p className="text-white/80 text-xs leading-snug">
+              Guess the word before the hangman is complete
             </p>
           </div>
-          <div className="p-5">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Heart className="w-4 h-4 text-red-400" />
+          <div className="p-4">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-1.5 text-xs text-gray-600 whitespace-nowrap">
+                <Heart className="w-3.5 h-3.5 text-red-400" />
                 8 Lives
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Lightbulb className="w-4 h-4 text-amber-500" />
+              <div className="flex items-center gap-1.5 text-xs text-gray-600 whitespace-nowrap">
+                <Lightbulb className="w-3.5 h-3.5 text-amber-500" />
                 Hints
               </div>
             </div>
@@ -248,26 +254,26 @@ export default function GamesPage() {
           href="/games/sentence-scramble"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
         >
-          <div className="bg-gradient-to-br from-cyan-500 to-blue-600 p-6 text-white">
-            <div className="flex items-center justify-between mb-3">
-              <Shuffle className="w-10 h-10" />
-              <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">
-                Daily Challenge
+          <div className="bg-gradient-to-br from-cyan-500 to-blue-600 p-5 text-white">
+            <div className="flex items-center justify-between mb-2">
+              <Shuffle className="w-8 h-8" />
+              <span className="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">
+                Daily
               </span>
             </div>
-            <h2 className="text-xl font-bold mb-1">Scramble</h2>
-            <p className="text-white/80 text-sm">
-              Unscramble words to build the correct sentence!
+            <h2 className="text-lg font-bold mb-1">Scramble</h2>
+            <p className="text-white/80 text-xs leading-snug">
+              Reorder words to build the correct sentence
             </p>
           </div>
-          <div className="p-5">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Clock className="w-4 h-4 text-gray-400" />
+          <div className="p-4">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-1.5 text-xs text-gray-600 whitespace-nowrap">
+                <Clock className="w-3.5 h-3.5 text-gray-400" />
                 Timed
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Lightbulb className="w-4 h-4 text-amber-500" />
+              <div className="flex items-center gap-1.5 text-xs text-gray-600 whitespace-nowrap">
+                <Lightbulb className="w-3.5 h-3.5 text-amber-500" />
                 3 Hints
               </div>
             </div>
@@ -285,27 +291,27 @@ export default function GamesPage() {
           href="/games/word-match"
           className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
         >
-          <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-6 text-white">
-            <div className="flex items-center justify-between mb-3">
-              <Layers className="w-10 h-10" />
-              <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">
-                Daily Challenge
+          <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-5 text-white">
+            <div className="flex items-center justify-between mb-2">
+              <Layers className="w-8 h-8" />
+              <span className="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">
+                Daily
               </span>
             </div>
-            <h2 className="text-xl font-bold mb-1">Pairs</h2>
-            <p className="text-white/80 text-sm">
-              Flip cards to match words with their definitions!
+            <h2 className="text-lg font-bold mb-1">Pairs</h2>
+            <p className="text-white/80 text-xs leading-snug">
+              Match words with their definitions
             </p>
           </div>
-          <div className="p-5">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <RotateCcw className="w-4 h-4 text-gray-400" />
+          <div className="p-4">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-1.5 text-xs text-gray-600 whitespace-nowrap">
+                <RotateCcw className="w-3.5 h-3.5 text-gray-400" />
                 Memory
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Lightbulb className="w-4 h-4 text-amber-500" />
-                3 Peeks
+              <div className="flex items-center gap-1.5 text-xs text-gray-600 whitespace-nowrap">
+                <Lightbulb className="w-3.5 h-3.5 text-amber-500" />
+                Peeks
               </div>
             </div>
             <div className="flex items-center justify-between">
