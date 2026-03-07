@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { LevelBadge, ProgressBar } from '@/components/Exercises';
-import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, ArrowRight, ClipboardCheck, Sparkles, Award, BarChart3, Gamepad2, LetterText, Skull, Shuffle, Layers, Crown, Lock } from 'lucide-react';
+import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Flame, Trophy, ArrowRight, ClipboardCheck, Sparkles, Award, BarChart3, Gamepad2, LetterText, Skull, Shuffle, Layers, Crown, Lock, Gift, Copy, Check } from 'lucide-react';
 import { isPro } from '@/lib/subscription';
 import StudyPlan from '@/components/StudyPlan';
 
@@ -85,13 +85,16 @@ export default function DashboardPage() {
                   Upgrade to Pro
                   <span className="text-xs font-medium bg-yellow-400/20 text-yellow-200 px-2 py-0.5 rounded-full">₹499/yr</span>
                 </h3>
-                <p className="text-white/70 text-sm">Unlock all levels (B1–C2), Reading, Listening, unlimited practice & more</p>
+                <p className="text-white/70 text-sm">Unlock B2 & C1 levels, Reading, Listening, unlimited practice & more</p>
               </div>
             </div>
             <ArrowRight className="w-6 h-6 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all" />
           </div>
         </Link>
       )}
+
+      {/* Referral Card */}
+      <ReferralCard referralCode={profile.referralCode} referralCount={profile.referralCount ?? 0} referralRewardsClaimed={profile.referralRewardsClaimed ?? 0} />
 
       {/* Games Row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
@@ -341,6 +344,93 @@ export default function DashboardPage() {
             </div>
           </div>
         </Link>
+      </div>
+    </div>
+  );
+}
+
+/* ──────── Referral Card ──────── */
+function ReferralCard({
+  referralCode,
+  referralCount,
+  referralRewardsClaimed,
+}: {
+  referralCode?: string;
+  referralCount: number;
+  referralRewardsClaimed: number;
+}) {
+  const [copied, setCopied] = useState(false);
+
+  if (!referralCode) return null;
+
+  const progressToNext = referralCount % 3;
+  const nextRewardAt = (referralRewardsClaimed + 1) * 3;
+  const shareUrl = `https://speakeasyapp.in/signup?ref=${referralCode}`;
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback
+      const input = document.createElement('input');
+      input.value = shareUrl;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  return (
+    <div className="mb-8 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-6">
+      <div className="flex items-start gap-4">
+        <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+          <Gift className="w-6 h-6 text-white" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="font-bold text-gray-800 text-lg mb-1">Refer Friends, Get Pro Free!</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Invite 3 friends to sign up and get <span className="font-semibold text-amber-700">1 week of Pro</span> for free. Stackable — every 3 referrals earns another week!
+          </p>
+
+          {/* Progress */}
+          <div className="mb-4">
+            <div className="flex justify-between text-sm mb-1.5">
+              <span className="text-gray-600">
+                <span className="font-semibold text-gray-800">{referralCount}</span> friend{referralCount !== 1 ? 's' : ''} joined
+              </span>
+              <span className="text-amber-700 font-medium">{progressToNext}/3 to next reward</span>
+            </div>
+            <div className="w-full h-3 bg-amber-100 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full transition-all duration-500"
+                style={{ width: `${(progressToNext / 3) * 100}%` }}
+              />
+            </div>
+            {referralRewardsClaimed > 0 && (
+              <p className="text-xs text-amber-600 mt-1.5">
+                🎉 {referralRewardsClaimed} week{referralRewardsClaimed !== 1 ? 's' : ''} of Pro earned so far!
+              </p>
+            )}
+          </div>
+
+          {/* Share Link */}
+          <div className="flex items-center gap-2">
+            <div className="flex-1 bg-white border border-amber-200 rounded-xl px-3 py-2.5 text-sm text-gray-600 truncate font-mono">
+              {shareUrl}
+            </div>
+            <button
+              onClick={handleCopy}
+              className="flex-shrink-0 px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-medium text-sm transition flex items-center gap-1.5"
+            >
+              {copied ? <><Check className="w-4 h-4" /> Copied!</> : <><Copy className="w-4 h-4" /> Copy</>}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

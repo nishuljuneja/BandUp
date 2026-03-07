@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { signUpWithEmail, signInWithGoogle } from '@/lib/auth';
 import { useAppStore } from '@/lib/store';
@@ -10,6 +10,8 @@ import { Mail, Lock, Eye, EyeOff, User } from 'lucide-react';
 
 export default function SignupPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const refCode = searchParams.get('ref') || undefined;
   const { uiLanguage } = useAppStore();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -34,7 +36,7 @@ export default function SignupPage() {
 
     setLoading(true);
     try {
-      await signUpWithEmail(email, password, name, uiLanguage);
+      await signUpWithEmail(email, password, name, uiLanguage, refCode);
       router.push('/onboarding');
     } catch (err: any) {
       const code = err?.code || '';
@@ -50,7 +52,7 @@ export default function SignupPage() {
     setError('');
     setLoading(true);
     try {
-      await signInWithGoogle();
+      await signInWithGoogle(undefined, refCode);
       router.push('/onboarding');
     } catch (err: any) {
       setError('Google sign-in failed. Please try again.');

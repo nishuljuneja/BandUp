@@ -50,6 +50,11 @@ export interface UserProfile {
   stripeSubscriptionId?: string;
   paymentFailedAt?: string; // ISO date of last failed payment
   disputeOpen?: boolean; // true if a chargeback dispute is open
+  // Referral
+  referralCode?: string;
+  referredBy?: string; // UID of the referrer
+  referralCount?: number;
+  referralRewardsClaimed?: number;
 }
 
 export interface VocabularyWord {
@@ -350,6 +355,85 @@ export async function getLeaderboard(limitCount: number = 20): Promise<UserProfi
   );
   const snapshot = await getDocs(q);
   return snapshot.docs.map((d) => d.data() as UserProfile);
+}
+
+// ==================== REFERRAL SYSTEM ====================
+
+/** Generate a short unique referral code */
+export function generateReferralCode(uid: string): string {
+  const prefix = uid.slice(0, 4).toUpperCase();
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let suffix = '';
+  for (let i = 0; i < 4; i++) suffix += chars[Math.floor(Math.random() * chars.length)];
+  return `${prefix}-${suffix}`;
+}
+
+/** Look up a user by their referral code */
+export async function getUserByReferralCode(code: string): Promise<UserProfile | null> {
+  const q = query(collection(db, 'users'), where('referralCode', '==', code.toUpperCase()), limit(1));
+  const snap = await getDocs(q);
+  if (snap.empty) return null;
+  return snap.docs[0].data() as UserProfile;
+}
+
+/**
+ * Record a referral: save audit doc, increment referrer count,
+ * and grant 1-week Pro if they've hit a new multiple of 3.
+ */
+export async function recordReferral(referrerUid: string, refereeUid: string, refereeEmail: string): Promise<void> {
+  // Prevent self-referral
+  if (referrerUid === refereeUid) return;
+
+  // Check if this referee was already recorded
+  const existingQ = query(
+    collection(db, 'referrals'),
+    where('refereeUid', '==', refereeUid),
+    limit(1)
+  );
+  const existing = await getDocs(existingQ);
+  if (!existing.empty) return;
+
+  // Save audit doc
+  await addDoc(collection(db, 'referrals'), {
+    referrerUid,
+    refereeUid,
+    refereeEmail,
+    createdAt: serverTimestamp(),
+  });
+
+  // Increment referral count
+  await updateDoc(doc(db, 'users', referrerUid), {
+    referralCount: increment(1),
+  });
+
+  // Re-read referrer profile to check reward threshold
+  const referrer = await getUserProfile(referrerUid);
+  if (!referrer) return;
+
+  const count = referrer.referralCount ?? 0;
+  const claimed = referrer.referralRewardsClaimed ?? 0;
+  const newCount = count + 1; // we just incremented
+
+  // Grant reward for every 3 referrals
+  if (newCount >= (claimed + 1) * 3) {
+    const today = new Date();
+    let expiry: Date;
+
+    if (referrer.subscriptionTier === 'pro' && referrer.subscriptionExpiry) {
+      // Extend existing Pro
+      const currentExpiry = new Date(referrer.subscriptionExpiry);
+      expiry = currentExpiry > today ? currentExpiry : today;
+    } else {
+      expiry = today;
+    }
+    expiry.setDate(expiry.getDate() + 7);
+
+    await updateDoc(doc(db, 'users', referrerUid), {
+      subscriptionTier: 'pro',
+      subscriptionExpiry: expiry.toISOString().split('T')[0],
+      referralRewardsClaimed: increment(1),
+    });
+  }
 }
 
 // Game score types/functions are in ./game-firestore.ts
