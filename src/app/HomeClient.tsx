@@ -60,6 +60,7 @@ export default function Home() {
     { id: 'B1', color: 'from-blue-400 to-blue-600' },
     { id: 'B2', color: 'from-purple-400 to-purple-600' },
     { id: 'C1', color: 'from-orange-400 to-orange-600' },
+    { id: 'C2', color: 'from-red-400 to-red-600' },
   ];
 
   return (
@@ -108,14 +109,80 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Try Our Games — No Sign-up Required */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">🎮 Try Our Games — Free, No Sign-up</h2>
+          <p className="text-center text-gray-500 mb-10">Designed to improve your vocabulary, sentence structure, and reading skills. Play instantly. Challenge your friends. Sign up later to save your scores.</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/games/word-puzzle" className="group bg-gradient-to-br from-violet-50 to-indigo-50 border border-violet-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                <LetterText className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-1">Unjumble</h3>
+              <p className="text-xs text-gray-500">Find the 7-letter word from jumbled letters</p>
+            </Link>
+            <Link href="/games/hangman" className="group bg-gradient-to-br from-rose-50 to-red-50 border border-rose-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                <Skull className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-1">Hangman</h3>
+              <p className="text-xs text-gray-500">Guess the word letter by letter</p>
+            </Link>
+            <Link href="/games/sentence-scramble" className="group bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                <Shuffle className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-1">Scramble</h3>
+              <p className="text-xs text-gray-500">Reorder words to build sentences</p>
+            </Link>
+            <Link href="/games/word-match" className="group bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
+              <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                <Layers className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-1">Pairs</h3>
+              <p className="text-xs text-gray-500">Match words with their definitions</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Word of the Day */}
+      <section className="py-16 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">📖 Word of the Day</h2>
+          <p className="text-center text-gray-500 mb-8">Learn a new word every day — no sign-up needed</p>
+          <div className="bg-white rounded-2xl shadow-md border border-indigo-100 p-8 text-center">
+            <div className="text-4xl font-black text-indigo-700 mb-2 tracking-wide">{wotd.word.toUpperCase()}</div>
+            {wotd.p && (
+              <span className="inline-block text-sm font-medium text-indigo-400 bg-indigo-50 px-3 py-0.5 rounded-full mb-4">{wotd.p}</span>
+            )}
+            <p className="text-lg text-gray-700 mb-3">{wotd.d}</p>
+            {wotd.e && (
+              <p className="text-sm text-gray-400 italic">&ldquo;{wotd.e}&rdquo;</p>
+            )}
+            <button
+              onClick={() => {
+                const utterance = new SpeechSynthesisUtterance(wotd.word);
+                utterance.lang = 'en-US';
+                speechSynthesis.speak(utterance);
+              }}
+              className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-200 transition"
+            >
+              <Volume2 className="w-4 h-4" /> Listen
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* CEFR Levels */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">5 Levels, One Clear Path</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">6 Levels, One Clear Path</h2>
           <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
             Based on the internationally recognised CEFR framework. Take a diagnostic test to find your starting point.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {levels.map((level) => (
               <div key={level.id} className={`bg-gradient-to-br ${level.color} rounded-2xl p-6 text-white text-center shadow-lg hover:scale-105 transition-transform cursor-pointer`}>
                 <div className="text-3xl font-black mb-2">{level.id}</div>
@@ -166,72 +233,6 @@ export default function Home() {
               <h3 className="font-semibold text-purple-800 mb-2">💼 Career-Focused</h3>
               <p className="text-sm text-purple-700">Special content for job interviews, business emails, presentations, and professional communication.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Word of the Day */}
-      <section className="py-16 bg-gradient-to-br from-indigo-50 to-purple-50">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">📖 Word of the Day</h2>
-          <p className="text-center text-gray-500 mb-8">Learn a new word every day — no sign-up needed</p>
-          <div className="bg-white rounded-2xl shadow-md border border-indigo-100 p-8 text-center">
-            <div className="text-4xl font-black text-indigo-700 mb-2 tracking-wide">{wotd.word.toUpperCase()}</div>
-            {wotd.p && (
-              <span className="inline-block text-sm font-medium text-indigo-400 bg-indigo-50 px-3 py-0.5 rounded-full mb-4">{wotd.p}</span>
-            )}
-            <p className="text-lg text-gray-700 mb-3">{wotd.d}</p>
-            {wotd.e && (
-              <p className="text-sm text-gray-400 italic">&ldquo;{wotd.e}&rdquo;</p>
-            )}
-            <button
-              onClick={() => {
-                const utterance = new SpeechSynthesisUtterance(wotd.word);
-                utterance.lang = 'en-US';
-                speechSynthesis.speak(utterance);
-              }}
-              className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-200 transition"
-            >
-              <Volume2 className="w-4 h-4" /> Listen
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Try Our Games — No Sign-up Required */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">🎮 Try Our Games — Free, No Sign-up</h2>
-          <p className="text-center text-gray-500 mb-10">Play instantly. Challenge your friends. Sign up later to save your scores.</p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link href="/games/word-puzzle" className="group bg-gradient-to-br from-violet-50 to-indigo-50 border border-violet-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
-              <div className="w-14 h-14 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
-                <LetterText className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="font-bold text-gray-800 mb-1">Unjumble</h3>
-              <p className="text-xs text-gray-500">Find the 7-letter word from jumbled letters</p>
-            </Link>
-            <Link href="/games/hangman" className="group bg-gradient-to-br from-rose-50 to-red-50 border border-rose-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
-              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
-                <Skull className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="font-bold text-gray-800 mb-1">Hangman</h3>
-              <p className="text-xs text-gray-500">Guess the word letter by letter</p>
-            </Link>
-            <Link href="/games/sentence-scramble" className="group bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
-              <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
-                <Shuffle className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="font-bold text-gray-800 mb-1">Scramble</h3>
-              <p className="text-xs text-gray-500">Reorder words to build sentences</p>
-            </Link>
-            <Link href="/games/word-match" className="group bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-6 hover:shadow-lg transition-all text-center">
-              <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm">
-                <Layers className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="font-bold text-gray-800 mb-1">Pairs</h3>
-              <p className="text-xs text-gray-500">Match words with their definitions</p>
-            </Link>
           </div>
         </div>
       </section>
