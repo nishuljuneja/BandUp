@@ -212,12 +212,19 @@ export default function DashboardPage() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {skills.map((skill) => {
           const score = profile.skillScores[skill.key as keyof typeof profile.skillScores] || 0;
+          const proLocked = !isPro(profile) && ['reading', 'listening', 'writing', 'speaking'].includes(skill.key);
           return (
             <Link
               key={skill.key}
               href={skill.href}
-              className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
+              className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative"
             >
+              {proLocked && (
+                <span className="absolute top-3 right-3 inline-flex items-center gap-0.5 text-[10px] font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-1.5 py-0.5 rounded-full">
+                  <Crown className="w-2.5 h-2.5" />
+                  PRO
+                </span>
+              )}
               <div className="flex items-center gap-3 mb-3">
                 <div className={`w-10 h-10 ${skill.color} rounded-xl flex items-center justify-center`}>
                   <skill.icon className="w-5 h-5 text-white" />
