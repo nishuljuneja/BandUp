@@ -41,7 +41,7 @@ export default function ProGate({ feature, compact, className }: ProGateProps) {
         {feature ? `${feature} — ` : ''}Pro Feature
       </h3>
       <p className="text-gray-500 mb-6 max-w-md mx-auto">
-        Upgrade to SpeakEasy Pro to unlock {feature ? feature.toLowerCase() : 'this feature'} and all content from B1 to C2.
+        Upgrade to SpeakEasy Pro to unlock {feature ? feature.toLowerCase() : 'this feature'} and all content at B2 and C1 levels.
       </p>
       <Link
         href="/pricing"

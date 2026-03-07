@@ -14,7 +14,7 @@ export function isPro(profile: UserProfile | null): boolean {
 /**
  * CEFR levels available for free tier
  */
-export const FREE_LEVELS = new Set(['A1', 'A2']);
+export const FREE_LEVELS = new Set(['A1', 'A2', 'B1']);
 
 /**
  * Check if a level is accessible for the user
