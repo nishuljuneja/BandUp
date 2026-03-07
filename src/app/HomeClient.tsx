@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { LANGUAGES } from '@/lib/i18n';
-import { BookOpen, Brain, Headphones, MessageSquare, Zap, Globe, Gamepad2, LetterText, Skull, Shuffle, Layers, Volume2 } from 'lucide-react';
+import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Globe, Gamepad2, LetterText, Skull, Shuffle, Layers, Volume2 } from 'lucide-react';
 import definitions from '@/content/word-definitions.json';
 
 // Deterministic Word of the Day — 6+ letters, changes daily
@@ -24,33 +24,33 @@ export default function Home() {
   const features = [
     {
       icon: BookOpen,
-      title: 'Oxford 5000 Vocabulary',
-      description: 'Learn the most important 5000 English words with spaced repetition, organized by your proficiency level.',
+      title: 'Reading',
+      description: 'Graded passages from beginner to advanced. Build comprehension with real-world articles and stories.',
     },
     {
       icon: Brain,
-      title: 'Grammar Made Simple',
-      description: 'Clear explanations with practical examples. We address the specific mistakes English learners commonly make.',,
+      title: 'Grammar',
+      description: 'Master tenses, articles, prepositions and sentence structure with clear rules and instant practice.',
     },
     {
-      icon: Headphones,
-      title: 'Reading & Listening',
-      description: 'Graded passages set in real-world contexts — from everyday situations to professional scenarios.',,
+      icon: PenTool,
+      title: 'Writing',
+      description: 'Structured prompts for essays, emails and reports. Improve clarity, coherence and formal tone.',
     },
     {
       icon: MessageSquare,
-      title: 'AI Conversation Practice',
-      description: 'Practice speaking English with an AI partner tuned to your level. No judgment, unlimited patience.',
+      title: 'Speaking',
+      description: 'Practice conversations with an AI partner tuned to your level. No judgment, unlimited patience.',
+    },
+    {
+      icon: Headphones,
+      title: 'Listening',
+      description: 'Audio exercises at every CEFR level. Train your ear with dialogues, lectures and everyday speech.',
     },
     {
       icon: Globe,
-      title: '10 Languages Supported',
-      description: 'Instructions in Hindi, Tamil, Telugu, Bengali, Marathi, Kannada, Malayalam, Gujarati, Punjabi, and Odia.',
-    },
-    {
-      icon: Zap,
-      title: 'Adaptive Learning',
-      description: 'Our system tracks your strengths and weaknesses across skills, adjusting difficulty automatically.',
+      title: 'Vocabulary',
+      description: 'Oxford 5000 words with spaced repetition. Learn meanings, usage and pronunciation — level by level.',
     },
   ];
 
