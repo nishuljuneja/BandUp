@@ -52,7 +52,12 @@ export default function Navbar() {
 
           {/* Nav Dropdown — visible on all screens */}
           {user && (() => {
-            const currentItem = navItems.find((item) => pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href))) || navItems[0];
+            const learningPaths = ['/vocabulary', '/grammar', '/reading', '/listening', '/writing', '/speaking', '/daily-practice'];
+            const currentItem = navItems.find((item) =>
+              pathname === item.href ||
+              (item.href !== '/dashboard' && pathname.startsWith(item.href)) ||
+              (item.href === '/learning' && learningPaths.some((p) => pathname.startsWith(p)))
+            ) || navItems[0];
             const CurrentIcon = currentItem.icon;
             return (
               <div className="flex items-center" ref={navDropdownRef}>
