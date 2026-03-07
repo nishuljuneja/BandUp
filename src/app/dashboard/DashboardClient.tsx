@@ -386,48 +386,33 @@ function ReferralCard({
   };
 
   return (
-    <div className="mb-8 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-6">
-      <div className="flex items-start gap-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
-          <Gift className="w-6 h-6 text-white" />
+    <div className="mb-8 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4">
+      <div className="flex items-center gap-3">
+        <div className="w-9 h-9 bg-gradient-to-br from-amber-400 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+          <Gift className="w-4.5 h-4.5 text-white" />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-gray-800 text-lg mb-1">Refer Friends, Get Pro Free!</h3>
-          <p className="text-sm text-gray-600 mb-4">
-            Invite 3 friends to sign up and get <span className="font-semibold text-amber-700">1 week of Pro</span> for free. Stackable — every 3 referrals earns another week!
-          </p>
-
-          {/* Progress */}
-          <div className="mb-4">
-            <div className="flex justify-between text-sm mb-1.5">
-              <span className="text-gray-600">
-                <span className="font-semibold text-gray-800">{referralCount}</span> friend{referralCount !== 1 ? 's' : ''} joined
-              </span>
-              <span className="text-amber-700 font-medium">{progressToNext}/3 to next reward</span>
-            </div>
-            <div className="w-full h-3 bg-amber-100 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full transition-all duration-500"
-                style={{ width: `${(progressToNext / 3) * 100}%` }}
-              />
-            </div>
+          <div className="flex items-center justify-between gap-2 mb-1">
+            <h3 className="font-bold text-gray-800 text-sm">Refer 3 Friends → 1 Week Pro Free</h3>
             {referralRewardsClaimed > 0 && (
-              <p className="text-xs text-amber-600 mt-1.5">
-                🎉 {referralRewardsClaimed} week{referralRewardsClaimed !== 1 ? 's' : ''} of Pro earned so far!
-              </p>
+              <span className="text-xs text-amber-600 font-medium whitespace-nowrap">🎉 {referralRewardsClaimed}w earned</span>
             )}
           </div>
-
-          {/* Share Link */}
-          <div className="flex items-center gap-2">
-            <div className="flex-1 bg-white border border-amber-200 rounded-xl px-3 py-2.5 text-sm text-gray-600 truncate font-mono">
-              {shareUrl}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 flex-1 min-w-0">
+              <div className="w-20 h-2 bg-amber-100 rounded-full overflow-hidden flex-shrink-0">
+                <div
+                  className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full transition-all duration-500"
+                  style={{ width: `${(progressToNext / 3) * 100}%` }}
+                />
+              </div>
+              <span className="text-xs text-gray-500 whitespace-nowrap">{progressToNext}/3</span>
             </div>
             <button
               onClick={handleCopy}
-              className="flex-shrink-0 px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-medium text-sm transition flex items-center gap-1.5"
+              className="flex-shrink-0 px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-white rounded-lg font-medium text-xs transition flex items-center gap-1"
             >
-              {copied ? <><Check className="w-4 h-4" /> Copied!</> : <><Copy className="w-4 h-4" /> Copy</>}
+              {copied ? <><Check className="w-3.5 h-3.5" /> Copied!</> : <><Copy className="w-3.5 h-3.5" /> Copy Link</>}
             </button>
           </div>
         </div>
