@@ -44,9 +44,12 @@ export interface UserProfile {
   emailReminders?: boolean; // opt-in daily streak email
   // Subscription
   subscriptionTier: 'free' | 'pro';
+  subscriptionStatus?: 'active' | 'past_due' | 'canceled' | 'unpaid' | 'paused';
   subscriptionExpiry?: string; // YYYY-MM-DD
   stripeCustomerId?: string;
   stripeSubscriptionId?: string;
+  paymentFailedAt?: string; // ISO date of last failed payment
+  disputeOpen?: boolean; // true if a chargeback dispute is open
 }
 
 export interface VocabularyWord {
