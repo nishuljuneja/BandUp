@@ -188,7 +188,7 @@ export default function GamesPage() {
               </span>
             </div>
             <h2 className="text-lg font-bold mb-1">Unjumble</h2>
-            <p className="text-white/80 text-xs leading-snug">
+            <p className="text-white/80 text-xs leading-snug min-h-[2rem]">
               Make a 7 letter word
             </p>
           </div>
@@ -225,7 +225,7 @@ export default function GamesPage() {
               </span>
             </div>
             <h2 className="text-lg font-bold mb-1">Hangman</h2>
-            <p className="text-white/80 text-xs leading-snug">
+            <p className="text-white/80 text-xs leading-snug min-h-[2rem]">
               Guess the word before the hangman is complete
             </p>
           </div>
@@ -262,7 +262,7 @@ export default function GamesPage() {
               </span>
             </div>
             <h2 className="text-lg font-bold mb-1">Scramble</h2>
-            <p className="text-white/80 text-xs leading-snug">
+            <p className="text-white/80 text-xs leading-snug min-h-[2rem]">
               Reorder words to build the correct sentence
             </p>
           </div>
@@ -299,7 +299,7 @@ export default function GamesPage() {
               </span>
             </div>
             <h2 className="text-lg font-bold mb-1">Pairs</h2>
-            <p className="text-white/80 text-xs leading-snug">
+            <p className="text-white/80 text-xs leading-snug min-h-[2rem]">
               Match words with their definitions
             </p>
           </div>
