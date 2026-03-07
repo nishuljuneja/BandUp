@@ -437,7 +437,7 @@ export default function WordMatchPage() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500 font-bold">4.</span>
-              Use &quot;Peek&quot; to briefly reveal all cards (costs +3 moves penalty).
+              Use &quot;Hint&quot; to briefly reveal all cards (costs +3 moves penalty).
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500 font-bold">5.</span>
@@ -521,7 +521,7 @@ export default function WordMatchPage() {
           <h1 className="text-3xl font-bold text-gray-800 mb-2">All Matched!</h1>
           <p className="text-gray-500">
             You matched all {totalPairs} pairs
-            {peeksUsed > 0 && ` (${peeksUsed} peek${peeksUsed > 1 ? 's' : ''} used)`}
+            {peeksUsed > 0 && ` (${peeksUsed} hint${peeksUsed > 1 ? 's' : ''} used)`}
           </p>
         </div>
 
@@ -545,7 +545,7 @@ export default function WordMatchPage() {
           <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center">
             <Eye className="w-6 h-6 text-amber-500 mx-auto mb-1" />
             <div className="text-2xl font-bold text-gray-800">{peeksUsed}</div>
-            <div className="text-xs text-gray-400">Peeks</div>
+            <div className="text-xs text-gray-400">Hints</div>
           </div>
         </div>
 
@@ -647,7 +647,7 @@ export default function WordMatchPage() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition disabled:opacity-40 disabled:cursor-not-allowed bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100"
         >
           <Eye className="w-4 h-4" />
-          Peek ({3 - peeksUsed} left)
+          Hint ({3 - peeksUsed} left)
         </button>
       </div>
 

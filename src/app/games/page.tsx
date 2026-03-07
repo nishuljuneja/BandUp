@@ -311,7 +311,7 @@ export default function GamesPage() {
               </div>
               <div className="flex items-center gap-1.5 text-xs text-gray-600 whitespace-nowrap">
                 <Lightbulb className="w-3.5 h-3.5 text-amber-500" />
-                Peeks
+                Hints
               </div>
             </div>
             <div className="flex items-center justify-between">
