@@ -10,7 +10,7 @@ import {
   BookOpen, Brain, BookOpenCheck, Headphones, PenTool, MessageSquare,
   CheckCircle2, Circle, ArrowRight, Sparkles, TrendingUp, Lock,
 } from 'lucide-react';
-import { IELTS_BAND_LABELS } from '@/lib/firestore';
+import { IELTS_BAND_LABELS, IELTS_BAND_NUMBER } from '@/lib/firestore';
 import type { CEFRLevel, SkillType, UserProfile } from '@/lib/firestore';
 
 // ─── Level descriptors ───────────────────────────────────────────────────
@@ -221,7 +221,7 @@ export default function StudyPlan() {
                         : 'bg-gray-200 text-gray-500'
                     }`}
                   >
-                    {isDone ? <CheckCircle2 className="w-4 h-4" /> : isLocked ? <Lock className="w-3 h-3" /> : IELTS_BAND_LABELS[level]}
+                    {isDone ? <CheckCircle2 className="w-4 h-4" /> : isLocked ? <Lock className="w-3 h-3" /> : IELTS_BAND_NUMBER[level]}
                   </div>
                   <span className={`text-[10px] mt-1 font-medium ${isActive ? 'text-indigo-700' : isDone ? 'text-green-700' : 'text-gray-400'}`}>
                     {IELTS_BAND_LABELS[level]}
