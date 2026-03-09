@@ -12,9 +12,9 @@ export function isPro(profile: UserProfile | null): boolean {
 }
 
 /**
- * IELTS bands available for free tier (Band 3–5)
+ * IELTS bands available for free tier (Band 3–6)
  */
-export const FREE_LEVELS = new Set(['A1', 'A2', 'B1']);
+export const FREE_LEVELS = new Set(['A1', 'A2', 'B1', 'B2']);
 
 /**
  * Check if a level is accessible for the user

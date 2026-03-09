@@ -105,7 +105,7 @@ export default function RootLayout({
           "@type": "Offer",
           price: "0",
           priceCurrency: "USD",
-          description: "Free tier with Band 3–5 content",
+          description: "Free tier with Band 3–6 content",
         },
         description:
           "IELTS prep app with band-level lessons for Reading, Writing, Listening and Speaking. Diagnostic test, vocabulary, grammar and practice tests.",

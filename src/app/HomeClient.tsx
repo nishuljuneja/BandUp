@@ -215,7 +215,7 @@ export default function Home() {
             </div>
             <div className="bg-purple-50 rounded-xl p-5 border border-purple-100">
               <h3 className="font-semibold text-purple-800 mb-2">💰 Affordable</h3>
-              <p className="text-sm text-purple-700">Free Band 3–5 content forever. Unlock everything with Pro for just $1.99/month — cheaper than a coffee.</p>
+              <p className="text-sm text-purple-700">Free Band 3–6 content forever. Unlock everything with Pro for just $1.99/month — cheaper than a coffee.</p>
             </div>
           </div>
         </div>

@@ -127,12 +127,12 @@ export default function PricingPage() {
           </div>
 
           <ul className="space-y-3 mb-8">
-            <FeatureRow included icon={BookOpen}>Band 3–5 Vocabulary</FeatureRow>
-            <FeatureRow included icon={Brain}>Band 3–5 Grammar</FeatureRow>
+            <FeatureRow included icon={BookOpen}>Band 3–6 Vocabulary</FeatureRow>
+            <FeatureRow included icon={Brain}>Band 3–6 Grammar</FeatureRow>
             <FeatureRow included icon={Gamepad2}>4 Daily Games</FeatureRow>
             <FeatureRow included icon={Target}>1 Daily Practice / day</FeatureRow>
             <FeatureRow included icon={BarChart3}>Progress & Streaks</FeatureRow>
-            <FeatureRow icon={BookOpenCheck}>Band 6 & 7 Content</FeatureRow>
+            <FeatureRow icon={BookOpenCheck}>Band 7 & 8-9 Content</FeatureRow>
             <FeatureRow icon={Headphones}>IELTS Listening Practice</FeatureRow>
             <FeatureRow icon={BookOpenCheck}>IELTS Reading Passages</FeatureRow>
             <FeatureRow icon={Gamepad2}>Unlimited Practice Mode</FeatureRow>
@@ -169,12 +169,12 @@ export default function PricingPage() {
           </div>
 
           <ul className="space-y-3 mb-8">
-            <FeatureRow included icon={BookOpen}>Band 3–5 Vocabulary</FeatureRow>
-            <FeatureRow included icon={Brain}>Band 3–5 Grammar</FeatureRow>
+            <FeatureRow included icon={BookOpen}>Band 3–6 Vocabulary</FeatureRow>
+            <FeatureRow included icon={Brain}>Band 3–6 Grammar</FeatureRow>
             <FeatureRow included icon={Gamepad2}>4 Daily Games</FeatureRow>
             <FeatureRow included icon={Target}>1 Daily Practice / day</FeatureRow>
             <FeatureRow included icon={BarChart3}>Progress & Streaks</FeatureRow>
-            <FeatureRow included icon={BookOpenCheck}>Band 6 & 7 Content</FeatureRow>
+            <FeatureRow included icon={BookOpenCheck}>Band 7 & 8-9 Content</FeatureRow>
             <FeatureRow included icon={Headphones}>IELTS Listening Practice</FeatureRow>
             <FeatureRow included icon={BookOpenCheck}>IELTS Reading Passages</FeatureRow>
             <FeatureRow included icon={Gamepad2}>Unlimited Practice Mode</FeatureRow>
@@ -222,7 +222,7 @@ export default function PricingPage() {
             Yes! You can cancel your Pro subscription at any time. You&apos;ll keep Pro access until the end of your billing period.
           </FaqItem>
           <FaqItem q="Is there a free trial?">
-            The Free tier itself is your trial — use all Band 3, 4 & 5 content and daily games at no cost, forever. Upgrade when you&apos;re ready for higher bands.
+            The Free tier itself is your trial — use all Band 3, 4, 5 & 6 content and daily games at no cost, forever. Upgrade when you&apos;re ready for higher bands.
           </FaqItem>
           <FaqItem q="What payment methods do you accept?">
             We accept all major credit/debit cards through our secure payment partner, Stripe.

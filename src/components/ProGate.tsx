@@ -41,7 +41,7 @@ export default function ProGate({ feature, compact, className }: ProGateProps) {
         {feature ? `${feature} — ` : ''}Pro Feature
       </h3>
       <p className="text-gray-500 mb-6 max-w-md mx-auto">
-        Upgrade to BandUp Pro to unlock {feature ? feature.toLowerCase() : 'this feature'} and all content at Band 6 and Band 7 levels.
+        Upgrade to BandUp Pro to unlock {feature ? feature.toLowerCase() : 'this feature'} and all content at Band 7 and Band 8-9 levels.
       </p>
       <Link
         href="/pricing"
