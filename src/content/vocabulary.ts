@@ -370,6 +370,16 @@ for (const sw of sampleVocabulary) {
 
 // Utility functions for vocabulary management
 export function getVocabularyByLevel(level: string): VocabularyWord[] {
+  if (level === 'C2') {
+    // Band 8-9 (C2) includes its own words plus a selection of harder B2 & C1 words
+    const c2Words = allVocabulary.filter((w) => w.level === 'C2');
+    const b2Words = allVocabulary.filter((w) => w.level === 'B2');
+    const c1Words = allVocabulary.filter((w) => w.level === 'C1');
+    // Take the last (harder) 412 B2 words and last 427 C1 words
+    const b2Selection = b2Words.slice(-412);
+    const c1Selection = c1Words.slice(-427);
+    return [...c2Words, ...b2Selection, ...c1Selection];
+  }
   return allVocabulary.filter((w) => w.level === level);
 }
 

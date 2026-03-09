@@ -179,7 +179,7 @@ export default function VocabularyPage() {
   const [drillDone, setDrillDone] = useState(false);
   const [drillKey, setDrillKey] = useState(0); // forces component remount between questions
 
-  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
+  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
   const browseWords = getVocabularyByLevel(selectedLevel).filter((w) =>
     searchQuery
@@ -448,7 +448,7 @@ export default function VocabularyPage() {
           <div>
             <h1 className="text-2xl font-bold text-gray-800">{t('nav.vocabulary', uiLanguage)}</h1>
             <p className="text-gray-500 text-sm">
-              {allVocabulary.length} words from Oxford 3000 + 5000
+              Master vocabulary across all IELTS bands
             </p>
           </div>
         </div>
