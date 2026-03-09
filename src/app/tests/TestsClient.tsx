@@ -12,7 +12,7 @@ import {
 import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
 
-const LEVEL_ORDER: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
+const LEVEL_ORDER: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const STORAGE_KEY = 'bandup-practice-tests';
 
 const LEVEL_COLORS: Record<string, { bg: string; text: string; border: string; gradient: string }> = {

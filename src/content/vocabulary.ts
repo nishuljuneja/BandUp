@@ -211,6 +211,140 @@ export const sampleVocabulary: VocabularyWord[] = [
     },
     pronunciation: '/bjʊˈrɒk.rə.si/', tags: ['government', 'society', 'work'], oxfordList: 'B',
   },
+
+  // ==================== C2 - Expert / Band 8-9 Words ====================
+  {
+    id: 'v-c2-001', word: 'ubiquitous', partOfSpeech: 'adjective', level: 'C2',
+    meaning: {
+      en: 'present, appearing, or found everywhere', hi: 'सर्वव्यापी',
+      ta: 'எங்கும் நிறைந்த', te: 'సర్వవ్యాపకమైన', bn: 'সর্বব্যাপী', mr: 'सर्वव्यापी',
+      kn: 'ಸರ್ವವ್ಯಾಪಿ', ml: 'സർവ്വവ്യാപി', gu: 'સર્વવ્યાપી', pa: 'ਸਰਵਵਿਆਪਕ', od: 'ସର୍ବବ୍ୟାପୀ',
+    },
+    example: 'Smartphones have become ubiquitous in modern society.',
+    exampleTranslation: { en: '', hi: 'स्मार्टफ़ोन आधुनिक समाज में सर्वव्यापी हो गए हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/juːˈbɪk.wɪ.təs/', tags: ['technology', 'society'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-002', word: 'paradigm', partOfSpeech: 'noun', level: 'C2',
+    meaning: {
+      en: 'a typical example or pattern of something; a model', hi: 'प्रतिमान',
+      ta: 'முன்மாதிரி', te: 'నమూనా', bn: 'দৃষ্টান্ত', mr: 'प्रतिमान',
+      kn: 'ಮಾದರಿ', ml: 'മാതൃക', gu: 'દાખલો', pa: 'ਨਮੂਨਾ', od: 'ପ୍ରତିମାନ',
+    },
+    example: 'The discovery represented a paradigm shift in scientific thinking.',
+    exampleTranslation: { en: '', hi: 'इस खोज ने वैज्ञानिक सोच में एक प्रतिमान बदलाव का प्रतिनिधित्व किया।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/ˈpær.ə.daɪm/', tags: ['academic', 'science'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-003', word: 'exacerbate', partOfSpeech: 'verb', level: 'C2',
+    meaning: {
+      en: 'to make a problem, bad situation, or negative feeling worse', hi: 'बिगाड़ना/बढ़ाना',
+      ta: 'மோசமாக்கு', te: 'తీవ్రతరం చేయు', bn: 'আরও খারাপ করা', mr: 'बिघडवणे',
+      kn: 'ಉಲ್ಬಣಗೊಳಿಸು', ml: 'വഷളാക്കുക', gu: 'વધુ ખરાબ કરવું', pa: 'ਵਿਗਾੜਨਾ', od: 'ଖରାପ କରିବା',
+    },
+    example: 'Climate change is expected to exacerbate food insecurity worldwide.',
+    exampleTranslation: { en: '', hi: 'जलवायु परिवर्तन से दुनिया भर में खाद्य असुरक्षा बढ़ने की आशंका है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/ɪɡˈzæs.ər.beɪt/', tags: ['academic', 'environment'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-004', word: 'juxtapose', partOfSpeech: 'verb', level: 'C2',
+    meaning: {
+      en: 'to place close together for contrasting effect', hi: 'एक साथ रखना (तुलना के लिए)',
+      ta: 'ஒருங்கிணைத்து வை', te: 'పక్కపక్కనే ఉంచు', bn: 'পাশাপাশি রাখা', mr: 'शेजारी ठेवणे',
+      kn: 'ಜೊತೆಜೊತೆಗೆ ಇಡು', ml: 'അടുത്തടുത്ത് വയ്ക്കുക', gu: 'સામસામે મૂકવું', pa: 'ਨਾਲ-ਨਾਲ ਰੱਖਣਾ', od: 'ପାଖାପାଖି ରଖିବା',
+    },
+    example: 'The artist juxtaposed images of wealth and poverty in the exhibition.',
+    exampleTranslation: { en: '', hi: 'कलाकार ने प्रदर्शनी में अमीरी और गरीबी की तस्वीरें एक साथ रखीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/ˌdʒʌk.stə.ˈpəʊz/', tags: ['academic', 'art'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-005', word: 'rhetoric', partOfSpeech: 'noun', level: 'C2',
+    meaning: {
+      en: 'the art of effective or persuasive speaking or writing', hi: 'वाक्पटुता/अलंकारशास्त्र',
+      ta: 'சொல்லாற்றல்', te: 'వాక్చాతుర్యం', bn: 'বাগ্মিতা', mr: 'वक्तृत्व',
+      kn: 'ವಾಕ್ಚಾತುರ್ಯ', ml: 'വാഗ്മിത', gu: 'વાકચાતુર્ય', pa: 'ਬੋਲੀ ਦੀ ਕਲਾ', od: 'ବାକପଟୁତା',
+    },
+    example: 'Political rhetoric often obscures the complexity of real issues.',
+    exampleTranslation: { en: '', hi: 'राजनीतिक भाषणबाज़ी अक्सर असली मुद्दों की जटिलता को छिपा देती है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/ˈret.ər.ɪk/', tags: ['politics', 'language'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-006', word: 'conundrum', partOfSpeech: 'noun', level: 'C2',
+    meaning: {
+      en: 'a confusing and difficult problem or question', hi: 'पहेली/दुविधा',
+      ta: 'புதிர்', te: 'సమస్య', bn: 'ধাঁধা', mr: 'कूट प्रश्न',
+      kn: 'ಒಗಟು', ml: 'പ്രഹേളിക', gu: 'કોયડો', pa: 'ਬੁਝਾਰਤ', od: 'ପ୍ରହେଳିକା',
+    },
+    example: 'The ethical conundrum of AI decision-making remains unresolved.',
+    exampleTranslation: { en: '', hi: 'एआई निर्णय-प्रक्रिया की नैतिक दुविधा अभी भी अनसुलझी है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/kəˈnʌn.drəm/', tags: ['academic', 'philosophy'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-007', word: 'ameliorate', partOfSpeech: 'verb', level: 'C2',
+    meaning: {
+      en: 'to make something bad or unsatisfactory better', hi: 'सुधारना',
+      ta: 'மேம்படுத்து', te: 'మెరుగుపరచు', bn: 'উন্নত করা', mr: 'सुधारणा करणे',
+      kn: 'ಸುಧಾರಿಸು', ml: 'മെച്ചപ്പെടുത്തുക', gu: 'સુધારવું', pa: 'ਸੁਧਾਰਨਾ', od: 'ଉନ୍ନତ କରିବା',
+    },
+    example: 'Government programmes aim to ameliorate living conditions in rural areas.',
+    exampleTranslation: { en: '', hi: 'सरकारी कार्यक्रमों का उद्देश्य ग्रामीण क्षेत्रों में जीवन स्थितियों में सुधार करना है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/əˈmiː.li.ə.reɪt/', tags: ['academic', 'society'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-008', word: 'dichotomy', partOfSpeech: 'noun', level: 'C2',
+    meaning: {
+      en: 'a division or contrast between two things', hi: 'द्विभाजन',
+      ta: 'இரு கூறாகப் பிரிவு', te: 'ద్వంద్వం', bn: 'দ্বিবিভাজন', mr: 'द्विभाजन',
+      kn: 'ದ್ವಿಭಜನೆ', ml: 'ദ്വന്ദ്വം', gu: 'દ્વિભાજન', pa: 'ਦੁਫੇੜ', od: 'ଦ୍ବିଭାଜନ',
+    },
+    example: 'There is a false dichotomy between economic growth and environmental protection.',
+    exampleTranslation: { en: '', hi: 'आर्थिक विकास और पर्यावरण संरक्षण के बीच एक झूठा द्विभाजन है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/daɪˈkɒt.ə.mi/', tags: ['academic', 'philosophy'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-009', word: 'promulgate', partOfSpeech: 'verb', level: 'C2',
+    meaning: {
+      en: 'to make widely known; to put a law or decree into effect', hi: 'प्रख्यापित करना',
+      ta: 'பிரகடனம் செய்', te: 'ప్రకటించు', bn: 'জারি করা', mr: 'जाहीर करणे',
+      kn: 'ಪ್ರಕಟಿಸು', ml: 'പ്രഖ്യാപിക്കുക', gu: 'જાહેર કરવું', pa: 'ਜਾਰੀ ਕਰਨਾ', od: 'ଜାରି କରିବା',
+    },
+    example: 'The government promulgated new regulations on data privacy.',
+    exampleTranslation: { en: '', hi: 'सरकार ने डेटा गोपनीयता पर नए नियम प्रख्यापित किए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/ˈprɒm.əl.ɡeɪt/', tags: ['law', 'government'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-010', word: 'ephemeral', partOfSpeech: 'adjective', level: 'C2',
+    meaning: {
+      en: 'lasting for a very short time', hi: 'क्षणभंगुर',
+      ta: 'நிலையற்ற', te: 'అశాశ్వతమైన', bn: 'ক্ষণস্থায়ী', mr: 'क्षणभंगुर',
+      kn: 'ಕ್ಷಣಿಕ', ml: 'ക്ഷണികമായ', gu: 'ક્ષણભંગુર', pa: 'ਛਿਣ-ਭੰਗੁਰ', od: 'କ୍ଷଣସ୍ଥାୟୀ',
+    },
+    example: 'Social media fame is often ephemeral, lasting only days or weeks.',
+    exampleTranslation: { en: '', hi: 'सोशल मीडिया की प्रसिद्धि अक्सर क्षणभंगुर होती है, केवल दिनों या हफ्तों तक रहती है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/ɪˈfem.ər.əl/', tags: ['academic', 'time'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-011', word: 'cognizant', partOfSpeech: 'adjective', level: 'C2',
+    meaning: {
+      en: 'having knowledge or awareness', hi: 'जागरूक/संज्ञान रखने वाला',
+      ta: 'அறிந்திருக்கும்', te: 'అవగాహన ఉన్న', bn: 'সচেতন', mr: 'जाणकार',
+      kn: 'ಅರಿವಿರುವ', ml: 'ബോധമുള്ള', gu: 'જાણકાર', pa: 'ਜਾਣੂ', od: 'ସଚେତନ',
+    },
+    example: 'Leaders must be cognizant of the social impact of their policies.',
+    exampleTranslation: { en: '', hi: 'नेताओं को अपनी नीतियों के सामाजिक प्रभाव के प्रति जागरूक रहना चाहिए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/ˈkɒɡ.nɪ.zənt/', tags: ['academic', 'awareness'], oxfordList: 'B',
+  },
+  {
+    id: 'v-c2-012', word: 'preclude', partOfSpeech: 'verb', level: 'C2',
+    meaning: {
+      en: 'to prevent from happening; make impossible', hi: 'रोकना/बाधा डालना',
+      ta: 'தடுக்கு', te: 'అడ్డుకొను', bn: 'প্রতিরোধ করা', mr: 'प्रतिबंध करणे',
+      kn: 'ತಡೆಗಟ್ಟು', ml: 'തടയുക', gu: 'અટકાવવું', pa: 'ਰੋਕਣਾ', od: 'ପ୍ରତିବନ୍ଧ କରିବା',
+    },
+    example: 'Budget constraints should not preclude investment in education.',
+    exampleTranslation: { en: '', hi: 'बजट की कमी को शिक्षा में निवेश से नहीं रोकना चाहिए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '' },
+    pronunciation: '/prɪˈkluːd/', tags: ['academic', 'formal'], oxfordList: 'B',
+  },
 ];
 
 // ---------- Merged vocabulary: sample (detailed) + Oxford 3000 + Oxford 5000 ----------

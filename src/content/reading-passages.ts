@@ -2263,8 +2263,429 @@ The path forward likely requires a regulatory framework specifically designed fo
       },
     ],
   },
-];
 
+  // ==================== C2 ====================
+  {
+    id: 'c2-read-01',
+    level: 'C2',
+    title: 'The Paradox of Choice in the Age of Information',
+    content: `The proliferation of choice in contemporary consumer societies has engendered a paradox that confounds the assumptions of classical economic theory. Conventional wisdom holds that rational agents benefit from an expanded choice set: more options permit more precise satisfaction of individual preferences. Yet a burgeoning body of empirical research—most notably Barry Schwartz's seminal work "The Paradox of Choice"—suggests that an overabundance of alternatives can precipitate decision paralysis, post-decision regret, and diminished subjective well-being.
+
+The psychological mechanisms underpinning this phenomenon are multifaceted. When confronted with a surfeit of options, individuals engage in exhaustive comparative evaluation, a cognitively taxing process that depletes executive function. Moreover, the availability of numerous alternatives elevates the opportunity cost of any given selection: the foregone options loom larger in the imagination, fostering a nagging sense that a superior choice existed but was overlooked.
+
+This dynamic is further amplified in the digital ecosystem, where algorithms curate ostensibly personalised recommendations from an effectively infinite catalogue. Paradoxically, the very technologies designed to mitigate information overload may exacerbate it by continuously surfacing novel alternatives. The resultant "fear of missing out" has been linked to elevated anxiety and compulsive consumption patterns.
+
+Schwartz distinguishes between "maximisers"—individuals who obsessively seek the optimal outcome—and "satisficers," who select the first option meeting a predetermined threshold. Research consistently demonstrates that satisficers report higher life satisfaction, despite objectively less optimal choices. This finding challenges the foundational economic assumption that utility maximisation is synonymous with well-being.
+
+The implications extend well beyond consumer behaviour. In domains ranging from career planning to healthcare decision-making, excessive optionality can impede rather than facilitate effective action. Policymakers and interface designers are increasingly cognizant of the need to structure choice architectures that balance autonomy with manageable cognitive load—a discipline known as "libertarian paternalism" or "nudge theory."`,
+    wordCount: 280,
+    topic: 'Psychology & Economics',
+    indianContext: false,
+    vocabulary: ['proliferation', 'engendered', 'confounds', 'burgeoning', 'seminal', 'precipitate', 'surfeit', 'cognitively', 'exacerbate', 'impede'],
+    questions: [
+      {
+        id: 'c2-r1-q1', type: 'multiple-choice',
+        question: 'According to the passage, what fundamental assumption of classical economics is challenged by choice overload?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Scarcity drives value', 'More choice always benefits rational agents', 'Markets tend toward equilibrium', 'Supply creates its own demand'],
+        correctAnswer: 'More choice always benefits rational agents',
+        explanation: 'The passage states that the paradox "confounds the assumptions of classical economic theory" that "rational agents benefit from an expanded choice set."',
+      },
+      {
+        id: 'c2-r1-q2', type: 'multiple-choice',
+        question: 'What does the passage identify as "cognitively taxing" when facing too many options?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Memorising all available choices', 'Exhaustive comparative evaluation', 'Understanding product specifications', 'Filtering irrelevant advertisements'],
+        correctAnswer: 'Exhaustive comparative evaluation',
+        explanation: 'The passage states that "individuals engage in exhaustive comparative evaluation, a cognitively taxing process."',
+      },
+      {
+        id: 'c2-r1-q3', type: 'multiple-choice',
+        question: 'Why do "satisficers" report higher life satisfaction than "maximisers"?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['They earn more money', 'They accept the first adequate option rather than obsessing over the optimal one', 'They avoid making decisions altogether', 'They have access to better information'],
+        correctAnswer: 'They accept the first adequate option rather than obsessing over the optimal one',
+        explanation: 'Satisficers "select the first option meeting a predetermined threshold" rather than obsessively seeking the optimal outcome.',
+      },
+      {
+        id: 'c2-r1-q4', type: 'multiple-choice',
+        question: 'What is "libertarian paternalism" as referenced in the passage?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['A political philosophy opposing regulation', 'A discipline that structures choices to balance autonomy with cognitive manageability', 'An economic theory about free markets', 'A marketing strategy used by technology companies'],
+        correctAnswer: 'A discipline that structures choices to balance autonomy with cognitive manageability',
+        explanation: 'The passage defines it as structuring "choice architectures that balance autonomy with manageable cognitive load."',
+      },
+    ],
+  },
+  {
+    id: 'c2-read-02',
+    level: 'C2',
+    title: 'The Ethics of Genetic Engineering: CRISPR and Human Enhancement',
+    content: `The advent of CRISPR-Cas9 technology has precipitated an ethical reckoning of unprecedented scope. Unlike previous genetic engineering techniques, which were cumbersome, imprecise, and prohibitively expensive, CRISPR enables targeted genome editing with remarkable accuracy and at a fraction of the former cost. This democratisation of genetic modification raises profound questions about the boundaries of therapeutic intervention and the spectre of human enhancement.
+
+The distinction between therapy and enhancement lies at the crux of the debate. Few would contest the moral legitimacy of editing a gene responsible for Huntington's disease or sickle cell anaemia—conditions that cause severe suffering with no effective cure. The ethical calculus becomes considerably more fraught, however, when one contemplates germline modifications that would be heritable across generations: altering not merely an individual patient but the trajectory of the human gene pool.
+
+In 2018, Chinese biophysicist He Jiankui provoked international condemnation by announcing the birth of twins whose CCR5 gene had been edited to confer purported resistance to HIV. The scientific community's response was swift and unequivocal: the experiment was premature, inadequately supervised, and ethically unconscionable. Yet the episode exposed a regulatory lacuna—the absence of enforceable international governance frameworks for human germline editing.
+
+The enhancement question compounds these concerns. If genetic modification can increase cognitive capacity, physical endurance, or resistance to ageing, access will almost certainly be stratified along socioeconomic lines, potentially creating a genetic underclass. Philosophers invoke the concept of "genetic justice" to argue that enhancement technologies, if permitted, must be universally accessible—a position that sits uneasily with market-driven innovation.
+
+Proponents of a more permissive approach contend that genetic enhancement is merely the logical extension of existing practices—education, nutrition, and medicine—that already augment human capacities unevenly. They argue that proscribing enhancement technologies would constitute an arbitrary constraint on human flourishing and scientific progress.
+
+The challenge for bioethics in the coming decades will be to forge a consensus that neither forecloses beneficial applications nor permits the emergence of a genetically stratified society—a task requiring unprecedented interdisciplinary collaboration among scientists, ethicists, legislators, and the public.`,
+    wordCount: 320,
+    topic: 'Bioethics & Science',
+    indianContext: false,
+    vocabulary: ['precipitated', 'cumbersome', 'democratisation', 'spectre', 'fraught', 'condemnation', 'unconscionable', 'lacuna', 'stratified', 'proscribing'],
+    questions: [
+      {
+        id: 'c2-r2-q1', type: 'multiple-choice',
+        question: 'What makes CRISPR fundamentally different from previous genetic engineering techniques?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['It only works on plants', 'It is targeted, accurate, and much cheaper', 'It was invented by multiple countries simultaneously', 'It does not modify DNA'],
+        correctAnswer: 'It is targeted, accurate, and much cheaper',
+        explanation: 'The passage states CRISPR "enables targeted genome editing with remarkable accuracy and at a fraction of the former cost."',
+      },
+      {
+        id: 'c2-r2-q2', type: 'multiple-choice',
+        question: 'Why was He Jiankui\'s experiment widely condemned?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['It failed scientifically', 'It was premature, inadequately supervised, and ethically unconscionable', 'It was too expensive', 'It targeted a non-genetic disease'],
+        correctAnswer: 'It was premature, inadequately supervised, and ethically unconscionable',
+        explanation: 'The passage describes the response as labelling the experiment "premature, inadequately supervised, and ethically unconscionable."',
+      },
+      {
+        id: 'c2-r2-q3', type: 'multiple-choice',
+        question: 'What does "genetic justice" argue regarding enhancement technologies?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['They should be banned entirely', 'If permitted, they must be universally accessible', 'They should only be used for medical therapy', 'They should be regulated by scientists alone'],
+        correctAnswer: 'If permitted, they must be universally accessible',
+        explanation: 'The passage states the concept argues "enhancement technologies, if permitted, must be universally accessible."',
+      },
+      {
+        id: 'c2-r2-q4', type: 'multiple-choice',
+        question: 'How do proponents of genetic enhancement justify their position?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Enhancement is natural evolution', 'It is merely a logical extension of existing practices that already augment capacities unevenly', 'Genetic changes are always reversible', 'Market forces should determine access'],
+        correctAnswer: 'It is merely a logical extension of existing practices that already augment capacities unevenly',
+        explanation: 'Proponents "contend that genetic enhancement is merely the logical extension of existing practices—education, nutrition, and medicine—that already augment human capacities unevenly."',
+      },
+    ],
+  },
+  {
+    id: 'c2-read-03',
+    level: 'C2',
+    title: 'Algorithmic Governance and the Erosion of Democratic Accountability',
+    content: `The increasing deployment of algorithmic decision-making systems in public administration represents what scholars have termed a "quiet revolution" in governance. From predictive policing and welfare eligibility determination to judicial risk assessment and border control, algorithms now mediate decisions that were once the exclusive province of human officials exercising discretionary judgement.
+
+Advocates emphasise the potential for enhanced efficiency, consistency, and freedom from the cognitive biases that afflict human decision-makers. An algorithm, the argument runs, applies identical criteria to every case, unswayed by fatigue, prejudice, or mood. This ostensible objectivity is particularly appealing in contexts where human discretion has historically produced discriminatory outcomes—sentencing disparities along racial lines, for instance, or inconsistent application of welfare eligibility criteria.
+
+Yet the veneer of objectivity conceals a more complicated reality. Algorithms are trained on historical data that frequently encodes the very biases they purport to eliminate. A recidivism prediction model trained on arrest data, for example, will inevitably reflect the racially disproportionate patterns of policing that generated those arrests. The algorithm does not create bias de novo; rather, it operationalises and perpetuates existing structural inequities with a patina of scientific legitimacy.
+
+The accountability deficit represents perhaps the most insidious consequence of algorithmic governance. When a human official makes a prejudicial decision, mechanisms of administrative review, judicial appeal, and democratic oversight can, in principle, identify and correct the error. Algorithmic systems, by contrast, often operate as "black boxes" whose internal logic is opaque even to their operators—a characteristic compounded by intellectual property protections that shield source code from public scrutiny.
+
+Furthermore, the diffusion of responsibility across designers, deployers, and regulators creates what political theorists call "the problem of many hands": no single actor bears sufficient responsibility for systemic harms. The algorithmic turn in governance thus demands not merely technical solutions—algorithmic auditing, explainability requirements—but a fundamental reconceptualisation of accountability in an age where consequential decisions are increasingly delegated to machines.`,
+    wordCount: 300,
+    topic: 'Technology & Governance',
+    indianContext: false,
+    vocabulary: ['mediating', 'discretionary', 'ostensible', 'veneer', 'recidivism', 'disproportionate', 'perpetuates', 'patina', 'insidious', 'opaque'],
+    questions: [
+      {
+        id: 'c2-r3-q1', type: 'multiple-choice',
+        question: 'What does the passage mean by calling algorithmic governance a "quiet revolution"?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Algorithms are silent by nature', 'It has happened gradually without public awareness or debate', 'Governments have kept it secret deliberately', 'It has not had any real impact'],
+        correctAnswer: 'It has happened gradually without public awareness or debate',
+        explanation: 'The term "quiet revolution" implies a fundamental change occurring without the attention or public discourse it warrants.',
+      },
+      {
+        id: 'c2-r3-q2', type: 'multiple-choice',
+        question: 'According to the passage, how do algorithms perpetuate existing biases?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Programmers intentionally code in biases', 'They are trained on historical data that already encodes structural inequities', 'They generate random decisions', 'They are never updated after deployment'],
+        correctAnswer: 'They are trained on historical data that already encodes structural inequities',
+        explanation: 'The passage states: "Algorithms are trained on historical data that frequently encodes the very biases they purport to eliminate."',
+      },
+      {
+        id: 'c2-r3-q3', type: 'multiple-choice',
+        question: 'What is "the problem of many hands" in the context of algorithmic governance?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Too many people use algorithms', 'Responsibility is diffused so no single actor bears accountability for systemic harms', 'Manual processes are more efficient', 'Algorithms require too much human input'],
+        correctAnswer: 'Responsibility is diffused so no single actor bears accountability for systemic harms',
+        explanation: 'The passage defines it as a situation where "no single actor bears sufficient responsibility for systemic harms."',
+      },
+      {
+        id: 'c2-r3-q4', type: 'multiple-choice',
+        question: 'What does the author argue is needed beyond technical fixes for algorithmic accountability?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Banning all algorithms in government', 'A fundamental reconceptualisation of accountability itself', 'Training algorithms on larger datasets', 'Replacing algorithms with human officials'],
+        correctAnswer: 'A fundamental reconceptualisation of accountability itself',
+        explanation: 'The passage calls for "a fundamental reconceptualisation of accountability in an age where consequential decisions are increasingly delegated to machines."',
+      },
+    ],
+  },
+  {
+    id: 'c2-read-04',
+    level: 'C2',
+    title: 'The Neuroscience of Bilingualism: Cognitive Advantages and Controversies',
+    content: `For decades, researchers have debated whether bilingualism confers measurable cognitive advantages beyond the obvious communicative benefits. The so-called "bilingual advantage" hypothesis, popularised by Ellen Bialystok's influential research programme, posits that the habitual management of two language systems enhances executive function—the suite of cognitive processes responsible for attention control, working memory, and cognitive flexibility.
+
+The theoretical rationale is elegant. Bilingual speakers must constantly monitor and suppress the non-target language while producing or comprehending the target one—a process termed "inhibitory control." This continuous exercise of cognitive control, the argument goes, strengthens the neural circuitry underlying executive function, yielding benefits that generalise to non-linguistic tasks such as conflict resolution, task switching, and selective attention.
+
+Early studies appeared to corroborate this hypothesis convincingly. Bilingual children outperformed monolinguals on the Simon task, the Stroop test, and flanker paradigms—all measures of inhibitory control. Bialystok further demonstrated that lifelong bilingualism delayed the onset of dementia symptoms by an average of four to five years, a finding with profound implications for ageing populations worldwide.
+
+However, the bilingual advantage has faced increasingly robust challenges. Large-scale replication attempts have frequently failed to reproduce the original findings, and meta-analyses have revealed significant publication bias in the extant literature. Critics argue that many early studies employed small, non-representative samples and inadequately controlled for confounding variables such as socioeconomic status, immigration experience, and cultural differences in cognitive test familiarity.
+
+The emerging consensus suggests a more nuanced picture. Bilingual advantages may be real but domain-specific, modest in magnitude, and modulated by variables including age of acquisition, proficiency balance, frequency of language switching, and the typological distance between the two languages. Rather than a categorical advantage, bilingualism appears to produce subtle reconfiguration of cognitive networks—effects that may be more readily detected through neuroimaging than behavioural tasks.`,
+    wordCount: 290,
+    topic: 'Neuroscience & Linguistics',
+    indianContext: false,
+    vocabulary: ['confers', 'posits', 'inhibitory', 'corroborate', 'monolinguals', 'replication', 'confounding', 'extant', 'modulated', 'typological'],
+    questions: [
+      {
+        id: 'c2-r4-q1', type: 'multiple-choice',
+        question: 'What is the core mechanism proposed for the "bilingual advantage"?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Knowing more vocabulary', 'Constant suppression of the non-target language strengthens executive function', 'Greater cultural awareness', 'Enhanced long-term memory'],
+        correctAnswer: 'Constant suppression of the non-target language strengthens executive function',
+        explanation: 'The passage explains that "continuous exercise of cognitive control strengthens the neural circuitry underlying executive function."',
+      },
+      {
+        id: 'c2-r4-q2', type: 'multiple-choice',
+        question: 'Why have recent studies challenged the bilingual advantage hypothesis?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Bilingualism was proven harmful', 'Large-scale replications failed and meta-analyses revealed publication bias', 'New languages were discovered', 'The original researchers retracted their findings'],
+        correctAnswer: 'Large-scale replications failed and meta-analyses revealed publication bias',
+        explanation: 'The passage states "large-scale replication attempts have frequently failed to reproduce the original findings, and meta-analyses have revealed significant publication bias."',
+      },
+      {
+        id: 'c2-r4-q3', type: 'multiple-choice',
+        question: 'What confounding variables do critics say early studies failed to control for?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Weather and geography', 'Socioeconomic status, immigration experience, and cultural familiarity with tests', 'Number of languages spoken', 'Participants\' handedness'],
+        correctAnswer: 'Socioeconomic status, immigration experience, and cultural familiarity with tests',
+        explanation: 'The passage lists "socioeconomic status, immigration experience, and cultural differences in cognitive test familiarity."',
+      },
+      {
+        id: 'c2-r4-q4', type: 'multiple-choice',
+        question: 'What does the "emerging consensus" suggest about the bilingual advantage?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['It does not exist at all', 'It is domain-specific, modest, and modulated by multiple variables', 'It only applies to children', 'It is stronger than originally thought'],
+        correctAnswer: 'It is domain-specific, modest, and modulated by multiple variables',
+        explanation: 'The passage concludes that advantages "may be real but domain-specific, modest in magnitude, and modulated by variables."',
+      },
+    ],
+  },
+  {
+    id: 'c2-read-05',
+    level: 'C2',
+    title: 'The Philosophy of Consciousness: The Hard Problem',
+    content: `In 1995, philosopher David Chalmers drew a distinction that has since become foundational in the philosophy of mind: the difference between the "easy problems" and the "hard problem" of consciousness. The easy problems—explaining how the brain integrates information, discriminates environmental stimuli, or controls behaviour—are "easy" only in the sense that they are amenable to standard methods of cognitive science and neuroscience. They are empirically tractable, even if solutions remain distant.
+
+The hard problem, by contrast, concerns why and how physical processes in the brain give rise to subjective experience—what philosophers call "qualia." Why does the sensation of seeing red feel like anything at all? Why is there "something it is like" to experience pain, pleasure, or the aroma of coffee? This explanatory gap between objective neural processes and subjective phenomenal experience constitutes the hard problem.
+
+Physicalists maintain that consciousness is ultimately reducible to physical processes, and that the apparent explanatory gap reflects merely our current ignorance rather than a fundamental metaphysical divide. Eliminative materialists go further, suggesting that our folk-psychological concepts of consciousness are themselves confused and will eventually be superseded by a mature neuroscience.
+
+Dualists, following Chalmers, contend that consciousness involves non-physical properties that cannot, even in principle, be derived from physical description alone. This position does not necessarily posit an immaterial soul; rather, it suggests that phenomenal experience may require new fundamental laws—laws that bridge the physical and the experiential in the way that electromagnetic laws bridge electricity and magnetism.
+
+Integrated Information Theory (IIT), developed by Giulio Tononi, represents one ambitious attempt to formalise consciousness scientifically. IIT proposes that consciousness corresponds to a mathematical quantity called "phi" (Φ), which measures the degree of integrated information generated by a system. The theory makes the provocative prediction that any system with sufficiently high Φ—even an artificial one—would possess consciousness. Whether this proposition can be empirically tested remains one of the most contested questions in contemporary neuroscience and philosophy.`,
+    wordCount: 300,
+    topic: 'Philosophy & Neuroscience',
+    indianContext: false,
+    vocabulary: ['foundational', 'amenable', 'tractable', 'qualia', 'phenomenal', 'reducible', 'metaphysical', 'superseded', 'formalise', 'provocative'],
+    questions: [
+      {
+        id: 'c2-r5-q1', type: 'multiple-choice',
+        question: 'In Chalmers\' framework, why are the "easy problems" called "easy"?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['They have already been solved', 'They are amenable to standard scientific methods, even if difficult', 'They are simple to understand', 'They do not involve the brain'],
+        correctAnswer: 'They are amenable to standard scientific methods, even if difficult',
+        explanation: 'The passage says they are "easy only in the sense that they are amenable to standard methods of cognitive science."',
+      },
+      {
+        id: 'c2-r5-q2', type: 'multiple-choice',
+        question: 'What is the "hard problem" of consciousness?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['How the brain processes language', 'Why physical processes give rise to subjective experience', 'How memory is stored', 'Why humans sleep'],
+        correctAnswer: 'Why physical processes give rise to subjective experience',
+        explanation: 'The hard problem "concerns why and how physical processes in the brain give rise to subjective experience."',
+      },
+      {
+        id: 'c2-r5-q3', type: 'multiple-choice',
+        question: 'What do eliminative materialists believe about folk-psychological concepts of consciousness?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['They are perfectly accurate', 'They are confused and will be superseded by mature neuroscience', 'They prove dualism', 'They are the only valid framework'],
+        correctAnswer: 'They are confused and will be superseded by mature neuroscience',
+        explanation: 'Eliminative materialists suggest folk-psychological concepts "are themselves confused and will eventually be superseded by a mature neuroscience."',
+      },
+      {
+        id: 'c2-r5-q4', type: 'multiple-choice',
+        question: 'What provocative prediction does Integrated Information Theory make?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Only biological brains can be conscious', 'Any system with sufficiently high integrated information, even artificial, would be conscious', 'Consciousness is an illusion', 'Only humans have consciousness'],
+        correctAnswer: 'Any system with sufficiently high integrated information, even artificial, would be conscious',
+        explanation: 'IIT predicts "that any system with sufficiently high Φ—even an artificial one—would possess consciousness."',
+      },
+    ],
+  },
+  {
+    id: 'c2-read-06',
+    level: 'C2',
+    title: 'The Economics of Climate Change Mitigation',
+    content: `The economic argument for aggressive climate change mitigation rests on an intricate cost-benefit analysis complicated by deep uncertainty, intergenerational equity considerations, and the peculiar properties of atmospheric carbon as a global public good. The Stern Review of 2006 famously concluded that the costs of inaction would vastly exceed the costs of mitigation, estimating that unchecked climate change could reduce global GDP by 5-20% annually, whereas stabilisation could be achieved for approximately 1% of global GDP per year.
+
+Critics, most prominently William Nordhaus, contested Stern's conclusions not on empirical grounds but on the choice of discount rate—the parameter that determines how much weight present generations should assign to future welfare. Stern employed a near-zero pure rate of time preference (0.1%), reflecting the ethical position that future generations' well-being warrants nearly equal consideration. Nordhaus advocated a market-based discount rate (approximately 3-5%), producing far more modest estimates of optimal mitigation investment.
+
+This seemingly technical dispute about discount rates encapsulates a profound philosophical question: do we have an obligation to sacrifice present consumption for the benefit of future people who will, by most projections, be considerably wealthier than ourselves? The "descriptive" school argues that the discount rate should reflect observed market behaviour; the "prescriptive" school contends that intergenerational ethics should not be subordinated to market preferences, which are shaped by present-day institutional and cognitive constraints.
+
+The challenge is further compounded by the nonlinear dynamics of climate systems. Tipping points—such as the collapse of the West Antarctic ice sheet, the dieback of the Amazon rainforest, or the release of methane from permafrost—could trigger cascading, irreversible consequences that render conventional cost-benefit analysis inadequate. Under conditions of potential catastrophe, many economists now advocate a precautionary approach—treating mitigation expenditure not as an investment with calculable returns but as an insurance premium against civilisational risk.
+
+The transition to a low-carbon economy also entails significant distributional consequences. Carbon taxation, cap-and-trade systems, and subsidy removal disproportionately affect lower-income populations unless accompanied by compensatory mechanisms. The political feasibility of mitigation policies thus depends crucially on their perceived equity—a consideration that economic models have historically marginalised.`,
+    wordCount: 310,
+    topic: 'Economics & Environment',
+    indianContext: false,
+    vocabulary: ['mitigation', 'intergenerational', 'atmospheric', 'discount', 'subordinated', 'nonlinear', 'cascading', 'irreversible', 'precautionary', 'distributional'],
+    questions: [
+      {
+        id: 'c2-r6-q1', type: 'multiple-choice',
+        question: 'What was the central disagreement between Stern and Nordhaus?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Whether climate change is real', 'The choice of discount rate and how to weigh future vs. present welfare', 'The reliability of climate models', 'Whether renewable energy is viable'],
+        correctAnswer: 'The choice of discount rate and how to weigh future vs. present welfare',
+        explanation: 'The passage explains the dispute centred on "the parameter that determines how much weight present generations should assign to future welfare."',
+      },
+      {
+        id: 'c2-r6-q2', type: 'multiple-choice',
+        question: 'Why do some economists argue conventional cost-benefit analysis is inadequate for climate policy?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Data is unavailable', 'Tipping points could trigger cascading, irreversible consequences beyond calculable risk', 'The methodology is too simple', 'Politicians refuse to use it'],
+        correctAnswer: 'Tipping points could trigger cascading, irreversible consequences beyond calculable risk',
+        explanation: 'The passage explains that tipping points "could trigger cascading, irreversible consequences that render conventional cost-benefit analysis inadequate."',
+      },
+      {
+        id: 'c2-r6-q3', type: 'multiple-choice',
+        question: 'What does the "prescriptive" school argue about discount rates?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['They should be as high as possible', 'Intergenerational ethics should not be subordinated to market preferences', 'Future generations will solve the problem themselves', 'Market rates accurately reflect moral obligations'],
+        correctAnswer: 'Intergenerational ethics should not be subordinated to market preferences',
+        explanation: 'The prescriptive school "contends that intergenerational ethics should not be subordinated to market preferences."',
+      },
+      {
+        id: 'c2-r6-q4', type: 'multiple-choice',
+        question: 'What distributional concern does the passage raise about carbon taxation?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['It only affects large corporations', 'It disproportionately affects lower-income populations without compensatory mechanisms', 'It reduces government revenue', 'It has no effect on emissions'],
+        correctAnswer: 'It disproportionately affects lower-income populations without compensatory mechanisms',
+        explanation: 'The passage says carbon policies "disproportionately affect lower-income populations unless accompanied by compensatory mechanisms."',
+      },
+    ],
+  },
+  {
+    id: 'c2-read-07',
+    level: 'C2',
+    title: 'Post-Truth Politics and the Epistemology of Democratic Discourse',
+    content: `The designation of "post-truth" as the Oxford English Dictionary's Word of the Year in 2016 signalled a growing unease about the epistemic foundations of democratic governance. Defined as circumstances in which "objective facts are less influential in shaping public opinion than appeals to emotion and personal belief," the concept captures a phenomenon that extends well beyond mere political mendacity—which has, after all, been a constant throughout human history.
+
+What distinguishes the post-truth condition is not the prevalence of falsehood per se, but the erosion of shared epistemic standards—the agreed-upon criteria by which claims are evaluated, evidence is weighed, and expertise is accorded authority. In the traditional model of democratic discourse, participants might disagree about values and policy prescriptions, but they operated within a common framework that recognised the authority of empirical evidence, scientific consensus, and institutional credibility.
+
+The architecture of contemporary information ecosystems has fundamentally disrupted this framework. Algorithmic content curation creates "epistemic bubbles"—environments in which individuals are primarily exposed to information confirming pre-existing beliefs—and "echo chambers"—actively hostile to contradictory evidence. The distinction, drawn by philosopher C. Thi Nguyen, is crucial: one can escape a bubble merely by encountering diverse information, whereas echo chambers inoculate their inhabitants against outside perspectives by systematically discrediting alternative sources.
+
+The weaponisation of epistemic uncertainty represents a particularly sophisticated form of post-truth discourse. Corporations and political actors have learned to manufacture doubt—not by advancing affirmative falsehoods, but by strategically amplifying uncertainty about scientific findings, thereby paralysing the policy response. The tobacco industry's decades-long campaign to obscure the link between smoking and cancer established a template subsequently deployed by fossil fuel interests, anti-vaccination movements, and political disinformation campaigns.
+
+Addressing the post-truth challenge requires more than fact-checking—though that is necessary. It demands renewed investment in media literacy education, the redesign of platform algorithms to prioritise epistemic welfare, and the cultivation of intellectual virtues—humility, curiosity, and a willingness to revise one's beliefs in light of evidence—that are the prerequisites of functional democratic discourse.`,
+    wordCount: 310,
+    topic: 'Media & Philosophy',
+    indianContext: false,
+    vocabulary: ['epistemic', 'mendacity', 'prevalence', 'accorded', 'prescriptions', 'ecosystems', 'curation', 'inoculate', 'weaponisation', 'prerequisites'],
+    questions: [
+      {
+        id: 'c2-r7-q1', type: 'multiple-choice',
+        question: 'According to the passage, what distinguishes the "post-truth" era from ordinary political lying?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['More politicians lie', 'The erosion of shared epistemic standards for evaluating truth', 'News moves faster', 'People are less educated'],
+        correctAnswer: 'The erosion of shared epistemic standards for evaluating truth',
+        explanation: 'The passage says what distinguishes it is "the erosion of shared epistemic standards—the agreed-upon criteria by which claims are evaluated."',
+      },
+      {
+        id: 'c2-r7-q2', type: 'multiple-choice',
+        question: 'What is the key difference between "epistemic bubbles" and "echo chambers"?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Bubbles are online, chambers are offline', 'Bubbles can be escaped by encountering new information; echo chambers actively discredit alternatives', 'Echo chambers are louder', 'They are the same concept'],
+        correctAnswer: 'Bubbles can be escaped by encountering new information; echo chambers actively discredit alternatives',
+        explanation: 'The passage distinguishes: "one can escape a bubble merely by encountering diverse information, whereas echo chambers inoculate their inhabitants against outside perspectives."',
+      },
+      {
+        id: 'c2-r7-q3', type: 'multiple-choice',
+        question: 'How does "weaponised epistemic uncertainty" work as a post-truth strategy?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['By spreading obvious lies', 'By strategically amplifying doubt about scientific findings to paralyse policy response', 'By censoring all media', 'By funding more research'],
+        correctAnswer: 'By strategically amplifying doubt about scientific findings to paralyse policy response',
+        explanation: 'The passage describes it as "strategically amplifying uncertainty about scientific findings, thereby paralysing the policy response."',
+      },
+      {
+        id: 'c2-r7-q4', type: 'multiple-choice',
+        question: 'What does the author argue is needed beyond fact-checking to address post-truth politics?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Stricter censorship laws', 'Media literacy education, algorithm redesign, and cultivation of intellectual virtues', 'More political debates', 'Banning social media'],
+        correctAnswer: 'Media literacy education, algorithm redesign, and cultivation of intellectual virtues',
+        explanation: 'The passage calls for "media literacy education, the redesign of platform algorithms, and the cultivation of intellectual virtues."',
+      },
+    ],
+  },
+  {
+    id: 'c2-read-08',
+    level: 'C2',
+    title: 'The Anthropocene: Redefining Humanity\'s Relationship with Earth',
+    content: `The proposal to designate a new geological epoch—the Anthropocene—formalises what earth scientists have increasingly recognised: that human activity has become the dominant force shaping the planet's geology, climate, and ecosystems. The term, popularised by atmospheric chemist Paul Crutzen in 2000, acknowledges that the stratigraphic record now bears indelible markers of human civilisation: radionuclides from nuclear testing, microplastics in ocean sediments, altered nitrogen and phosphorus cycles, and the mass redistribution of species through globalisation.
+
+The International Commission on Stratigraphy has debated whether the Anthropocene meets the formal criteria for epoch designation—specifically, whether a globally synchronous marker, or "golden spike," can be identified. Crawford Lake in Ontario, Canada, has been proposed as the primary reference site, with its laminated sediments preserving a distinct plutonium-239 signal from mid-twentieth-century nuclear detonations. However, in 2024
+
+, the Commission voted against formal ratification, though the term has nonetheless achieved widespread currency in scientific and public discourse.
+
+The significance of the Anthropocene extends far beyond nomenclature. Conceptually, it dissolves the long-standing dichotomy between "nature" and "culture"—the assumption that the natural world exists as a stable backdrop against which human history unfolds. In the Anthropocene, there is no nature untouched by human influence: atmospheric composition, ocean chemistry, and terrestrial biodiversity all bear the imprint of industrialisation, agriculture, and urbanisation.
+
+This reconceptualisation carries profound ethical implications. If humanity is a geological force, then questions of environmental stewardship acquire an unprecedented urgency and scope. The concept of "planetary boundaries"—articulated by Johan Rockström and colleagues—identifies nine Earth-system processes within which humanity must operate to maintain a habitable planet. Several of these boundaries, including those for climate change, biodiversity loss, and biogeochemical flows, have already been transgressed.
+
+Critics from the humanities and social sciences caution against treating the Anthropocene as a narrative of undifferentiated human responsibility. The atmospheric carbon driving climate change derives overwhelmingly from industrialised nations; framing it as a species-level phenomenon risks obscuring the vastly unequal distribution of both causation and consequence. Alternative designations—"Capitalocene," "Plantationocene"—seek to centre the specific political-economic structures responsible for planetary transformation.`,
+    wordCount: 320,
+    topic: 'Earth Science & Philosophy',
+    indianContext: false,
+    vocabulary: ['stratigraphic', 'indelible', 'radionuclides', 'synchronous', 'ratification', 'nomenclature', 'dichotomy', 'stewardship', 'transgressed', 'undifferentiated'],
+    questions: [
+      {
+        id: 'c2-r8-q1', type: 'multiple-choice',
+        question: 'What markers in the stratigraphic record suggest a new geological epoch?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Ancient fossils', 'Radionuclides, microplastics, altered nutrient cycles, and redistributed species', 'Volcanic eruptions', 'Meteor impact craters'],
+        correctAnswer: 'Radionuclides, microplastics, altered nutrient cycles, and redistributed species',
+        explanation: 'The passage lists "radionuclides from nuclear testing, microplastics in ocean sediments, altered nitrogen and phosphorus cycles."',
+      },
+      {
+        id: 'c2-r8-q2', type: 'multiple-choice',
+        question: 'What long-standing assumption does the Anthropocene concept dissolve?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['That evolution is real', 'The dichotomy between nature and culture', 'That geology changes over time', 'That humans evolved from apes'],
+        correctAnswer: 'The dichotomy between nature and culture',
+        explanation: 'The passage says it "dissolves the long-standing dichotomy between nature and culture."',
+      },
+      {
+        id: 'c2-r8-q3', type: 'multiple-choice',
+        question: 'What do critics from the humanities caution against regarding the Anthropocene?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Using scientific terminology', 'Treating it as undifferentiated human responsibility, which obscures unequal causation', 'Naming geological epochs', 'Publishing too many papers on the topic'],
+        correctAnswer: 'Treating it as undifferentiated human responsibility, which obscures unequal causation',
+        explanation: 'Critics argue that "framing it as a species-level phenomenon risks obscuring the vastly unequal distribution of both causation and consequence."',
+      },
+      {
+        id: 'c2-r8-q4', type: 'multiple-choice',
+        question: 'What alternative designations are proposed and why?',
+        questionTranslations: { hi: '', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
+        options: ['Holocene—to maintain tradition', 'Capitalocene and Plantationocene—to centre the specific political-economic structures responsible', 'Technocene—to focus on technology', 'Pyrocene—to emphasise fire usage'],
+        correctAnswer: 'Capitalocene and Plantationocene—to centre the specific political-economic structures responsible',
+        explanation: 'The passage says these "seek to centre the specific political-economic structures responsible for planetary transformation."',
+      },
+    ],
+  },
+];
 export function getReadingPassagesByLevel(level: string): ReadingPassage[] {
   return readingPassages.filter((p) => p.level === level);
 }

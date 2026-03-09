@@ -296,6 +296,62 @@ const c1Test4: PracticeQuestion[] = [
 ];
 
 // ═══════════════════════════════════════════════════════════════════
+// C2 – Expert / Band 8-9 (4 tests × 10 questions)
+// ═══════════════════════════════════════════════════════════════════
+
+const c2Test1: PracticeQuestion[] = [
+  { id: 'c2-1-01', question: 'The ambassador\'s remarks were deliberately _____ to avoid diplomatic fallout.', options: ['circumlocutory', 'circumspect', 'circumscribed', 'circuitous'], correctAnswer: 'circumspect' },
+  { id: 'c2-1-02', question: 'The novel\'s _____ narrative structure defies conventional literary classification.', options: ['labyrinthine', 'laborious', 'laconic', 'lambent'], correctAnswer: 'labyrinthine' },
+  { id: 'c2-1-03', question: 'Her argument, though ostensibly compelling, was _____ upon closer examination.', options: ['specious', 'spacious', 'auspicious', 'suspicious'], correctAnswer: 'specious' },
+  { id: 'c2-1-04', question: 'The treaty was designed to _____ the escalating tensions between the two nations.', options: ['ameliorate', 'exacerbate', 'obfuscate', 'adjudicate'], correctAnswer: 'ameliorate' },
+  { id: 'c2-1-05', question: 'The professor\'s _____ on the subject left the audience both enlightened and overwhelmed.', options: ['diatribe', 'disquisition', 'dalliance', 'delineation'], correctAnswer: 'disquisition' },
+  { id: 'c2-1-06', question: 'The critic\'s review was nothing short of a _____ against the entire genre.', options: ['panegyric', 'polemic', 'paradigm', 'paradox'], correctAnswer: 'polemic' },
+  { id: 'c2-1-07', question: 'The committee\'s decision was _____ by allegations of conflict of interest.', options: ['vitiated', 'vindicated', 'venerated', 'validated'], correctAnswer: 'vitiated' },
+  { id: 'c2-1-08', question: 'His _____ manner belied the intensity of his convictions.', options: ['phlegmatic', 'pragmatic', 'pneumatic', 'problematic'], correctAnswer: 'phlegmatic' },
+  { id: 'c2-1-09', question: 'The documentary offers a _____ account of the environmental crisis unfolding in the Arctic.', options: ['trenchant', 'truculent', 'transient', 'tangential'], correctAnswer: 'trenchant' },
+  { id: 'c2-1-10', question: 'The artist\'s later works are characterised by an almost _____ simplicity.', options: ['ascetic', 'aesthetic', 'acerbic', 'acoustic'], correctAnswer: 'ascetic' },
+];
+
+const c2Test2: PracticeQuestion[] = [
+  { id: 'c2-2-01', question: 'The witness\'s testimony served to _____ the defendant\'s alibi.', options: ['corroborate', 'collaborate', 'confiscate', 'concatenate'], correctAnswer: 'corroborate' },
+  { id: 'c2-2-02', question: 'The politician\'s _____ apology failed to convince the electorate.', options: ['perfunctory', 'performative', 'peremptory', 'peripheral'], correctAnswer: 'perfunctory' },
+  { id: 'c2-2-03', question: '_____ he to have accepted the position, the outcome might have been very different.', options: ['Were', 'Had', 'Should', 'Would'], correctAnswer: 'Were' },
+  { id: 'c2-2-04', question: 'The researcher\'s findings _____ the prevailing orthodoxy in the field.', options: ['contravened', 'contrived', 'contributed', 'contracted'], correctAnswer: 'contravened' },
+  { id: 'c2-2-05', question: 'The company\'s _____ growth masked fundamental structural weaknesses.', options: ['ostensible', 'ostentatious', 'obstinate', 'obsequious'], correctAnswer: 'ostensible' },
+  { id: 'c2-2-06', question: 'The legislation was criticised for its _____ language, which permitted multiple interpretations.', options: ['equivocal', 'eloquent', 'equivalent', 'equitable'], correctAnswer: 'equivocal' },
+  { id: 'c2-2-07', question: 'Not until the evidence was examined _____ the full extent of the scandal become apparent.', options: ['did', 'had', 'was', 'would'], correctAnswer: 'did' },
+  { id: 'c2-2-08', question: 'The scholar\'s _____ knowledge of medieval manuscripts is unparalleled.', options: ['encyclopaedic', 'endemic', 'enigmatic', 'epicurean'], correctAnswer: 'encyclopaedic' },
+  { id: 'c2-2-09', question: 'The CEO\'s resignation was seen as a _____ gesture, given the severity of the crisis.', options: ['futile', 'facile', 'fertile', 'furtive'], correctAnswer: 'futile' },
+  { id: 'c2-2-10', question: 'The historian\'s account _____ nuance, reducing a complex event to a simple narrative.', options: ['lacked', 'belied', 'precluded', 'eschewed'], correctAnswer: 'lacked' },
+];
+
+const c2Test3: PracticeQuestion[] = [
+  { id: 'c2-3-01', question: 'The theory, however intellectually _____, has yet to be empirically validated.', options: ['seductive', 'sedentary', 'seditious', 'sedulously'], correctAnswer: 'seductive' },
+  { id: 'c2-3-02', question: 'The government\'s response to the crisis was widely _____ as inadequate.', options: ['decried', 'decreed', 'declined', 'deferred'], correctAnswer: 'decried' },
+  { id: 'c2-3-03', question: 'The report makes for _____ reading, documenting systemic failures across the institution.', options: ['sobering', 'soporific', 'solicitous', 'sycophantic'], correctAnswer: 'sobering' },
+  { id: 'c2-3-04', question: 'The philosopher argued that moral relativism inevitably leads to ethical _____.', options: ['nihilism', 'narcissism', 'nativism', 'naturalism'], correctAnswer: 'nihilism' },
+  { id: 'c2-3-05', question: '_____ had the minister finished speaking than the opposition demanded a retraction.', options: ['Scarcely', 'Seldom', 'Hardly', 'No sooner'], correctAnswer: 'No sooner' },
+  { id: 'c2-3-06', question: 'The _____ between the two accounts calls into question the reliability of eyewitness testimony.', options: ['discrepancy', 'discretion', 'discrimination', 'dispensation'], correctAnswer: 'discrepancy' },
+  { id: 'c2-3-07', question: 'The author\'s prose is _____ with allusions to classical mythology.', options: ['replete', 'repulsive', 'replicative', 'reprehensible'], correctAnswer: 'replete' },
+  { id: 'c2-3-08', question: 'The committee\'s recommendations were _____ ignored by the administration.', options: ['summarily', 'sumptuously', 'superficially', 'supernaturally'], correctAnswer: 'summarily' },
+  { id: 'c2-3-09', question: 'The proposed merger would create a _____ in the telecommunications industry.', options: ['monopoly', 'monolith', 'monograph', 'monotone'], correctAnswer: 'monopoly' },
+  { id: 'c2-3-10', question: 'Her analysis was notable for its _____ and intellectual rigour.', options: ['perspicacity', 'pertinacity', 'pugnacity', 'precocity'], correctAnswer: 'perspicacity' },
+];
+
+const c2Test4: PracticeQuestion[] = [
+  { id: 'c2-4-01', question: 'The architect\'s vision was too _____ for the conservative planning committee.', options: ['avant-garde', 'avaricious', 'avuncular', 'averse'], correctAnswer: 'avant-garde' },
+  { id: 'c2-4-02', question: 'The diplomat\'s ability to navigate _____ political waters was legendary.', options: ['treacherous', 'tremendous', 'tremulous', 'trenchant'], correctAnswer: 'treacherous' },
+  { id: 'c2-4-03', question: 'So _____ was the evidence that the jury reached a verdict within an hour.', options: ['compelling', 'compulsory', 'comprehensive', 'compendious'], correctAnswer: 'compelling' },
+  { id: 'c2-4-04', question: 'The doctrine of judicial _____ prevents courts from revisiting settled law unnecessarily.', options: ['precedent', 'prudence', 'predilection', 'preeminence'], correctAnswer: 'precedent' },
+  { id: 'c2-4-05', question: 'The singer\'s performance was a _____ of technical skill and emotional depth.', options: ['tour de force', 'fait accompli', 'coup de grâce', 'raison d\'être'], correctAnswer: 'tour de force' },
+  { id: 'c2-4-06', question: 'The text\'s meaning has been _____ by centuries of scholarly interpretation.', options: ['obfuscated', 'obliterated', 'objectified', 'obviated'], correctAnswer: 'obfuscated' },
+  { id: 'c2-4-07', question: 'Under no circumstances _____ the confidential documents be released to the press.', options: ['should', 'would', 'could', 'might'], correctAnswer: 'should' },
+  { id: 'c2-4-08', question: 'The survey revealed a _____ between public perception and empirical reality.', options: ['chasm', 'channel', 'charter', 'chassis'], correctAnswer: 'chasm' },
+  { id: 'c2-4-09', question: 'The writer\'s _____ wit earned her both admirers and enemies in equal measure.', options: ['mordant', 'moribund', 'mundane', 'munificent'], correctAnswer: 'mordant' },
+  { id: 'c2-4-10', question: 'The institution\'s failure to act constituted a _____ dereliction of duty.', options: ['flagrant', 'fragrant', 'vagrant', 'vibrant'], correctAnswer: 'flagrant' },
+];
+
+// ═══════════════════════════════════════════════════════════════════
 // Assemble all tests
 // ═══════════════════════════════════════════════════════════════════
 
@@ -325,6 +381,11 @@ export const practiceTests: PracticeTest[] = [
   { id: 'c1-test-2', level: 'C1', testNumber: 2, title: 'Precision & Nuance', questions: c1Test2 },
   { id: 'c1-test-3', level: 'C1', testNumber: 3, title: 'Critical Analysis', questions: c1Test3 },
   { id: 'c1-test-4', level: 'C1', testNumber: 4, title: 'Advanced Expression', questions: c1Test4 },
+  // C2
+  { id: 'c2-test-1', level: 'C2', testNumber: 1, title: 'Expert Vocabulary', questions: c2Test1 },
+  { id: 'c2-test-2', level: 'C2', testNumber: 2, title: 'Mastery & Inversion', questions: c2Test2 },
+  { id: 'c2-test-3', level: 'C2', testNumber: 3, title: 'Nuance & Precision', questions: c2Test3 },
+  { id: 'c2-test-4', level: 'C2', testNumber: 4, title: 'Idiomatic Mastery', questions: c2Test4 },
 ];
 
 /** Get tests for a specific level */

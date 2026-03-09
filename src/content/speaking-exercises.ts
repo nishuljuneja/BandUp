@@ -250,6 +250,106 @@ export const speakingExercises: SpeakingExercise[] = [
     ],
   },
 
+  // ==================== C2 ====================
+  {
+    id: 's-c2-01',
+    level: 'C2',
+    title: 'Academic Lecture Delivery',
+    type: 'respond',
+    description: 'Deliver a structured mini-lecture (2-3 minutes) on each academic topic. Demonstrate expert-level fluency, sophisticated vocabulary, and clear argumentation.',
+    sentences: [
+      { text: 'Deliver a brief lecture on the ethical implications of CRISPR gene-editing technology for human enhancement.', hint: 'Structure: Introduce the technology → Distinguish therapy vs. enhancement → Present ethical arguments → Conclude with your position.' },
+      { text: 'Explain the concept of "the hard problem of consciousness" to a non-specialist audience.', hint: 'Use analogies and accessible language while maintaining academic precision. Reference Chalmers and qualia.' },
+      { text: 'Present an analysis of how algorithmic bias in AI systems perpetuates structural inequality.', hint: 'Provide concrete examples (predictive policing, hiring algorithms). Use hedging: "The evidence suggests...", "It is arguable that...".' },
+    ],
+    topic: 'Academic Presentation',
+    tips: [
+      'Maintain a measured pace with strategic pauses for emphasis',
+      'Use discourse markers for academic speech: "Turning now to...", "It is worth noting that...", "This brings us to a crucial point..."',
+      'Demonstrate the ability to simplify complex concepts without losing precision',
+      'Use intonation to signal topic shifts and emphasise key arguments',
+    ],
+  },
+  {
+    id: 's-c2-02',
+    level: 'C2',
+    title: 'Debate: Sophisticated Argumentation',
+    type: 'respond',
+    description: 'Argue both sides of each proposition. First present the case FOR, then AGAINST (90 seconds each). Demonstrate the ability to construct and deconstruct arguments with equal sophistication.',
+    sentences: [
+      { text: 'Proposition: "Universal Basic Income is a moral imperative in the age of automation." Argue FOR, then AGAINST.', hint: 'FOR: appeal to dignity, economic security, innovation. AGAINST: moral hazard, fiscal burden, inflationary pressure.' },
+      { text: 'Proposition: "Social media companies should be legally liable for the content their algorithms promote." Argue FOR, then AGAINST.', hint: 'FOR: algorithmic amplification, duty of care, advertiser model. AGAINST: free speech, Section 230, innovation constraints.' },
+      { text: 'Proposition: "The pursuit of economic growth is fundamentally incompatible with environmental sustainability." Argue FOR, then AGAINST.', hint: 'FOR: finite resources, externalities, growth imperative. AGAINST: green growth, decoupling, innovation incentives.' },
+    ],
+    topic: 'Debate',
+    tips: [
+      'Use the language of formal debate: "I would submit that...", "The proposition fails to account for...", "On balance, the weight of evidence suggests..."',
+      'Acknowledge the strongest counterarguments before refuting them',
+      'Use rhetorical techniques: tricolon, antithesis, rhetorical questions',
+      'Maintain logical coherence even when arguing a position you disagree with',
+    ],
+  },
+  {
+    id: 's-c2-03',
+    level: 'C2',
+    title: 'Impromptu Speaking: Abstract Concepts',
+    type: 'respond',
+    description: 'Speak for 2 minutes on each abstract topic with no preparation. Demonstrate the ability to formulate coherent, sophisticated thoughts spontaneously.',
+    sentences: [
+      { text: 'Is the concept of "truth" objective, or is all truth culturally constructed?', hint: 'Draw on epistemology: empiricism, relativism, pragmatism. Use concrete examples to illustrate abstract points.' },
+      { text: 'What is the relationship between language and thought? Does language constrain what we can think?', hint: 'Reference the Sapir-Whorf hypothesis, linguistic relativity, translation challenges. Provide examples from different languages.' },
+      { text: 'Is technological progress inherently beneficial, or does it merely create new categories of problem?', hint: 'Consider healthcare advances vs. surveillance, communication vs. alienation, productivity vs. environmental cost.' },
+      { text: 'Can genuine justice exist in a society with significant economic inequality?', hint: 'Discuss procedural vs. distributive justice, access to legal representation, systemic barriers.' },
+    ],
+    topic: 'Abstract Philosophy',
+    tips: [
+      'Take 5 seconds to mentally outline your response before speaking',
+      'Use sophisticated framing devices: "At its core, this question interrogates...", "The tension between X and Y lies at the heart of..."',
+      'Demonstrate the ability to handle nuance and ambiguity without resorting to simplistic positions',
+      'Close with a synthesised conclusion rather than trailing off',
+    ],
+  },
+  {
+    id: 's-c2-04',
+    level: 'C2',
+    title: 'Diplomatic Negotiation Role-Play',
+    type: 'role-play',
+    description: 'Engage in diplomatic scenarios requiring tact, precision, and sophisticated register. Respond to each situation as a senior diplomat or policymaker.',
+    sentences: [
+      { text: 'You are addressing the UN General Assembly on the need for binding international regulations on autonomous weapons systems. Deliver a 2-minute speech.', hint: 'Use diplomatic register: "Distinguished delegates...", "It is the considered position of my delegation that...".' },
+      { text: 'A journalist asks: "Your government has been accused of suppressing press freedom. How do you respond?" Give a diplomatic but substantive answer.', hint: 'Acknowledge the importance of press freedom, redirect to specific achievements, remain composed under pressure.' },
+      { text: 'You are mediating a trade dispute between two countries. Present a compromise solution that addresses both parties\' core concerns.', hint: 'Use conditional and hypothetical language: "Were both parties to agree to...", "A phased approach might encompass...".' },
+    ],
+    topic: 'Diplomatic Communication',
+    tips: [
+      'Master the art of saying difficult things in measured, diplomatic language',
+      'Use hedging and qualification strategically: "With respect...", "While acknowledging the complexity..."',
+      'Maintain composure and avoid emotional language even when addressing contentious topics',
+      'Demonstrate the ability to find common ground and propose constructive solutions',
+    ],
+  },
+  {
+    id: 's-c2-05',
+    level: 'C2',
+    title: 'Pronunciation Mastery: Connected Speech',
+    type: 'repeat',
+    description: 'Master the features of natural connected speech at native-like proficiency. Focus on elision, assimilation, weak forms, and intonation patterns.',
+    sentences: [
+      { text: 'The government ought to have been more transparent about its intentions from the outset.', hint: 'Focus on weak forms: "ought to" → /ɔːtə/, "have been" → /əv bɪn/. Practise the elision in "government".' },
+      { text: 'I would have thought that the implications were self-evident, but apparently not.', hint: 'Focus on: "would have" → /wʊdəv/, natural rhythm and sentence stress. Emphasis on "apparently not".' },
+      { text: 'Notwithstanding the considerable reservations expressed by several committee members, the resolution was adopted unanimously.', hint: 'Maintain flow through this long sentence. Use appropriate pausing after "members." Stress "unanimously".' },
+      { text: 'The phenomenon, insofar as it can be empirically quantified, appears to be accelerating at an unprecedented rate.', hint: 'Practise "insofar as" as a fluid phrase. Emphasise "unprecedented." Maintain academic intonation throughout.' },
+      { text: 'Had the circumstances been otherwise, one might reasonably have expected a rather different outcome.', hint: 'Master the subjunctive intonation. Use falling tone on "outcome." Practise natural rhythm in conditional structures.' },
+    ],
+    topic: 'Advanced Pronunciation',
+    tips: [
+      'At C2 level, pronunciation mastery means sounding natural, not perfect — focus on connected speech features',
+      'Record and compare: can a listener follow your meaning without effort?',
+      'Master the weak forms of auxiliary verbs: "have" → /əv/, "would" → /wʊd/',
+      'Use intonation to convey attitude and emphasis, not just grammar',
+    ],
+  },
+
   // ==================== ADDITIONAL A1 EXERCISES ====================
   {
     id: 's-a1-04',
