@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { signUpWithEmail, signInWithGoogle } from '@/lib/auth';
 import { useAppStore } from '@/lib/store';
+import { getUserProfile } from '@/lib/firestore';
 import { Mail, Lock, Eye, EyeOff, User } from 'lucide-react';
 
 export default function SignupPage() {
@@ -35,7 +36,10 @@ export default function SignupPage() {
 
     setLoading(true);
     try {
-      await signUpWithEmail(email, password, name, uiLanguage, refCode);
+      const user = await signUpWithEmail(email, password, name, uiLanguage, refCode);
+      // Ensure store picks up the correct profile (avoids race with auth listener)
+      const freshProfile = await getUserProfile(user.uid);
+      if (freshProfile) useAppStore.getState().setProfile(freshProfile);
       router.push('/onboarding');
     } catch (err: any) {
       const code = err?.code || '';
@@ -51,7 +55,9 @@ export default function SignupPage() {
     setError('');
     setLoading(true);
     try {
-      await signInWithGoogle(undefined, refCode);
+      const user = await signInWithGoogle(undefined, refCode);
+      const freshProfile = await getUserProfile(user.uid);
+      if (freshProfile) useAppStore.getState().setProfile(freshProfile);
       router.push('/onboarding');
     } catch (err: any) {
       setError('Google sign-in failed. Please try again.');
@@ -85,7 +91,7 @@ export default function SignupPage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  placeholder="Priya Sharma"
+                  placeholder="Your Name"
                   className="w-full pl-10 pr-4 py-3 bg-gray-50 text-gray-800 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                 />
               </div>

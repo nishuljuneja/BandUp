@@ -61,34 +61,9 @@ export const useAppStore = create<AppState>((set, get) => ({
       set({ user, loading: true });
       if (user) {
         let profile = await getUserProfile(user.uid);
-        // If user exists in Auth but has no Firestore profile, create one
+        // If no profile yet (e.g. signup in progress), wait briefly and retry
         if (!profile) {
-          const { createUserProfile } = await import('./firestore');
-          const { Timestamp } = await import('firebase/firestore');
-          await createUserProfile({
-            uid: user.uid,
-            displayName: user.displayName || 'Learner',
-            email: user.email || '',
-            nativeLanguage: 'en',
-            currentLevel: 'A1',
-            xp: 0,
-            streak: 0,
-            lastActiveDate: new Date().toISOString().split('T')[0],
-            createdAt: Timestamp.now(),
-            skillScores: {
-              vocabulary: 0,
-              grammar: 0,
-              reading: 0,
-              listening: 0,
-              writing: 0,
-              speaking: 0,
-            },
-            lessonsCompleted: 0,
-            wordsLearned: 0,
-            placementTestCompleted: false,
-            emailReminders: true,
-            subscriptionTier: 'free',
-          });
+          await new Promise((r) => setTimeout(r, 1500));
           profile = await getUserProfile(user.uid);
         }
         set({ profile, loading: false });
