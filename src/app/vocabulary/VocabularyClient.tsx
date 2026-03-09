@@ -85,7 +85,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-type Mode = 'browse' | 'flashcards' | 'fill-blanks' | 'quiz' | 'review';
+type Mode = 'flashcards' | 'browse' | 'fill-blanks' | 'quiz' | 'revisit' | 'review';
 const DRILL_SIZE = 10; // questions per round
 const REVIEW_SIZE = 15; // flashcards per review session
 
@@ -109,12 +109,38 @@ function markWordStudied(uid: string, wordId: string) {
   }
 }
 
+// ── Didn't-Know tracking via localStorage ──
+const DIDNT_KNOW_KEY_PREFIX = 'bandup-didntknow-';
+
+function getDidntKnowWordIds(uid: string): string[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(DIDNT_KNOW_KEY_PREFIX + uid);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+}
+
+function addDidntKnowWord(uid: string, wordId: string) {
+  if (typeof window === 'undefined') return;
+  const ids = getDidntKnowWordIds(uid);
+  if (!ids.includes(wordId)) {
+    ids.push(wordId);
+    localStorage.setItem(DIDNT_KNOW_KEY_PREFIX + uid, JSON.stringify(ids));
+  }
+}
+
+function removeDidntKnowWord(uid: string, wordId: string) {
+  if (typeof window === 'undefined') return;
+  const ids = getDidntKnowWordIds(uid).filter(id => id !== wordId);
+  localStorage.setItem(DIDNT_KNOW_KEY_PREFIX + uid, JSON.stringify(ids));
+}
+
 export default function VocabularyPage() {
   const { profile, uiLanguage, setProfile } = useAppStore();
   const { speak, isPlaying } = useIndianVoice();
   const currentLevel = profile?.currentLevel || 'A1';
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(currentLevel);
-  const [mode, setMode] = useState<Mode>('browse');
+  const [mode, setMode] = useState<Mode>('flashcards');
   const [searchQuery, setSearchQuery] = useState('');
   const [flashcardIndex, setFlashcardIndex] = useState(0);
   const [shuffleSeed, setShuffleSeed] = useState(0); // bump to reshuffle
@@ -124,6 +150,10 @@ export default function VocabularyPage() {
   const [reviewIndex, setReviewIndex] = useState(0);
   const [reviewedCount, setReviewedCount] = useState(0);
   const [reviewKnewCount, setReviewKnewCount] = useState(0);
+
+  // Revisit mode state
+  const [revisitWords, setRevisitWords] = useState<VocabularyWord[]>([]);
+  const [revisitIndex, setRevisitIndex] = useState(0);
 
   // Read ?mode=review from URL on mount
   useEffect(() => {
@@ -257,7 +287,15 @@ export default function VocabularyPage() {
       if (profile) {
         // Mark word as studied for review
         const word = flashcardWords[flashcardIndex];
-        if (word) markWordStudied(profile.uid, word.id);
+        if (word) {
+          markWordStudied(profile.uid, word.id);
+          // Track "Didn't Know" words for Revisit
+          if (quality < 3) {
+            addDidntKnowWord(profile.uid, word.id);
+          } else {
+            removeDidntKnowWord(profile.uid, word.id);
+          }
+        }
 
         incrementWordsLearned(profile.uid, 1).catch(() => {});
         addXP(profile.uid, quality >= 3 ? 5 : 2).catch(() => {});
@@ -285,6 +323,38 @@ export default function VocabularyPage() {
       }
     },
     [profile, setProfile, flashcardIndex, flashcardWords.length, flashcardWords]
+  );
+
+  // Handle revisit flashcard rating
+  const handleRevisitRate = useCallback(
+    (quality: number) => {
+      const word = revisitWords[revisitIndex];
+      if (profile && word) {
+        addXP(profile.uid, quality >= 3 ? 5 : 2).catch(() => {});
+        const xpGain = quality >= 3 ? 5 : 2;
+        // If they knew it this time, remove from revisit list
+        if (quality >= 3) {
+          removeDidntKnowWord(profile.uid, word.id);
+        }
+        updateStreak(profile.uid).then((streakData) => {
+          setProfile({
+            ...profile,
+            xp: profile.xp + xpGain,
+            streak: streakData.streak,
+            lastActiveDate: streakData.lastActiveDate,
+          });
+        }).catch(() => {
+          setProfile({ ...profile, xp: profile.xp + xpGain });
+        });
+      }
+      if (revisitIndex < revisitWords.length - 1) {
+        setRevisitIndex((i) => i + 1);
+      } else {
+        // Finished — reload to see updated list
+        setRevisitIndex(revisitWords.length); // triggers summary
+      }
+    },
+    [profile, setProfile, revisitWords, revisitIndex]
   );
 
   // Handle review flashcard rating — updates spaced repetition in Firestore
@@ -335,6 +405,9 @@ export default function VocabularyPage() {
     if (m === 'review') {
       loadReviewWords();
     }
+    if (m === 'revisit') {
+      loadRevisitWords();
+    }
   };
 
   const loadReviewWords = useCallback(() => {
@@ -352,6 +425,16 @@ export default function VocabularyPage() {
     setReviewIndex(0);
     setReviewedCount(0);
     setReviewKnewCount(0);
+  }, [profile]);
+
+  const loadRevisitWords = useCallback(() => {
+    if (!profile) { setRevisitWords([]); return; }
+    const didntKnowIds = getDidntKnowWordIds(profile.uid);
+    if (didntKnowIds.length === 0) { setRevisitWords([]); return; }
+    const words = getVocabularyByIds(didntKnowIds);
+    const arr = shuffle(words);
+    setRevisitWords(arr);
+    setRevisitIndex(0);
   }, [profile]);
 
   return (
@@ -373,8 +456,9 @@ export default function VocabularyPage() {
         {/* Mode Toggle */}
         <div className="flex bg-gray-100 rounded-lg p-1 flex-wrap gap-1">
           {([
-            { key: 'browse', label: 'Browse' },
             { key: 'flashcards', label: 'Flashcards' },
+            { key: 'revisit', label: '🔁 Revisit' },
+            { key: 'browse', label: 'Browse' },
             { key: 'fill-blanks', label: 'Fill Blanks' },
             { key: 'quiz', label: 'Quiz' },
             { key: 'review', label: '🔄 Review' },
@@ -441,6 +525,77 @@ export default function VocabularyPage() {
             example={currentWord.example}
             onRate={handleFlashcardRate}
           />
+        </div>
+      )}
+
+      {/* Revisit Mode — words the user didn't know */}
+      {mode === 'revisit' && (
+        <div className="py-8">
+          {revisitWords.length === 0 ? (
+            <div className="text-center py-16">
+              <RotateCcw className="w-16 h-16 mx-auto mb-4 text-gray-300" />
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">Nothing to revisit</h3>
+              <p className="text-gray-400 mb-6">
+                Words you mark as &ldquo;Didn&apos;t Know&rdquo; in Flashcards will appear here.<br />
+                Start studying and come back to revisit the tricky ones!
+              </p>
+              <button
+                onClick={() => switchMode('flashcards')}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition"
+              >
+                Start Flashcards
+              </button>
+            </div>
+          ) : revisitIndex >= revisitWords.length ? (
+            /* Revisit complete summary */
+            <div className="max-w-md mx-auto text-center">
+              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <RotateCcw className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">Revisit Complete!</h3>
+                <p className="text-gray-500 mb-6">
+                  You went through {revisitWords.length} word{revisitWords.length !== 1 ? 's' : ''} you previously didn&apos;t know.
+                </p>
+                <p className="text-sm text-gray-400 mb-6">
+                  Words you marked &ldquo;Knew It&rdquo; have been removed from your revisit list.
+                </p>
+                <div className="flex gap-3 justify-center">
+                  <button
+                    onClick={() => loadRevisitWords()}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition"
+                  >
+                    <RotateCcw className="w-4 h-4" />
+                    Revisit Again
+                  </button>
+                  <button
+                    onClick={() => switchMode('flashcards')}
+                    className="px-5 py-2.5 bg-gray-100 text-gray-600 rounded-xl font-medium hover:bg-gray-200 transition"
+                  >
+                    Back to Flashcards
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* Active revisit flashcard */
+            <>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-400 mb-4">
+                <span className="flex items-center gap-1.5">
+                  <RotateCcw className="w-4 h-4" />
+                  Revisit: {revisitIndex + 1} / {revisitWords.length}
+                </span>
+              </div>
+              <Flashcard
+                front={revisitWords[revisitIndex].word}
+                back={revisitWords[revisitIndex].meaning[uiLanguage] || revisitWords[revisitIndex].meaning.en}
+                pronunciation={revisitWords[revisitIndex].pronunciation}
+                partOfSpeech={revisitWords[revisitIndex].partOfSpeech}
+                example={revisitWords[revisitIndex].example}
+                onRate={handleRevisitRate}
+              />
+            </>
+          )}
         </div>
       )}
 
