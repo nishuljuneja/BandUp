@@ -54,7 +54,7 @@ export default function LoginPage() {
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-2">{t('auth.login', uiLanguage)}</h1>
-            <p className="text-gray-500">Continue your English learning journey</p>
+            <p className="text-gray-500">Continue your IELTS prep journey</p>
           </div>
 
           {error && (
