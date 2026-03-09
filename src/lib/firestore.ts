@@ -75,6 +75,8 @@ export interface UserProfile {
   referredBy?: string; // UID of the referrer
   referralCount?: number;
   referralRewardsClaimed?: number;
+  // IELTS Goal
+  ieltsExamDate?: string; // YYYY-MM-DD
 }
 
 export interface VocabularyWord {

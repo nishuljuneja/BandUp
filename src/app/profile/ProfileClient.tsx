@@ -5,7 +5,8 @@ import { useAppStore } from '@/lib/store';
 import { t, LANGUAGES } from '@/lib/i18n';
 import { logOut } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
-import { User, Trophy, BookOpen, Target, Calendar, Medal, Settings, LogOut, Globe, Flame, Mail } from 'lucide-react';
+import Link from 'next/link';
+import { User, Trophy, BookOpen, Target, Calendar, Medal, Settings, LogOut, Globe, Flame, Mail, Gift } from 'lucide-react';
 import { updateUserProfile } from '@/lib/firestore';
 import { LevelBadge } from '@/components/Exercises';
 import type { CEFRLevel } from '@/lib/firestore';
@@ -207,6 +208,25 @@ export default function ProfilePage() {
           ))}
         </div>
       </div>
+
+      {/* Referral */}
+      <Link
+        href="/referral"
+        className="block bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl border border-purple-100 p-6 mb-6 hover:shadow-md transition-shadow"
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Gift className="w-6 h-6 text-purple-600" />
+            <div>
+              <h3 className="font-bold text-gray-800">Refer & Earn Free Pro</h3>
+              <p className="text-sm text-gray-500">
+                {(profile?.referralCount || 0)} friends joined · {3 - ((profile?.referralCount || 0) % 3)} more for a free Pro week
+              </p>
+            </div>
+          </div>
+          <span className="text-indigo-600 font-semibold text-sm">View →</span>
+        </div>
+      </Link>
 
       {/* Log Out */}
       <button

@@ -147,6 +147,13 @@ export default function Navbar() {
                   <span className="hidden sm:inline">Diagnostic Test</span>
                 </Link>
                 <Link
+                  href="/pricing"
+                  className="text-gray-600 hover:text-indigo-600 px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium whitespace-nowrap flex items-center gap-1"
+                >
+                  <Crown className="w-4 h-4" />
+                  <span className="hidden sm:inline">Pricing</span>
+                </Link>
+                <Link
                   href="/login"
                   className="text-gray-600 hover:text-indigo-600 px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium whitespace-nowrap"
                 >

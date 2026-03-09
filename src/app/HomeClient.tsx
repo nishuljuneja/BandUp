@@ -75,6 +75,7 @@ export default function Home() {
             <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Targeted practice for Reading, Writing, Listening, Speaking designed to help you improve your IELTS score.
             </p>
+            <p className="text-sm text-white/70 mb-6 font-medium">Join 6,000+ IELTS learners who have scored higher than Band 7 using BandUp</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={user ? '/dashboard' : '/signup'}
