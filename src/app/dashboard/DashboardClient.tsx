@@ -164,7 +164,7 @@ export default function DashboardPage() {
                   Upgrade to Pro
                   <span className="text-xs font-medium bg-yellow-400/20 text-yellow-200 px-2 py-0.5 rounded-full">$1.99/mo</span>
                 </h3>
-                <p className="text-white/70 text-sm">Unlock Band 7 & 8-9 levels, Reading, Listening, unlimited practice & more</p>
+                <p className="text-white/70 text-sm">Unlock Bands 7, 8 and 9, and get access to Listening, Writing and Speaking with BandUp Pro</p>
               </div>
             </div>
             <ArrowRight className="w-6 h-6 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all" />
