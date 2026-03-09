@@ -185,7 +185,7 @@ export default function ProfilePage() {
       </div>
 
       {/* Achievements placeholder */}
-      <div className="bg-white rounded-xl border border-gray-100 p-6">
+      <div className="bg-white rounded-xl border border-gray-100 p-6 mb-6">
         <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
           <Medal className="w-5 h-5 text-yellow-500" /> Achievements
         </h3>
@@ -207,6 +207,14 @@ export default function ProfilePage() {
           ))}
         </div>
       </div>
+
+      {/* Log Out */}
+      <button
+        onClick={handleLogout}
+        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-red-50 text-red-600 rounded-xl font-semibold hover:bg-red-100 transition"
+      >
+        <LogOut className="w-5 h-5" /> Log Out
+      </button>
     </div>
   );
 }

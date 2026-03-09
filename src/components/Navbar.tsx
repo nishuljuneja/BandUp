@@ -37,6 +37,7 @@ export default function Navbar() {
     { href: '/achievements', label: 'Achievements', icon: Award },
     { href: '/leaderboard', label: t('nav.leaderboard', uiLanguage), icon: Trophy },
     { href: '/pricing', label: 'Pricing', icon: Crown },
+    { href: '/profile', label: 'Profile', icon: User },
   ];
 
   return (
