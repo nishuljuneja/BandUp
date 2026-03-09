@@ -63,7 +63,38 @@ export const useAppStore = create<AppState>((set, get) => ({
         let profile = await getUserProfile(user.uid);
         // If no profile yet (e.g. signup in progress), wait briefly and retry
         if (!profile) {
-          await new Promise((r) => setTimeout(r, 1500));
+          await new Promise((r) => setTimeout(r, 2000));
+          profile = await getUserProfile(user.uid);
+        }
+        // If still no profile (e.g. Google sign-in first time), auto-create one
+        if (!profile) {
+          const { createUserProfile, generateReferralCode } = await import('./firestore');
+          const { Timestamp } = await import('firebase/firestore');
+          await createUserProfile({
+            uid: user.uid,
+            displayName: user.displayName || 'Learner',
+            email: user.email || '',
+            nativeLanguage: 'en',
+            currentLevel: 'A1',
+            xp: 0,
+            streak: 0,
+            lastActiveDate: new Date().toISOString().split('T')[0],
+            createdAt: Timestamp.now(),
+            skillScores: {
+              vocabulary: 0,
+              grammar: 0,
+              reading: 0,
+              listening: 0,
+              writing: 0,
+              speaking: 0,
+            },
+            lessonsCompleted: 0,
+            wordsLearned: 0,
+            placementTestCompleted: false,
+            emailReminders: true,
+            subscriptionTier: 'free',
+            referralCode: generateReferralCode(user.uid),
+          });
           profile = await getUserProfile(user.uid);
         }
         set({ profile, loading: false });
