@@ -55,12 +55,12 @@ export default function Home() {
   ];
 
   const levels: { id: CEFRLevel; band: string; color: string }[] = [
-    { id: 'A1', band: 'Band 3', color: 'from-emerald-400 to-emerald-600' },
-    { id: 'A2', band: 'Band 4', color: 'from-green-400 to-green-600' },
-    { id: 'B1', band: 'Band 5', color: 'from-blue-400 to-blue-600' },
-    { id: 'B2', band: 'Band 6', color: 'from-purple-400 to-purple-600' },
-    { id: 'C1', band: 'Band 7', color: 'from-orange-400 to-orange-600' },
-    { id: 'C2', band: 'Band 8-9', color: 'from-red-400 to-red-600' },
+    { id: 'A1', band: 'Band 3+', color: 'from-emerald-400 to-emerald-600' },
+    { id: 'A2', band: 'Band 4+', color: 'from-green-400 to-green-600' },
+    { id: 'B1', band: 'Band 5+', color: 'from-blue-400 to-blue-600' },
+    { id: 'B2', band: 'Band 6+', color: 'from-purple-400 to-purple-600' },
+    { id: 'C1', band: 'Band 7+', color: 'from-orange-400 to-orange-600' },
+    { id: 'C2', band: 'Band 8+', color: 'from-red-400 to-red-600' },
   ];
 
   return (
@@ -98,13 +98,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">6 IELTS Bands, One Clear Path</h2>
           <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
-            Content structured by IELTS band level. Take a free diagnostic test to find your starting band.
+            Take a free diagnostic test to evaluate your band level.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {levels.map((level) => (
               <div key={level.id} className={`bg-gradient-to-br ${level.color} rounded-2xl p-6 text-white text-center shadow-lg hover:scale-105 transition-transform cursor-pointer`}>
                 <div className="text-3xl font-black mb-2">{level.band}</div>
-                <div className="text-sm font-medium opacity-90">{t(`level.${level.id}`, uiLanguage)}</div>
                 <div className="text-xs opacity-70 mt-1">{t(`level.${level.id}.desc`, uiLanguage)}</div>
               </div>
             ))}
