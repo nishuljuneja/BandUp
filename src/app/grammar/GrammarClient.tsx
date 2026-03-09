@@ -6,6 +6,7 @@ import { t } from '@/lib/i18n';
 import { grammarLessons, getGrammarLessonsByLevel } from '@/content/grammar-lessons';
 import { LevelBadge } from '@/components/Exercises';
 import { Brain, CheckCircle, ArrowRight, Lock } from 'lucide-react';
+import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
 import { isLevelAccessible } from '@/lib/subscription';
 import ProGate from '@/components/ProGate';
@@ -46,7 +47,7 @@ export default function GrammarPage() {
             </div>
 
             {locked ? (
-              <ProGate feature={`${level} Grammar`} compact />
+              <ProGate feature={`${IELTS_BAND_LABELS[level]} Grammar`} compact />
             ) : (
               <div className="space-y-3">
                 {lessons.map((lesson) => {

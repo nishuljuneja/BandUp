@@ -9,6 +9,7 @@ import {
   SkipForward, ArrowRight, ArrowLeft, ClipboardCheck, TrendingUp, TrendingDown,
   Minus, Clock, ChevronRight, CheckCircle2, BookOpen,
 } from 'lucide-react';
+import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
 
 const LEVEL_ORDER: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
@@ -208,7 +209,7 @@ export default function TestsPage() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center text-white font-black text-lg shadow-md`}>
-                      {level}
+                      {IELTS_BAND_LABELS[level]}
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-800 group-hover:text-indigo-600 transition-colors">
@@ -270,11 +271,11 @@ export default function TestsPage() {
 
         <div className="flex items-center gap-4 mb-8">
           <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center text-white font-black text-xl shadow-lg`}>
-            {selectedLevel}
+            {IELTS_BAND_LABELS[selectedLevel]}
           </div>
           <div>
             <h1 className="text-2xl font-bold text-gray-800">
-              {selectedLevel} — {t(`level.${selectedLevel}`, uiLanguage)}
+              {IELTS_BAND_LABELS[selectedLevel]} — {t(`level.${selectedLevel}`, uiLanguage)}
             </h1>
             <p className="text-gray-500 text-sm">{t(`level.${selectedLevel}.desc`, uiLanguage)}</p>
           </div>
@@ -528,7 +529,7 @@ export default function TestsPage() {
             onClick={() => setPhase('tests')}
             className="flex-1 py-3 px-6 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition flex items-center justify-center gap-2"
           >
-            Back to {selectedLevel} Tests <ArrowRight className="w-4 h-4" />
+            Back to {IELTS_BAND_LABELS[selectedLevel!]} Tests <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>

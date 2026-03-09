@@ -5,6 +5,7 @@ import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { PenTool, CheckCircle, AlertCircle, Send, Star, ChevronDown, ChevronUp, AlertTriangle } from 'lucide-react';
 import { LevelBadge } from '@/components/Exercises';
+import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
 import { gradeWriting, type GradingResult, type WritingMistake } from '@/lib/writing-grader';
 import { writingPrompts, type WritingPrompt } from '@/content/writing-prompts';
@@ -75,7 +76,7 @@ export default function WritingPage() {
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              {level === 'all' ? 'All Levels' : level}
+              {level === 'all' ? 'All Bands' : IELTS_BAND_LABELS[level as CEFRLevel]}
             </button>
           ))}
         </div>

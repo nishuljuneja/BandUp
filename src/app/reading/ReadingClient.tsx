@@ -7,6 +7,7 @@ import { readingPassages, getReadingPassagesByLevel } from '@/content/reading-pa
 import { MultipleChoice, ProgressBar, ScoreCard, LevelBadge } from '@/components/Exercises';
 import { BookOpen, ArrowLeft, Clock, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
+import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel, ReadingPassage } from '@/lib/firestore';
 import { isPro } from '@/lib/subscription';
 import ProGate from '@/components/ProGate';
@@ -102,7 +103,7 @@ export default function ReadingPage() {
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
-                {level} ({count})
+                {IELTS_BAND_LABELS[level as CEFRLevel]} ({count})
               </button>
             );
           })}

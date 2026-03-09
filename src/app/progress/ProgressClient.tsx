@@ -9,7 +9,8 @@ import {
   Flame, Trophy, BookOpen, Brain, Headphones, MessageSquare, PenTool,
   TrendingUp, Target, Star, Zap, Award, ChevronRight, ArrowRight,
 } from 'lucide-react';
-import type { SkillType } from '@/lib/firestore';
+import { IELTS_BAND_LABELS } from '@/lib/firestore';
+import type { CEFRLevel, SkillType } from '@/lib/firestore';
 
 // Motivational messages based on streak
 function getMotivation(streak: number, xp: number): { emoji: string; message: string } {
@@ -160,8 +161,8 @@ export default function ProgressPage() {
             <LevelBadge level={profile.currentLevel} size="lg" />
             <div className="flex-1">
               <div className="flex justify-between text-sm text-gray-500 mb-1">
-                <span>Current: {profile.currentLevel}</span>
-                <span>Next: {nextLevel}</span>
+                <span>Current: {IELTS_BAND_LABELS[profile.currentLevel as CEFRLevel]}</span>
+                <span>Next: {IELTS_BAND_LABELS[nextLevel as CEFRLevel]}</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-3">
                 <div
@@ -172,7 +173,7 @@ export default function ProgressPage() {
             </div>
           </div>
           <p className="text-sm text-gray-400">
-            Complete more exercises across all skills to level up to {nextLevel}.
+            Complete more exercises across all skills to level up to {IELTS_BAND_LABELS[nextLevel as CEFRLevel]}.
           </p>
         </div>
 

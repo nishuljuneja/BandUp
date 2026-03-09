@@ -7,6 +7,7 @@ import { Headphones, Play, Pause, RotateCcw, CheckCircle, XCircle, Volume2, Chev
 import { LevelBadge, ScoreCard } from '@/components/Exercises';
 import { listeningExercises, type ListeningExercise } from '@/content/listening-exercises';
 import { useIndianVoice } from '@/lib/useIndianVoice';
+import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
 import { isPro } from '@/lib/subscription';
 import ProGate from '@/components/ProGate';
@@ -132,7 +133,7 @@ export default function ListeningPage() {
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              {level === 'all' ? 'All Levels' : level}
+              {level === 'all' ? 'All Bands' : IELTS_BAND_LABELS[level as CEFRLevel]}
             </button>
           ))}
         </div>

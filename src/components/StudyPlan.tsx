@@ -10,6 +10,7 @@ import {
   BookOpen, Brain, BookOpenCheck, Headphones, PenTool, MessageSquare,
   CheckCircle2, Circle, ArrowRight, Sparkles, TrendingUp, Lock,
 } from 'lucide-react';
+import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel, SkillType, UserProfile } from '@/lib/firestore';
 
 // ─── Level descriptors ───────────────────────────────────────────────────
@@ -184,7 +185,7 @@ export default function StudyPlan() {
         <p className="text-white/80 text-sm">
           {currentLevel === 'C2'
             ? 'You\'ve reached the highest level — keep perfecting your skills!'
-            : `Complete skills at ${currentLevel} to unlock ${nextLevel}`}
+            : `Complete ${IELTS_BAND_LABELS[currentLevel]} to unlock ${IELTS_BAND_LABELS[nextLevel!]}`}
         </p>
       </div>
 
@@ -220,10 +221,10 @@ export default function StudyPlan() {
                         : 'bg-gray-200 text-gray-500'
                     }`}
                   >
-                    {isDone ? <CheckCircle2 className="w-4 h-4" /> : isLocked ? <Lock className="w-3 h-3" /> : level}
+                    {isDone ? <CheckCircle2 className="w-4 h-4" /> : isLocked ? <Lock className="w-3 h-3" /> : IELTS_BAND_LABELS[level]}
                   </div>
                   <span className={`text-[10px] mt-1 font-medium ${isActive ? 'text-indigo-700' : isDone ? 'text-green-700' : 'text-gray-400'}`}>
-                    {level}
+                    {IELTS_BAND_LABELS[level]}
                   </span>
                 </div>
               </div>
@@ -237,7 +238,7 @@ export default function StudyPlan() {
         <div className="flex items-center justify-between mb-2">
           <div>
             <h3 className="font-semibold text-gray-800">
-              Level {currentLevel}: {levelInfo[currentLevel].name}
+              {levelInfo[currentLevel].name}
             </h3>
             <p className="text-sm text-gray-500">{levelInfo[currentLevel].description}</p>
           </div>
@@ -317,8 +318,8 @@ export default function StudyPlan() {
               <div>
                 <h4 className="font-semibold text-green-800">Ready to level up! 🎉</h4>
                 <p className="text-sm text-green-700 mt-1">
-                  You&apos;ve built a strong foundation at {currentLevel}. Start exploring{' '}
-                  <span className="font-bold">{nextLevel} ({levelInfo[nextLevel].name})</span> content
+                  You&apos;ve built a strong foundation at {IELTS_BAND_LABELS[currentLevel]}. Start exploring{' '}
+                  <span className="font-bold">{levelInfo[nextLevel].name}</span> content
                   — {levelInfo[nextLevel].description.toLowerCase()}.
                 </p>
                 <Link
@@ -339,7 +340,7 @@ export default function StudyPlan() {
                 <p className="text-sm text-indigo-700 mt-1">
                   Focus on <span className="font-bold">{weakestSkill.label}</span> — it&apos;s your
                   biggest growth area right now. Practice regularly and you&apos;ll be
-                  ready for {nextLevel || 'mastery'} soon!
+                  ready for {nextLevel ? IELTS_BAND_LABELS[nextLevel] : 'mastery'} soon!
                 </p>
                 <Link
                   href={weakestSkill.href}

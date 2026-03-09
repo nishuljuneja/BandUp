@@ -7,6 +7,7 @@ import { allVocabulary, getVocabularyByLevel, getVocabularyByIds } from '@/conte
 import { Flashcard, LevelBadge, FillBlank, MultipleChoice, ScoreCard, ProgressBar } from '@/components/Exercises';
 import { BookOpen, Search, Filter, RotateCcw, Brain, Volume2, Lock } from 'lucide-react';
 import { useIndianVoice } from '@/lib/useIndianVoice';
+import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel, VocabularyWord } from '@/lib/firestore';
 import { updateUserProfile, addXP, updateStreak, updateVocabularyProgress, incrementWordsLearned } from '@/lib/firestore';
 import { isPro, isLevelAccessible } from '@/lib/subscription';
@@ -409,7 +410,7 @@ export default function VocabularyPage() {
               }`}
               title={locked ? 'Upgrade to Pro' : undefined}
             >
-              {level} ({count}) {locked && <Lock className="inline w-3 h-3 ml-1" />}
+              {IELTS_BAND_LABELS[level]} ({count}) {locked && <Lock className="inline w-3 h-3 ml-1" />}
             </button>
           );
         })}
@@ -417,7 +418,7 @@ export default function VocabularyPage() {
 
       {/* Pro gate for locked level */}
       {!isLevelAccessible(selectedLevel, profile) && (
-        <ProGate feature={`${selectedLevel} Vocabulary`} />
+        <ProGate feature={`${IELTS_BAND_LABELS[selectedLevel]} Vocabulary`} />
       )}
 
       {/* Flashcard Mode */}

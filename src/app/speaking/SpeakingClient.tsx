@@ -7,6 +7,7 @@ import { Mic, MicOff, Play, Pause, ChevronLeft, CheckCircle, Volume2, RotateCcw 
 import { LevelBadge } from '@/components/Exercises';
 import { speakingExercises, type SpeakingExercise } from '@/content/speaking-exercises';
 import { useIndianVoice } from '@/lib/useIndianVoice';
+import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
 
 type Phase = 'list' | 'exercise';
@@ -125,7 +126,7 @@ export default function SpeakingPage() {
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              {level === 'all' ? 'All Levels' : level}
+              {level === 'all' ? 'All Bands' : IELTS_BAND_LABELS[level as CEFRLevel]}
             </button>
           ))}
         </div>
