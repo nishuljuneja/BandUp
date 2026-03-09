@@ -61,6 +61,13 @@ service cloud.firestore {
       allow write: if isOwner(userId);
     }
 
+    // Referrals
+    match /referrals/{referralId} {
+      allow read: if isAuth();
+      allow create: if isAuth();
+      allow update, delete: if false;
+    }
+
     // Deny everything else
     match /{document=**} {
       allow read, write: if false;

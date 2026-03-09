@@ -33,33 +33,40 @@ export async function signUpWithEmail(
     }
   }
 
-  await createUserProfile({
-    uid: result.user.uid,
-    displayName,
-    email,
-    nativeLanguage,
-    currentLevel: 'A1',
-    xp: 0,
-    streak: 0,
-    lastActiveDate: new Date().toISOString().split('T')[0],
-    createdAt: Timestamp.now(),
-    skillScores: {
-      vocabulary: 0,
-      grammar: 0,
-      reading: 0,
-      listening: 0,
-      writing: 0,
-      speaking: 0,
-    },
-    lessonsCompleted: 0,
-    wordsLearned: 0,
-    placementTestCompleted: false,
-    subscriptionTier: 'free',
-    referralCode: generateReferralCode(result.user.uid),
-    referredBy: referrerUid,
-    referralCount: 0,
-    referralRewardsClaimed: 0,
-  });
+  try {
+    await createUserProfile({
+      uid: result.user.uid,
+      displayName,
+      email,
+      nativeLanguage,
+      currentLevel: 'A1',
+      xp: 0,
+      streak: 0,
+      lastActiveDate: new Date().toISOString().split('T')[0],
+      createdAt: Timestamp.now(),
+      skillScores: {
+        vocabulary: 0,
+        grammar: 0,
+        reading: 0,
+        listening: 0,
+        writing: 0,
+        speaking: 0,
+      },
+      lessonsCompleted: 0,
+      wordsLearned: 0,
+      placementTestCompleted: false,
+      subscriptionTier: 'free',
+      referralCode: generateReferralCode(result.user.uid),
+      referredBy: referrerUid,
+      referralCount: 0,
+      referralRewardsClaimed: 0,
+    });
+  } catch (firestoreErr) {
+    // If Firestore profile creation fails, delete the Auth user to avoid zombie accounts
+    console.error('Firestore profile creation failed, cleaning up Auth user:', firestoreErr);
+    await result.user.delete();
+    throw firestoreErr;
+  }
 
   // Record the referral (increments count + grants reward if threshold met)
   if (referrerUid) {

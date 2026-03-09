@@ -42,10 +42,11 @@ export default function SignupPage() {
       if (freshProfile) useAppStore.getState().setProfile(freshProfile);
       router.push('/onboarding');
     } catch (err: any) {
+      console.error('Signup error:', err);
       const code = err?.code || '';
       if (code === 'auth/email-already-in-use') setError('An account with this email already exists.');
       else if (code === 'auth/weak-password') setError('Password is too weak. Use at least 6 characters.');
-      else setError('Signup failed. Please try again.');
+      else setError(err?.message || 'Signup failed. Please try again.');
     } finally {
       setLoading(false);
     }
