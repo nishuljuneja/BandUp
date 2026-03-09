@@ -73,7 +73,7 @@ export default function Home() {
               Ace the IELTS, Band by Band
             </h1>
             <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Targeted practice for Reading, Writing, Listening and Speaking. Know your band. Raise your band.
+              Targeted practice for Reading, Writing, Listening, Speaking designed to help you improve your IELTS score.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
