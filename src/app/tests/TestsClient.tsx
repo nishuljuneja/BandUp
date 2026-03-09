@@ -9,7 +9,7 @@ import {
   SkipForward, ArrowRight, ArrowLeft, ClipboardCheck, TrendingUp, TrendingDown,
   Minus, Clock, ChevronRight, CheckCircle2, BookOpen,
 } from 'lucide-react';
-import { IELTS_BAND_LABELS } from '@/lib/firestore';
+import { IELTS_BAND_LABELS, IELTS_BAND_NUMBER } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
 
 const LEVEL_ORDER: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -21,6 +21,7 @@ const LEVEL_COLORS: Record<string, { bg: string; text: string; border: string; g
   B1: { bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200', gradient: 'from-blue-400 to-blue-600' },
   B2: { bg: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-200', gradient: 'from-purple-400 to-purple-600' },
   C1: { bg: 'bg-orange-50', text: 'text-orange-700', border: 'border-orange-200', gradient: 'from-orange-400 to-orange-600' },
+  C2: { bg: 'bg-red-50', text: 'text-red-700', border: 'border-red-200', gradient: 'from-red-400 to-red-600' },
 };
 
 // ── Saved results per test ──
@@ -208,8 +209,8 @@ export default function TestsPage() {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center text-white font-black text-lg shadow-md`}>
-                      {IELTS_BAND_LABELS[level]}
+                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colors?.gradient || 'from-red-400 to-red-600'} flex items-center justify-center text-white font-black text-lg shadow-md`}>
+                      {IELTS_BAND_NUMBER[level]}
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-800 group-hover:text-indigo-600 transition-colors">
@@ -270,8 +271,8 @@ export default function TestsPage() {
         </button>
 
         <div className="flex items-center gap-4 mb-8">
-          <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center text-white font-black text-xl shadow-lg`}>
-            {IELTS_BAND_LABELS[selectedLevel]}
+          <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${colors?.gradient || 'from-red-400 to-red-600'} flex items-center justify-center text-white font-black text-xl shadow-lg`}>
+            {IELTS_BAND_NUMBER[selectedLevel]}
           </div>
           <div>
             <h1 className="text-2xl font-bold text-gray-800">

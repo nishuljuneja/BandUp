@@ -5,7 +5,7 @@ import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { CheckCircle, XCircle, ArrowRight, RotateCcw, Shuffle, Volume2 } from 'lucide-react';
 import { useIndianVoice } from '@/lib/useIndianVoice';
-import { IELTS_BAND_LABELS, type CEFRLevel } from '@/lib/firestore';
+import { IELTS_BAND_LABELS, IELTS_BAND_NUMBER, type CEFRLevel } from '@/lib/firestore';
 
 // ==================== Flashcard Component ====================
 interface FlashcardProps {
@@ -364,6 +364,7 @@ export function LevelBadge({ level, size = 'md' }: LevelBadgeProps) {
     B1: 'bg-blue-100 text-blue-800 border-blue-300',
     B2: 'bg-purple-100 text-purple-800 border-purple-300',
     C1: 'bg-orange-100 text-orange-800 border-orange-300',
+    C2: 'bg-red-100 text-red-800 border-red-300',
   };
 
   const sizes = {
