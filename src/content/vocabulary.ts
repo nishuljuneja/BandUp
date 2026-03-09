@@ -64,7 +64,7 @@ const oxford5000: VocabularyWord[] = (oxford5000Extra as OxfordEntry[]).map((ent
 // Combined Oxford vocabulary (3000 + 2000 extra = ~5300 unique words)
 const oxfordVocabulary: VocabularyWord[] = [...oxford3000, ...oxford5000];
 
-// Hand-crafted sample vocabulary with full translations (Indian market focus)
+// Hand-crafted sample vocabulary with full translations (global market focus)
 
 export const sampleVocabulary: VocabularyWord[] = [
   // ==================== A1 - Basic Everyday Words ====================
@@ -74,7 +74,7 @@ export const sampleVocabulary: VocabularyWord[] = [
       en: 'a group of people related to each other', hi: 'परिवार', ta: 'குடும்பம்', te: 'కుటుంబం',
       bn: 'পরিবার', mr: 'कुटुंब', kn: 'ಕುಟುಂಬ', ml: 'കുടുംബം', gu: 'પરિવાર', pa: 'ਪਰਿਵਾਰ', od: 'ପରିବାର',
     },
-    example: 'I live with my family in Delhi.',
+    example: 'I live with my family in London.',
     exampleTranslation: {
       en: '', hi: 'मैं अपने परिवार के साथ दिल्ली में रहता हूँ।', ta: 'நான் என் குடும்பத்துடன் டெல்லியில் வசிக்கிறேன்.',
       te: 'నేను నా కుటుంబంతో ఢిల్లీలో ఉంటాను.', bn: 'আমি আমার পরিবারের সাথে দিল্লিতে থাকি।',
@@ -107,7 +107,7 @@ export const sampleVocabulary: VocabularyWord[] = [
       te: 'స్నేహితుడు', bn: 'বন্ধু', mr: 'मित्र', kn: 'ಸ್ನೇಹಿತ', ml: 'സുഹൃത്ത്', gu: 'મિત્ર',
       pa: 'ਦੋਸਤ', od: 'ବନ୍ଧୁ',
     },
-    example: 'Rahul is my best friend.',
+    example: 'Thomas is my best friend.',
     exampleTranslation: {
       en: '', hi: 'राहुल मेरा सबसे अच्छा दोस्त है।', ta: 'ராகுல் என் சிறந்த நண்பன்.',
       te: 'రాహుల్ నా మంచి స్నేహితుడు.', bn: 'রাহুল আমার সেরা বন্ধু।',
@@ -164,7 +164,7 @@ export const sampleVocabulary: VocabularyWord[] = [
       en: 'a chance to do something', hi: 'अवसर', ta: 'வாய்ப்பு', te: 'అవకాశం',
       bn: 'সুযোগ', mr: 'संधी', kn: 'ಅವಕಾಶ', ml: 'അവസരം', gu: 'તક', pa: 'ਮੌਕਾ', od: 'ସୁଯୋଗ',
     },
-    example: 'Bangalore offers many opportunities for IT professionals.',
+    example: 'Toronto offers many opportunities for IT professionals.',
     exampleTranslation: {
       en: '', hi: 'बैंगलोर आईटी पेशेवरों के लिए कई अवसर प्रदान करता है।',
       ta: 'பெங்களூர் IT நிபுணர்களுக்கு பல வாய்ப்புகளை வழங்குகிறது.',
@@ -188,7 +188,7 @@ export const sampleVocabulary: VocabularyWord[] = [
       ta: 'நிலையான', te: 'సుస్థిర', bn: 'টেকসই', mr: 'शाश्वत', kn: 'ಸುಸ್ಥಿರ',
       ml: 'സുസ്ഥിര', gu: 'ટકાઉ', pa: 'ਟਿਕਾਊ', od: 'ସ୍ଥାୟୀ',
     },
-    example: 'India needs sustainable solutions for its growing energy needs.',
+    example: 'the country needs sustainable solutions for its growing energy needs.',
     exampleTranslation: {
       en: '', hi: 'भारत को अपनी बढ़ती ऊर्जा जरूरतों के लिए टिकाऊ समाधान चाहिए।',
       ta: 'இந்தியாவின் வளரும் எரிசக்தித் தேவைகளுக்கு நிலையான தீர்வுகள் தேவை.',
@@ -204,7 +204,7 @@ export const sampleVocabulary: VocabularyWord[] = [
       ta: 'அதிகாரத்துவம்', te: 'అధికారవ్యవస్థ', bn: 'আমলাতন্ত্র', mr: 'नोकरशाही',
       kn: 'ಅಧಿಕಾರಶಾಹಿ', ml: 'ഉദ്യോഗസ്ഥമേധാവിത്വം', gu: 'અમલદારશાહી', pa: 'ਨੌਕਰਸ਼ਾਹੀ', od: 'ଆମଲାତନ୍ତ୍ର',
     },
-    example: 'Cutting through bureaucracy is one of the biggest challenges for businesses in India.',
+    example: 'Cutting through bureaucracy is one of the biggest challenges for businesses in many countries.',
     exampleTranslation: {
       en: '', hi: 'नौकरशाही से गुजरना भारत में व्यवसायों के लिए सबसे बड़ी चुनौतियों में से एक है।',
       ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '',

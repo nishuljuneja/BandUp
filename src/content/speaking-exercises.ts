@@ -36,10 +36,10 @@ export const speakingExercises: SpeakingExercise[] = [
     description: 'Listen and repeat these self-introduction sentences. Focus on clear pronunciation.',
     sentences: [
       { text: 'Hello, my name is Aarav.', hint: 'Say your own name instead' },
-      { text: 'I am from Mumbai.', hint: 'Say your city' },
+      { text: 'I am from Sydney.', hint: 'Say your city' },
       { text: 'I am twenty-five years old.' },
       { text: 'I am a software engineer.' },
-      { text: 'I like playing cricket and reading books.' },
+      { text: 'I like playing football and reading books.' },
       { text: 'Nice to meet you.' },
     ],
     topic: 'Introductions',
@@ -59,7 +59,7 @@ export const speakingExercises: SpeakingExercise[] = [
       { speaker: 'user', line: 'I would like to buy some milk, please.', hint: 'Ask for milk' },
       { speaker: 'system', line: 'Sure! We have full cream and toned milk. Which one would you like?' },
       { speaker: 'user', line: 'I will take toned milk, please.', hint: 'Choose one type' },
-      { speaker: 'system', line: 'That will be forty rupees.' },
+      { speaker: 'system', line: 'That will be four dollars.' },
       { speaker: 'user', line: 'Here you are. Thank you!', hint: 'Pay and thank' },
       { speaker: 'system', line: 'Thank you! Have a nice day!' },
     ],
@@ -75,14 +75,14 @@ export const speakingExercises: SpeakingExercise[] = [
     sentences: [
       { text: 'The time is half past nine.' },
       { text: 'My phone number is nine eight seven six five four three two one zero.' },
-      { text: 'This shirt costs four hundred and fifty rupees.' },
+      { text: 'This shirt costs forty-five dollars.' },
       { text: 'The train arrives at quarter to six.' },
       { text: 'I wake up at seven o\'clock every morning.' },
     ],
     topic: 'Numbers & Time',
     tips: [
       'Practice numbers clearly — they are crucial for daily communication',
-      'Indian English often says "four fifty" instead of "four hundred and fifty" — both are fine',
+      'common English often says "four fifty" instead of "four hundred and fifty" — both are fine',
     ],
   },
 
@@ -136,7 +136,7 @@ export const speakingExercises: SpeakingExercise[] = [
     description: 'Read each question, then speak your answer aloud for at least 30 seconds. Use opinion phrases.',
     sentences: [
       { text: 'Do you think social media is good for students?', hint: 'Use: In my opinion... / I believe... / On the other hand...' },
-      { text: 'Should school uniforms be mandatory in India?', hint: 'Use: I think... / The advantage is... / However...' },
+      { text: 'Should school uniforms be mandatory in many countries?', hint: 'Use: I think... / The advantage is... / However...' },
       { text: 'Is it better to live in a city or a village?', hint: 'Use: From my perspective... / While some people think...' },
     ],
     topic: 'Opinions',
@@ -178,7 +178,7 @@ export const speakingExercises: SpeakingExercise[] = [
     type: 'describe',
     description: 'Pick one topic and speak for 2 minutes. Use the structure provided. Record yourself and listen back.',
     sentences: [
-      { text: 'Topic: The impact of technology on education in India', hint: 'Use: Today I would like to discuss...' },
+      { text: 'Topic: The impact of technology on education in many countries', hint: 'Use: Today I would like to discuss...' },
       { text: 'Introduction: State the topic and why it matters.', hint: 'Use: This is particularly relevant because...' },
       { text: 'Point 1: Discuss the advantages.', hint: 'Use: One significant advantage is..., Furthermore...' },
       { text: 'Point 2: Discuss the challenges.', hint: 'Use: However, there are also challenges such as...' },
@@ -188,7 +188,7 @@ export const speakingExercises: SpeakingExercise[] = [
     tips: [
       'Use signposting language: firstly, secondly, moving on to, in conclusion',
       'Pause between main points — don\'t rush',
-      'Use examples from Indian context to support your arguments',
+      'Use examples from international context to support your arguments',
     ],
   },
   {
@@ -217,8 +217,8 @@ export const speakingExercises: SpeakingExercise[] = [
     type: 'respond',
     description: 'Respond to each academic prompt with a well-structured spoken answer (60-90 seconds each).',
     sentences: [
-      { text: 'Discuss the implications of artificial intelligence on employment in developing countries like India.', hint: 'Use hedging language: It could be argued that... / Evidence suggests... / This is likely to...' },
-      { text: 'Evaluate the effectiveness of India\'s digital payment revolution in promoting financial inclusion.', hint: 'Use evaluative language: To a large extent... / The evidence is mixed... / A critical assessment reveals...' },
+      { text: 'Discuss the implications of artificial intelligence on employment in developing countries like the country.', hint: 'Use hedging language: It could be argued that... / Evidence suggests... / This is likely to...' },
+      { text: 'Evaluate the effectiveness worldwide\'s digital payment revolution in promoting financial inclusion.', hint: 'Use evaluative language: To a large extent... / The evidence is mixed... / A critical assessment reveals...' },
       { text: 'To what extent should governments regulate social media platforms?', hint: 'Balance arguments: Proponents argue... / Critics, however, contend... / A nuanced perspective suggests...' },
     ],
     topic: 'Academic',
@@ -233,7 +233,7 @@ export const speakingExercises: SpeakingExercise[] = [
     level: 'C1',
     title: 'Pronunciation: Problem Sounds',
     type: 'repeat',
-    description: 'Practice sounds that are commonly challenging for Indian English speakers. Listen carefully and repeat.',
+    description: 'Practice sounds that are commonly challenging for common English speakers. Listen carefully and repeat.',
     sentences: [
       { text: 'The thick thief thought about three things.', hint: 'Focus on "th" sound — tongue between teeth' },
       { text: 'She sells sea shells by the sea shore.', hint: 'Focus on "sh" vs "s" distinction' },
@@ -245,7 +245,7 @@ export const speakingExercises: SpeakingExercise[] = [
     topic: 'Pronunciation',
     tips: [
       'Record yourself and compare with the model pronunciation',
-      'Indian languages often lack the "th" sound — practice placing your tongue between your teeth',
+      'local languages often lack the "th" sound — practice placing your tongue between your teeth',
       'The "v" and "w" distinction is important: "vine" vs "wine"',
     ],
   },
@@ -358,16 +358,16 @@ export const speakingExercises: SpeakingExercise[] = [
     type: 'repeat',
     description: 'Practice saying basic self-introduction sentences clearly and confidently.',
     sentences: [
-      { text: 'Hello, my name is Priya.', hint: 'Start with a clear "Hello"' },
-      { text: 'I am from Hyderabad.', hint: 'Pronounce "Hyderabad" clearly' },
+      { text: 'Hello, my name is Sophie.', hint: 'Start with a clear "Hello"' },
+      { text: 'I am from Singapore.', hint: 'Pronounce "Singapore" clearly' },
       { text: 'I am twenty-five years old.', hint: 'Stress "twenty-five"' },
       { text: 'I work as a software engineer.', hint: 'Clear pronunciation of "engineer"' },
-      { text: 'I like playing cricket and watching movies.', hint: 'Pause after "cricket" with "and"' },
+      { text: 'I like playing football and watching movies.', hint: 'Pause after "football" with "and"' },
       { text: 'Nice to meet you!', hint: 'Friendly and warm tone' },
     ],
     topic: 'Self-Introduction',
     tips: [
-      'Don\'t say "Myself Priya" — say "My name is Priya" or "I am Priya"',
+      'Don\'t say "Myself Sophie" — say "My name is Sophie" or "I am Sophie"',
       'Speak slowly and clearly',
       'Smile when you introduce yourself!',
     ],
@@ -381,9 +381,9 @@ export const speakingExercises: SpeakingExercise[] = [
     sentences: [
       { text: 'Good evening! Welcome to our restaurant. How many people?', hint: 'Say: "Table for two, please."' },
       { text: 'Here is the menu. Would you like something to drink?', hint: 'Say: "I would like a glass of water, please."' },
-      { text: 'Are you ready to order?', hint: 'Say: "Yes, I would like the butter chicken and two naan, please."' },
+      { text: 'Are you ready to order?', hint: 'Say: "Yes, I would like the grilled salmon and a side salad, please."' },
       { text: 'Would you like anything else?', hint: 'Say: "No, thank you. That is all."' },
-      { text: 'Here is your bill. That will be six hundred rupees.', hint: 'Say: "Thank you. Here you are."' },
+      { text: 'Here is your bill. That will be sixty dollars.', hint: 'Say: "Thank you. Here you are."' },
     ],
     topic: 'Restaurant',
     tips: [
@@ -447,7 +447,7 @@ export const speakingExercises: SpeakingExercise[] = [
       { speaker: 'system', line: 'Dr. Patel is available on Thursday at three PM. Does that work for you?' },
       { speaker: 'user', line: 'Yes, Thursday at three PM is fine. Thank you.', hint: 'Confirm the time and day' },
       { speaker: 'system', line: 'May I have your name and phone number, please?' },
-      { speaker: 'user', line: 'My name is Arjun Kumar. My number is nine eight seven six five four three two one zero.', hint: 'Say the phone number digit by digit' },
+      { speaker: 'user', line: 'My name is Lucas Anderson. My number is nine eight seven six five four three two one zero.', hint: 'Say the phone number digit by digit' },
     ],
     topic: 'Phone Calls',
     tips: [
@@ -528,9 +528,9 @@ export const speakingExercises: SpeakingExercise[] = [
     type: 'describe',
     description: 'Practice describing graphs, charts, and trends — a key skill for IELTS and professional presentations.',
     sentences: [
-      { text: 'Describe a chart showing India\'s GDP growth from 2010 to 2024.', hint: 'Use trend language: "increased steadily", "rose sharply", "experienced a decline in 2020"' },
-      { text: 'Explain the trend in smartphone usage in rural India.', hint: 'Use: "There has been a significant increase...", "The figure doubled between..."' },
-      { text: 'Describe the shift from cash to digital payments in India.', hint: 'Use comparisons: "while cash transactions declined, UPI payments surged"' },
+      { text: 'Describe a chart showing the country\'s GDP growth from 2010 to 2024.', hint: 'Use trend language: "increased steadily", "rose sharply", "experienced a decline in 2020"' },
+      { text: 'Explain the trend in smartphone usage in rural areas.', hint: 'Use: "There has been a significant increase...", "The figure doubled between..."' },
+      { text: 'Describe the shift from cash to digital payments in many countries.', hint: 'Use comparisons: "while cash transactions declined, digital payments payments surged"' },
     ],
     topic: 'Data & Presentations',
     tips: [
@@ -552,7 +552,7 @@ export const speakingExercises: SpeakingExercise[] = [
       { speaker: 'system', line: 'But don\'t you think collaboration suffers when people work remotely?' },
       { speaker: 'user', line: 'That is a fair point. However, studies show that productivity actually increases with remote work, and collaboration tools like video conferencing have made virtual teamwork highly effective.', hint: 'Acknowledge the counter-argument, then refute with evidence' },
       { speaker: 'system', line: 'What about the mental health impact of isolation?' },
-      { speaker: 'user', line: 'While isolation can be a concern, companies can address this through regular virtual social events and hybrid models. Moreover, eliminating long commutes in cities like Bangalore and Mumbai significantly reduces stress.', hint: 'Address the concern and provide solutions' },
+      { speaker: 'user', line: 'While isolation can be a concern, companies can address this through regular virtual social events and hybrid models. Moreover, eliminating long commutes in cities like Toronto and Sydney significantly reduces stress.', hint: 'Address the concern and provide solutions' },
       { speaker: 'system', line: 'Please give your closing statement.' },
       { speaker: 'user', line: 'In conclusion, remote work reduces commute time, increases productivity, and promotes a better quality of life. The evidence strongly supports making it a permanent option.', hint: 'Summarise your key arguments' },
     ],
@@ -571,7 +571,7 @@ export const speakingExercises: SpeakingExercise[] = [
     type: 'describe',
     description: 'Practice giving a 2-minute presentation on a familiar topic. Structure your talk with an introduction, body, and conclusion.',
     sentences: [
-      { text: 'Give a 2-minute presentation on the importance of learning English in India.', hint: 'Introduction: Hook → Body: 3 reasons with examples → Conclusion: Summary + call to action' },
+      { text: 'Give a 2-minute presentation on the importance of learning English in many countries.', hint: 'Introduction: Hook → Body: 3 reasons with examples → Conclusion: Summary + call to action' },
       { text: 'Present the pros and cons of social media for students.', hint: 'Start with a question or statistic, then present a balanced view' },
       { text: 'Talk about a recent technology that has changed your life.', hint: 'Describe what it is, how you use it, and why it matters' },
     ],
@@ -593,7 +593,7 @@ export const speakingExercises: SpeakingExercise[] = [
     description: 'Practice disagreeing politely and diplomatically in professional settings.',
     sentences: [
       { text: 'I think we should move all our operations to the cloud immediately without any testing phase.', hint: 'Disagree politely: "I see your point, however, I would suggest that a phased approach might be more prudent..."' },
-      { text: 'In my view, English should be the only language used in Indian offices.', hint: 'Challenge respectfully: "While I understand the rationale, I would argue that multilingual policies actually foster inclusivity..."' },
+      { text: 'In my view, English should be the only language used in many countriesn offices.', hint: 'Challenge respectfully: "While I understand the rationale, I would argue that multilingual policies actually foster inclusivity..."' },
       { text: 'We should cut the marketing budget entirely and rely solely on word of mouth.', hint: 'Counter with evidence: "I appreciate the sentiment, but data consistently shows that a balanced approach yields better results..."' },
       { text: 'I believe AI will completely replace human workers within the next decade.', hint: 'Offer nuance: "That is an interesting perspective. However, most experts suggest that AI will augment rather than replace..."' },
     ],
@@ -612,9 +612,9 @@ export const speakingExercises: SpeakingExercise[] = [
     type: 'describe',
     description: 'Practice summarising complex passages concisely. Read the prompt and provide a 1-minute spoken summary.',
     sentences: [
-      { text: 'Summarise the key arguments for and against India\'s reservation system in education.', hint: 'Cover: Historical rationale, current impact, criticisms about merit, defense about equity, possible reforms' },
-      { text: 'Explain the concept of Net Zero emissions and why it matters for India.', hint: 'Define Net Zero, India\'s 2070 target, challenges (coal dependency, development needs), opportunities (solar, green hydrogen)' },
-      { text: 'Summarise how UPI has transformed financial transactions in India.', hint: 'Cover: What UPI is, scale of adoption, impact on small businesses, financial inclusion, global recognition' },
+      { text: 'Summarise the key arguments for and against the country\'s reservation system in education.', hint: 'Cover: Historical rationale, current impact, criticisms about merit, defense about equity, possible reforms' },
+      { text: 'Explain the concept of Net Zero emissions and why it matters for the country.', hint: 'Define Net Zero, the country\'s 2070 target, challenges (coal dependency, development needs), opportunities (solar, green hydrogen)' },
+      { text: 'Summarise how digital payments has transformed financial transactions in many countries.', hint: 'Cover: What digital payments is, scale of adoption, impact on small businesses, financial inclusion, global recognition' },
     ],
     topic: 'Academic & Professional',
     tips: [
@@ -631,10 +631,10 @@ export const speakingExercises: SpeakingExercise[] = [
     type: 'respond',
     description: 'Develop fluency by speaking spontaneously on abstract topics for 2 minutes each.',
     sentences: [
-      { text: 'What does success mean to you? Has your definition changed over time?', hint: 'Explore personal growth, societal vs personal definitions, Indian cultural context' },
+      { text: 'What does success mean to you? Has your definition changed over time?', hint: 'Explore personal growth, societal vs personal definitions, local cultural context' },
       { text: 'Is it possible to be truly objective? Why or why not?', hint: 'Consider journalism, science, human bias, cultural perspectives' },
-      { text: 'How has globalisation affected local cultures in India?', hint: 'Discuss food, fashion, language, festivals — both positive and negative effects' },
-      { text: 'What role should art and creativity play in education?', hint: 'Consider holistic development, innovation, Indian classical arts, school curriculum' },
+      { text: 'How has globalisation affected local cultures in many countries?', hint: 'Discuss food, fashion, language, festivals — both positive and negative effects' },
+      { text: 'What role should art and creativity play in education?', hint: 'Consider holistic development, innovation, local classical arts, school curriculum' },
     ],
     topic: 'Abstract Discussion',
     tips: [

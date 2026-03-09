@@ -69,7 +69,7 @@ export default function ProfilePage() {
             <div className="flex items-center gap-3 mt-2">
               {profile?.currentLevel && <LevelBadge level={profile.currentLevel} />}
               <span className="text-sm text-white/60">
-                Joined {profile?.createdAt ? new Date(profile.createdAt.seconds * 1000).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' }) : 'recently'}
+                Joined {profile?.createdAt ? new Date(profile.createdAt.seconds * 1000).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }) : 'recently'}
               </span>
             </div>
           </div>

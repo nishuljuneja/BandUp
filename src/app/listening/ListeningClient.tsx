@@ -6,7 +6,7 @@ import { t } from '@/lib/i18n';
 import { Headphones, Play, Pause, RotateCcw, CheckCircle, XCircle, Volume2, ChevronLeft } from 'lucide-react';
 import { LevelBadge, ScoreCard } from '@/components/Exercises';
 import { listeningExercises, type ListeningExercise } from '@/content/listening-exercises';
-import { useIndianVoice } from '@/lib/useIndianVoice';
+import { useEnglishVoice } from '@/lib/useEnglishVoice';
 import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
 import { isPro } from '@/lib/subscription';
@@ -33,8 +33,8 @@ export default function ListeningPage() {
   const [compAnswers, setCompAnswers] = useState<Record<number, string>>({});
   const [compSubmitted, setCompSubmitted] = useState(false);
 
-  // TTS — shared Indian-English voice hook
-  const { speak, stop: stopSpeech, isPlaying } = useIndianVoice();
+  // TTS — shared local-English voice hook
+  const { speak, stop: stopSpeech, isPlaying } = useEnglishVoice();
 
   const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 

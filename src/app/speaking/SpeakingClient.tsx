@@ -6,14 +6,16 @@ import { t } from '@/lib/i18n';
 import { Mic, MicOff, Play, Pause, ChevronLeft, CheckCircle, Volume2, RotateCcw } from 'lucide-react';
 import { LevelBadge } from '@/components/Exercises';
 import { speakingExercises, type SpeakingExercise } from '@/content/speaking-exercises';
-import { useIndianVoice } from '@/lib/useIndianVoice';
+import { useEnglishVoice } from '@/lib/useEnglishVoice';
 import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
+import { isPro } from '@/lib/subscription';
+import ProGate from '@/components/ProGate';
 
 type Phase = 'list' | 'exercise';
 
 export default function SpeakingPage() {
-  const { uiLanguage } = useAppStore();
+  const { uiLanguage, profile } = useAppStore();
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel | 'all'>('all');
   const [phase, setPhase] = useState<Phase>('list');
   const [exercise, setExercise] = useState<SpeakingExercise | null>(null);
@@ -27,8 +29,8 @@ export default function SpeakingPage() {
 
   const recognitionRef = useRef<ReturnType<typeof createRecognition> | null>(null);
 
-  // TTS — shared Indian-English voice hook
-  const { speak, stop: stopSpeech, isPlaying } = useIndianVoice();
+  // TTS — shared local-English voice hook
+  const { speak, stop: stopSpeech, isPlaying } = useEnglishVoice();
 
   const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
@@ -42,7 +44,7 @@ export default function SpeakingPage() {
     const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SR) return null;
     const r = new SR();
-    r.lang = 'en-IN';
+    r.lang = 'en-GB';
     r.interimResults = false;
     r.maxAlternatives = 1;
     return r;
@@ -115,6 +117,11 @@ export default function SpeakingPage() {
           </div>
         </div>
 
+        {!isPro(profile) && (
+          <ProGate feature="Speaking Practice" />
+        )}
+
+        {isPro(profile) && (<>
         <div className="flex flex-wrap gap-2 mb-6">
           {(['all', ...levels] as const).map((level) => (
             <button
@@ -157,6 +164,7 @@ export default function SpeakingPage() {
             <p className="text-center text-gray-400 py-12">No exercises for this level yet.</p>
           )}
         </div>
+        </>)}
       </div>
     );
   }

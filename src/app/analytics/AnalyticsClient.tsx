@@ -54,7 +54,7 @@ function analyzeSkill(
     },
     listening: {
       strong: ['Challenge yourself with faster speech', 'Try listening without subtitles'],
-      moderate: ['Listen to exercises twice before answering', 'Practice with Indian English accents'],
+      moderate: ['Listen to exercises twice before answering', 'Practice with clear English pronunciation'],
       weak: ['Start with slow, clear audio at A1 level', 'Listen and repeat sentences', 'Use the speaker button on vocabulary cards'],
     },
     writing: {

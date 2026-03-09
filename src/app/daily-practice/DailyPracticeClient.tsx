@@ -13,7 +13,7 @@ import {
   CheckCircle2, Zap, Target, Volume2, Lock,
 } from 'lucide-react';
 import { addXP, updateStreak, incrementWordsLearned, updateUserProfile } from '@/lib/firestore';
-import { useIndianVoice } from '@/lib/useIndianVoice';
+import { useEnglishVoice } from '@/lib/useEnglishVoice';
 import type { CEFRLevel, VocabularyWord } from '@/lib/firestore';
 import { isPro, getDailyPracticeCount, incrementDailyPracticeCount, FREE_DAILY_PRACTICE_LIMIT } from '@/lib/subscription';
 import ProGate from '@/components/ProGate';
@@ -64,7 +64,7 @@ const DAILY_ITEMS = 10; // number of items per session
 
 export default function DailyPracticePage() {
   const { profile, uiLanguage, setProfile, loading, refreshProfile } = useAppStore();
-  const { speak } = useIndianVoice();
+  const { speak } = useEnglishVoice();
   const [started, setStarted] = useState(false);
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);

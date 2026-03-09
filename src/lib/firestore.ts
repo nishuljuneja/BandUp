@@ -148,7 +148,6 @@ export interface ReadingPassage {
   content: string;
   wordCount: number;
   topic: string;
-  indianContext: boolean; // True if set in Indian context
   questions: ReadingQuestion[];
   vocabulary: string[]; // Key words to pre-teach
 }

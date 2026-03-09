@@ -346,7 +346,7 @@ export default function TestsPage() {
                   <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-4 text-xs text-gray-400">
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
-                      Last: {new Date(lastAttempt.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
+                      Last: {new Date(lastAttempt.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}
                     </span>
                     <span>Score: {lastAttempt.score}/{lastAttempt.total}</span>
                     {/* Trend vs previous */}

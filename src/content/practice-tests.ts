@@ -20,13 +20,13 @@ export interface PracticeTest {
 // ═══════════════════════════════════════════════════════════════════
 
 const a1Test1: PracticeQuestion[] = [
-  { id: 'a1-1-01', question: 'My name _____ Anita.', options: ['am', 'is', 'are', 'be'], correctAnswer: 'is' },
+  { id: 'a1-1-01', question: 'My name _____ Emma.', options: ['am', 'is', 'are', 'be'], correctAnswer: 'is' },
   { id: 'a1-1-02', question: 'I _____ a student.', options: ['is', 'am', 'are', 'be'], correctAnswer: 'am' },
-  { id: 'a1-1-03', question: 'They _____ from Chennai.', options: ['is', 'am', 'are', 'be'], correctAnswer: 'are' },
+  { id: 'a1-1-03', question: 'They _____ from Vancouver.', options: ['is', 'am', 'are', 'be'], correctAnswer: 'are' },
   { id: 'a1-1-04', question: '_____ is your favourite colour?', options: ['Who', 'What', 'Where', 'When'], correctAnswer: 'What' },
   { id: 'a1-1-05', question: 'She _____ tea every morning.', options: ['drink', 'drinks', 'drinking', 'drank'], correctAnswer: 'drinks' },
   { id: 'a1-1-06', question: 'This is _____ book.', options: ['a', 'an', 'the', 'some'], correctAnswer: 'a' },
-  { id: 'a1-1-07', question: 'He lives _____ Delhi.', options: ['in', 'on', 'at', 'to'], correctAnswer: 'in' },
+  { id: 'a1-1-07', question: 'He lives _____ London.', options: ['in', 'on', 'at', 'to'], correctAnswer: 'in' },
   { id: 'a1-1-08', question: 'I have two _____.', options: ['brother', 'brothers', 'brotheres', 'brotherss'], correctAnswer: 'brothers' },
   { id: 'a1-1-09', question: 'The cat is _____ the table.', options: ['in', 'on', 'at', 'to'], correctAnswer: 'on' },
   { id: 'a1-1-10', question: 'We _____ happy today.', options: ['is', 'am', 'are', 'be'], correctAnswer: 'are' },
@@ -40,7 +40,7 @@ const a1Test2: PracticeQuestion[] = [
   { id: 'a1-2-05', question: 'There _____ five people in my family.', options: ['is', 'am', 'are', 'be'], correctAnswer: 'are' },
   { id: 'a1-2-06', question: '_____ you speak English?', options: ['Can', 'Is', 'Am', 'Are'], correctAnswer: 'Can' },
   { id: 'a1-2-07', question: 'I wake up _____ 7 o\'clock.', options: ['in', 'on', 'at', 'to'], correctAnswer: 'at' },
-  { id: 'a1-2-08', question: 'He _____ not like cricket.', options: ['do', 'does', 'is', 'are'], correctAnswer: 'does' },
+  { id: 'a1-2-08', question: 'He _____ not like football.', options: ['do', 'does', 'is', 'are'], correctAnswer: 'does' },
   { id: 'a1-2-09', question: 'This is _____ apple.', options: ['a', 'an', 'the', 'some'], correctAnswer: 'an' },
   { id: 'a1-2-10', question: 'My mother _____ very well.', options: ['cook', 'cooks', 'cooking', 'cooked'], correctAnswer: 'cooks' },
 ];
@@ -48,7 +48,7 @@ const a1Test2: PracticeQuestion[] = [
 const a1Test3: PracticeQuestion[] = [
   { id: 'a1-3-01', question: '_____ is the hospital?', options: ['What', 'Who', 'Where', 'When'], correctAnswer: 'Where' },
   { id: 'a1-3-02', question: 'We _____ football on Sundays.', options: ['play', 'plays', 'playing', 'played'], correctAnswer: 'play' },
-  { id: 'a1-3-03', question: 'Ravi is _____ brother.', options: ['I', 'me', 'my', 'mine'], correctAnswer: 'my' },
+  { id: 'a1-3-03', question: 'James is _____ brother.', options: ['I', 'me', 'my', 'mine'], correctAnswer: 'my' },
   { id: 'a1-3-04', question: 'The children _____ in the park.', options: ['is', 'am', 'are', 'be'], correctAnswer: 'are' },
   { id: 'a1-3-05', question: 'I go to bed _____ 10 pm.', options: ['in', 'on', 'at', 'to'], correctAnswer: 'at' },
   { id: 'a1-3-06', question: '_____ many pencils do you have?', options: ['What', 'How', 'Who', 'Where'], correctAnswer: 'How' },
@@ -76,7 +76,7 @@ const a1Test4: PracticeQuestion[] = [
 // ═══════════════════════════════════════════════════════════════════
 
 const a2Test1: PracticeQuestion[] = [
-  { id: 'a2-1-01', question: 'I _____ to Jaipur last summer.', options: ['go', 'went', 'gone', 'going'], correctAnswer: 'went' },
+  { id: 'a2-1-01', question: 'I _____ to Amsterdam last summer.', options: ['go', 'went', 'gone', 'going'], correctAnswer: 'went' },
   { id: 'a2-1-02', question: 'She is _____ than her sister.', options: ['tall', 'taller', 'tallest', 'more tall'], correctAnswer: 'taller' },
   { id: 'a2-1-03', question: 'We _____ dinner at 8 pm every day.', options: ['has', 'have', 'having', 'had'], correctAnswer: 'have' },
   { id: 'a2-1-04', question: 'He _____ already finished his homework.', options: ['have', 'has', 'is', 'was'], correctAnswer: 'has' },
@@ -92,7 +92,7 @@ const a2Test2: PracticeQuestion[] = [
   { id: 'a2-2-01', question: 'You _____ wear a helmet while riding a bike.', options: ['can', 'must', 'may', 'might'], correctAnswer: 'must' },
   { id: 'a2-2-02', question: 'The movie was _____ boring. I fell asleep.', options: ['very', 'much', 'many', 'lot'], correctAnswer: 'very' },
   { id: 'a2-2-03', question: 'If it rains, we _____ stay at home.', options: ['does', 'do', 'will', 'are'], correctAnswer: 'will' },
-  { id: 'a2-2-04', question: 'She asked me _____ I wanted some chai.', options: ['that', 'if', 'what', 'which'], correctAnswer: 'if' },
+  { id: 'a2-2-04', question: 'She asked me _____ I wanted some coffee.', options: ['that', 'if', 'what', 'which'], correctAnswer: 'if' },
   { id: 'a2-2-05', question: 'I _____ never been to Goa.', options: ['am', 'was', 'have', 'had'], correctAnswer: 'have' },
   { id: 'a2-2-06', question: 'He is interested _____ learning music.', options: ['at', 'for', 'in', 'on'], correctAnswer: 'in' },
   { id: 'a2-2-07', question: 'The shop opens _____ 9 am _____ 9 pm.', options: ['from...to', 'at...at', 'in...in', 'on...on'], correctAnswer: 'from...to' },
@@ -108,7 +108,7 @@ const a2Test3: PracticeQuestion[] = [
   { id: 'a2-3-04', question: 'The food here is _____ expensive than there.', options: ['more', 'most', 'much', 'many'], correctAnswer: 'more' },
   { id: 'a2-3-05', question: 'I need to go to the bank _____ withdraw money.', options: ['for', 'to', 'at', 'in'], correctAnswer: 'to' },
   { id: 'a2-3-06', question: 'She was _____ tired that she went to bed early.', options: ['very', 'so', 'too', 'much'], correctAnswer: 'so' },
-  { id: 'a2-3-07', question: 'My friend _____ in Bangalore for five years.', options: ['lives', 'lived', 'has lived', 'is living'], correctAnswer: 'has lived' },
+  { id: 'a2-3-07', question: 'My friend _____ in Toronto for five years.', options: ['lives', 'lived', 'has lived', 'is living'], correctAnswer: 'has lived' },
   { id: 'a2-3-08', question: 'I usually travel _____ train to work.', options: ['in', 'on', 'by', 'with'], correctAnswer: 'by' },
   { id: 'a2-3-09', question: '_____ happened at the meeting yesterday?', options: ['Who', 'What', 'Where', 'How'], correctAnswer: 'What' },
   { id: 'a2-3-10', question: 'The children enjoyed _____ at the park.', options: ['them', 'their', 'theirs', 'themselves'], correctAnswer: 'themselves' },
@@ -124,7 +124,7 @@ const a2Test4: PracticeQuestion[] = [
   { id: 'a2-4-07', question: 'He got up early _____ catch the train.', options: ['for', 'to', 'so', 'because'], correctAnswer: 'to' },
   { id: 'a2-4-08', question: 'My sister is good _____ cooking biriyani.', options: ['in', 'on', 'at', 'for'], correctAnswer: 'at' },
   { id: 'a2-4-09', question: 'It\'s too _____ to play outside in the summer.', options: ['hot', 'cold', 'warm', 'cool'], correctAnswer: 'hot' },
-  { id: 'a2-4-10', question: 'Neither Ravi _____ Sita came to the party.', options: ['or', 'and', 'nor', 'but'], correctAnswer: 'nor' },
+  { id: 'a2-4-10', question: 'Neither James _____ Lily came to the party.', options: ['or', 'and', 'nor', 'but'], correctAnswer: 'nor' },
 ];
 
 // ═══════════════════════════════════════════════════════════════════
@@ -132,7 +132,7 @@ const a2Test4: PracticeQuestion[] = [
 // ═══════════════════════════════════════════════════════════════════
 
 const b1Test1: PracticeQuestion[] = [
-  { id: 'b1-1-01', question: 'If I _____ more time, I would travel around India.', options: ['have', 'had', 'has', 'having'], correctAnswer: 'had' },
+  { id: 'b1-1-01', question: 'If I _____ more time, I would travel around the world.', options: ['have', 'had', 'has', 'having'], correctAnswer: 'had' },
   { id: 'b1-1-02', question: 'She suggested _____ to the new restaurant.', options: ['go', 'to go', 'going', 'gone'], correctAnswer: 'going' },
   { id: 'b1-1-03', question: 'The report _____ by the manager yesterday.', options: ['was reviewed', 'reviewed', 'is reviewed', 'has reviewed'], correctAnswer: 'was reviewed' },
   { id: 'b1-1-04', question: 'I wish I _____ speak better English.', options: ['can', 'could', 'would', 'should'], correctAnswer: 'could' },
@@ -141,13 +141,13 @@ const b1Test1: PracticeQuestion[] = [
   { id: 'b1-1-07', question: 'By the time we arrived, the movie _____ already started.', options: ['has', 'have', 'had', 'was'], correctAnswer: 'had' },
   { id: 'b1-1-08', question: 'The number of students _____ increased this year.', options: ['have', 'has', 'are', 'is'], correctAnswer: 'has' },
   { id: 'b1-1-09', question: 'He apologised _____ being late to the meeting.', options: ['of', 'about', 'for', 'to'], correctAnswer: 'for' },
-  { id: 'b1-1-10', question: 'You should get used _____ Indian traffic.', options: ['for', 'with', 'to', 'at'], correctAnswer: 'to' },
+  { id: 'b1-1-10', question: 'You should get used _____ local traffic.', options: ['for', 'with', 'to', 'at'], correctAnswer: 'to' },
 ];
 
 const b1Test2: PracticeQuestion[] = [
   { id: 'b1-2-01', question: 'The project needs to be completed _____ Friday.', options: ['until', 'by', 'on', 'at'], correctAnswer: 'by' },
   { id: 'b1-2-02', question: 'I\'d rather you _____ smoke inside the house.', options: ['don\'t', 'didn\'t', 'won\'t', 'not'], correctAnswer: 'didn\'t' },
-  { id: 'b1-2-03', question: 'She _____ working at Infosys for three years before she quit.', options: ['is', 'was', 'has been', 'had been'], correctAnswer: 'had been' },
+  { id: 'b1-2-03', question: 'She _____ working at Salesforce for three years before she quit.', options: ['is', 'was', 'has been', 'had been'], correctAnswer: 'had been' },
   { id: 'b1-2-04', question: 'The more you practise, the _____ you will become.', options: ['good', 'better', 'best', 'well'], correctAnswer: 'better' },
   { id: 'b1-2-05', question: 'He denied _____ the money from the drawer.', options: ['take', 'to take', 'taking', 'took'], correctAnswer: 'taking' },
   { id: 'b1-2-06', question: '_____ I were you, I would accept the offer.', options: ['If', 'When', 'Unless', 'Although'], correctAnswer: 'If' },
@@ -174,7 +174,7 @@ const b1Test4: PracticeQuestion[] = [
   { id: 'b1-4-01', question: 'The results were _____ disappointing than we expected.', options: ['less', 'fewer', 'least', 'little'], correctAnswer: 'less' },
   { id: 'b1-4-02', question: 'I won\'t go _____ she invites me personally.', options: ['if', 'when', 'unless', 'although'], correctAnswer: 'unless' },
   { id: 'b1-4-03', question: 'She has been _____ for the job interview all week.', options: ['prepare', 'prepared', 'preparing', 'to prepare'], correctAnswer: 'preparing' },
-  { id: 'b1-4-04', question: 'The company, _____ was founded in Pune, is now global.', options: ['that', 'which', 'who', 'where'], correctAnswer: 'which' },
+  { id: 'b1-4-04', question: 'The company, _____ was founded in Melbourne, is now global.', options: ['that', 'which', 'who', 'where'], correctAnswer: 'which' },
   { id: 'b1-4-05', question: 'He ran fast _____ not to miss the flight.', options: ['so as', 'in order', 'because', 'due to'], correctAnswer: 'so as' },
   { id: 'b1-4-06', question: 'I\'d _____ stay home than go to the crowded market.', options: ['better', 'rather', 'prefer', 'like'], correctAnswer: 'rather' },
   { id: 'b1-4-07', question: '_____ having a map, we got lost in the old city.', options: ['Although', 'Despite', 'Because', 'Since'], correctAnswer: 'Despite' },
@@ -253,7 +253,7 @@ const c1Test1: PracticeQuestion[] = [
   { id: 'c1-1-07', question: 'The researcher _____ a correlation between diet and cognitive performance.', options: ['established', 'installed', 'instituted', 'ensured'], correctAnswer: 'established' },
   { id: 'c1-1-08', question: 'The merger will _____ have significant ramifications for the industry.', options: ['inevitably', 'invariably', 'inconceivably', 'inadvertently'], correctAnswer: 'inevitably' },
   { id: 'c1-1-09', question: 'He was _____ in his efforts to modernise the curriculum.', options: ['relentless', 'reluctant', 'reclusive', 'redundant'], correctAnswer: 'relentless' },
-  { id: 'c1-1-10', question: 'The novel provides a _____ account of partition-era India.', options: ['poignant', 'pungent', 'prudent', 'prevalent'], correctAnswer: 'poignant' },
+  { id: 'c1-1-10', question: 'The novel provides a _____ account of partition-era the country.', options: ['poignant', 'pungent', 'prudent', 'prevalent'], correctAnswer: 'poignant' },
 ];
 
 const c1Test2: PracticeQuestion[] = [
@@ -266,7 +266,7 @@ const c1Test2: PracticeQuestion[] = [
   { id: 'c1-2-07', question: 'The activist\'s speech _____ widespread public support for the cause.', options: ['garnered', 'governed', 'generated', 'guaranteed'], correctAnswer: 'garnered' },
   { id: 'c1-2-08', question: 'The findings are _____ with previous research in the area.', options: ['consistent', 'constant', 'constituent', 'constructive'], correctAnswer: 'consistent' },
   { id: 'c1-2-09', question: 'We should not _____ the complexity of the situation.', options: ['undermine', 'undertake', 'underestimate', 'undergo'], correctAnswer: 'underestimate' },
-  { id: 'c1-2-10', question: 'The infrastructure plan will _____ billions of rupees in investment.', options: ['entail', 'engage', 'enforce', 'endure'], correctAnswer: 'entail' },
+  { id: 'c1-2-10', question: 'The infrastructure plan will _____ billions of dollars in investment.', options: ['entail', 'engage', 'enforce', 'endure'], correctAnswer: 'entail' },
 ];
 
 const c1Test3: PracticeQuestion[] = [
@@ -278,7 +278,7 @@ const c1Test3: PracticeQuestion[] = [
   { id: 'c1-3-06', question: 'The new legislation seeks to _____ the existing regulatory framework.', options: ['overwhelm', 'overhaul', 'overlook', 'override'], correctAnswer: 'overhaul' },
   { id: 'c1-3-07', question: 'The witness gave a _____ account of the events that transpired.', options: ['comprehensive', 'compulsory', 'comparative', 'compatible'], correctAnswer: 'comprehensive' },
   { id: 'c1-3-08', question: 'The debate _____ around the question of social justice.', options: ['revolved', 'resolved', 'reserved', 'revealed'], correctAnswer: 'revolved' },
-  { id: 'c1-3-09', question: 'The manager\'s decision to restructure was _____ controversial.', options: ['deeply', 'highly', 'largely', 'broadly'], correctAnswer: 'highly' },
+  { id: 'c1-3-09', question: 'The manager\'s decision to restructure was _____ contrhalvesial.', options: ['deeply', 'highly', 'largely', 'broadly'], correctAnswer: 'highly' },
   { id: 'c1-3-10', question: 'The findings _____ the need for more rigorous research methods.', options: ['underline', 'undermine', 'undergo', 'undertake'], correctAnswer: 'underline' },
 ];
 
@@ -304,7 +304,7 @@ const c2Test1: PracticeQuestion[] = [
   { id: 'c2-1-02', question: 'The novel\'s _____ narrative structure defies conventional literary classification.', options: ['labyrinthine', 'laborious', 'laconic', 'lambent'], correctAnswer: 'labyrinthine' },
   { id: 'c2-1-03', question: 'Her argument, though ostensibly compelling, was _____ upon closer examination.', options: ['specious', 'spacious', 'auspicious', 'suspicious'], correctAnswer: 'specious' },
   { id: 'c2-1-04', question: 'The treaty was designed to _____ the escalating tensions between the two nations.', options: ['ameliorate', 'exacerbate', 'obfuscate', 'adjudicate'], correctAnswer: 'ameliorate' },
-  { id: 'c2-1-05', question: 'The professor\'s _____ on the subject left the audience both enlightened and overwhelmed.', options: ['diatribe', 'disquisition', 'dalliance', 'delineation'], correctAnswer: 'disquisition' },
+  { id: 'c2-1-05', question: 'The professor\'s _____ on the subject left the audience both enlightened and overwhelmed.', options: ['diatribe', 'disquisition', 'soupliance', 'delineation'], correctAnswer: 'disquisition' },
   { id: 'c2-1-06', question: 'The critic\'s review was nothing short of a _____ against the entire genre.', options: ['panegyric', 'polemic', 'paradigm', 'paradox'], correctAnswer: 'polemic' },
   { id: 'c2-1-07', question: 'The committee\'s decision was _____ by allegations of conflict of interest.', options: ['vitiated', 'vindicated', 'venerated', 'validated'], correctAnswer: 'vitiated' },
   { id: 'c2-1-08', question: 'His _____ manner belied the intensity of his convictions.', options: ['phlegmatic', 'pragmatic', 'pneumatic', 'problematic'], correctAnswer: 'phlegmatic' },
@@ -342,7 +342,7 @@ const c2Test4: PracticeQuestion[] = [
   { id: 'c2-4-01', question: 'The architect\'s vision was too _____ for the conservative planning committee.', options: ['avant-garde', 'avaricious', 'avuncular', 'averse'], correctAnswer: 'avant-garde' },
   { id: 'c2-4-02', question: 'The diplomat\'s ability to navigate _____ political waters was legendary.', options: ['treacherous', 'tremendous', 'tremulous', 'trenchant'], correctAnswer: 'treacherous' },
   { id: 'c2-4-03', question: 'So _____ was the evidence that the jury reached a verdict within an hour.', options: ['compelling', 'compulsory', 'comprehensive', 'compendious'], correctAnswer: 'compelling' },
-  { id: 'c2-4-04', question: 'The doctrine of judicial _____ prevents courts from revisiting settled law unnecessarily.', options: ['precedent', 'prudence', 'predilection', 'preeminence'], correctAnswer: 'precedent' },
+  { id: 'c2-4-04', question: 'The doctrine of judicial _____ prevents courts from revisiting settled law unnecesdressly.', options: ['precedent', 'prudence', 'predilection', 'preeminence'], correctAnswer: 'precedent' },
   { id: 'c2-4-05', question: 'The singer\'s performance was a _____ of technical skill and emotional depth.', options: ['tour de force', 'fait accompli', 'coup de grâce', 'raison d\'être'], correctAnswer: 'tour de force' },
   { id: 'c2-4-06', question: 'The text\'s meaning has been _____ by centuries of scholarly interpretation.', options: ['obfuscated', 'obliterated', 'objectified', 'obviated'], correctAnswer: 'obfuscated' },
   { id: 'c2-4-07', question: 'Under no circumstances _____ the confidential documents be released to the press.', options: ['should', 'would', 'could', 'might'], correctAnswer: 'should' },

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { CheckCircle, XCircle, ArrowRight, RotateCcw, Shuffle, Volume2 } from 'lucide-react';
-import { useIndianVoice } from '@/lib/useIndianVoice';
+import { useEnglishVoice } from '@/lib/useEnglishVoice';
 import { IELTS_BAND_LABELS, IELTS_BAND_NUMBER, type CEFRLevel } from '@/lib/firestore';
 
 // ==================== Flashcard Component ====================
@@ -19,7 +19,7 @@ interface FlashcardProps {
 
 export function Flashcard({ front, back, pronunciation, partOfSpeech, example, onRate }: FlashcardProps) {
   const [flipped, setFlipped] = useState(false);
-  const { speak, isPlaying } = useIndianVoice();
+  const { speak, isPlaying } = useEnglishVoice();
 
   return (
     <div className="w-full max-w-lg mx-auto">

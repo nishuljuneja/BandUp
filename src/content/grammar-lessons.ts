@@ -81,7 +81,7 @@ Think of it like this:
           highlight: 'am',
         },
         {
-          english: 'She is from Chennai.',
+          english: 'She is from Vancouver.',
           translations: {
             hi: 'वह चेन्नई से है।', ta: 'அவள் சென்னையிலிருந்து.', te: 'ఆమె చెన్నై నుండి.',
             bn: 'সে চেন্নাই থেকে।', mr: 'ती चेन्नईची आहे.', kn: 'ಅವಳು ಚೆನ್ನೈನಿಂದ.',
@@ -101,7 +101,7 @@ Think of it like this:
           highlight: 'are',
         },
         {
-          english: 'The chai is hot.',
+          english: 'The coffee is hot.',
           translations: {
             hi: 'चाय गर्म है।', ta: 'டீ சூடாக இருக்கிறது.', te: 'టీ వేడిగా ఉంది.',
             bn: 'চা গরম।', mr: 'चहा गरम आहे.', kn: 'ಚಹಾ ಬಿಸಿಯಾಗಿದೆ.',
@@ -148,10 +148,10 @@ Think of it like this:
       {
         id: 'a1-g1-ex2',
         type: 'multiple-choice',
-        question: 'Rahul _____ a good cricketer.',
+        question: 'Thomas _____ a good footballer.',
         options: ['am', 'is', 'are', 'be'],
         correctAnswer: 'is',
-        explanation: 'Rahul is one person (he), so we use "is".',
+        explanation: 'Thomas is one person (he), so we use "is".',
         explanationTranslations: {
           hi: 'राहुल एक व्यक्ति है (वह), इसलिए "is" लगता है।', ta: 'ராகுல் ஒரு நபர் (அவன்), அதனால் "is" பயன்படுத்துகிறோம்.',
           te: 'రాహుల్ ఒక వ్యక్తి (అతడు), కాబట్టి "is" వాడతాము.', bn: 'রাহুল একজন (সে), তাই "is" ব্যবহার করি।',
@@ -163,7 +163,7 @@ Think of it like this:
       {
         id: 'a1-g1-ex3',
         type: 'multiple-choice',
-        question: 'We _____ from India.',
+        question: 'We _____ from Toronto.',
         options: ['am', 'is', 'are', 'be'],
         correctAnswer: 'are',
         explanation: '"We" is more than one person, so we use "are".',
@@ -198,7 +198,7 @@ Think of it like this:
       {
         id: 'a1-g1-ex5',
         type: 'multiple-choice',
-        question: '_____ you from Jaipur?',
+        question: '_____ you from Amsterdam?',
         options: ['Am', 'Is', 'Are', 'Be'],
         correctAnswer: 'Are',
         explanation: 'Questions with "you" always use "are": "Are you...?"',
@@ -210,7 +210,7 @@ Think of it like this:
       {
         id: 'a1-g1-ex6',
         type: 'fill-blank',
-        question: 'It _____ very cold in Shimla today.',
+        question: 'It _____ very cold in Zurich today.',
         correctAnswer: 'is',
         explanation: '"It" always goes with "is".',
         explanationTranslations: {
@@ -241,10 +241,10 @@ Think of it like this:
         },
       },
       { id: 'a1-g1-ex9', type: 'fill-blank', question: 'The children _____ in the garden.', correctAnswer: 'are', explanation: '"Children" is plural, so we use "are".', explanationTranslations: { hi: '"Children" बहुवचन है, इसलिए "are" लगता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g1-ex10', type: 'multiple-choice', question: 'Meera and Arjun _____ cousins.', options: ['am', 'is', 'are', 'be'], correctAnswer: 'are', explanation: 'Two people joined by "and" make a plural subject → "are".', explanationTranslations: { hi: '"and" से जुड़े दो लोग बहुवचन कर्ता बनाते हैं → "are".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g1-ex10', type: 'multiple-choice', question: 'Maria and Lucas _____ cousins.', options: ['am', 'is', 'are', 'be'], correctAnswer: 'are', explanation: 'Two people joined by "and" make a plural subject → "are".', explanationTranslations: { hi: '"and" से जुड़े दो लोग बहुवचन कर्ता बनाते हैं → "are".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g1-ex11', type: 'correct-error', question: 'Find the error: "The weather are nice today."', correctAnswer: 'The weather is nice today.', explanation: '"Weather" is singular and uncountable, so we use "is".', explanationTranslations: { hi: '"Weather" एकवचन और अगणनीय है, इसलिए "is" लगता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g1-ex12', type: 'multiple-choice', question: 'The samosas _____ ready to serve.', options: ['am', 'is', 'are', 'be'], correctAnswer: 'are', explanation: '"Samosas" is plural → "are".', explanationTranslations: { hi: '"Samosas" बहुवचन है → "are".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g1-ex13', type: 'fill-blank', question: 'There _____ a temple near my house in Varanasi.', correctAnswer: 'is', explanation: '"A temple" is singular, so we use "is" after "there".', explanationTranslations: { hi: '"A temple" एकवचन है, इसलिए "there" के बाद "is" आता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g1-ex12', type: 'multiple-choice', question: 'The sandwiches _____ ready to serve.', options: ['am', 'is', 'are', 'be'], correctAnswer: 'are', explanation: '"Samosas" is plural → "are".', explanationTranslations: { hi: '"Samosas" बहुवचन है → "are".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g1-ex13', type: 'fill-blank', question: 'There _____ a temple near my house in Prague.', correctAnswer: 'is', explanation: '"A temple" is singular, so we use "is" after "there".', explanationTranslations: { hi: '"A temple" एकवचन है, इसलिए "there" के बाद "is" आता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g1-ex14', type: 'correct-error', question: 'Find the error: "You is my best friend."', correctAnswer: 'You are my best friend.', explanation: '"You" always takes "are", never "is".', explanationTranslations: { hi: '"You" के साथ हमेशा "are" आता है, "is" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
@@ -304,7 +304,7 @@ Think of it like this:
       },
       examples: [
         {
-          english: 'I ate an idli for breakfast.',
+          english: 'I ate a sandwich for breakfast.',
           translations: {
             hi: 'मैंने नाश्ते में एक इडली खाई।', ta: 'நான் காலை உணவுக்கு ஒரு இட்லி சாப்பிட்டேன்.',
             te: 'నేను అల్పాహారానికి ఒక ఇడ్లీ తిన్నాను.', bn: 'আমি সকালের নাস্তায় একটা ইডলি খেলাম।',
@@ -328,7 +328,7 @@ Think of it like this:
       ],
       tips: [
         {
-          text: '💡 Indian languages like Hindi, Tamil, etc. don\'t have articles. This is one of the trickiest things to learn — but with practice, it becomes natural!',
+          text: '💡 local languages like Hindi, Tamil, etc. don\'t have articles. This is one of the trickiest things to learn — but with practice, it becomes natural!',
           translations: {
             hi: '💡 हिंदी जैसी भारतीय भाषाओं में आर्टिकल नहीं होते। यह सीखना मुश्किल लग सकता है — लेकिन अभ्यास से आसान हो जाता है!',
             ta: '💡 தமிழ் போன்ற இந்திய மொழிகளில் articles இல்லை. இது கற்க கடினமாக இருக்கலாம் — ஆனால் பயிற்சியால் இயல்பாகிவிடும்!',
@@ -353,7 +353,7 @@ Think of it like this:
       {
         id: 'a1-g2-ex2',
         type: 'multiple-choice',
-        question: '_____ Qutub Minar is in Delhi.',
+        question: '_____ Qutub Minar is in London.',
         options: ['A', 'An', 'The', '(no article)'],
         correctAnswer: 'The',
         explanation: 'Qutub Minar is a specific, well-known monument — we use "the".',
@@ -411,7 +411,7 @@ Think of it like this:
       {
         id: 'a1-g2-ex7',
         type: 'multiple-choice',
-        question: '_____ rice is the main food in South India.',
+        question: '_____ rice is the main food in South the country.',
         options: ['A', 'An', 'The', '(no article)'],
         correctAnswer: '(no article)',
         explanation: 'When talking about rice in general, no article is needed.',
@@ -432,10 +432,10 @@ Think of it like this:
           ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
         },
       },
-      { id: 'a1-g2-ex9', type: 'fill-blank', question: 'Priya wants to become _____ IAS officer.', correctAnswer: 'an', explanation: '"IAS" starts with a vowel sound (/aɪ/), so we use "an".', explanationTranslations: { hi: '"IAS" स्वर ध्वनि (/aɪ/) से शुरू होता है, इसलिए "an" लगाते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g2-ex9', type: 'fill-blank', question: 'Sophie wants to become _____ IAS officer.', correctAnswer: 'an', explanation: '"IAS" starts with a vowel sound (/aɪ/), so we use "an".', explanationTranslations: { hi: '"IAS" स्वर ध्वनि (/aɪ/) से शुरू होता है, इसलिए "an" लगाते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g2-ex10', type: 'multiple-choice', question: '_____ moon looks beautiful during Karva Chauth.', options: ['A', 'An', 'The', '(no article)'], correctAnswer: 'The', explanation: 'There is only one moon — we use "the" for unique things.', explanationTranslations: { hi: 'चाँद एक ही है — अनोखी चीज़ों के लिए "the" लगाते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g2-ex11', type: 'correct-error', question: 'Find the error: "She has a uncle in Kolkata."', correctAnswer: 'She has an uncle in Kolkata.', explanation: '"Uncle" starts with a vowel sound (u-), so we use "an", not "a".', explanationTranslations: { hi: '"Uncle" स्वर ध्वनि (u-) से शुरू होता है, इसलिए "an" लगाते हैं, "a" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g2-ex12', type: 'multiple-choice', question: 'Ravi is _____ tallest boy in our class.', options: ['a', 'an', 'the', '(no article)'], correctAnswer: 'the', explanation: 'Superlatives always use "the": the tallest, the best, the most.', explanationTranslations: { hi: 'Superlatives के साथ हमेशा "the" लगता है: the tallest, the best.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g2-ex11', type: 'correct-error', question: 'Find the error: "She has a uncle in Berlin."', correctAnswer: 'She has an uncle in Berlin.', explanation: '"Uncle" starts with a vowel sound (u-), so we use "an", not "a".', explanationTranslations: { hi: '"Uncle" स्वर ध्वनि (u-) से शुरू होता है, इसलिए "an" लगाते हैं, "a" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g2-ex12', type: 'multiple-choice', question: 'James is _____ tallest boy in our class.', options: ['a', 'an', 'the', '(no article)'], correctAnswer: 'the', explanation: 'Superlatives always use "the": the tallest, the best, the most.', explanationTranslations: { hi: 'Superlatives के साथ हमेशा "the" लगता है: the tallest, the best.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g2-ex13', type: 'fill-blank', question: 'I saw _____ one-eyed man at the market.', correctAnswer: 'a', explanation: '"One" starts with a consonant sound (/wʌn/), so we use "a", not "an".', explanationTranslations: { hi: '"One" व्यंजन ध्वनि (/wʌn/) से शुरू होता है, इसलिए "a" लगाते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g2-ex14', type: 'correct-error', question: 'Find the error: "I drink the milk every morning."', correctAnswer: 'I drink milk every morning.', explanation: 'When talking about milk in general, no article is needed.', explanationTranslations: { hi: 'सामान्य रूप से दूध की बात करते समय कोई article नहीं लगता।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
@@ -459,50 +459,50 @@ Think of it like this:
       od: 'Present Perfect ବନାମ Past Simple',
       en: 'Present Perfect vs Past Simple',
     },
-    description: 'Understand the difference between "I have done" and "I did" — one of the most confusing grammar points for Indian English learners.',
+    description: 'Understand the difference between "I have done" and "I did" — one of the most confusing grammar points for common English learners.',
     descriptionTranslations: {
       hi: '"I have done" और "I did" के बीच का अंतर समझें — भारतीय अंग्रेजी सीखने वालों के लिए सबसे भ्रमित करने वाले व्याकरण बिंदुओं में से एक।',
       ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '',
-      en: 'Understand the difference between "I have done" and "I did" — one of the most confusing grammar points for Indian English learners.',
+      en: 'Understand the difference between "I have done" and "I did" — one of the most confusing grammar points for common English learners.',
     },
     order: 1,
     content: {
-      explanation: `This is one of the most common mistakes Indian English speakers make. Let's clear it up!
+      explanation: `This is one of the most common mistakes common English speakers make. Let's clear it up!
 
 **Past Simple** ("I did") → for completed actions at a **specific time** in the past
-- I visited Jaipur **last year**.
+- I visited Amsterdam **last year**.
 - She finished the project **yesterday**.
 
 **Present Perfect** ("I have done") → for actions that connect past to **now**
-- I **have visited** Jaipur three times. (total experience, time not important)
+- I **have visited** Amsterdam three times. (total experience, time not important)
 - She **has finished** the project. (it's done now, result matters)
-- I **have lived** in Bangalore **since** 2020. (started in past, still true now)
+- I **have lived** in Toronto **since** 2020. (started in past, still true now)
 
 **Key signals:**
 | Past Simple | Present Perfect |
 |---|---|
 | yesterday, last week, in 2020, ago | already, yet, ever, never, just, since, for |
 
-**Common Indian English error:**
-❌ "I have visited Jaipur last year." (mixing perfect + specific past time)
-✅ "I visited Jaipur last year." OR "I have visited Jaipur (before)."`,
+**Common common English error:**
+❌ "I have visited Amsterdam last year." (mixing perfect + specific past time)
+✅ "I visited Amsterdam last year." OR "I have visited Amsterdam (before)."`,
       explanationTranslations: {
         hi: `यह भारतीय अंग्रेजी बोलने वालों की सबसे आम गलतियों में से एक है।
 
 **Past Simple** ("I did") → बीते हुए **निश्चित समय** पर पूरे हुए कामों के लिए
-- I visited Jaipur **last year**. (पिछले साल)
+- I visited Amsterdam **last year**. (पिछले साल)
 
 **Present Perfect** ("I have done") → ऐसे काम जो अतीत को **अभी** से जोड़ते हैं
-- I **have visited** Jaipur three times. (कुल अनुभव, समय महत्वपूर्ण नहीं)
+- I **have visited** Amsterdam three times. (कुल अनुभव, समय महत्वपूर्ण नहीं)
 
 **आम गलती:**
-❌ "I have visited Jaipur last year."
-✅ "I visited Jaipur last year."`,
+❌ "I have visited Amsterdam last year."
+✅ "I visited Amsterdam last year."`,
         ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
       },
       examples: [
         {
-          english: 'I visited the Red Fort when I was in Delhi.',
+          english: 'I visited the Red Fort when I was in London.',
           translations: {
             hi: 'जब मैं दिल्ली में था तब मैंने लाल किला देखा।',
             ta: 'நான் டெல்லியில் இருந்தபோது செங்கோட்டையைப் பார்வையிட்டேன்.',
@@ -520,7 +520,7 @@ Think of it like this:
           highlight: 'have never eaten',
         },
         {
-          english: 'She has worked at Infosys for five years.',
+          english: 'She has worked at Salesforce for five years.',
           translations: {
             hi: 'वह पाँच साल से इन्फोसिस में काम कर रही है।',
             ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
@@ -530,7 +530,7 @@ Think of it like this:
       ],
       tips: [
         {
-          text: '💡 In Indian English, people often overuse Present Perfect. Remember: if you mention a specific past time (yesterday, in 2019, last month), use Past Simple!',
+          text: '💡 In common English, people often overuse Present Perfect. Remember: if you mention a specific past time (yesterday, in 2019, last month), use Past Simple!',
           translations: {
             hi: '💡 भारतीय अंग्रेजी में लोग अक्सर Present Perfect का ज्यादा इस्तेमाल करते हैं। याद रखें: अगर आप कोई विशेष समय बताते हैं (कल, 2019 में), तो Past Simple इस्तेमाल करें!',
             ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
@@ -574,17 +574,17 @@ Think of it like this:
           ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
         },
       },
-      { id: 'b1-g1-ex4', type: 'fill-blank', question: 'I have worked at Wipro _____ 2019.', correctAnswer: 'since', explanation: '"Since" is used with a specific point in time (2019). "For" is used with duration.', explanationTranslations: { hi: '"Since" किसी निश्चित समय बिंदु (2019) के साथ। "For" अवधि के साथ।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g1-ex4', type: 'fill-blank', question: 'I have worked at Accenture _____ 2019.', correctAnswer: 'since', explanation: '"Since" is used with a specific point in time (2019). "For" is used with duration.', explanationTranslations: { hi: '"Since" किसी निश्चित समय बिंदु (2019) के साथ। "For" अवधि के साथ।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g1-ex5', type: 'multiple-choice', question: 'Have you _____ been to Ladakh?', options: ['never', 'ever', 'already', 'yet'], correctAnswer: 'ever', explanation: '"Ever" is used in questions: "Have you ever...?" to ask about life experience.', explanationTranslations: { hi: '"Ever" प्रश्नों में: "Have you ever...?" जीवन अनुभव पूछने के लिए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g1-ex6', type: 'fill-blank', question: 'She has _____ finished her assignment. She submitted it five minutes ago.', correctAnswer: 'just', explanation: '"Just" means a very short time ago: has just finished.', explanationTranslations: { hi: '"Just" = अभी-अभी: has just finished.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g1-ex7', type: 'correct-error', question: 'Find the error: "I have already ate lunch."', correctAnswer: 'I have already eaten lunch.', explanation: 'Present Perfect uses past participle: have + eaten (not ate).', explanationTranslations: { hi: 'Present Perfect में past participle: have + eaten (ate नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g1-ex8', type: 'multiple-choice', question: 'Has the train arrived _____?', options: ['already', 'yet', 'just', 'ever'], correctAnswer: 'yet', explanation: '"Yet" is used in questions and negatives with Present Perfect.', explanationTranslations: { hi: '"Yet" प्रश्नों और नकारात्मक में Present Perfect के साथ।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g1-ex9', type: 'fill-blank', question: 'Priya has lived in Bangalore _____ five years.', correctAnswer: 'for', explanation: '"For" is used with a duration of time (five years). "Since" is for a specific point.', explanationTranslations: { hi: '"For" अवधि (five years) के साथ। "Since" निश्चित समय बिंदु के साथ।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g1-ex10', type: 'multiple-choice', question: 'We _____ to Shimla when we were children.', options: ['have gone', 'went', 'have been', 'go'], correctAnswer: 'went', explanation: '"When we were children" = specific past time → Past Simple.', explanationTranslations: { hi: '"When we were children" = निश्चित बीता समय → Past Simple.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g1-ex9', type: 'fill-blank', question: 'Sophie has lived in Toronto _____ five years.', correctAnswer: 'for', explanation: '"For" is used with a duration of time (five years). "Since" is for a specific point.', explanationTranslations: { hi: '"For" अवधि (five years) के साथ। "Since" निश्चित समय बिंदु के साथ।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g1-ex10', type: 'multiple-choice', question: 'We _____ to Zurich when we were children.', options: ['have gone', 'went', 'have been', 'go'], correctAnswer: 'went', explanation: '"When we were children" = specific past time → Past Simple.', explanationTranslations: { hi: '"When we were children" = निश्चित बीता समय → Past Simple.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g1-ex11', type: 'correct-error', question: 'Find the error: "I have seen that movie last Friday."', correctAnswer: 'I saw that movie last Friday.', explanation: '"Last Friday" is a specific past time — use Past Simple, not Present Perfect.', explanationTranslations: { hi: '"Last Friday" निश्चित बीता समय है — Past Simple लगाएं, Present Perfect नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g1-ex12', type: 'multiple-choice', question: 'Arjun has _____ eaten sushi.', options: ['ever', 'never', 'yet', 'already'], correctAnswer: 'never', explanation: '"Never" + Present Perfect = total life experience (negative).', explanationTranslations: { hi: '"Never" + Present Perfect = कुल जीवन अनुभव (नकारात्मक)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g1-ex13', type: 'fill-blank', question: 'Meera _____ already submitted her assignment. (have/has)', correctAnswer: 'has', explanation: 'She/he/it → "has" in Present Perfect: has already submitted.', explanationTranslations: { hi: 'She/he/it → Present Perfect में "has": has already submitted.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g1-ex14', type: 'correct-error', question: 'Find the error: "They have went to Chennai for a conference."', correctAnswer: 'They have gone to Chennai for a conference.', explanation: 'Present Perfect uses past participle: have + gone (not went).', explanationTranslations: { hi: 'Present Perfect में past participle: have + gone (went नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g1-ex12', type: 'multiple-choice', question: 'Lucas has _____ eaten sushi.', options: ['ever', 'never', 'yet', 'already'], correctAnswer: 'never', explanation: '"Never" + Present Perfect = total life experience (negative).', explanationTranslations: { hi: '"Never" + Present Perfect = कुल जीवन अनुभव (नकारात्मक)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g1-ex13', type: 'fill-blank', question: 'Maria _____ already submitted her assignment. (have/has)', correctAnswer: 'has', explanation: 'She/he/it → "has" in Present Perfect: has already submitted.', explanationTranslations: { hi: 'She/he/it → Present Perfect में "has": has already submitted.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g1-ex14', type: 'correct-error', question: 'Find the error: "They have went to Vancouver for a conference."', correctAnswer: 'They have gone to Vancouver for a conference.', explanation: 'Present Perfect uses past participle: have + gone (not went).', explanationTranslations: { hi: 'Present Perfect में past participle: have + gone (went नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
 
@@ -618,7 +618,7 @@ Think of it like this:
 **Third Conditional** → Imaginary situations in the PAST (impossible, it didn't happen)
 **Structure:** If + past perfect, would have + past participle
 
-- If I **had studied** harder, I **would have passed** the IIT exam.
+- If I **had studied** harder, I **would have passed** the MIT exam.
 - If it **hadn't rained**, we **would have gone** to the beach.
 
 **Key difference:**
@@ -636,7 +636,7 @@ Think of it like this:
       },
       examples: [
         {
-          english: 'If I lived in Shimla, I would see snow every winter.',
+          english: 'If I lived in Zurich, I would see snow every winter.',
           translations: {
             hi: 'अगर मैं शिमला में रहता, तो हर सर्दी में बर्फ देखता।',
             ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
@@ -654,7 +654,7 @@ Think of it like this:
       ],
       tips: [
         {
-          text: '💡 Indian speakers often mix conditionals. "If I would have..." is incorrect! The "if" clause never has "would".',
+          text: '💡 Many learners often mix conditionals. "If I would have..." is incorrect! The "if" clause never has "would".',
           translations: {
             hi: '💡 भारतीय बोलने वाले अक्सर conditionals मिला देते हैं। "If I would have..." गलत है! "If" वाले भाग में कभी "would" नहीं आता।',
             ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
@@ -666,7 +666,7 @@ Think of it like this:
       {
         id: 'b2-g1-ex1',
         type: 'multiple-choice',
-        question: 'If I _____ more time, I would learn Carnatic music.',
+        question: 'If I _____ more time, I would learn classical piano.',
         options: ['have', 'had', 'would have', 'having'],
         correctAnswer: 'had',
         explanation: 'Second conditional uses past simple in the "if" clause: "If I had..."',
@@ -678,7 +678,7 @@ Think of it like this:
       {
         id: 'b2-g1-ex2',
         type: 'multiple-choice',
-        question: 'If he had applied earlier, he _____ the job at TCS.',
+        question: 'If he had applied earlier, he _____ the job at IBM.',
         options: ['would get', 'would have got', 'will get', 'got'],
         correctAnswer: 'would have got',
         explanation: 'Third conditional: past hypothetical → would have + past participle.',
@@ -701,7 +701,7 @@ Think of it like this:
       {
         id: 'b2-g1-ex4',
         type: 'multiple-choice',
-        question: 'If she had caught the Rajdhani Express, she _____ in Delhi by now.',
+        question: 'If she had caught the express train service, she _____ in London by now.',
         options: ['will be', 'would be', 'would have been', 'is'],
         correctAnswer: 'would be',
         explanation: 'Past condition → present result (mixed conditional): would + base verb.',
@@ -756,12 +756,12 @@ Think of it like this:
           ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
         },
       },
-      { id: 'b2-g1-ex9', type: 'fill-blank', question: 'If Meera _____ in Shimla, she would enjoy the snowfall every winter. (live — 2nd conditional)', correctAnswer: 'lived', explanation: 'Second conditional: If + past simple: If she lived...', explanationTranslations: { hi: 'Second conditional: If + past simple: If she lived...', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g1-ex10', type: 'multiple-choice', question: 'If they had left earlier, they _____ the flight to Chennai.', options: ['won\'t miss', 'wouldn\'t miss', 'wouldn\'t have missed', 'didn\'t miss'], correctAnswer: 'wouldn\'t have missed', explanation: 'Third conditional: would + have + past participle for past hypothetical.', explanationTranslations: { hi: 'Third conditional: would + have + past participle भूतकाल की कल्पना।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g1-ex9', type: 'fill-blank', question: 'If Maria _____ in Zurich, she would enjoy the snowfall every winter. (live — 2nd conditional)', correctAnswer: 'lived', explanation: 'Second conditional: If + past simple: If she lived...', explanationTranslations: { hi: 'Second conditional: If + past simple: If she lived...', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g1-ex10', type: 'multiple-choice', question: 'If they had left earlier, they _____ the flight to Vancouver.', options: ['won\'t miss', 'wouldn\'t miss', 'wouldn\'t have missed', 'didn\'t miss'], correctAnswer: 'wouldn\'t have missed', explanation: 'Third conditional: would + have + past participle for past hypothetical.', explanationTranslations: { hi: 'Third conditional: would + have + past participle भूतकाल की कल्पना।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g1-ex11', type: 'correct-error', question: 'Find the error: "If I would be the captain, I would change the batting order."', correctAnswer: 'If I were the captain, I would change the batting order.', explanation: 'Second conditional: "if" clause uses past simple / were, never "would".', explanationTranslations: { hi: 'Second conditional: "if" वाले भाग में past simple / were, कभी "would" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g1-ex12', type: 'fill-blank', question: 'If it _____ rained so heavily, the match in Kolkata would have continued. (3rd conditional — negative)', correctAnswer: 'hadn\'t', explanation: 'Third conditional negative: If + hadn\'t + past participle.', explanationTranslations: { hi: 'Third conditional negative: If + hadn\'t + past participle.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g1-ex13', type: 'multiple-choice', question: 'If Ravi knew how to cook, he _____ prepare dinner himself.', options: ['will', 'would', 'could have', 'can'], correctAnswer: 'would', explanation: 'Second conditional: would + base verb for imaginary present.', explanationTranslations: { hi: 'Second conditional: would + base verb काल्पनिक वर्तमान के लिए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g1-ex14', type: 'correct-error', question: 'Find the error: "If she had knew about the sale, she would have bought the sari."', correctAnswer: 'If she had known about the sale, she would have bought the sari.', explanation: 'Third conditional: had + past participle → had known (not had knew).', explanationTranslations: { hi: 'Third conditional: had + past participle → had known (had knew नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g1-ex12', type: 'fill-blank', question: 'If it _____ rained so heavily, the match in Berlin would have continued. (3rd conditional — negative)', correctAnswer: 'hadn\'t', explanation: 'Third conditional negative: If + hadn\'t + past participle.', explanationTranslations: { hi: 'Third conditional negative: If + hadn\'t + past participle.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g1-ex13', type: 'multiple-choice', question: 'If James knew how to cook, he _____ prepare dinner himself.', options: ['will', 'would', 'could have', 'can'], correctAnswer: 'would', explanation: 'Second conditional: would + base verb for imaginary present.', explanationTranslations: { hi: 'Second conditional: would + base verb काल्पनिक वर्तमान के लिए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g1-ex14', type: 'correct-error', question: 'Find the error: "If she had knew about the sale, she would have bought the dress."', correctAnswer: 'If she had known about the sale, she would have bought the dress.', explanation: 'Third conditional: had + past participle → had known (not had knew).', explanationTranslations: { hi: 'Third conditional: had + past participle → had known (had knew नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
 
@@ -815,7 +815,7 @@ Think of it like this:
       },
       examples: [
         {
-          english: 'Not only did India win the World Cup, but they also remained unbeaten throughout.',
+          english: 'Not only did the country win the World Cup, but they also remained unbeaten throughout.',
           translations: {
             hi: 'भारत ने न केवल विश्व कप जीता, बल्कि पूरे टूर्नामेंट में अपराजित भी रहा।',
             ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '',
@@ -856,7 +856,7 @@ Think of it like this:
       {
         id: 'c1-g1-ex2',
         type: 'fill-blank',
-        question: 'Never _____ I witnessed such a massive gathering at India Gate.',
+        question: 'Never _____ I witnessed such a massive gathering at the country Gate.',
         correctAnswer: 'have',
         explanation: 'After "Never" at the start, we invert: Never + have + I.',
         explanationTranslations: {
@@ -924,7 +924,7 @@ Think of it like this:
       {
         id: 'c1-g1-ex8',
         type: 'fill-blank',
-        question: 'Seldom _____ the monsoon arrived so early in Mumbai.',
+        question: 'Seldom _____ the monsoon arrived so early in Sydney.',
         correctAnswer: 'has',
         explanation: '"Seldom" at the start triggers inversion: Seldom + has + subject + past participle.',
         explanationTranslations: {
@@ -935,7 +935,7 @@ Think of it like this:
       { id: 'c1-g1-ex9', type: 'fill-blank', question: 'No sooner _____ the Prime Minister finished his speech than the crowd erupted in applause.', correctAnswer: 'had', explanation: '"No sooner...than" pattern: No sooner + had + subject + past participle + than...', explanationTranslations: { hi: '"No sooner...than" पैटर्न: No sooner + had + कर्ता + past participle + than...', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g1-ex10', type: 'multiple-choice', question: 'Under no circumstances _____ students use their phones during the exam.', options: ['should', 'they should', 'should they', 'they'], correctAnswer: 'should', explanation: '"Under no circumstances" triggers inversion: Under no circumstances + should + subject.', explanationTranslations: { hi: '"Under no circumstances" inversion लगाता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g1-ex11', type: 'correct-error', question: 'Find the error: "Not only she won the gold but she also set a record."', correctAnswer: 'Not only did she win the gold, but she also set a record.', explanation: '"Not only" at the start triggers inversion: Not only + did + she + base verb.', explanationTranslations: { hi: '"Not only" शुरू में inversion लगाता है: Not only + did + she + base verb.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'c1-g1-ex12', type: 'fill-blank', question: 'Little _____ Ravi know that he would become the CEO of the company one day.', correctAnswer: 'did', explanation: '"Little" with negative meaning triggers inversion: Little + did + subject + base verb.', explanationTranslations: { hi: '"Little" नकारात्मक अर्थ के साथ inversion: Little + did + कर्ता + base verb.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'c1-g1-ex12', type: 'fill-blank', question: 'Little _____ James know that he would become the CEO of the company one day.', correctAnswer: 'did', explanation: '"Little" with negative meaning triggers inversion: Little + did + subject + base verb.', explanationTranslations: { hi: '"Little" नकारात्मक अर्थ के साथ inversion: Little + did + कर्ता + base verb.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g1-ex13', type: 'multiple-choice', question: 'Only after the results were announced _____ the students celebrate.', options: ['did', 'do', 'were', 'had'], correctAnswer: 'did', explanation: '"Only after..." triggers inversion in the main clause: did + subject + base verb.', explanationTranslations: { hi: '"Only after..." मुख्य clause में inversion: did + कर्ता + base verb.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g1-ex14', type: 'correct-error', question: 'Find the error: "Had I knew about the delay, I would have taken another route."', correctAnswer: 'Had I known about the delay, I would have taken another route.', explanation: 'Inverted conditional: Had + subject + past participle → Had I known.', explanationTranslations: { hi: 'Inverted conditional: Had + कर्ता + past participle → Had I known.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
@@ -994,28 +994,28 @@ Think of it like this:
       },
       examples: [
         { english: 'I went to the temple yesterday.', translations: { hi: 'मैं कल मंदिर गया।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'went' },
-        { english: 'She cooked biryani for dinner last night.', translations: { hi: 'उसने रात के खाने में बिरयानी बनाई।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'cooked' },
+        { english: 'She cooked pasta for dinner last night.', translations: { hi: 'उसने रात के खाने में बिरयानी बनाई।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'cooked' },
         { english: 'Did you take the bus to office?', translations: { hi: 'क्या तुमने ऑफिस बस से ली?', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'Did' },
       ],
       tips: [
-        { text: '💡 Common Indian English error: "I didn\'t went" is wrong! After "didn\'t", always use the BASE form: "I didn\'t go."', translations: { hi: '💡 "I didn\'t went" गलत है! "didn\'t" के बाद हमेशा मूल रूप: "I didn\'t go."', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+        { text: '💡 Common common English error: "I didn\'t went" is wrong! After "didn\'t", always use the BASE form: "I didn\'t go."', translations: { hi: '💡 "I didn\'t went" गलत है! "didn\'t" के बाद हमेशा मूल रूप: "I didn\'t go."', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       ],
     },
     exercises: [
       { id: 'a2-g1-ex1', type: 'multiple-choice', question: 'She _____ to the market yesterday.', options: ['go', 'goes', 'went', 'going'], correctAnswer: 'went', explanation: '"yesterday" = past, "go" is irregular → went.', explanationTranslations: { hi: '"yesterday" = बीता समय, "go" अनियमित → went.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g1-ex2', type: 'fill-blank', question: 'We _____ cricket in the park last Sunday.', correctAnswer: 'played', explanation: '"play" + ed = "played" (regular verb).', explanationTranslations: { hi: '"play" + ed = "played" (नियमित क्रिया)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g1-ex2', type: 'fill-blank', question: 'We _____ football in the park last Sunday.', correctAnswer: 'played', explanation: '"play" + ed = "played" (regular verb).', explanationTranslations: { hi: '"play" + ed = "played" (नियमित क्रिया)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g1-ex3', type: 'multiple-choice', question: 'Did she _____ the exam?', options: ['passed', 'pass', 'passes', 'passing'], correctAnswer: 'pass', explanation: 'After "Did", use base verb: "Did she pass?"', explanationTranslations: { hi: '"Did" के बाद मूल क्रिया: "Did she pass?"', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g1-ex4', type: 'correct-error', question: 'Find the error: "I didn\'t went to school."', correctAnswer: 'I didn\'t go to school.', explanation: 'After "didn\'t", use base form: go (not went).', explanationTranslations: { hi: '"didn\'t" के बाद मूल रूप: go (went नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g1-ex5', type: 'fill-blank', question: 'They _____ a new house in Noida last year. (buy)', correctAnswer: 'bought', explanation: '"Buy" is irregular → past form is "bought".', explanationTranslations: { hi: '"Buy" अनियमित है → past form "bought" है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g1-ex6', type: 'multiple-choice', question: '_____ she not come to the party yesterday?', options: ['Was', 'Did', 'Does', 'Is'], correctAnswer: 'Did', explanation: 'Negative question in past: "Did she not...?" or "Didn\'t she...?"', explanationTranslations: { hi: 'Past में negative प्रश्न: "Did she not...?" या "Didn\'t she...?"', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g1-ex7', type: 'correct-error', question: 'Find the error: "We eated dal and roti for dinner."', correctAnswer: 'We ate dal and roti for dinner.', explanation: '"Eat" is irregular → past form is "ate", not "eated".', explanationTranslations: { hi: '"Eat" अनियमित है → past form "ate" है, "eated" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g1-ex7', type: 'correct-error', question: 'Find the error: "We eated soup and roti for dinner."', correctAnswer: 'We ate soup and roti for dinner.', explanation: '"Eat" is irregular → past form is "ate", not "eated".', explanationTranslations: { hi: '"Eat" अनियमित है → past form "ate" है, "eated" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g1-ex8', type: 'multiple-choice', question: 'When I was a child, I _____ near the Ganga river.', options: ['live', 'lived', 'living', 'am living'], correctAnswer: 'lived', explanation: '"When I was a child" signals past time → Past Simple "lived".', explanationTranslations: { hi: '"When I was a child" बीता समय बताता है → Past Simple "lived".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g1-ex9', type: 'fill-blank', question: 'Meera _____ a beautiful rangoli last Diwali. (make)', correctAnswer: 'made', explanation: '"Make" is irregular → past form is "made".', explanationTranslations: { hi: '"Make" अनियमित है → past form "made" है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g1-ex10', type: 'multiple-choice', question: 'Arjun _____ his keys at the chai stall yesterday.', options: ['lose', 'lost', 'losed', 'losing'], correctAnswer: 'lost', explanation: '"Lose" is irregular → past form is "lost", not "losed".', explanationTranslations: { hi: '"Lose" अनियमित है → past form "lost" है, "losed" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g1-ex9', type: 'fill-blank', question: 'Maria _____ a beautiful decorations last New Year. (make)', correctAnswer: 'made', explanation: '"Make" is irregular → past form is "made".', explanationTranslations: { hi: '"Make" अनियमित है → past form "made" है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g1-ex10', type: 'multiple-choice', question: 'Lucas _____ his keys at the coffee stall yesterday.', options: ['lose', 'lost', 'losed', 'losing'], correctAnswer: 'lost', explanation: '"Lose" is irregular → past form is "lost", not "losed".', explanationTranslations: { hi: '"Lose" अनियमित है → past form "lost" है, "losed" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g1-ex11', type: 'correct-error', question: 'Find the error: "She didn\'t studied for the Hindi exam."', correctAnswer: 'She didn\'t study for the Hindi exam.', explanation: 'After "didn\'t", use base form: study (not studied).', explanationTranslations: { hi: '"didn\'t" के बाद मूल रूप: study (studied नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g1-ex12', type: 'multiple-choice', question: '_____ Ravi finish the project on time?', options: ['Does', 'Did', 'Was', 'Is'], correctAnswer: 'Did', explanation: 'Past tense question: "Did + subject + base verb?"', explanationTranslations: { hi: 'Past tense प्रश्न: "Did + कर्ता + मूल क्रिया?"', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g1-ex12', type: 'multiple-choice', question: '_____ James finish the project on time?', options: ['Does', 'Did', 'Was', 'Is'], correctAnswer: 'Did', explanation: 'Past tense question: "Did + subject + base verb?"', explanationTranslations: { hi: 'Past tense प्रश्न: "Did + कर्ता + मूल क्रिया?"', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g1-ex13', type: 'fill-blank', question: 'The children _____ happily in Cubbon Park last evening. (run)', correctAnswer: 'ran', explanation: '"Run" is irregular → past form is "ran".', explanationTranslations: { hi: '"Run" अनियमित है → past form "ran" है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g1-ex14', type: 'correct-error', question: 'Find the error: "They taked the train from Chennai to Mumbai."', correctAnswer: 'They took the train from Chennai to Mumbai.', explanation: '"Take" is irregular → past form is "took", not "taked".', explanationTranslations: { hi: '"Take" अनियमित है → past form "took" है, "taked" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g1-ex14', type: 'correct-error', question: 'Find the error: "They taked the train from Vancouver to Sydney."', correctAnswer: 'They took the train from Vancouver to Sydney.', explanation: '"Take" is irregular → past form is "took", not "taked".', explanationTranslations: { hi: '"Take" अनियमित है → past form "took" है, "taked" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
   {
@@ -1052,8 +1052,8 @@ Think of it like this:
 - far → farther → the farthest
 
 **Key patterns:**
-- A is **___er than** B: Mumbai is bigger than Pune.
-- A is **more ___ than** B: Delhi is more polluted than Shimla.
+- A is **___er than** B: Sydney is bigger than Melbourne.
+- A is **more ___ than** B: London is more polluted than Zurich.
 - A is **the ___est** of all: Burj Khalifa is the tallest building in the world.`,
       explanationTranslations: {
         hi: `**Comparatives** दो चीज़ों की तुलना करते हैं। **Superlatives** कहते हैं कि कुछ सबसे ज्यादा है।
@@ -1065,7 +1065,7 @@ Think of it like this:
       },
       examples: [
         { english: 'The Ganges is longer than the Yamuna.', translations: { hi: 'गंगा यमुना से लंबी है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'longer than' },
-        { english: 'Bangalore has the best weather in India.', translations: { hi: 'बैंगलोर का मौसम भारत में सबसे अच्छा है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'the best' },
+        { english: 'Toronto has the best weather in many countries.', translations: { hi: 'बैंगलोर का मौसम भारत में सबसे अच्छा है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'the best' },
         { english: 'This phone is more expensive than that one.', translations: { hi: 'यह फ़ोन उससे ज़्यादा महंगा है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'more expensive than' },
       ],
       tips: [
@@ -1073,19 +1073,19 @@ Think of it like this:
       ],
     },
     exercises: [
-      { id: 'a2-g2-ex1', type: 'fill-blank', question: 'Mumbai is _____ than Pune. (big)', correctAnswer: 'bigger', explanation: '"big" is one syllable, double consonant + er = bigger.', explanationTranslations: { hi: '"big" एक अक्षर — consonant दोगुना + er = bigger.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex1', type: 'fill-blank', question: 'Sydney is _____ than Melbourne. (big)', correctAnswer: 'bigger', explanation: '"big" is one syllable, double consonant + er = bigger.', explanationTranslations: { hi: '"big" एक अक्षर — consonant दोगुना + er = bigger.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g2-ex2', type: 'multiple-choice', question: 'Mount Everest is _____ mountain in the world.', options: ['the highest', 'higher', 'most high', 'the higher'], correctAnswer: 'the highest', explanation: 'Superlative for "high" = "the highest".', explanationTranslations: { hi: '"high" का Superlative = "the highest".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g2-ex3', type: 'correct-error', question: 'Find the error: "She is more taller than her brother."', correctAnswer: 'She is taller than her brother.', explanation: '"tall" is short — use "taller" not "more taller".', explanationTranslations: { hi: '"tall" छोटा है — "taller" इस्तेमाल करें, "more taller" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g2-ex4', type: 'fill-blank', question: 'Kolkata is not as _____ as Mumbai. (expensive)', correctAnswer: 'expensive', explanation: '"As...as" is used for equal comparison: "as expensive as".', explanationTranslations: { hi: '"As...as" बराबर तुलना के लिए: "as expensive as".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g2-ex5', type: 'multiple-choice', question: 'This biryani is _____ than the one we had in Lucknow.', options: ['worst', 'worse', 'bad', 'more bad'], correctAnswer: 'worse', explanation: '"Bad" is irregular: bad → worse → the worst.', explanationTranslations: { hi: '"Bad" अनियमित है: bad → worse → the worst.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g2-ex6', type: 'fill-blank', question: 'The Mysore Palace is one of the _____ beautiful buildings in India. (superlative)', correctAnswer: 'most', explanation: '"Beautiful" is a long adjective → superlative = "the most beautiful".', explanationTranslations: { hi: '"Beautiful" लंबा विशेषण है → superlative = "the most beautiful".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex4', type: 'fill-blank', question: 'Berlin is not as _____ as Sydney. (expensive)', correctAnswer: 'expensive', explanation: '"As...as" is used for equal comparison: "as expensive as".', explanationTranslations: { hi: '"As...as" बराबर तुलना के लिए: "as expensive as".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex5', type: 'multiple-choice', question: 'This pasta is _____ than the one we had in Vienna.', options: ['worst', 'worse', 'bad', 'more bad'], correctAnswer: 'worse', explanation: '"Bad" is irregular: bad → worse → the worst.', explanationTranslations: { hi: '"Bad" अनियमित है: bad → worse → the worst.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex6', type: 'fill-blank', question: 'The Mysore Palace is one of the _____ beautiful buildings in many countries. (superlative)', correctAnswer: 'most', explanation: '"Beautiful" is a long adjective → superlative = "the most beautiful".', explanationTranslations: { hi: '"Beautiful" लंबा विशेषण है → superlative = "the most beautiful".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g2-ex7', type: 'correct-error', question: 'Find the error: "She is the more intelligent student in the class."', correctAnswer: 'She is the most intelligent student in the class.', explanation: 'Superlative of long adjectives: "the most" (not "the more").', explanationTranslations: { hi: 'लंबे विशेषणों का superlative: "the most" ("the more" नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g2-ex8', type: 'multiple-choice', question: 'Sachin is the _____ cricketer India has ever produced.', options: ['good', 'better', 'best', 'most good'], correctAnswer: 'best', explanation: '"Good" is irregular: good → better → the best.', explanationTranslations: { hi: '"Good" अनियमित है: good → better → the best.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g2-ex9', type: 'fill-blank', question: 'Priya is _____ than Meera at solving maths problems. (good)', correctAnswer: 'better', explanation: '"Good" is irregular: good → better → the best.', explanationTranslations: { hi: '"Good" अनियमित है: good → better → the best.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g2-ex10', type: 'multiple-choice', question: 'Chennai is one of the _____ cities in India.', options: ['hot', 'hotter', 'hottest', 'more hot'], correctAnswer: 'hottest', explanation: 'Superlative of short adjective: hot → hottest (double consonant + est).', explanationTranslations: { hi: 'छोटे विशेषण का superlative: hot → hottest (consonant दोगुना + est).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g2-ex11', type: 'correct-error', question: 'Find the error: "This samosa is more tastier than that one."', correctAnswer: 'This samosa is tastier than that one.', explanation: '"Tasty" is short — use "tastier" not "more tastier". Never use both together.', explanationTranslations: { hi: '"Tasty" छोटा है — "tastier" इस्तेमाल करें, "more tastier" नहीं। दोनों एक साथ नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g2-ex12', type: 'fill-blank', question: 'The traffic in Delhi is _____ than in Jaipur. (bad)', correctAnswer: 'worse', explanation: '"Bad" is irregular: bad → worse → the worst.', explanationTranslations: { hi: '"Bad" अनियमित है: bad → worse → the worst.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g2-ex13', type: 'multiple-choice', question: 'Rajasthan is the _____ state in India by area.', options: ['large', 'larger', 'largest', 'most large'], correctAnswer: 'largest', explanation: 'Superlative of "large" = "largest" (one syllable → -est).', explanationTranslations: { hi: '"Large" का superlative = "largest" (एक अक्षर → -est).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex8', type: 'multiple-choice', question: 'Sachin is the _____ footballer The country has ever produced.', options: ['good', 'better', 'best', 'most good'], correctAnswer: 'best', explanation: '"Good" is irregular: good → better → the best.', explanationTranslations: { hi: '"Good" अनियमित है: good → better → the best.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex9', type: 'fill-blank', question: 'Sophie is _____ than Maria at solving maths problems. (good)', correctAnswer: 'better', explanation: '"Good" is irregular: good → better → the best.', explanationTranslations: { hi: '"Good" अनियमित है: good → better → the best.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex10', type: 'multiple-choice', question: 'Vancouver is one of the _____ cities in many countries.', options: ['hot', 'hotter', 'hottest', 'more hot'], correctAnswer: 'hottest', explanation: 'Superlative of short adjective: hot → hottest (double consonant + est).', explanationTranslations: { hi: 'छोटे विशेषण का superlative: hot → hottest (consonant दोगुना + est).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex11', type: 'correct-error', question: 'Find the error: "This sandwich is more tastier than that one."', correctAnswer: 'This sandwich is tastier than that one.', explanation: '"Tasty" is short — use "tastier" not "more tastier". Never use both together.', explanationTranslations: { hi: '"Tasty" छोटा है — "tastier" इस्तेमाल करें, "more tastier" नहीं। दोनों एक साथ नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex12', type: 'fill-blank', question: 'The traffic in London is _____ than in Amsterdam. (bad)', correctAnswer: 'worse', explanation: '"Bad" is irregular: bad → worse → the worst.', explanationTranslations: { hi: '"Bad" अनियमित है: bad → worse → the worst.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g2-ex13', type: 'multiple-choice', question: 'Arizona is the _____ state in many countries by area.', options: ['large', 'larger', 'largest', 'most large'], correctAnswer: 'largest', explanation: 'Superlative of "large" = "largest" (one syllable → -est).', explanationTranslations: { hi: '"Large" का superlative = "largest" (एक अक्षर → -est).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g2-ex14', type: 'correct-error', question: 'Find the error: "He is the most fastest runner in our school."', correctAnswer: 'He is the fastest runner in our school.', explanation: '"Fast" is short — use "fastest" not "most fastest". Never combine both.', explanationTranslations: { hi: '"Fast" छोटा है — "fastest" इस्तेमाल करें, "most fastest" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
@@ -1109,16 +1109,16 @@ Think of it like this:
     content: {
       explanation: `**Prepositions of TIME:**
 - **at** → specific times: at 5 o'clock, at noon, at midnight, at night
-- **on** → days and dates: on Monday, on 15th August, on Diwali
+- **on** → days and dates: on Monday, on 15th August, on New Year
 - **in** → months, years, seasons, parts of day: in January, in 2024, in summer, in the morning
 
 **Prepositions of PLACE:**
 - **at** → specific points: at the bus stop, at the door, at home
-- **on** → surfaces: on the table, on the wall, on the floor, on MG Road
-- **in** → enclosed spaces: in the room, in Mumbai, in India, in the car
+- **on** → surfaces: on the table, on the wall, on the floor, on High Street
+- **in** → enclosed spaces: in the room, in Sydney, in many countries, in the car
 
 **Memory trick:** Think of it as: IN (big) → ON (surface) → AT (point)
-- IN India → ON MG Road → AT the shop`,
+- IN the country → ON High Street → AT the shop`,
       explanationTranslations: {
         hi: `**समय:** at = विशिष्ट समय, on = दिन/तारीख, in = महीना/साल/मौसम
 **स्थान:** at = विशिष्ट बिंदु, on = सतह, in = बंद जगह
@@ -1127,10 +1127,10 @@ Think of it like this:
       },
       examples: [
         { english: 'The meeting is at 3 PM on Monday.', translations: { hi: 'मीटिंग सोमवार को 3 बजे है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'at ... on' },
-        { english: 'She lives in Delhi, on Rajpath Road.', translations: { hi: 'वह दिल्ली में, राजपथ रोड पर रहती है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'in ... on' },
+        { english: 'She lives in London, on Rajpath Road.', translations: { hi: 'वह दिल्ली में, राजपथ रोड पर रहती है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'in ... on' },
       ],
       tips: [
-        { text: '💡 Indian English often drops prepositions: "I will come Monday" — correct: "I will come on Monday."', translations: { hi: '💡 "I will come Monday" — सही: "I will come on Monday."', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+        { text: '💡 common English often drops prepositions: "I will come Monday" — correct: "I will come on Monday."', translations: { hi: '💡 "I will come Monday" — सही: "I will come on Monday."', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       ],
     },
     exercises: [
@@ -1141,10 +1141,10 @@ Think of it like this:
       { id: 'a2-g3-ex5', type: 'multiple-choice', question: 'My grandfather goes for a walk _____ the morning.', options: ['at', 'on', 'in', 'by'], correctAnswer: 'in', explanation: 'Parts of the day use "in": in the morning, in the afternoon, in the evening.', explanationTranslations: { hi: 'दिन के हिस्सों के साथ "in": in the morning, in the afternoon.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g3-ex6', type: 'correct-error', question: 'Find the error: "She is sitting in the bus."', correctAnswer: 'She is sitting on the bus.', explanation: 'We say "on the bus" (public transport), but "in the car" (private vehicle).', explanationTranslations: { hi: 'सार्वजनिक वाहन = "on the bus", निजी वाहन = "in the car".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g3-ex7', type: 'multiple-choice', question: 'Amma is _____ home right now.', options: ['in', 'on', 'at', 'by'], correctAnswer: 'at', explanation: '"At home" is a fixed expression for being at the place called home.', explanationTranslations: { hi: '"at home" एक निश्चित अभिव्यक्ति है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g3-ex8', type: 'fill-blank', question: 'Diwali usually falls _____ October or November.', correctAnswer: 'in', explanation: 'Months use "in": in October, in November.', explanationTranslations: { hi: 'महीनों के साथ "in": in October, in November.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g3-ex8', type: 'fill-blank', question: 'New Year usually falls _____ October or November.', correctAnswer: 'in', explanation: 'Months use "in": in October, in November.', explanationTranslations: { hi: 'महीनों के साथ "in": in October, in November.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g3-ex9', type: 'fill-blank', question: 'The temple bell rings _____ 6 AM every morning.', correctAnswer: 'at', explanation: 'Specific time = "at": at 6 AM.', explanationTranslations: { hi: 'विशिष्ट समय = "at": at 6 AM.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g3-ex10', type: 'multiple-choice', question: 'Ravi was born _____ 5th March.', options: ['in', 'on', 'at', 'by'], correctAnswer: 'on', explanation: 'Specific dates use "on": on 5th March.', explanationTranslations: { hi: 'विशिष्ट तारीखों के साथ "on": on 5th March.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g3-ex11', type: 'correct-error', question: 'Find the error: "She lives in MG Road in Bangalore."', correctAnswer: 'She lives on MG Road in Bangalore.', explanation: 'Streets and roads use "on": on MG Road.', explanationTranslations: { hi: 'सड़कों के साथ "on" लगता है: on MG Road.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g3-ex10', type: 'multiple-choice', question: 'James was born _____ 5th March.', options: ['in', 'on', 'at', 'by'], correctAnswer: 'on', explanation: 'Specific dates use "on": on 5th March.', explanationTranslations: { hi: 'विशिष्ट तारीखों के साथ "on": on 5th March.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g3-ex11', type: 'correct-error', question: 'Find the error: "She lives in High Street in Toronto."', correctAnswer: 'She lives on High Street in Toronto.', explanation: 'Streets and roads use "on": on High Street.', explanationTranslations: { hi: 'सड़कों के साथ "on" लगता है: on High Street.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g3-ex12', type: 'multiple-choice', question: 'The keys are _____ the drawer.', options: ['at', 'on', 'in', 'by'], correctAnswer: 'in', explanation: 'Inside an enclosed space = "in": in the drawer.', explanationTranslations: { hi: 'बंद जगह के अंदर = "in": in the drawer.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g3-ex13', type: 'fill-blank', question: 'We celebrate Holi _____ spring every year.', correctAnswer: 'in', explanation: 'Seasons use "in": in spring, in summer, in winter.', explanationTranslations: { hi: 'मौसम के साथ "in" लगता है: in spring, in summer.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g3-ex14', type: 'correct-error', question: 'Find the error: "The picture is hanging in the wall."', correctAnswer: 'The picture is hanging on the wall.', explanation: 'Surfaces use "on": on the wall, on the table.', explanationTranslations: { hi: 'सतहों के साथ "on" लगता है: on the wall, on the table.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
@@ -1171,7 +1171,7 @@ Think of it like this:
 **Structure:** Subject + be + past participle (+ by agent)
 
 **Tense examples:**
-- Present: Rice **is grown** in India.
+- Present: Rice **is grown** in many countries.
 - Past: The Taj Mahal **was built** by Shah Jahan.
 - Future: The results **will be announced** tomorrow.
 - Present Perfect: The homework **has been submitted**.`,
@@ -1198,7 +1198,7 @@ Think of it like this:
       { id: 'b1-g2-ex6', type: 'correct-error', question: 'Find the error: "The letter was write by my grandmother."', correctAnswer: 'The letter was written by my grandmother.', explanation: 'Passive needs past participle: was written (not write).', explanationTranslations: { hi: 'Passive में past participle चाहिए: was written (write नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g2-ex7', type: 'fill-blank', question: 'The new metro line can _____ used by thousands of commuters.', correctAnswer: 'be', explanation: 'Modal passive: can + be + past participle: can be used.', explanationTranslations: { hi: 'Modal passive: can + be + past participle: can be used.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g2-ex8', type: 'multiple-choice', question: 'The Mahabharata _____ by Vyasa.', options: ['wrote', 'was wrote', 'was written', 'written'], correctAnswer: 'was written', explanation: 'Past passive: was + past participle → was written.', explanationTranslations: { hi: 'Past passive: was + past participle → was written.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g2-ex9', type: 'fill-blank', question: 'Biryani _____ cooked in many different styles across India.', correctAnswer: 'is', explanation: 'Present passive for a general fact: Biryani is cooked...', explanationTranslations: { hi: 'सामान्य तथ्य के लिए present passive: Biryani is cooked...', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g2-ex9', type: 'fill-blank', question: 'Pasta _____ cooked in many different styles across the region.', correctAnswer: 'is', explanation: 'Present passive for a general fact: Pasta is cooked...', explanationTranslations: { hi: 'सामान्य तथ्य के लिए present passive: Pasta is cooked...', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g2-ex10', type: 'multiple-choice', question: 'The new highway _____ completed by next March.', options: ['will be', 'will', 'is being', 'was'], correctAnswer: 'will be', explanation: 'Future passive: will be + past participle.', explanationTranslations: { hi: 'Future passive: will be + past participle.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g2-ex11', type: 'correct-error', question: 'Find the error: "The report has been submit to the manager."', correctAnswer: 'The report has been submitted to the manager.', explanation: 'Present Perfect passive needs past participle: has been submitted.', explanationTranslations: { hi: 'Present Perfect passive में past participle चाहिए: has been submitted.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g2-ex12', type: 'fill-blank', question: 'The Konark Sun Temple _____ built in the 13th century.', correctAnswer: 'was', explanation: 'Past passive with specific time period: was built.', explanationTranslations: { hi: 'निश्चित समय अवधि के साथ past passive: was built.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
@@ -1220,11 +1220,11 @@ Think of it like this:
       explanation: `Relative clauses give extra information about a noun.
 
 **Defining** (essential — no commas): tells us WHICH one
-- The man **who works at Infosys** is my uncle.
+- The man **who works at Salesforce** is my uncle.
 - The book **that I bought** was interesting.
 
 **Non-defining** (extra info — with commas): adds details
-- My cousin Priya, **who lives in Pune**, is a doctor.
+- My cousin Sophie, **who lives in Melbourne**, is a doctor.
 - The Taj Mahal, **which was built in 1632**, attracts millions.
 
 **Which word to use:**
@@ -1240,7 +1240,7 @@ Think of it like this:
 
 who → लोग, which → चीज़ें, where → जगह, whose → अधिकार`, ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
       examples: [
-        { english: 'The company where my father works is in Hyderabad.', translations: { hi: 'जिस कंपनी में मेरे पिता काम करते हैं वह हैदराबाद में है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'where' },
+        { english: 'The company where my father works is in Singapore.', translations: { hi: 'जिस कंपनी में मेरे पिता काम करते हैं वह हैदराबाद में है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'where' },
         { english: 'The student whose presentation was best won the prize.', translations: { hi: 'जिस छात्र की प्रस्तुति सबसे अच्छी थी उसने पुरस्कार जीता।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'whose' },
       ],
       tips: [
@@ -1249,19 +1249,19 @@ who → लोग, which → चीज़ें, where → जगह, whose → 
     },
     exercises: [
       { id: 'b2-g2-ex1', type: 'multiple-choice', question: 'The woman _____ called you is my colleague.', options: ['who', 'which', 'where', 'whose'], correctAnswer: 'who', explanation: '"who" for people in defining relative clauses.', explanationTranslations: { hi: 'लोगों के लिए "who"।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g2-ex2', type: 'fill-blank', question: 'Jaipur, _____ is known as the Pink City, attracts many tourists.', correctAnswer: 'which', explanation: 'Non-defining clause about a place/thing → "which".', explanationTranslations: { hi: 'Non-defining clause → "which".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g2-ex2', type: 'fill-blank', question: 'Amsterdam, _____ is known as the Pink City, attracts many tourists.', correctAnswer: 'which', explanation: 'Non-defining clause about a place/thing → "which".', explanationTranslations: { hi: 'Non-defining clause → "which".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g2-ex3', type: 'multiple-choice', question: 'The restaurant _____ we had dinner was fantastic.', options: ['who', 'which', 'where', 'whose'], correctAnswer: 'where', explanation: '"where" for places.', explanationTranslations: { hi: 'जगहों के लिए "where".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g2-ex4', type: 'fill-blank', question: 'The boy _____ father is a pilot studies in my school.', correctAnswer: 'whose', explanation: '"Whose" shows possession: the boy\'s father → whose father.', explanationTranslations: { hi: '"Whose" अधिकार दिखाता है: लड़के के पिता → whose father.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g2-ex5', type: 'correct-error', question: 'Find the error: "My mother, that is a teacher, lives in Lucknow."', correctAnswer: 'My mother, who is a teacher, lives in Lucknow.', explanation: 'In non-defining clauses (with commas), use "who" for people — not "that".', explanationTranslations: { hi: 'Non-defining clauses (comma के साथ) में लोगों के लिए "who" — "that" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g2-ex5', type: 'correct-error', question: 'Find the error: "My mother, that is a teacher, lives in Vienna."', correctAnswer: 'My mother, who is a teacher, lives in Vienna.', explanation: 'In non-defining clauses (with commas), use "who" for people — not "that".', explanationTranslations: { hi: 'Non-defining clauses (comma के साथ) में लोगों के लिए "who" — "that" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g2-ex6', type: 'multiple-choice', question: 'The book _____ I borrowed from the library was very interesting.', options: ['who', 'which', 'whose', 'where'], correctAnswer: 'which', explanation: '"Which" (or "that") is used for things in defining clauses.', explanationTranslations: { hi: 'Defining clauses में चीज़ों के लिए "which" या "that".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g2-ex7', type: 'fill-blank', question: 'The man I spoke to _____ my uncle. (relative pronoun omitted)', correctAnswer: 'is', explanation: 'The relative pronoun (who/that) can be omitted when it is the object of the clause.', explanationTranslations: { hi: 'Relative pronoun (who/that) हटा सकते हैं जब वह clause का object हो।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g2-ex8', type: 'multiple-choice', question: 'Chennai, _____ is the capital of Tamil Nadu, has beautiful beaches.', options: ['that', 'which', 'who', 'where'], correctAnswer: 'which', explanation: 'Non-defining clause about a place/thing (as subject) → "which" with commas.', explanationTranslations: { hi: 'Non-defining clause (comma) में जगह/चीज़ के लिए → "which".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g2-ex9', type: 'fill-blank', question: 'Varanasi, _____ is one of the oldest cities in the world, is located on the Ganges.', correctAnswer: 'which', explanation: 'Non-defining clause about a place (as subject) → "which" with commas.', explanationTranslations: { hi: 'Non-defining clause (comma) में जगह/चीज़ → "which".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g2-ex8', type: 'multiple-choice', question: 'Vancouver, _____ is the capital of Scotland, has beautiful beaches.', options: ['that', 'which', 'who', 'where'], correctAnswer: 'which', explanation: 'Non-defining clause about a place/thing (as subject) → "which" with commas.', explanationTranslations: { hi: 'Non-defining clause (comma) में जगह/चीज़ के लिए → "which".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g2-ex9', type: 'fill-blank', question: 'Prague, _____ is one of the oldest cities in the world, is located on the Ganges.', correctAnswer: 'which', explanation: 'Non-defining clause about a place (as subject) → "which" with commas.', explanationTranslations: { hi: 'Non-defining clause (comma) में जगह/चीज़ → "which".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g2-ex10', type: 'multiple-choice', question: 'The teacher _____ taught us English has retired.', options: ['who', 'which', 'where', 'whose'], correctAnswer: 'who', explanation: '"Who" for people in defining relative clauses.', explanationTranslations: { hi: 'Defining clauses में लोगों के लिए "who".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g2-ex11', type: 'correct-error', question: 'Find the error: "The city which I was born is Jaipur."', correctAnswer: 'The city where I was born is Jaipur.', explanation: 'For places, use "where" (not "which" without a preposition).', explanationTranslations: { hi: 'जगहों के लिए "where" लगाएं ("which" बिना preposition के नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g2-ex11', type: 'correct-error', question: 'Find the error: "The city which I was born is Amsterdam."', correctAnswer: 'The city where I was born is Amsterdam.', explanation: 'For places, use "where" (not "which" without a preposition).', explanationTranslations: { hi: 'जगहों के लिए "where" लगाएं ("which" बिना preposition के नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g2-ex12', type: 'fill-blank', question: 'The girl _____ mother is a famous singer won the talent show.', correctAnswer: 'whose', explanation: '"Whose" shows possession: the girl\'s mother → whose mother.', explanationTranslations: { hi: '"Whose" अधिकार दिखाता है: लड़की की माँ → whose mother.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g2-ex13', type: 'multiple-choice', question: '2005, _____ the tsunami struck, was a devastating year for coastal India.', options: ['which', 'where', 'when', 'that'], correctAnswer: 'when', explanation: '"When" is used for time references in relative clauses.', explanationTranslations: { hi: 'Relative clauses में समय के लिए "when" लगाते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g2-ex14', type: 'correct-error', question: 'Find the error: "Ravi, that works at TCS, is my neighbour."', correctAnswer: 'Ravi, who works at TCS, is my neighbour.', explanation: 'In non-defining clauses (with commas), use "who" for people — never "that".', explanationTranslations: { hi: 'Non-defining clauses (comma) में लोगों के लिए "who" — "that" कभी नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g2-ex13', type: 'multiple-choice', question: '2005, _____ the tsunami struck, was a devastating year for coastal the country.', options: ['which', 'where', 'when', 'that'], correctAnswer: 'when', explanation: '"When" is used for time references in relative clauses.', explanationTranslations: { hi: 'Relative clauses में समय के लिए "when" लगाते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g2-ex14', type: 'correct-error', question: 'Find the error: "James, that works at IBM, is my neighbour."', correctAnswer: 'James, who works at IBM, is my neighbour.', explanation: 'In non-defining clauses (with commas), use "who" for people — never "that".', explanationTranslations: { hi: 'Non-defining clauses (comma) में लोगों के लिए "who" — "that" कभी नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
 
@@ -1279,7 +1279,7 @@ who → लोग, which → चीज़ें, where → जगह, whose → 
 
 **Subject pronouns** (who does the action):
 I, you, he, she, it, we, they
-- **I** am a student. **She** is my sister. **They** live in Delhi.
+- **I** am a student. **She** is my sister. **They** live in London.
 
 **Object pronouns** (who receives the action):
 me, you, him, her, it, us, them
@@ -1287,7 +1287,7 @@ me, you, him, her, it, us, them
 
 **Possessive adjectives** (ownership before a noun):
 my, your, his, her, its, our, their
-- **My** name is Ravi. **Their** house is big.
+- **My** name is James. **Their** house is big.
 
 **Possessive pronouns** (ownership without a noun):
 mine, yours, his, hers, ours, theirs
@@ -1303,24 +1303,24 @@ mine, yours, his, hers, ours, theirs
         { english: 'This is our house. It is ours.', translations: { hi: 'यह हमारा घर है। यह हमारा है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'our ... ours' },
       ],
       tips: [
-        { text: '💡 Indian English common error: "Myself Ravi" is not correct! Say "My name is Ravi" or "I am Ravi."', translations: { hi: '💡 "Myself Ravi" गलत है! "My name is Ravi" या "I am Ravi" कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+        { text: '💡 common English common error: "Myself James" is not correct! Say "My name is James" or "I am James."', translations: { hi: '💡 "Myself James" गलत है! "My name is James" या "I am James" कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       ],
     },
     exercises: [
-      { id: 'a1-g3-ex1', type: 'multiple-choice', question: 'Priya is a doctor. _____ works at AIIMS.', options: ['He', 'She', 'It', 'They'], correctAnswer: 'She', explanation: 'Priya is female → She.', explanationTranslations: { hi: 'Priya महिला है → She.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g3-ex1', type: 'multiple-choice', question: 'Sophie is a doctor. _____ works at major hospitals.', options: ['He', 'She', 'It', 'They'], correctAnswer: 'She', explanation: 'Sophie is female → She.', explanationTranslations: { hi: 'Sophie महिला है → She.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g3-ex2', type: 'fill-blank', question: 'Please give _____ the keys. (I → object form)', correctAnswer: 'me', explanation: 'Object form of "I" is "me".', explanationTranslations: { hi: '"I" का कर्म रूप "me" है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g3-ex3', type: 'multiple-choice', question: 'This is not your bag. It is _____.', options: ['my', 'me', 'mine', 'I'], correctAnswer: 'mine', explanation: 'Without a noun after it → possessive pronoun "mine".', explanationTranslations: { hi: 'बाद में संज्ञा नहीं → "mine".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g3-ex4', type: 'correct-error', question: 'Find the error: "Myself is Rahul."', correctAnswer: 'My name is Rahul.', explanation: '"Myself" cannot be subject. Use "My name is..." or "I am..."', explanationTranslations: { hi: '"Myself" कर्ता नहीं बन सकता। "My name is..." या "I am..." कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g3-ex5', type: 'multiple-choice', question: 'Amit lost _____ wallet on the bus.', options: ['her', 'his', 'their', 'its'], correctAnswer: 'his', explanation: 'Amit is male → possessive adjective "his".', explanationTranslations: { hi: 'Amit पुरुष है → "his" (उसका)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g3-ex4', type: 'correct-error', question: 'Find the error: "Myself is Thomas."', correctAnswer: 'My name is Thomas.', explanation: '"Myself" cannot be subject. Use "My name is..." or "I am..."', explanationTranslations: { hi: '"Myself" कर्ता नहीं बन सकता। "My name is..." या "I am..." कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g3-ex5', type: 'multiple-choice', question: 'David lost _____ wallet on the bus.', options: ['her', 'his', 'their', 'its'], correctAnswer: 'his', explanation: 'David is male → possessive adjective "his".', explanationTranslations: { hi: 'David पुरुष है → "his" (उसका)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g3-ex6', type: 'fill-blank', question: 'The cat drank _____ milk. (belonging to the cat)', correctAnswer: 'its', explanation: 'Possessive for "it" (animal/thing) is "its" — no apostrophe.', explanationTranslations: { hi: '"it" का अधिकारवाचक "its" होता है — बिना apostrophe के।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g3-ex7', type: 'multiple-choice', question: 'Neha and Priya are sisters. _____ father is a teacher.', options: ['Her', 'His', 'Their', 'Its'], correctAnswer: 'Their', explanation: 'Neha and Priya = they → possessive "their".', explanationTranslations: { hi: 'Neha और Priya = they → "their" (उनका)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g3-ex7', type: 'multiple-choice', question: 'Anna and Sophie are sisters. _____ father is a teacher.', options: ['Her', 'His', 'Their', 'Its'], correctAnswer: 'Their', explanation: 'Anna and Sophie = they → possessive "their".', explanationTranslations: { hi: 'Anna और Sophie = they → "their" (उनका)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g3-ex8', type: 'correct-error', question: 'Find the error: "She hurt she while cooking."', correctAnswer: 'She hurt herself while cooking.', explanation: 'When subject and object are the same person, use reflexive pronoun: "herself".', explanationTranslations: { hi: 'जब कर्ता और कर्म एक ही हों, तो reflexive pronoun लगाएं: "herself".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g3-ex9', type: 'fill-blank', question: 'Ravi and I went to the market. _____ bought vegetables. (we/us)', correctAnswer: 'We', explanation: '"Ravi and I" as subject → "We" (subject pronoun).', explanationTranslations: { hi: '"Ravi and I" कर्ता के रूप में → "We" (कर्ता सर्वनाम)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g3-ex10', type: 'multiple-choice', question: 'The teacher asked Meera and _____ to stay after class.', options: ['I', 'me', 'my', 'myself'], correctAnswer: 'me', explanation: 'After a verb → object pronoun: asked Meera and me.', explanationTranslations: { hi: 'क्रिया के बाद → कर्म सर्वनाम: asked Meera and me.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g3-ex11', type: 'correct-error', question: 'Find the error: "Her and Priya went to Chennai."', correctAnswer: 'She and Priya went to Chennai.', explanation: 'Subject position needs "She", not "Her". "Her" is object form.', explanationTranslations: { hi: 'कर्ता स्थान पर "She" चाहिए, "Her" नहीं। "Her" कर्म रूप है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g3-ex9', type: 'fill-blank', question: 'James and I went to the market. _____ bought vegetables. (we/us)', correctAnswer: 'We', explanation: '"James and I" as subject → "We" (subject pronoun).', explanationTranslations: { hi: '"James and I" कर्ता के रूप में → "We" (कर्ता सर्वनाम)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g3-ex10', type: 'multiple-choice', question: 'The teacher asked Maria and _____ to stay after class.', options: ['I', 'me', 'my', 'myself'], correctAnswer: 'me', explanation: 'After a verb → object pronoun: asked Maria and me.', explanationTranslations: { hi: 'क्रिया के बाद → कर्म सर्वनाम: asked Maria and me.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g3-ex11', type: 'correct-error', question: 'Find the error: "Her and Sophie went to Vancouver."', correctAnswer: 'She and Sophie went to Vancouver.', explanation: 'Subject position needs "She", not "Her". "Her" is object form.', explanationTranslations: { hi: 'कर्ता स्थान पर "She" चाहिए, "Her" नहीं। "Her" कर्म रूप है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g3-ex12', type: 'multiple-choice', question: 'Is this Ankit\'s phone? Yes, it is _____.', options: ['him', 'he', 'his', 'her'], correctAnswer: 'his', explanation: 'Ankit is male. "His" works as both possessive adjective and pronoun.', explanationTranslations: { hi: 'Ankit पुरुष है। "His" अधिकारवाचक विशेषण और सर्वनाम दोनों है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g3-ex13', type: 'fill-blank', question: 'The dog wagged _____ tail happily. (belonging to the dog)', correctAnswer: 'its', explanation: '"Its" (no apostrophe) shows possession for animals and things.', explanationTranslations: { hi: '"Its" (बिना apostrophe) जानवरों और चीज़ों का अधिकार दिखाता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g3-ex14', type: 'multiple-choice', question: 'Arjun taught _____ to play the tabla.', options: ['him', 'his', 'he', 'himself'], correctAnswer: 'himself', explanation: 'Arjun (subject) and the person taught (object) are the same → reflexive "himself".', explanationTranslations: { hi: 'Arjun (कर्ता) और सिखाया गया व्यक्ति (कर्म) एक ही हैं → reflexive "himself".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g3-ex14', type: 'multiple-choice', question: 'Lucas taught _____ to play the drums.', options: ['him', 'his', 'he', 'himself'], correctAnswer: 'himself', explanation: 'Lucas (subject) and the person taught (object) are the same → reflexive "himself".', explanationTranslations: { hi: 'Lucas (कर्ता) और सिखाया गया व्यक्ति (कर्म) एक ही हैं → reflexive "himself".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
 
@@ -1360,7 +1360,7 @@ mine, yours, his, hers, ours, theirs
         { english: 'She bought two knives and five dishes.', translations: { hi: 'उसने दो चाकू और पांच बर्तन खरीदे।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'knives ... dishes' },
       ],
       tips: [
-        { text: '💡 Very common Indian English error: "I need some informations" — "information" is uncountable! Say "some information" or "pieces of information."', translations: { hi: '💡 "informations" गलत है! "information" अगणनीय है। "some information" कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+        { text: '💡 Very common common English error: "I need some informations" — "information" is uncountable! Say "some information" or "pieces of information."', translations: { hi: '💡 "informations" गलत है! "information" अगणनीय है। "some information" कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       ],
     },
     exercises: [
@@ -1374,8 +1374,8 @@ mine, yours, his, hers, ours, theirs
       { id: 'a1-g4-ex8', type: 'multiple-choice', question: 'My _____ hurt after walking all day. (foot, plural)', options: ['foots', 'feets', 'feet', 'foot'], correctAnswer: 'feet', explanation: '"Foot" is irregular → plural is "feet".', explanationTranslations: { hi: '"Foot" अनियमित है → बहुवचन "feet" होता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g4-ex9', type: 'fill-blank', question: 'There are three _____ in my family. (woman)', correctAnswer: 'women', explanation: '"Woman" is irregular → plural is "women".', explanationTranslations: { hi: '"Woman" अनियमित है → बहुवचन "women" होता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g4-ex10', type: 'multiple-choice', question: 'Which is the correct plural of "box"?', options: ['boxs', 'boxes', 'boxies', 'boxen'], correctAnswer: 'boxes', explanation: 'Nouns ending in -x: add -es → box → boxes.', explanationTranslations: { hi: '-x पर खत्म होने वाली संज्ञा: -es जोड़ें → box → boxes.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g4-ex11', type: 'correct-error', question: 'Find the error: "I need some furnitures for my new flat in Mumbai."', correctAnswer: 'I need some furniture for my new flat in Mumbai.', explanation: '"Furniture" is uncountable — it has no plural form.', explanationTranslations: { hi: '"Furniture" अगणनीय है — इसका बहुवचन नहीं होता।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g4-ex12', type: 'multiple-choice', question: 'The farmer has five _____ on his farm near Jaipur. (ox)', options: ['oxs', 'oxes', 'oxen', 'ox'], correctAnswer: 'oxen', explanation: '"Ox" is irregular → plural is "oxen".', explanationTranslations: { hi: '"Ox" अनियमित है → बहुवचन "oxen" होता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g4-ex11', type: 'correct-error', question: 'Find the error: "I need some furnitures for my new flat in Sydney."', correctAnswer: 'I need some furniture for my new flat in Sydney.', explanation: '"Furniture" is uncountable — it has no plural form.', explanationTranslations: { hi: '"Furniture" अगणनीय है — इसका बहुवचन नहीं होता।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g4-ex12', type: 'multiple-choice', question: 'The farmer has five _____ on his farm near Amsterdam. (ox)', options: ['oxs', 'oxes', 'oxen', 'ox'], correctAnswer: 'oxen', explanation: '"Ox" is irregular → plural is "oxen".', explanationTranslations: { hi: '"Ox" अनियमित है → बहुवचन "oxen" होता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g4-ex13', type: 'fill-blank', question: 'She cut the mangoes with two sharp _____. (knife)', correctAnswer: 'knives', explanation: 'Nouns ending in -fe: change to -ves → knife → knives.', explanationTranslations: { hi: '-fe पर खत्म होने वाली संज्ञा: -ves में बदलें → knife → knives.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g4-ex14', type: 'fill-blank', question: 'We caught ten _____ in the pond. (fish)', correctAnswer: 'fish', explanation: '"Fish" stays the same in plural — like "sheep" and "deer".', explanationTranslations: { hi: '"Fish" बहुवचन में भी "fish" ही रहता है — जैसे "sheep" और "deer"।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
@@ -1392,15 +1392,15 @@ mine, yours, his, hers, ours, theirs
     order: 5,
     content: {
       explanation: `**Present Simple** → habits, facts, routines
-- I **work** in Bangalore.
-- She **drinks** chai every morning.
+- I **work** in Toronto.
+- She **drinks** coffee every morning.
 - Water **boils** at 100°C.
 - Add -s/-es for he/she/it: He work**s**, She go**es**
 
 **Present Continuous** → happening RIGHT NOW or temporary
 - I **am working** from home today.
 - She **is cooking** dinner right now.
-- They **are watching** the cricket match.
+- They **are watching** the football match.
 - Structure: am/is/are + verb + **-ing**
 
 **Key difference:**
@@ -1411,7 +1411,7 @@ mine, yours, his, hers, ours, theirs
 - Simple: always, usually, often, sometimes, every day/week
 - Continuous: now, right now, at the moment, currently, today`,
       explanationTranslations: { hi: `**Present Simple** → आदतें, तथ्य, नियमित काम
-- I work in Bangalore. She drinks chai every morning.
+- I work in Toronto. She drinks coffee every morning.
 
 **Present Continuous** → अभी हो रहा है
 - I am working now. She is cooking dinner.
@@ -1422,7 +1422,7 @@ mine, yours, his, hers, ours, theirs
         { english: 'Shh! The baby is sleeping right now.', translations: { hi: 'शश! बच्चा अभी सो रहा है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'is sleeping' },
       ],
       tips: [
-        { text: '💡 Common mistake in India: "I am living in Mumbai" when you mean permanently. If it\'s your home, say "I live in Mumbai." Use "am living" only for temporary stays.', translations: { hi: '💡 "I am living in Mumbai" — अगर स्थायी है तो "I live in Mumbai" कहें। "am living" अस्थायी के लिए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+        { text: '💡 Common mistake in many countries: "I am living in Sydney" when you mean permanently. If it\'s your home, say "I live in Sydney." Use "am living" only for temporary stays.', translations: { hi: '💡 "I am living in Sydney" — अगर स्थायी है तो "I live in Sydney" कहें। "am living" अस्थायी के लिए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       ],
     },
     exercises: [
@@ -1433,11 +1433,11 @@ mine, yours, his, hers, ours, theirs
       { id: 'a1-g5-ex5', type: 'fill-blank', question: 'She _____ not like spicy food. (do/does — negative)', correctAnswer: 'does', explanation: 'Negative Present Simple with she/he/it: does not (doesn\'t).', explanationTranslations: { hi: 'She/he/it के साथ negative: does not (doesn\'t).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g5-ex6', type: 'multiple-choice', question: '_____ you usually take the metro to work?', options: ['Are', 'Do', 'Is', 'Does'], correctAnswer: 'Do', explanation: 'Question with "you" in Present Simple → "Do you...?"', explanationTranslations: { hi: '"you" के साथ Present Simple प्रश्न → "Do you...?"', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g5-ex7', type: 'correct-error', question: 'Find the error: "I am understanding the lesson now."', correctAnswer: 'I understand the lesson now.', explanation: '"Understand" is a state verb — it doesn\'t take continuous form.', explanationTranslations: { hi: '"Understand" स्थिति क्रिया है — continuous रूप नहीं लेती।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g5-ex8', type: 'multiple-choice', question: 'Ravi _____ plays cricket on Sundays.', options: ['always', 'is always', 'always is', 'does always'], correctAnswer: 'always', explanation: 'Frequency adverbs go before the main verb in Present Simple.', explanationTranslations: { hi: 'Frequency adverbs मुख्य क्रिया से पहले आते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g5-ex9', type: 'fill-blank', question: 'Priya _____ her grandmother in Varanasi every Diwali. (visit — habit)', correctAnswer: 'visits', explanation: 'Habit + she → visits (Present Simple with -s).', explanationTranslations: { hi: 'आदत + she → visits (Present Simple -s के साथ)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g5-ex8', type: 'multiple-choice', question: 'James _____ plays football on Sundays.', options: ['always', 'is always', 'always is', 'does always'], correctAnswer: 'always', explanation: 'Frequency adverbs go before the main verb in Present Simple.', explanationTranslations: { hi: 'Frequency adverbs मुख्य क्रिया से पहले आते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g5-ex9', type: 'fill-blank', question: 'Sophie _____ her grandmother in Prague every New Year. (visit — habit)', correctAnswer: 'visits', explanation: 'Habit + she → visits (Present Simple with -s).', explanationTranslations: { hi: 'आदत + she → visits (Present Simple -s के साथ)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g5-ex10', type: 'multiple-choice', question: 'Shh! The teacher _____ the results right now.', options: ['announces', 'is announcing', 'announce', 'announced'], correctAnswer: 'is announcing', explanation: '"Right now" = happening at this moment → Present Continuous.', explanationTranslations: { hi: '"Right now" = इसी पल हो रहा है → Present Continuous.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g5-ex11', type: 'correct-error', question: 'Find the error: "I am believing in hard work."', correctAnswer: 'I believe in hard work.', explanation: '"Believe" is a state verb — it does not take continuous form.', explanationTranslations: { hi: '"Believe" स्थिति क्रिया है — continuous रूप नहीं लेती।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a1-g5-ex12', type: 'multiple-choice', question: '_____ Arjun work at Infosys?', options: ['Do', 'Does', 'Is', 'Are'], correctAnswer: 'Does', explanation: 'Question with he/she/it in Present Simple → "Does".', explanationTranslations: { hi: 'He/she/it के साथ Present Simple प्रश्न → "Does".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a1-g5-ex12', type: 'multiple-choice', question: '_____ Lucas work at Salesforce?', options: ['Do', 'Does', 'Is', 'Are'], correctAnswer: 'Does', explanation: 'Question with he/she/it in Present Simple → "Does".', explanationTranslations: { hi: 'He/she/it के साथ Present Simple प्रश्न → "Does".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g5-ex13', type: 'fill-blank', question: 'The sun _____ in the east. (rise — fact)', correctAnswer: 'rises', explanation: 'General facts use Present Simple. He/she/it + rises.', explanationTranslations: { hi: 'सामान्य तथ्य Present Simple में होते हैं। He/she/it + rises.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a1-g5-ex14', type: 'correct-error', question: 'Find the error: "She go to the temple every Tuesday."', correctAnswer: 'She goes to the temple every Tuesday.', explanation: 'With she/he/it in Present Simple, add -es: goes.', explanationTranslations: { hi: 'She/he/it के साथ Present Simple में -es जोड़ें: goes.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
@@ -1455,12 +1455,12 @@ mine, yours, his, hers, ours, theirs
     content: {
       explanation: `Adjectives describe nouns. They come **before** the noun or **after** "be".
 
-**Before a noun:** a **tall** man, a **red** sari, **hot** chai
+**Before a noun:** a **tall** man, a **red** dress, **hot** coffee
 **After "be":** The movie is **boring**. The food was **delicious**.
 
 **Adjective order** (when using multiple):
 Opinion → Size → Age → Shape → Colour → Origin → Material → Purpose
-- A **beautiful large old round brown Indian wooden dining** table
+- A **beautiful large old round brown antique wooden dining** table
 - Simplified: "a beautiful big old brown table" — opinion first, then physical.
 
 **Common pairs:**
@@ -1471,7 +1471,7 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
 **क्रम:** राय → आकार → उम्र → रंग → उत्पत्ति → सामग्री
 **-ed vs -ing:** bored = मुझे बोरियत हुई, boring = बोरिंग चीज़`, ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
       examples: [
-        { english: 'She wore a beautiful red silk sari.', translations: { hi: 'उसने एक सुंदर लाल रेशमी साड़ी पहनी।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'beautiful red silk' },
+        { english: 'She wore a beautiful red silk dress.', translations: { hi: 'उसने एक सुंदर लाल रेशमी साड़ी पहनी।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'beautiful red silk' },
         { english: 'The lecture was boring but the teacher was interested in the topic.', translations: { hi: 'व्याख्यान बोरिंग था लेकिन शिक्षक विषय में रुचि रखते थे।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'boring ... interested' },
       ],
       tips: [
@@ -1480,18 +1480,18 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
     },
     exercises: [
       { id: 'a2-g4-ex1', type: 'multiple-choice', question: 'The match was very _____. (It made us feel excited)', options: ['excited', 'exciting', 'excite', 'excites'], correctAnswer: 'exciting', explanation: 'The match causes excitement → -ing form.', explanationTranslations: { hi: 'मैच उत्साह का कारण है → -ing.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g4-ex2', type: 'fill-blank', question: 'She bought a _____ Indian cotton kurta. (beautiful)', correctAnswer: 'beautiful', explanation: 'Opinion adjective before origin and material.', explanationTranslations: { hi: 'राय विशेषण उत्पत्ति और सामग्री से पहले।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g4-ex3', type: 'correct-error', question: 'Find the error: "I am very interesting in cricket."', correctAnswer: 'I am very interested in cricket.', explanation: 'YOU feel it → -ed: "interested in". Not "interesting in".', explanationTranslations: { hi: 'आप महसूस करते हैं → -ed: "interested in".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g4-ex2', type: 'fill-blank', question: 'She bought a _____ organic cotton shirt. (beautiful)', correctAnswer: 'beautiful', explanation: 'Opinion adjective before origin and material.', explanationTranslations: { hi: 'राय विशेषण उत्पत्ति और सामग्री से पहले।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g4-ex3', type: 'correct-error', question: 'Find the error: "I am very interesting in football."', correctAnswer: 'I am very interested in football.', explanation: 'YOU feel it → -ed: "interested in". Not "interesting in".', explanationTranslations: { hi: 'आप महसूस करते हैं → -ed: "interested in".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g4-ex4', type: 'multiple-choice', question: 'The journey was very _____. I fell asleep. (tire)', options: ['tired', 'tiring', 'tire', 'tires'], correctAnswer: 'tiring', explanation: 'The journey causes tiredness → -ing form: "tiring".', explanationTranslations: { hi: 'यात्रा थकान का कारण है → -ing: "tiring".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g4-ex5', type: 'fill-blank', question: 'We were _____ by the magic show at the mela. (amaze)', correctAnswer: 'amazed', explanation: 'We feel amazement → -ed form: "amazed".', explanationTranslations: { hi: 'हमें आश्चर्य हुआ → -ed: "amazed".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g4-ex6', type: 'correct-error', question: 'Find the error: "The instructions were confusing, so I was confusing too."', correctAnswer: 'The instructions were confusing, so I was confused too.', explanation: 'Instructions cause confusion → confusing. You feel confusion → confused.', explanationTranslations: { hi: 'निर्देश भ्रम का कारण → confusing। आप भ्रमित हैं → confused.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g4-ex7', type: 'multiple-choice', question: 'She wore a _____ green silk sari at the wedding. (adjective order)', options: ['beautiful', 'green beautiful silk', 'silk beautiful green', 'beautiful silk green'], correctAnswer: 'beautiful', explanation: 'Correct order: opinion (beautiful) → colour (green) → material (silk).', explanationTranslations: { hi: 'सही क्रम: राय (beautiful) → रंग (green) → सामग्री (silk).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g4-ex7', type: 'multiple-choice', question: 'She wore a _____ green silk dress at the wedding. (adjective order)', options: ['beautiful', 'green beautiful silk', 'silk beautiful green', 'beautiful silk green'], correctAnswer: 'beautiful', explanation: 'Correct order: opinion (beautiful) → colour (green) → material (silk).', explanationTranslations: { hi: 'सही क्रम: राय (beautiful) → रंग (green) → सामग्री (silk).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g4-ex8', type: 'fill-blank', question: 'The horror movie was _____. I was so scared. (frighten)', correctAnswer: 'frightening', explanation: 'The movie causes fear → -ing form: "frightening".', explanationTranslations: { hi: 'फ़िल्म डर का कारण → -ing: "frightening".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g4-ex9', type: 'multiple-choice', question: 'The children were _____ when they saw the Rajasthani puppet show. (delight)', options: ['delighting', 'delighted', 'delight', 'delights'], correctAnswer: 'delighted', explanation: 'The children feel delight → -ed form: "delighted".', explanationTranslations: { hi: 'बच्चों को खुशी हुई → -ed: "delighted".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g4-ex10', type: 'fill-blank', question: 'Arjun wore a _____ new blue cotton shirt to the party.', correctAnswer: 'nice', explanation: 'Adjective order: opinion (nice) → age (new) → colour (blue) → material (cotton).', explanationTranslations: { hi: 'विशेषण क्रम: राय (nice) → उम्र (new) → रंग (blue) → सामग्री (cotton).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g4-ex9', type: 'multiple-choice', question: 'The children were _____ when they saw the Arizonai puppet show. (delight)', options: ['delighting', 'delighted', 'delight', 'delights'], correctAnswer: 'delighted', explanation: 'The children feel delight → -ed form: "delighted".', explanationTranslations: { hi: 'बच्चों को खुशी हुई → -ed: "delighted".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g4-ex10', type: 'fill-blank', question: 'Lucas wore a _____ new blue cotton shirt to the party.', correctAnswer: 'nice', explanation: 'Adjective order: opinion (nice) → age (new) → colour (blue) → material (cotton).', explanationTranslations: { hi: 'विशेषण क्रम: राय (nice) → उम्र (new) → रंग (blue) → सामग्री (cotton).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g4-ex11', type: 'correct-error', question: 'Find the error: "The sunset at Marina Beach was very amazing, and we were very amazing too."', correctAnswer: 'The sunset at Marina Beach was very amazing, and we were very amazed too.', explanation: 'The sunset causes amazement → amazing. You feel it → amazed.', explanationTranslations: { hi: 'सूर्यास्त आश्चर्य का कारण → amazing। आप महसूस करें → amazed.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g4-ex12', type: 'multiple-choice', question: 'The documentary about the Himalayas was very _____. (It taught us a lot)', options: ['interested', 'interesting', 'interest', 'interests'], correctAnswer: 'interesting', explanation: 'The documentary causes interest → -ing form: "interesting".', explanationTranslations: { hi: 'डॉक्यूमेंट्री रुचि का कारण है → -ing: "interesting".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g4-ex13', type: 'fill-blank', question: 'After the long bus ride to Manali, all the passengers felt _____. (exhaust)', correctAnswer: 'exhausted', explanation: 'The passengers feel exhaustion → -ed form: "exhausted".', explanationTranslations: { hi: 'यात्रियों को थकान महसूस हुई → -ed: "exhausted".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g4-ex13', type: 'fill-blank', question: 'After the long bus ride to Interlaken, all the passengers felt _____. (exhaust)', correctAnswer: 'exhausted', explanation: 'The passengers feel exhaustion → -ed form: "exhausted".', explanationTranslations: { hi: 'यात्रियों को थकान महसूस हुई → -ed: "exhausted".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g4-ex14', type: 'multiple-choice', question: 'She bought a _____ round wooden table for her kitchen.', options: ['small', 'wooden small round', 'round small wooden', 'small wooden round'], correctAnswer: 'small', explanation: 'Correct order: size (small) → shape (round) → material (wooden).', explanationTranslations: { hi: 'सही क्रम: आकार (small) → आकृति (round) → सामग्री (wooden).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
@@ -1515,7 +1515,7 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
 
 **Frequency (how often?):** Position = before main verb, after "be"
 - always, usually, often, sometimes, rarely, never
-- I **always** drink chai in the morning.
+- I **always** drink coffee in the morning.
 - She is **never** late for work.
 
 **Time (when?):** today, yesterday, tomorrow, soon, already, yet, still
@@ -1542,13 +1542,13 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
       { id: 'a2-g5-ex1', type: 'fill-blank', question: 'She sings very _____. (beautiful)', correctAnswer: 'beautifully', explanation: 'Describing how she sings → adverb: beautifully.', explanationTranslations: { hi: 'कैसे गाती है → क्रिया विशेषण: beautifully.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g5-ex2', type: 'multiple-choice', question: 'He did _____ on the exam.', options: ['good', 'well', 'goodly', 'betterly'], correctAnswer: 'well', explanation: '"good" → "well" (irregular adverb).', explanationTranslations: { hi: '"good" → "well" (अनियमित)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g5-ex3', type: 'multiple-choice', question: 'She is _____ late for class.', options: ['never', 'not', 'no', 'none'], correctAnswer: 'never', explanation: 'Frequency adverb after "be": She is never late.', explanationTranslations: { hi: '"be" के बाद frequency adverb: She is never late.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g5-ex4', type: 'correct-error', question: 'Find the error: "He runs very fastly."', correctAnswer: 'He runs very fast.', explanation: '"fast" is already an adverb. Don\'t add -ly!', explanationTranslations: { hi: '"fast" पहले से adverb है। -ly मत जोड़ें!', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g5-ex4', type: 'correct-error', question: 'Find the error: "He goals very fastly."', correctAnswer: 'He goals very fast.', explanation: '"fast" is already an adverb. Don\'t add -ly!', explanationTranslations: { hi: '"fast" पहले से adverb है। -ly मत जोड़ें!', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g5-ex5', type: 'multiple-choice', question: 'She played the sitar very _____.', options: ['good', 'well', 'goodly', 'better'], correctAnswer: 'well', explanation: '"Good" is adjective, "well" is adverb. To describe how she played → "well".', explanationTranslations: { hi: '"Good" विशेषण है, "well" क्रिया विशेषण। कैसे बजाया → "well".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g5-ex6', type: 'fill-blank', question: 'He is not tall _____ to reach the top shelf.', correctAnswer: 'enough', explanation: '"Enough" comes after adjectives and adverbs: tall enough.', explanationTranslations: { hi: '"Enough" विशेषण/क्रिया विशेषण के बाद आता है: tall enough.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g5-ex7', type: 'correct-error', question: 'Find the error: "The chai is too much hot to drink."', correctAnswer: 'The chai is too hot to drink.', explanation: '"Too" + adjective directly — don\'t add "much" in between.', explanationTranslations: { hi: '"Too" + विशेषण सीधे — बीच में "much" न जोड़ें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g5-ex7', type: 'correct-error', question: 'Find the error: "The coffee is too much hot to drink."', correctAnswer: 'The coffee is too hot to drink.', explanation: '"Too" + adjective directly — don\'t add "much" in between.', explanationTranslations: { hi: '"Too" + विशेषण सीधे — बीच में "much" न जोड़ें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g5-ex8', type: 'multiple-choice', question: 'She _____ eats breakfast before 7 AM.', options: ['usually', 'usual', 'use', 'used'], correctAnswer: 'usually', explanation: '"Usually" is a frequency adverb placed before the main verb.', explanationTranslations: { hi: '"Usually" frequency adverb है, मुख्य क्रिया से पहले आता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g5-ex9', type: 'fill-blank', question: 'Priya speaks English very _____. (fluent)', correctAnswer: 'fluently', explanation: 'Describing how she speaks → adverb: fluently.', explanationTranslations: { hi: 'कैसे बोलती है → क्रिया विशेषण: fluently.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g5-ex10', type: 'multiple-choice', question: 'Arjun _____ goes to the gym. He works out five days a week.', options: ['rarely', 'never', 'regularly', 'seldom'], correctAnswer: 'regularly', explanation: 'Five days a week = frequent activity → "regularly".', explanationTranslations: { hi: 'हफ्ते में पाँच दिन = नियमित गतिविधि → "regularly".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g5-ex9', type: 'fill-blank', question: 'Sophie speaks English very _____. (fluent)', correctAnswer: 'fluently', explanation: 'Describing how she speaks → adverb: fluently.', explanationTranslations: { hi: 'कैसे बोलती है → क्रिया विशेषण: fluently.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g5-ex10', type: 'multiple-choice', question: 'Lucas _____ goes to the gym. He works out five days a week.', options: ['rarely', 'never', 'regularly', 'seldom'], correctAnswer: 'regularly', explanation: 'Five days a week = frequent activity → "regularly".', explanationTranslations: { hi: 'हफ्ते में पाँच दिन = नियमित गतिविधि → "regularly".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g5-ex11', type: 'correct-error', question: 'Find the error: "She dances very graceful."', correctAnswer: 'She dances very gracefully.', explanation: '"Graceful" is an adjective. To describe HOW she dances, use adverb "gracefully".', explanationTranslations: { hi: '"Graceful" विशेषण है। कैसे नाचती है → "gracefully" (क्रिया विशेषण)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g5-ex12', type: 'fill-blank', question: 'The test was _____ difficult for most students. (extreme)', correctAnswer: 'extremely', explanation: '"Extremely" modifies the adjective "difficult" — adverbs modify adjectives too.', explanationTranslations: { hi: '"Extremely" विशेषण "difficult" को संशोधित करता है — क्रिया विशेषण विशेषणों को भी संशोधित करते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g5-ex13', type: 'multiple-choice', question: 'He works _____ to support his family in the village.', options: ['hard', 'hardly', 'hardest', 'harder'], correctAnswer: 'hard', explanation: '"Hard" as adverb means with effort. "Hardly" means barely — different meaning!', explanationTranslations: { hi: '"Hard" क्रिया विशेषण = मेहनत से। "Hardly" = मुश्किल से — अलग अर्थ!', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
@@ -1576,8 +1576,8 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
 - Look at those clouds! It **is going to** rain. (evidence)
 
 **3. Present Continuous** → fixed arrangements with time/place
-- I **am meeting** Priya at 5 PM tomorrow. (arranged, confirmed)
-- We **are flying** to Chennai on Friday.
+- I **am meeting** Sophie at 5 PM tomorrow. (arranged, confirmed)
+- We **are flying** to Vancouver on Friday.
 
 **Quick guide:**
 | Situation | Use |
@@ -1589,10 +1589,10 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
 **Present Continuous** → पक्का arrangement (समय/जगह तय)`, ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
       examples: [
         { english: 'I am going to learn coding this summer.', translations: { hi: 'मैं इस गर्मी में कोडिंग सीखने वाला हूं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'am going to learn' },
-        { english: 'We are flying to Jaipur on Saturday.', translations: { hi: 'हम शनिवार को जयपुर उड़ रहे हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'are flying' },
+        { english: 'We are flying to Amsterdam on Saturday.', translations: { hi: 'हम शनिवार को जयपुर उड़ रहे हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'are flying' },
       ],
       tips: [
-        { text: '💡 In Indian English, "I will go tomorrow" is often used for everything. But if you\'ve already booked a ticket, "I am going tomorrow" or "I am going to go" is more accurate!', translations: { hi: '💡 अगर टिकट बुक हो चुकी है तो "I am going tomorrow" ज़्यादा सही है!', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+        { text: '💡 In common English, "I will go tomorrow" is often used for everything. But if you\'ve already booked a ticket, "I am going tomorrow" or "I am going to go" is more accurate!', translations: { hi: '💡 अगर टिकट बुक हो चुकी है तो "I am going tomorrow" ज़्यादा सही है!', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       ],
     },
     exercises: [
@@ -1601,15 +1601,15 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
       { id: 'a2-g6-ex3', type: 'fill-blank', question: 'I _____ dinner with my boss tomorrow at 7 PM. (have — fixed arrangement)', correctAnswer: 'am having', explanation: 'Fixed arrangement with time → Present Continuous.', explanationTranslations: { hi: 'पक्का arrangement → Present Continuous.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g6-ex4', type: 'fill-blank', question: 'I promise I _____ help you with your homework.', correctAnswer: 'will', explanation: 'Promises use "will": I will help you.', explanationTranslations: { hi: 'वादे के लिए "will": I will help you.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g6-ex5', type: 'multiple-choice', question: 'Look at those dark clouds! It _____ rain heavily.', options: ['will', 'is going to', 'rains', 'rained'], correctAnswer: 'is going to', explanation: 'Evidence-based prediction (dark clouds) → going to.', explanationTranslations: { hi: 'सबूत-आधारित भविष्यवाणी (काले बादल) → going to.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g6-ex6', type: 'correct-error', question: 'Find the error: "We will going to visit Agra next weekend."', correctAnswer: 'We are going to visit Agra next weekend.', explanation: 'Don\'t mix "will" with "going to". Use either "will visit" or "are going to visit".', explanationTranslations: { hi: '"will" और "going to" मिलाएं नहीं। "will visit" या "are going to visit" कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g6-ex7', type: 'multiple-choice', question: 'I think India _____ the next cricket World Cup.', options: ['is winning', 'wins', 'will win', 'is going to win'], correctAnswer: 'will win', explanation: '"I think" + prediction about future → will.', explanationTranslations: { hi: '"I think" + भविष्यवाणी → will.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g6-ex8', type: 'fill-blank', question: 'We _____ the Rajdhani Express to Delhi tomorrow. The tickets are confirmed. (take — fixed arrangement)', correctAnswer: 'are taking', explanation: 'Fixed arrangement with confirmed tickets → Present Continuous.', explanationTranslations: { hi: 'टिकट confirmed है → Present Continuous: "are taking".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g6-ex9', type: 'fill-blank', question: 'Meera _____ her grandmother in Kolkata this weekend. The tickets are booked. (visit — fixed arrangement)', correctAnswer: 'is visiting', explanation: 'Fixed arrangement with booked tickets → Present Continuous for future.', explanationTranslations: { hi: 'टिकट बुक है → Present Continuous भविष्य के लिए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g6-ex10', type: 'multiple-choice', question: 'I believe Ravi _____ a great doctor someday.', options: ['is being', 'is going to be', 'will be', 'is'], correctAnswer: 'will be', explanation: 'Personal belief/prediction without evidence → will.', explanationTranslations: { hi: 'व्यक्तिगत विश्वास/भविष्यवाणी बिना सबूत → will.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g6-ex6', type: 'correct-error', question: 'Find the error: "We will going to visit Florence next weekend."', correctAnswer: 'We are going to visit Florence next weekend.', explanation: 'Don\'t mix "will" with "going to". Use either "will visit" or "are going to visit".', explanationTranslations: { hi: '"will" और "going to" मिलाएं नहीं। "will visit" या "are going to visit" कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g6-ex7', type: 'multiple-choice', question: 'I think the country _____ the next football World Cup.', options: ['is winning', 'wins', 'will win', 'is going to win'], correctAnswer: 'will win', explanation: '"I think" + prediction about future → will.', explanationTranslations: { hi: '"I think" + भविष्यवाणी → will.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g6-ex8', type: 'fill-blank', question: 'We _____ the express train service to London tomorrow. The tickets are confirmed. (take — fixed arrangement)', correctAnswer: 'are taking', explanation: 'Fixed arrangement with confirmed tickets → Present Continuous.', explanationTranslations: { hi: 'टिकट confirmed है → Present Continuous: "are taking".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g6-ex9', type: 'fill-blank', question: 'Maria _____ her grandmother in Berlin this weekend. The tickets are booked. (visit — fixed arrangement)', correctAnswer: 'is visiting', explanation: 'Fixed arrangement with booked tickets → Present Continuous for future.', explanationTranslations: { hi: 'टिकट बुक है → Present Continuous भविष्य के लिए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g6-ex10', type: 'multiple-choice', question: 'I believe James _____ a great doctor someday.', options: ['is being', 'is going to be', 'will be', 'is'], correctAnswer: 'will be', explanation: 'Personal belief/prediction without evidence → will.', explanationTranslations: { hi: 'व्यक्तिगत विश्वास/भविष्यवाणी बिना सबूत → will.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g6-ex11', type: 'correct-error', question: 'Find the error: "She is go to study abroad next year."', correctAnswer: 'She is going to study abroad next year.', explanation: 'Correct form: is going to + base verb, not "is go to".', explanationTranslations: { hi: 'सही रूप: is going to + मूल क्रिया, "is go to" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g6-ex12', type: 'multiple-choice', question: 'Careful! That glass _____ fall off the table!', options: ['will', 'is going to', 'is falling', 'falls'], correctAnswer: 'is going to', explanation: 'Evidence-based prediction (glass about to fall) → going to.', explanationTranslations: { hi: 'सबूत-आधारित भविष्यवाणी (गिलास गिरने वाला है) → going to.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'a2-g6-ex13', type: 'fill-blank', question: '"It is very hot." — "I _____ turn on the AC." (spontaneous decision)', correctAnswer: 'will', explanation: 'Deciding right now in the moment → will.', explanationTranslations: { hi: 'अभी इसी पल फैसला → will.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'a2-g6-ex14', type: 'correct-error', question: 'Find the error: "I will going to attend the wedding in Jaipur."', correctAnswer: 'I am going to attend the wedding in Jaipur.', explanation: 'Don\'t combine "will" + "going to". Use "will attend" or "am going to attend".', explanationTranslations: { hi: '"will" + "going to" न मिलाएं। "will attend" या "am going to attend" कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'a2-g6-ex14', type: 'correct-error', question: 'Find the error: "I will going to attend the wedding in Amsterdam."', correctAnswer: 'I am going to attend the wedding in Amsterdam.', explanation: 'Don\'t combine "will" + "going to". Use "will attend" or "am going to attend".', explanationTranslations: { hi: '"will" + "going to" न मिलाएं। "will attend" या "am going to attend" कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
 
@@ -1638,7 +1638,7 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
 - He **must** be at home. (I'm sure)
 
 **Have to** → external obligation (rules, laws)
-- You **have to** wear a helmet in India. (it's the law)
+- You **have to** wear a helmet in many countries. (it's the law)
 
 **Should** → advice, recommendation
 - You **should** drink more water.
@@ -1653,8 +1653,8 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
 **Should** = सलाह
 **May/Might** = संभावना`, ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
       examples: [
-        { english: 'You must carry your Aadhaar card for verification.', translations: { hi: 'सत्यापन के लिए आपको आधार कार्ड ले जाना होगा।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'must' },
-        { english: 'You should visit Kerala during the monsoon — it is beautiful!', translations: { hi: 'मानसून में केरल ज़रूर जाएं — बहुत सुंदर है!', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'should' },
+        { english: 'You must carry your national ID system card for verification.', translations: { hi: 'सत्यापन के लिए आपको आधार कार्ड ले जाना होगा।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'must' },
+        { english: 'You should visit Scotland during the monsoon — it is beautiful!', translations: { hi: 'मानसून में केरल ज़रूर जाएं — बहुत सुंदर है!', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'should' },
       ],
       tips: [
         { text: '💡 "Must" and "have to" are different! Must = your own feeling. Have to = external rule. "I must lose weight" (I want to) vs "I have to wear uniform" (school rule).', translations: { hi: '💡 Must = अपनी भावना। Have to = बाहरी नियम।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
@@ -1669,12 +1669,12 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
       { id: 'b1-g3-ex6', type: 'fill-blank', question: 'You _____ wear a tie tomorrow. It is a casual day.', correctAnswer: 'don\'t have to', explanation: '"Don\'t have to" means it is not necessary (but you can if you want).', explanationTranslations: { hi: '"Don\'t have to" = ज़रूरी नहीं (लेकिन चाहें तो कर सकते हैं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g3-ex7', type: 'multiple-choice', question: 'The train has stopped. There _____ be a problem on the track.', options: ['must', 'could', 'should', 'will'], correctAnswer: 'could', explanation: '"Could" expresses possibility when we are not sure.', explanationTranslations: { hi: '"Could" संभावना व्यक्त करता है जब निश्चित नहीं हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g3-ex8', type: 'correct-error', question: 'Find the error: "May I to borrow your pen?"', correctAnswer: 'May I borrow your pen?', explanation: 'After modals, use base verb without "to": May I borrow...', explanationTranslations: { hi: 'Modals के बाद "to" के बिना base verb: May I borrow...', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g3-ex9', type: 'fill-blank', question: 'Priya _____ speak four languages fluently. (ability)', correctAnswer: 'can', explanation: '"Can" expresses present ability.', explanationTranslations: { hi: '"Can" वर्तमान क्षमता व्यक्त करता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g3-ex9', type: 'fill-blank', question: 'Sophie _____ speak four languages fluently. (ability)', correctAnswer: 'can', explanation: '"Can" expresses present ability.', explanationTranslations: { hi: '"Can" वर्तमान क्षमता व्यक्त करता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g3-ex10', type: 'multiple-choice', question: 'You _____ touch the exhibits in the museum. It is strictly prohibited.', options: ['shouldn\'t', 'mustn\'t', 'don\'t have to', 'might not'], correctAnswer: 'mustn\'t', explanation: '"Mustn\'t" = forbidden/prohibited. "Shouldn\'t" is just advice.', explanationTranslations: { hi: '"Mustn\'t" = मना है/निषिद्ध। "Shouldn\'t" सिर्फ सलाह है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g3-ex11', type: 'correct-error', question: 'Find the error: "He must to finish the work before Friday."', correctAnswer: 'He must finish the work before Friday.', explanation: 'After modals, use base verb — no "to"! Must finish, not must to finish.', explanationTranslations: { hi: 'Modals के बाद base verb — "to" नहीं! Must finish.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g3-ex12', type: 'multiple-choice', question: 'Meera _____ cook very well when she was young.', options: ['can', 'could', 'must', 'should'], correctAnswer: 'could', explanation: '"Could" = past ability. She had this ability before.', explanationTranslations: { hi: '"Could" = भूतकाल की क्षमता। उसके पास पहले यह क्षमता थी।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g3-ex12', type: 'multiple-choice', question: 'Maria _____ cook very well when she was young.', options: ['can', 'could', 'must', 'should'], correctAnswer: 'could', explanation: '"Could" = past ability. She had this ability before.', explanationTranslations: { hi: '"Could" = भूतकाल की क्षमता। उसके पास पहले यह क्षमता थी।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g3-ex13', type: 'fill-blank', question: 'It is Sunday. You _____ go to office today. (not necessary)', correctAnswer: 'don\'t have to', explanation: '"Don\'t have to" = not necessary. "Mustn\'t" = forbidden — different meaning!', explanationTranslations: { hi: '"Don\'t have to" = ज़रूरी नहीं। "Mustn\'t" = मना है — अलग अर्थ!', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g3-ex14', type: 'multiple-choice', question: 'That _____ be Ravi at the door. He said he would come at 7.', options: ['must', 'might', 'should', 'can'], correctAnswer: 'must', explanation: '"Must" for logical conclusion — you are almost sure it is Ravi.', explanationTranslations: { hi: '"Must" तार्किक निष्कर्ष के लिए — आप लगभग निश्चित हैं कि Ravi है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g3-ex14', type: 'multiple-choice', question: 'That _____ be James at the door. He said he would come at 7.', options: ['must', 'might', 'should', 'can'], correctAnswer: 'must', explanation: '"Must" for logical conclusion — you are almost sure it is James.', explanationTranslations: { hi: '"Must" तार्किक निष्कर्ष के लिए — आप लगभग निश्चित हैं कि James है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
 
@@ -1691,7 +1691,7 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
       explanation: `The verb must agree with the subject in number (singular/plural).
 
 **Basic rule:** Singular subject → singular verb (with -s). Plural subject → plural verb (no -s).
-- The boy **runs**. The boys **run**.
+- The boy **goals**. The boys **run**.
 - She **has** a car. They **have** a car.
 
 **Tricky cases:**
@@ -1707,7 +1707,7 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
   - A lot of water **is** wasted. A lot of people **are** waiting.`,
       explanationTranslations: { hi: `क्रिया को कर्ता से मिलना चाहिए।
 
-**मूल नियम:** Singular → -s (runs, has). Plural → no -s (run, have).
+**मूल नियम:** Singular → -s (goals, has). Plural → no -s (run, have).
 **मुश्किल:** Everyone/each → singular. People/police → plural.
 **Either...or:** निकटतम कर्ता से मिलाएं।`, ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
       examples: [
@@ -1715,23 +1715,23 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
         { english: 'Each of the players has to bring their own kit.', translations: { hi: 'हर खिलाड़ी को अपनी किट लानी होगी।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'Each ... has' },
       ],
       tips: [
-        { text: '💡 "The team are..." or "The team is..."? In Indian/British English, collective nouns can be plural when referring to individuals: "The team are arguing among themselves."', translations: { hi: '💡 भारतीय/ब्रिटिश अंग्रेजी में collective nouns व्यक्तियों के लिए plural हो सकते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+        { text: '💡 "The team are..." or "The team is..."? In British English, collective nouns can be plural when referring to individuals: "The team are arguing among themselves."', translations: { hi: '💡 भारतीय/ब्रिटिश अंग्रेजी में collective nouns व्यक्तियों के लिए plural हो सकते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       ],
     },
     exercises: [
       { id: 'b1-g4-ex1', type: 'multiple-choice', question: 'Everyone in the class _____ excited about the trip.', options: ['is', 'are', 'were', 'be'], correctAnswer: 'is', explanation: '"Everyone" is always singular → is.', explanationTranslations: { hi: '"Everyone" हमेशा singular → is.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g4-ex2', type: 'fill-blank', question: 'Mathematics _____ my favourite subject.', correctAnswer: 'is', explanation: '"Mathematics" is singular despite ending in -s.', explanationTranslations: { hi: '"Mathematics" -s पर खत्म होने के बावजूद singular है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g4-ex3', type: 'correct-error', question: 'Find the error: "The police has arrested the thief."', correctAnswer: 'The police have arrested the thief.', explanation: '"Police" is always plural → have.', explanationTranslations: { hi: '"Police" हमेशा plural → have.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g4-ex4', type: 'multiple-choice', question: 'Either Priya or her sisters _____ coming to the party.', options: ['is', 'are', 'was', 'has'], correctAnswer: 'are', explanation: 'Either...or — verb agrees with the nearest subject: "sisters" (plural) → are.', explanationTranslations: { hi: 'Either...or — क्रिया निकटतम कर्ता से मिलती है: "sisters" (बहुवचन) → are.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g4-ex4', type: 'multiple-choice', question: 'Either Sophie or her sisters _____ coming to the party.', options: ['is', 'are', 'was', 'has'], correctAnswer: 'are', explanation: 'Either...or — verb agrees with the nearest subject: "sisters" (plural) → are.', explanationTranslations: { hi: 'Either...or — क्रिया निकटतम कर्ता से मिलती है: "sisters" (बहुवचन) → are.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g4-ex5', type: 'fill-blank', question: 'Neither the teacher nor the students _____ aware of the change.', correctAnswer: 'were', explanation: 'Neither...nor — verb matches the nearest subject: "students" (plural) → were.', explanationTranslations: { hi: 'Neither...nor — "students" (बहुवचन) → were.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g4-ex6', type: 'correct-error', question: 'Find the error: "A lot of water are wasted every day."', correctAnswer: 'A lot of water is wasted every day.', explanation: '"A lot of" + uncountable noun (water) → singular verb: is.', explanationTranslations: { hi: '"A lot of" + अगणनीय (water) → singular: is.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g4-ex7', type: 'multiple-choice', question: 'The committee _____ announced its decision.', options: ['have', 'has', 'are', 'were'], correctAnswer: 'has', explanation: 'Collective noun "committee" acting as one unit → singular verb: has.', explanationTranslations: { hi: 'Collective noun "committee" एक इकाई → singular: has.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g4-ex8', type: 'fill-blank', question: 'Each of the students _____ a textbook.', correctAnswer: 'has', explanation: '"Each" is always singular → has.', explanationTranslations: { hi: '"Each" हमेशा singular → has.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g4-ex9', type: 'fill-blank', question: 'The news about the floods in Chennai _____ very disturbing.', correctAnswer: 'is', explanation: '"News" is always singular despite ending in -s: news is.', explanationTranslations: { hi: '"News" -s पर खत्म होने के बावजूद हमेशा singular है: news is.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g4-ex10', type: 'multiple-choice', question: 'Neither Ravi nor his brothers _____ at the wedding.', options: ['was', 'were', 'is', 'has'], correctAnswer: 'were', explanation: 'Neither...nor — verb matches nearest subject: "brothers" (plural) → were.', explanationTranslations: { hi: 'Neither...nor — निकटतम कर्ता से: "brothers" (बहुवचन) → were.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g4-ex9', type: 'fill-blank', question: 'The news about the floods in Vancouver _____ very disturbing.', correctAnswer: 'is', explanation: '"News" is always singular despite ending in -s: news is.', explanationTranslations: { hi: '"News" -s पर खत्म होने के बावजूद हमेशा singular है: news is.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g4-ex10', type: 'multiple-choice', question: 'Neither James nor his brothers _____ at the wedding.', options: ['was', 'were', 'is', 'has'], correctAnswer: 'were', explanation: 'Neither...nor — verb matches nearest subject: "brothers" (plural) → were.', explanationTranslations: { hi: 'Neither...nor — निकटतम कर्ता से: "brothers" (बहुवचन) → were.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g4-ex11', type: 'correct-error', question: 'Find the error: "Each of the mangoes are ripe."', correctAnswer: 'Each of the mangoes is ripe.', explanation: '"Each" is always singular → is, not are.', explanationTranslations: { hi: '"Each" हमेशा singular → is, are नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g4-ex12', type: 'fill-blank', question: 'A lot of students _____ absent today due to the rains.', correctAnswer: 'are', explanation: '"A lot of" + countable plural (students) → plural verb: are.', explanationTranslations: { hi: '"A lot of" + गणनीय बहुवचन (students) → plural: are.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g4-ex13', type: 'multiple-choice', question: 'Physics _____ Arjun\'s favourite subject at school.', options: ['is', 'are', 'were', 'have been'], correctAnswer: 'is', explanation: '"Physics" is singular despite ending in -s: physics is.', explanationTranslations: { hi: '"Physics" -s पर खत्म होने के बावजूद singular है: physics is.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g4-ex13', type: 'multiple-choice', question: 'Physics _____ Lucas\'s favourite subject at school.', options: ['is', 'are', 'were', 'have been'], correctAnswer: 'is', explanation: '"Physics" is singular despite ending in -s: physics is.', explanationTranslations: { hi: '"Physics" -s पर खत्म होने के बावजूद singular है: physics is.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g4-ex14', type: 'correct-error', question: 'Find the error: "Nobody know the answer to this question."', correctAnswer: 'Nobody knows the answer to this question.', explanation: '"Nobody" is singular → needs -s on the verb: knows.', explanationTranslations: { hi: '"Nobody" singular है → क्रिया पर -s: knows.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
@@ -1764,7 +1764,7 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
 **Subordinating:** because, although, if, when, while, before, after
 **Linking adverbs:** however, therefore, moreover, nevertheless`, ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
       examples: [
-        { english: 'Although Delhi is polluted, millions of people love living there.', translations: { hi: 'हालांकि दिल्ली प्रदूषित है, लाखों लोग वहां रहना पसंद करते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'Although' },
+        { english: 'Although London is polluted, millions of people love living there.', translations: { hi: 'हालांकि दिल्ली प्रदूषित है, लाखों लोग वहां रहना पसंद करते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'Although' },
         { english: 'The train was late; therefore, we missed the meeting.', translations: { hi: 'ट्रेन देर से आई; इसलिए, हम मीटिंग चूक गए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'therefore' },
       ],
       tips: [
@@ -1772,19 +1772,19 @@ Opinion → Size → Age → Shape → Colour → Origin → Material → Purpos
       ],
     },
     exercises: [
-      { id: 'b1-g5-ex1', type: 'multiple-choice', question: 'She likes cricket _____ her brother prefers football.', options: ['and', 'but', 'so', 'because'], correctAnswer: 'but', explanation: 'Contrast between two preferences → but.', explanationTranslations: { hi: 'दो विरोधी बातें → but.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g5-ex1', type: 'multiple-choice', question: 'She likes football _____ her brother prefers football.', options: ['and', 'but', 'so', 'because'], correctAnswer: 'but', explanation: 'Contrast between two preferences → but.', explanationTranslations: { hi: 'दो विरोधी बातें → but.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g5-ex2', type: 'fill-blank', question: '_____ it was very hot, we went for a walk. (contrast)', correctAnswer: 'Although', explanation: 'Contrast (surprising result) → Although.', explanationTranslations: { hi: 'विरोधाभास (अप्रत्याशित) → Although.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g5-ex3', type: 'multiple-choice', question: 'I will call you _____ I reach Pune.', options: ['although', 'because', 'when', 'but'], correctAnswer: 'when', explanation: 'Time conjunction → when.', explanationTranslations: { hi: 'समय सूचक → when.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g5-ex3', type: 'multiple-choice', question: 'I will call you _____ I reach Melbourne.', options: ['although', 'because', 'when', 'but'], correctAnswer: 'when', explanation: 'Time conjunction → when.', explanationTranslations: { hi: 'समय सूचक → when.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g5-ex4', type: 'multiple-choice', question: 'He missed the train _____ he woke up late.', options: ['so', 'because', 'but', 'although'], correctAnswer: 'because', explanation: '"Because" gives the reason: He missed it because he woke up late.', explanationTranslations: { hi: '"Because" कारण बताता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g5-ex5', type: 'fill-blank', question: '_____ it was raining heavily, the match continued.', correctAnswer: 'Even though', explanation: '"Even though" shows contrast — surprising result despite a condition.', explanationTranslations: { hi: '"Even though" विरोधाभास दिखाता है — शर्त के बावजूद अप्रत्याशित परिणाम।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g5-ex6', type: 'multiple-choice', question: 'You will fail _____ you study harder.', options: ['if', 'unless', 'because', 'so'], correctAnswer: 'unless', explanation: '"Unless" = "if not". You will fail if you don\'t study harder.', explanationTranslations: { hi: '"Unless" = "if not"। अगर ज्यादा पढ़ाई नहीं करोगे तो फेल हो जाओगे।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g5-ex7', type: 'fill-blank', question: 'You can borrow my bike _____ you return it by evening.', correctAnswer: 'as long as', explanation: '"As long as" means "on the condition that".', explanationTranslations: { hi: '"As long as" = इस शर्त पर कि।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g5-ex8', type: 'correct-error', question: 'Find the error: "I was cooking while my mother was watch TV."', correctAnswer: 'I was cooking while my mother was watching TV.', explanation: '"While" connects two simultaneous actions — both need continuous form.', explanationTranslations: { hi: '"While" दो एक साथ चल रही क्रियाएं जोड़ता है — दोनों continuous में।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g5-ex9', type: 'fill-blank', question: 'Meera studied hard _____ she wanted to top the exam.', correctAnswer: 'because', explanation: '"Because" introduces the reason for studying hard.', explanationTranslations: { hi: '"Because" मेहनत से पढ़ने का कारण बताता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g5-ex9', type: 'fill-blank', question: 'Maria studied hard _____ she wanted to top the exam.', correctAnswer: 'because', explanation: '"Because" introduces the reason for studying hard.', explanationTranslations: { hi: '"Because" मेहनत से पढ़ने का कारण बताता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g5-ex10', type: 'multiple-choice', question: 'He is rich; _____, he lives a simple life.', options: ['therefore', 'however', 'moreover', 'furthermore'], correctAnswer: 'however', explanation: '"However" shows contrast between being rich and living simply.', explanationTranslations: { hi: '"However" अमीर होने और सादगी से रहने के बीच विरोधाभास दिखाता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g5-ex11', type: 'correct-error', question: 'Find the error: "She likes both tea or coffee."', correctAnswer: 'She likes both tea and coffee.', explanation: '"Both" always pairs with "and": both...and, not both...or.', explanationTranslations: { hi: '"Both" हमेशा "and" के साथ: both...and, both...or नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g5-ex12', type: 'multiple-choice', question: 'We should leave early _____ we miss the train to Mumbai.', options: ['so that', 'in case', 'unless', 'although'], correctAnswer: 'in case', explanation: '"In case" = as a precaution against something happening.', explanationTranslations: { hi: '"In case" = सावधानी के तौर पर, कहीं कुछ हो न जाए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b1-g5-ex13', type: 'fill-blank', question: 'Ravi plays cricket well; _____, he is also good at badminton.', correctAnswer: 'moreover', explanation: '"Moreover" adds extra supporting information.', explanationTranslations: { hi: '"Moreover" अतिरिक्त सहायक जानकारी जोड़ता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g5-ex12', type: 'multiple-choice', question: 'We should leave early _____ we miss the train to Sydney.', options: ['so that', 'in case', 'unless', 'although'], correctAnswer: 'in case', explanation: '"In case" = as a precaution against something happening.', explanationTranslations: { hi: '"In case" = सावधानी के तौर पर, कहीं कुछ हो न जाए।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b1-g5-ex13', type: 'fill-blank', question: 'James plays football well; _____, he is also good at badminton.', correctAnswer: 'moreover', explanation: '"Moreover" adds extra supporting information.', explanationTranslations: { hi: '"Moreover" अतिरिक्त सहायक जानकारी जोड़ता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b1-g5-ex14', type: 'correct-error', question: 'Find the error: "Despite of the traffic, we reached on time."', correctAnswer: 'Despite the traffic, we reached on time.', explanation: '"Despite" is never followed by "of". Use "despite" alone or "in spite of".', explanationTranslations: { hi: '"Despite" के बाद कभी "of" नहीं। "despite" अकेला या "in spite of" कहें।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
@@ -1826,7 +1826,7 @@ am→was, will→would, can→could
 I→he/she, today→that day, tomorrow→the next day
 प्रश्न: asked if/whether... आदेश: told + to + verb`, ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
       examples: [
-        { english: '"I will call you tomorrow," Rahul said. → Rahul said he would call me the next day.', translations: { hi: '"मैं कल फ़ोन करूंगा," राहुल ने कहा। → राहुल ने कहा कि वह अगले दिन फ़ोन करेगा।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'would ... the next day' },
+        { english: '"I will call you tomorrow," Thomas said. → Thomas said he would call me the next day.', translations: { hi: '"मैं कल फ़ोन करूंगा," राहुल ने कहा। → राहुल ने कहा कि वह अगले दिन फ़ोन करेगा।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'would ... the next day' },
         { english: '"Where do you live?" she asked. → She asked where I lived.', translations: { hi: '"तुम कहाँ रहते हो?" उसने पूछा। → उसने पूछा कि मैं कहाँ रहता हूँ।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'asked where I lived' },
       ],
       tips: [
@@ -1842,11 +1842,11 @@ I→he/she, today→that day, tomorrow→the next day
       { id: 'b2-g3-ex6', type: 'correct-error', question: 'Find the error: "She said that she will come tomorrow."', correctAnswer: 'She said that she would come the next day.', explanation: 'will → would, tomorrow → the next day in reported speech.', explanationTranslations: { hi: 'will → would, tomorrow → the next day reported speech में।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g3-ex7', type: 'fill-blank', question: '"Don\'t touch the wire!" he warned us. → He warned us _____ touch the wire.', correctAnswer: 'not to', explanation: 'Reported negative command: told/warned + not to + base verb.', explanationTranslations: { hi: 'Reported negative command: told/warned + not to + base verb.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g3-ex8', type: 'multiple-choice', question: '"I met her yesterday," he said. → He said he had met her _____.', options: ['yesterday', 'the day before', 'today', 'that day'], correctAnswer: 'the day before', explanation: '"Yesterday" becomes "the day before" in reported speech.', explanationTranslations: { hi: '"Yesterday" → "the day before" reported speech में।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g3-ex9', type: 'fill-blank', question: '"I live in Mumbai," Arjun said. → Arjun said he _____ in Mumbai.', correctAnswer: 'lived', explanation: 'Tense backshift: live (present) → lived (past) in reported speech.', explanationTranslations: { hi: 'Tense backshift: live (वर्तमान) → lived (भूतकाल) reported speech में।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g3-ex9', type: 'fill-blank', question: '"I live in Sydney," Lucas said. → Lucas said he _____ in Sydney.', correctAnswer: 'lived', explanation: 'Tense backshift: live (present) → lived (past) in reported speech.', explanationTranslations: { hi: 'Tense backshift: live (वर्तमान) → lived (भूतकाल) reported speech में।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g3-ex10', type: 'multiple-choice', question: '"Are you coming to the temple?" she asked. → She asked _____ I was coming to the temple.', options: ['that', 'if', 'what', 'where'], correctAnswer: 'if', explanation: 'Yes/No questions in reported speech use "if" or "whether".', explanationTranslations: { hi: 'हां/नहीं प्रश्न reported speech में "if" या "whether" लगाते हैं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g3-ex11', type: 'correct-error', question: 'Find the error: "He told that he was busy."', correctAnswer: 'He said that he was busy.', explanation: '"Told" needs an object (told me/told her). Without object, use "said".', explanationTranslations: { hi: '"Told" के बाद कर्म चाहिए (told me/told her)। बिना कर्म → "said".', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g3-ex12', type: 'fill-blank', question: '"We are enjoying the festival here," they said. → They said they were enjoying the festival _____.', correctAnswer: 'there', explanation: '"Here" becomes "there" in reported speech.', explanationTranslations: { hi: '"Here" reported speech में "there" बन जाता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'b2-g3-ex13', type: 'multiple-choice', question: '"I will bring sweets," Priya promised. → Priya promised that she _____ bring sweets.', options: ['will', 'would', 'could', 'should'], correctAnswer: 'would', explanation: 'Modal backshift: will → would in reported speech.', explanationTranslations: { hi: 'Modal backshift: will → would reported speech में।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'b2-g3-ex13', type: 'multiple-choice', question: '"I will bring sweets," Sophie promised. → Sophie promised that she _____ bring sweets.', options: ['will', 'would', 'could', 'should'], correctAnswer: 'would', explanation: 'Modal backshift: will → would in reported speech.', explanationTranslations: { hi: 'Modal backshift: will → would reported speech में।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'b2-g3-ex14', type: 'correct-error', question: 'Find the error: "She asked me where do I work."', correctAnswer: 'She asked me where I worked.', explanation: 'Reported questions: no question order + tense backshift → where I worked.', explanationTranslations: { hi: 'Reported questions: प्रश्न क्रम नहीं + tense backshift → where I worked.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
@@ -1864,7 +1864,7 @@ I→he/she, today→that day, tomorrow→the next day
       explanation: `**Mixed Conditional Type 1:** Past condition → Present result
 If + Past Perfect → would + base verb
 - If I **had studied** medicine, I **would be** a doctor now.
-- If she **hadn't moved** to Bangalore, she **wouldn't have** this job.
+- If she **hadn't moved** to Toronto, she **wouldn't have** this job.
 
 **Mixed Conditional Type 2:** Present condition → Past result
 If + Past Simple → would have + past participle
@@ -1880,7 +1880,7 @@ If + Past Simple → would have + past participle
 **Mixed Type 2:** अगर वर्तमान में... → भूतकाल का परिणाम
 **Wish:** Past Simple = वर्तमान पछतावा, Past Perfect = भूतकाल पछतावा`, ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' },
       examples: [
-        { english: 'If I had taken the IIT entrance exam, I would be an engineer now.', translations: { hi: 'अगर मैंने IIT की परीक्षा दी होती, तो अब इंजीनियर होता।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'had taken ... would be' },
+        { english: 'If I had taken the MIT entrance exam, I would be an engineer now.', translations: { hi: 'अगर मैंने MIT की परीक्षा दी होती, तो अब इंजीनियर होता।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'had taken ... would be' },
         { english: 'I wish I had learned to code in college.', translations: { hi: 'काश मैंने कॉलेज में कोडिंग सीखी होती।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' }, highlight: 'wish ... had learned' },
       ],
       tips: [
@@ -1891,17 +1891,17 @@ If + Past Simple → would have + past participle
       { id: 'c1-g2-ex1', type: 'fill-blank', question: 'If I _____ harder at school, I would have a better job now. (study)', correctAnswer: 'had studied', explanation: 'Past condition → present result = had + past participle.', explanationTranslations: { hi: 'भूतकाल शर्त → वर्तमान परिणाम = had + past participle.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g2-ex2', type: 'multiple-choice', question: 'I wish I _____ more time to travel. (present regret)', options: ['have', 'had', 'would have', 'having'], correctAnswer: 'had', explanation: 'Wish + Past Simple for present regrets.', explanationTranslations: { hi: 'Wish + Past Simple = वर्तमान पछतावा.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g2-ex3', type: 'multiple-choice', question: 'If she spoke fluent English, she _____ got the international posting last year.', options: ['will have', 'would have', 'had', 'has'], correctAnswer: 'would have', explanation: 'Present condition → past result = would have + past participle.', explanationTranslations: { hi: 'वर्तमान शर्त → भूतकाल परिणाम = would have + past participle.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'c1-g2-ex4', type: 'fill-blank', question: 'If only I _____ more time to prepare for the UPSC exam!', correctAnswer: 'had', explanation: '"If only" + Past Simple = strong present wish/regret. Same as "I wish I had..."', explanationTranslations: { hi: '"If only" + Past Simple = मजबूत वर्तमान इच्छा/पछतावा।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'c1-g2-ex4', type: 'fill-blank', question: 'If only I _____ more time to prepare for the civil service exams exam!', correctAnswer: 'had', explanation: '"If only" + Past Simple = strong present wish/regret. Same as "I wish I had..."', explanationTranslations: { hi: '"If only" + Past Simple = मजबूत वर्तमान इच्छा/पछतावा।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g2-ex5', type: 'multiple-choice', question: 'I wish my neighbours _____ stop playing loud music at night.', options: ['will', 'would', 'could', 'should'], correctAnswer: 'would', explanation: '"I wish + would" expresses annoyance or a desire for someone to change.', explanationTranslations: { hi: '"I wish + would" झुंझलाहट या बदलाव की इच्छा व्यक्त करता है।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g2-ex6', type: 'correct-error', question: 'Find the error: "I wish I didn\'t eat so much at the wedding last night."', correctAnswer: 'I wish I hadn\'t eaten so much at the wedding last night.', explanation: 'For past regrets: wish + Past Perfect (hadn\'t eaten).', explanationTranslations: { hi: 'भूतकाल का पछतावा: wish + Past Perfect (hadn\'t eaten).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g2-ex7', type: 'multiple-choice', question: 'If he were more confident, he _____ that job interview last week.', options: ['will pass', 'would pass', 'would have passed', 'passed'], correctAnswer: 'would have passed', explanation: 'Mixed conditional: present condition (were confident) → past result (would have passed).', explanationTranslations: { hi: 'Mixed conditional: वर्तमान शर्त → भूतकाल परिणाम: would have passed.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g2-ex8', type: 'fill-blank', question: 'If only she _____ accepted the scholarship when it was offered. (regret about the past)', correctAnswer: 'had', explanation: '"If only" + Past Perfect for past regrets: If only she had accepted...', explanationTranslations: { hi: '"If only" + Past Perfect भूतकाल पछतावा: If only she had accepted...', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'c1-g2-ex9', type: 'fill-blank', question: 'If Arjun _____ saved money earlier, he would own a flat in Mumbai now. (save — mixed)', correctAnswer: 'had', explanation: 'Mixed conditional: past condition (had saved) → present result (would own).', explanationTranslations: { hi: 'Mixed conditional: भूतकाल शर्त (had saved) → वर्तमान परिणाम (would own).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'c1-g2-ex10', type: 'multiple-choice', question: 'I wish I _____ attend the wedding in Jaipur last week. (past regret)', options: ['can', 'could', 'could have', 'would'], correctAnswer: 'could have', explanation: 'Wish + could have + past participle = regret about past inability.', explanationTranslations: { hi: 'Wish + could have + past participle = भूतकाल की असमर्थता का पछतावा।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'c1-g2-ex9', type: 'fill-blank', question: 'If Lucas _____ saved money earlier, he would own a flat in Sydney now. (save — mixed)', correctAnswer: 'had', explanation: 'Mixed conditional: past condition (had saved) → present result (would own).', explanationTranslations: { hi: 'Mixed conditional: भूतकाल शर्त (had saved) → वर्तमान परिणाम (would own).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'c1-g2-ex10', type: 'multiple-choice', question: 'I wish I _____ attend the wedding in Amsterdam last week. (past regret)', options: ['can', 'could', 'could have', 'would'], correctAnswer: 'could have', explanation: 'Wish + could have + past participle = regret about past inability.', explanationTranslations: { hi: 'Wish + could have + past participle = भूतकाल की असमर्थता का पछतावा।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
       { id: 'c1-g2-ex11', type: 'correct-error', question: 'Find the error: "I wish I can speak Tamil fluently."', correctAnswer: 'I wish I could speak Tamil fluently.', explanation: 'Wish + could (not can) for present wishes about ability.', explanationTranslations: { hi: 'वर्तमान इच्छा के लिए Wish + could (can नहीं)।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'c1-g2-ex12', type: 'fill-blank', question: 'If Priya were more patient, she _____ not have argued with her colleague yesterday. (mixed)', correctAnswer: 'would', explanation: 'Mixed: present condition (were patient) → past result (would not have argued).', explanationTranslations: { hi: 'Mixed: वर्तमान शर्त (were patient) → भूतकाल परिणाम (would not have argued).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'c1-g2-ex13', type: 'multiple-choice', question: 'If only Meera _____ accepted the job offer in Bangalore when she had the chance.', options: ['has', 'had', 'would', 'will'], correctAnswer: 'had', explanation: '"If only" + Past Perfect for past regrets: If only she had accepted.', explanationTranslations: { hi: '"If only" + Past Perfect भूतकाल पछतावा: If only she had accepted.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
-      { id: 'c1-g2-ex14', type: 'correct-error', question: 'Find the error: "I wish the traffic in Delhi will improve soon."', correctAnswer: 'I wish the traffic in Delhi would improve soon.', explanation: '"I wish + would" for desires about future changes, not "will".', explanationTranslations: { hi: 'भविष्य में बदलाव की इच्छा: wish + would, "will" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'c1-g2-ex12', type: 'fill-blank', question: 'If Sophie were more patient, she _____ not have argued with her colleague yesterday. (mixed)', correctAnswer: 'would', explanation: 'Mixed: present condition (were patient) → past result (would not have argued).', explanationTranslations: { hi: 'Mixed: वर्तमान शर्त (were patient) → भूतकाल परिणाम (would not have argued).', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'c1-g2-ex13', type: 'multiple-choice', question: 'If only Maria _____ accepted the job offer in Toronto when she had the chance.', options: ['has', 'had', 'would', 'will'], correctAnswer: 'had', explanation: '"If only" + Past Perfect for past regrets: If only she had accepted.', explanationTranslations: { hi: '"If only" + Past Perfect भूतकाल पछतावा: If only she had accepted.', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
+      { id: 'c1-g2-ex14', type: 'correct-error', question: 'Find the error: "I wish the traffic in London will improve soon."', correctAnswer: 'I wish the traffic in London would improve soon.', explanation: '"I wish + would" for desires about future changes, not "will".', explanationTranslations: { hi: 'भविष्य में बदलाव की इच्छा: wish + would, "will" नहीं।', ta: '', te: '', bn: '', mr: '', kn: '', ml: '', gu: '', pa: '', od: '', en: '' } },
     ],
   },
   ...additionalGrammarLessons,

@@ -30,16 +30,16 @@ export default function LeaderboardPage() {
       } catch {
         // Use sample data if Firestore isn't configured
         setEntries([
-          { id: '1', displayName: 'Priya S.', xp: 4520, streak: 45, currentLevel: 'B2', wordsLearned: 380 },
-          { id: '2', displayName: 'Rahul K.', xp: 3890, streak: 32, currentLevel: 'B1', wordsLearned: 290 },
+          { id: '1', displayName: 'Sophie S.', xp: 4520, streak: 45, currentLevel: 'B2', wordsLearned: 380 },
+          { id: '2', displayName: 'Thomas K.', xp: 3890, streak: 32, currentLevel: 'B1', wordsLearned: 290 },
           { id: '3', displayName: 'Ananya M.', xp: 3650, streak: 28, currentLevel: 'B2', wordsLearned: 340 },
-          { id: '4', displayName: 'Vikram P.', xp: 3200, streak: 21, currentLevel: 'B1', wordsLearned: 250 },
-          { id: '5', displayName: 'Deepa R.', xp: 2800, streak: 19, currentLevel: 'A2', wordsLearned: 180 },
-          { id: '6', displayName: 'Arjun N.', xp: 2450, streak: 15, currentLevel: 'A2', wordsLearned: 160 },
+          { id: '4', displayName: 'Oliver P.', xp: 3200, streak: 21, currentLevel: 'B1', wordsLearned: 250 },
+          { id: '5', displayName: 'Nina R.', xp: 2800, streak: 19, currentLevel: 'A2', wordsLearned: 180 },
+          { id: '6', displayName: 'Lucas N.', xp: 2450, streak: 15, currentLevel: 'A2', wordsLearned: 160 },
           { id: '7', displayName: 'Kavitha L.', xp: 2100, streak: 12, currentLevel: 'B1', wordsLearned: 200 },
           { id: '8', displayName: 'Suresh D.', xp: 1800, streak: 10, currentLevel: 'A1', wordsLearned: 95 },
-          { id: '9', displayName: 'Meera G.', xp: 1500, streak: 8, currentLevel: 'A1', wordsLearned: 72 },
-          { id: '10', displayName: 'Amit T.', xp: 1200, streak: 5, currentLevel: 'A1', wordsLearned: 50 },
+          { id: '9', displayName: 'Maria G.', xp: 1500, streak: 8, currentLevel: 'A1', wordsLearned: 72 },
+          { id: '10', displayName: 'David T.', xp: 1200, streak: 5, currentLevel: 'A1', wordsLearned: 50 },
         ]);
       } finally {
         setLoading(false);

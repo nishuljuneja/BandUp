@@ -9,9 +9,11 @@ import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel } from '@/lib/firestore';
 import { gradeWriting, type GradingResult, type WritingMistake } from '@/lib/writing-grader';
 import { writingPrompts, type WritingPrompt } from '@/content/writing-prompts';
+import { isPro } from '@/lib/subscription';
+import ProGate from '@/components/ProGate';
 
 export default function WritingPage() {
-  const { uiLanguage } = useAppStore();
+  const { uiLanguage, profile } = useAppStore();
   const [selectedPrompt, setSelectedPrompt] = useState<WritingPrompt | null>(null);
   const [text, setText] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -64,6 +66,12 @@ export default function WritingPage() {
           </div>
         </div>
 
+        {!isPro(profile) && (
+          <ProGate feature="Writing Practice" />
+        )}
+
+        {isPro(profile) && (<>
+
         {/* Level Filter */}
         <div className="flex flex-wrap gap-2 mb-6">
           {(['all', 'A1', 'A2', 'B1', 'B2', 'C1'] as const).map((level) => (
@@ -97,6 +105,7 @@ export default function WritingPage() {
             </div>
           ))}
         </div>
+        </>)}
       </div>
     );
   }

@@ -50,7 +50,7 @@ const GRAMMAR_PATTERNS: ErrorPattern[] = [
   // Singular nouns followed by "have" instead of "has"
   { pattern: /\b(the\s+(?:house|room|city|school|car|building|office|shop|place|country|company|team|book|phone|table|dog|cat|child|garden|kitchen|park|hotel|hospital|restaurant|college|village|town|flat|apartment|movie|film|song|game|website|app))\s+have\b/gi, type: 'grammar', suggestion: 'Use "has" with a singular noun', explanation: 'Singular nouns take "has", not "have". E.g. "The house has 4 rooms."' },
   { pattern: /\b(my\s+(?:house|room|home|city|school|car|building|office|shop|place|country|company|team|book|phone|table|dog|cat|child|garden|kitchen|park|hotel|flat|apartment|friend|brother|sister|mother|father|wife|husband))\s+have\b/gi, type: 'grammar', suggestion: 'Use "has" with a singular noun', explanation: 'Singular nouns take "has", not "have". E.g. "My house has 4 rooms."' },
-  // Common Indian English errors
+  // Common common learner errors
   { pattern: /\b(I|he|she|we|they)\s+am\s+having\b/gi, type: 'grammar', suggestion: '"I have" or "I am eating/doing..."', explanation: '"Having" is often misused. Use "have" for possession and "am/is/are + verb-ing" for actions.' },
   { pattern: /\byesterday\s+I\s+(go|eat|come|do|make|take|see|give|get|buy|run|write|read)\b/gi, type: 'grammar', suggestion: 'Use past tense after "yesterday"', explanation: 'When describing past events, use the past tense form of the verb.' },
   { pattern: /\b(did\s+not|didn't)\s+\w+ed\b/gi, type: 'grammar', suggestion: 'Use base form after "did not"', explanation: 'After "did not / didn\'t", use the base form of the verb, not past tense.' },

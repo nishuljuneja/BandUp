@@ -6,7 +6,7 @@ import { t } from '@/lib/i18n';
 import { allVocabulary, getVocabularyByLevel, getVocabularyByIds } from '@/content/vocabulary';
 import { Flashcard, LevelBadge, FillBlank, MultipleChoice, ScoreCard, ProgressBar } from '@/components/Exercises';
 import { BookOpen, Search, Filter, RotateCcw, Brain, Volume2, Lock } from 'lucide-react';
-import { useIndianVoice } from '@/lib/useIndianVoice';
+import { useEnglishVoice } from '@/lib/useEnglishVoice';
 import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel, VocabularyWord } from '@/lib/firestore';
 import { updateUserProfile, addXP, updateStreak, updateVocabularyProgress, incrementWordsLearned } from '@/lib/firestore';
@@ -137,7 +137,7 @@ function removeDidntKnowWord(uid: string, wordId: string) {
 
 export default function VocabularyPage() {
   const { profile, uiLanguage, setProfile } = useAppStore();
-  const { speak, isPlaying } = useIndianVoice();
+  const { speak, isPlaying } = useEnglishVoice();
   const currentLevel = profile?.currentLevel || 'A1';
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(currentLevel);
   const [mode, setMode] = useState<Mode>('flashcards');
