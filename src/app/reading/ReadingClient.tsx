@@ -9,7 +9,7 @@ import { BookOpen, ArrowLeft, Clock, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import { IELTS_BAND_LABELS } from '@/lib/firestore';
 import type { CEFRLevel, ReadingPassage } from '@/lib/firestore';
-import { isPro } from '@/lib/subscription';
+import { isPro, FREE_LEVELS } from '@/lib/subscription';
 import ProGate from '@/components/ProGate';
 
 export default function ReadingPage() {
@@ -22,8 +22,11 @@ export default function ReadingPage() {
   const [score, setScore] = useState(0);
   const [quizKey, setQuizKey] = useState(0);
 
-  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
+  const levels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
   const passages = getReadingPassagesByLevel(selectedLevel);
+
+  const isProLevel = !FREE_LEVELS.has(selectedLevel);
+  const userIsPro = isPro(profile);
 
   const readingTimeMinutes = activePassage
     ? Math.ceil(activePassage.content.split(' ').length / 150)
@@ -57,23 +60,7 @@ export default function ReadingPage() {
     setPhase('list');
   };
 
-  // ── PRO GATE ──
-  if (!isPro(profile)) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-            <BookOpen className="w-6 h-6 text-green-600" />
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-gray-800">{t('nav.reading', uiLanguage)}</h1>
-            <p className="text-gray-500 text-sm">Improve comprehension with Indian-context passages</p>
-          </div>
-        </div>
-        <ProGate feature="Reading Passages" />
-      </div>
-    );
-  }
+  // ── PRO GATE (removed — reading is free for Band 3-6) ──
 
   // ── PASSAGE LIST ──
   if (phase === 'list') {
@@ -85,7 +72,7 @@ export default function ReadingPage() {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-gray-800">{t('nav.reading', uiLanguage)}</h1>
-            <p className="text-gray-500 text-sm">Improve comprehension with Indian-context passages</p>
+            <p className="text-gray-500 text-sm">Improve comprehension with IELTS-style passages</p>
           </div>
         </div>
 
@@ -93,6 +80,7 @@ export default function ReadingPage() {
         <div className="flex flex-wrap gap-2 mb-6">
           {levels.map((level) => {
             const count = getReadingPassagesByLevel(level).length;
+            const locked = !userIsPro && !FREE_LEVELS.has(level);
             return (
               <button
                 key={level}
@@ -103,14 +91,18 @@ export default function ReadingPage() {
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
-                {IELTS_BAND_LABELS[level as CEFRLevel]} ({count})
+                {IELTS_BAND_LABELS[level as CEFRLevel]} ({count}) {locked ? '🔒' : ''}
               </button>
             );
           })}
         </div>
 
-        {/* Passage Cards */}
-        <div className="grid md:grid-cols-2 gap-4">
+        {/* Pro gate for Band 7+ */}
+        {isProLevel && !userIsPro ? (
+          <ProGate feature={`${IELTS_BAND_LABELS[selectedLevel]} Reading Passages`} />
+        ) : (
+          /* Passage Cards */
+          <div className="grid md:grid-cols-2 gap-4">
           {passages.map((passage) => {
             const wordCount = passage.content.split(' ').length;
             const mins = Math.ceil(wordCount / 150);
@@ -145,6 +137,7 @@ export default function ReadingPage() {
             </div>
           )}
         </div>
+        )}
       </div>
     );
   }
