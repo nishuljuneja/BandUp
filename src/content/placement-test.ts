@@ -226,7 +226,7 @@ export const placementQuestions: PlacementQuestion[] = [
 /**
  * IELTS-style scoring:
  * - Assign highest band where user got 3+/5 correct
- * - Cap at Band 7 (C1) unless EVERY answer is correct → Band 7.5+ (C2)
+ * - Cap at Band 7 (C1) unless EVERY answer is correct → Band 8-9 (C2)
  */
 export function calculatePlacementLevel(
   answers: { questionId: string; correct: boolean }[]
@@ -246,7 +246,7 @@ export function calculatePlacementLevel(
   const totalCorrect = answers.filter((a) => a.correct).length;
   const totalQuestions = placementQuestions.length;
 
-  // Perfect score → Band 7.5+ (C2)
+  // Perfect score → Band 8-9 (C2)
   if (totalCorrect === totalQuestions) {
     return 'C2';
   }

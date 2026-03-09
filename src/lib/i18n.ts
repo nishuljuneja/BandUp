@@ -98,7 +98,7 @@ export const translations: Record<SupportedLanguage, Record<string, string>> = {
     'level.B2.desc': 'Competent language use across all IELTS sections',
     'level.C1': 'Band 7',
     'level.C1.desc': 'Fluent and flexible use of English in IELTS tasks',
-    'level.C2': 'Band 7.5+',
+    'level.C2': 'Band 8-9',
     'level.C2.desc': 'Expert-level performance on IELTS',
 
     // Hero

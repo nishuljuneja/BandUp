@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | BandUp",
   },
   description:
-    "Ace the IELTS with targeted practice for Reading, Writing, Listening and Speaking. Band-level lessons from Band 3 to 7.5+. Free diagnostic test.",
+    "Ace the IELTS with targeted practice for Reading, Writing, Listening and Speaking. Band-level lessons from Band 3 to 8-9. Free diagnostic test.",
   keywords: [
     "IELTS preparation",
     "IELTS practice test",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "BandUp",
     title: "BandUp — IELTS Prep App | Boost Your IELTS Band Score",
     description:
-      "Ace the IELTS with targeted practice for Reading, Writing, Listening and Speaking. Band-level lessons from Band 3 to 7.5+.",
+      "Ace the IELTS with targeted practice for Reading, Writing, Listening and Speaking. Band-level lessons from Band 3 to 8-9.",
     images: [
       {
         url: "/og-image.png",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BandUp — IELTS Prep App | Boost Your Band Score",
     description:
-      "Ace the IELTS with targeted practice. Band-level lessons from Band 3 to 7.5+.",
+      "Ace the IELTS with targeted practice. Band-level lessons from Band 3 to 8-9.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -120,13 +120,13 @@ export default function RootLayout({
         name: "BandUp",
         url: "https://bandup-ebon.vercel.app",
         description:
-          "Online IELTS preparation platform with band-level courses from Band 3 to 7.5+.",
+          "Online IELTS preparation platform with band-level courses from Band 3 to 8-9.",
       },
       {
         "@type": "Course",
         name: "IELTS Preparation Course",
         description:
-          "Comprehensive IELTS prep covering vocabulary, grammar, reading, listening, speaking and writing. Band-level content from Band 3 to 7.5+.",
+          "Comprehensive IELTS prep covering vocabulary, grammar, reading, listening, speaking and writing. Band-level content from Band 3 to 8-9.",
         provider: {
           "@type": "Organization",
           name: "BandUp",

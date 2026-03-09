@@ -19,7 +19,7 @@ const levelInfo: Record<CEFRLevel, { name: string; description: string }> = {
   B1: { name: 'Band 5', description: 'Common IELTS task types, connected paragraphs' },
   B2: { name: 'Band 6', description: 'All four IELTS sections with competence' },
   C1: { name: 'Band 7', description: 'Fluent, flexible language across IELTS tasks' },
-  C2: { name: 'Band 7.5+', description: 'Expert-level IELTS performance' },
+  C2: { name: 'Band 8-9', description: 'Expert-level IELTS performance' },
 };
 
 const allLevels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];

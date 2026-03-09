@@ -60,7 +60,7 @@ export default function Home() {
     { id: 'B1', band: 'Band 5', color: 'from-blue-400 to-blue-600' },
     { id: 'B2', band: 'Band 6', color: 'from-purple-400 to-purple-600' },
     { id: 'C1', band: 'Band 7', color: 'from-orange-400 to-orange-600' },
-    { id: 'C2', band: 'Band 7.5+', color: 'from-red-400 to-red-600' },
+    { id: 'C2', band: 'Band 8-9', color: 'from-red-400 to-red-600' },
   ];
 
   return (
@@ -86,7 +86,7 @@ export default function Home() {
                 href="/placement-test"
                 className="px-8 py-4 bg-white/10 text-white rounded-xl font-bold text-lg hover:bg-white/20 transition-colors backdrop-blur-sm border border-white/20"
               >
-                Free Band Diagnostic Test
+                Take Free Diagnostic Test
               </Link>
             </div>
           </div>
@@ -224,10 +224,10 @@ export default function Home() {
       {/* CTA */}
       <section className="py-16 bg-indigo-600">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to raise your IELTS band?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to ace the IELTS?</h2>
           <p className="text-indigo-200 mb-8">Take a free diagnostic test to find your current band level. No sign-up required.</p>
           <Link href="/placement-test" className="inline-block px-8 py-4 bg-white text-indigo-700 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg">
-            Start Free Band Test →
+            Take Free Diagnostic Test →
           </Link>
         </div>
       </section>

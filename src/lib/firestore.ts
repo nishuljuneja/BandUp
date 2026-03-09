@@ -28,7 +28,7 @@ export const IELTS_BAND_LABELS: Record<CEFRLevel, string> = {
   B1: 'Band 5',
   B2: 'Band 6',
   C1: 'Band 7',
-  C2: 'Band 7.5+',
+  C2: 'Band 8-9',
 };
 
 /** Short numeric band value for display */
@@ -38,7 +38,7 @@ export const IELTS_BAND_NUMBER: Record<CEFRLevel, string> = {
   B1: '5',
   B2: '6',
   C1: '7',
-  C2: '7.5+',
+  C2: '8-9',
 };
 
 export type SkillType = 'vocabulary' | 'grammar' | 'reading' | 'listening' | 'writing' | 'speaking';
