@@ -2,23 +2,23 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - SpeakEasy',
-  description: 'Privacy policy for SpeakEasy, the English learning app.',
+  title: 'Privacy Policy - BandUp',
+  description: 'Privacy policy for BandUp, the IELTS preparation app.',
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-gray-800 mb-2">Privacy Policy</h1>
-      <p className="text-sm text-gray-400 mb-8">Last updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+      <p className="text-sm text-gray-400 mb-8">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
 
       <div className="prose prose-gray max-w-none space-y-6 text-gray-700 leading-relaxed">
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">1. Introduction</h2>
           <p>
-            Welcome to SpeakEasy (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;). We are committed to protecting your privacy.
+            Welcome to BandUp (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;). We are committed to protecting your privacy.
             This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our
-            English learning application.
+            IELTS preparation application.
           </p>
         </section>
 
@@ -35,7 +35,7 @@ export default function PrivacyPolicyPage() {
           <h3 className="text-lg font-medium text-gray-700 mt-4 mb-2">2.2 Learning Data</h3>
           <p>As you use the app, we collect and store:</p>
           <ul className="list-disc pl-6 space-y-1">
-            <li>Your CEFR proficiency level and diagnostic test results</li>
+            <li>Your IELTS band level and diagnostic test results</li>
             <li>Vocabulary words learned and review progress</li>
             <li>Grammar, reading, listening, speaking, and writing lesson progress</li>
             <li>XP points, streaks, and skill scores</li>
@@ -121,8 +121,8 @@ export default function PrivacyPolicyPage() {
           </ul>
           <p className="mt-2">
             To exercise any of these rights, please contact us at{' '}
-            <a href="mailto:support@speakeasyapp.in" className="text-indigo-600 hover:underline">
-              support@speakeasyapp.in
+            <a href="mailto:support@bandupapp.com" className="text-indigo-600 hover:underline">
+              support@bandupapp.com
             </a>.
           </p>
         </section>
@@ -148,8 +148,8 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">11. Contact Us</h2>
           <p>
             If you have any questions about this Privacy Policy, please contact us at{' '}
-            <a href="mailto:support@speakeasyapp.in" className="text-indigo-600 hover:underline">
-              support@speakeasyapp.in
+            <a href="mailto:support@bandupapp.com" className="text-indigo-600 hover:underline">
+              support@bandupapp.com
             </a>.
           </p>
         </section>

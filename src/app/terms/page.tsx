@@ -2,21 +2,21 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - SpeakEasy',
-  description: 'Terms of service for SpeakEasy, the English learning app.',
+  title: 'Terms of Service - BandUp',
+  description: 'Terms of service for BandUp, the IELTS preparation app.',
 };
 
 export default function TermsOfServicePage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-gray-800 mb-2">Terms of Service</h1>
-      <p className="text-sm text-gray-400 mb-8">Last updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+      <p className="text-sm text-gray-400 mb-8">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
 
       <div className="prose prose-gray max-w-none space-y-6 text-gray-700 leading-relaxed">
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">1. Acceptance of Terms</h2>
           <p>
-            By accessing or using SpeakEasy (&ldquo;the App&rdquo;), you agree to be bound by these Terms of Service.
+            By accessing or using BandUp (&ldquo;the App&rdquo;), you agree to be bound by these Terms of Service.
             If you do not agree to these terms, please do not use the App.
           </p>
         </section>
@@ -24,9 +24,9 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">2. Description of Service</h2>
           <p>
-            SpeakEasy is a free English learning platform designed for learners in India. The App provides
+            BandUp is an IELTS preparation platform. The App provides
             vocabulary building, grammar lessons, reading comprehension, listening practice, speaking exercises,
-            writing activities, and proficiency testing based on the CEFR framework (A1–C1).
+            writing activities, and band-level diagnostic testing.
           </p>
         </section>
 
@@ -58,7 +58,7 @@ export default function TermsOfServicePage() {
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">5. Intellectual Property</h2>
           <p>
             All content, features, and functionality of the App — including but not limited to text, graphics,
-            logos, icons, exercises, and software — are owned by SpeakEasy and are protected by applicable intellectual
+            logos, icons, exercises, and software — are owned by BandUp and are protected by applicable intellectual
             property laws. You may not reproduce, distribute, or create derivative works from our content without
             explicit permission.
           </p>
@@ -76,8 +76,8 @@ export default function TermsOfServicePage() {
             education or certified language assessment.
           </p>
           <p className="mt-2">
-            CEFR level assessments provided by the App are approximate and intended for self-study guidance only.
-            They do not constitute official CEFR certification.
+            IELTS band level assessments provided by the App are approximate and intended for self-study guidance only.
+            They do not constitute official IELTS certification.
           </p>
         </section>
 
@@ -117,7 +117,7 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">10. Limitation of Liability</h2>
           <p>
-            To the fullest extent permitted by applicable law, SpeakEasy shall not be liable for any indirect,
+            To the fullest extent permitted by applicable law, BandUp shall not be liable for any indirect,
             incidental, special, consequential, or punitive damages, or any loss of profits or data, arising
             out of or in connection with your use of the App.
           </p>
@@ -126,8 +126,8 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">11. Governing Law</h2>
           <p>
-            These Terms shall be governed by and construed in accordance with the laws of India. Any disputes
-            arising from these Terms shall be subject to the exclusive jurisdiction of the courts in India.
+            These Terms shall be governed by and construed in accordance with applicable laws. Any disputes
+            arising from these Terms shall be subject to the exclusive jurisdiction of the competent courts.
           </p>
         </section>
 
@@ -135,8 +135,8 @@ export default function TermsOfServicePage() {
           <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-3">12. Contact Us</h2>
           <p>
             If you have any questions about these Terms, please contact us at{' '}
-            <a href="mailto:support@speakeasyapp.in" className="text-indigo-600 hover:underline">
-              support@speakeasyapp.in
+            <a href="mailto:support@bandupapp.com" className="text-indigo-600 hover:underline">
+              support@bandupapp.com
             </a>.
           </p>
         </section>

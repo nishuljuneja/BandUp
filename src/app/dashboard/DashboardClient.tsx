@@ -162,9 +162,9 @@ export default function DashboardPage() {
               <div>
                 <h3 className="text-lg font-bold flex items-center gap-2">
                   Upgrade to Pro
-                  <span className="text-xs font-medium bg-yellow-400/20 text-yellow-200 px-2 py-0.5 rounded-full">₹499/yr</span>
+                  <span className="text-xs font-medium bg-yellow-400/20 text-yellow-200 px-2 py-0.5 rounded-full">$1.99/mo</span>
                 </h3>
-                <p className="text-white/70 text-sm">Unlock B2 & C1 levels, Reading, Listening, unlimited practice & more</p>
+                <p className="text-white/70 text-sm">Unlock Band 6 & 7 levels, Reading, Listening, unlimited practice & more</p>
               </div>
             </div>
             <ArrowRight className="w-6 h-6 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all" />
@@ -301,7 +301,7 @@ export default function DashboardPage() {
             <div>
               <h3 className="text-lg font-bold text-gray-800">Track Your Progress with Tests</h3>
               <p className="text-sm text-gray-500 mt-1">
-                Take a quick test to see how your English level has improved over time. Compare results and spot trends.
+                Take a quick test to see how your IELTS band level has improved over time. Compare results and spot trends.
               </p>
             </div>
           </div>
@@ -365,7 +365,7 @@ function ReferralCard({
 
   const progressToNext = referralCount % 3;
   const nextRewardAt = (referralRewardsClaimed + 1) * 3;
-  const shareUrl = `https://englishlearningapp-teal.vercel.app/signup?ref=${referralCode}`;
+  const shareUrl = `https://bandup-ebon.vercel.app/signup?ref=${referralCode}`;
 
   const handleCopy = async () => {
     try {

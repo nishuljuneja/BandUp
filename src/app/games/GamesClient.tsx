@@ -101,10 +101,10 @@ export default function GamesPage() {
 
       // Fallback to localStorage if Firestore returned nothing
       if (result.length === 0) {
-        const lbKey = activeTab === 'unjumble' ? 'speakeasy-word-puzzle-lb'
-          : activeTab === 'hangman' ? 'speakeasy-hangman-lb'
-          : activeTab === 'wordmatch' ? 'speakeasy-wordmatch-lb'
-          : 'speakeasy-scramble-lb';
+        const lbKey = activeTab === 'unjumble' ? 'bandup-word-puzzle-lb'
+          : activeTab === 'hangman' ? 'bandup-hangman-lb'
+          : activeTab === 'wordmatch' ? 'bandup-wordmatch-lb'
+          : 'bandup-scramble-lb';
         const local = getLocalLB(lbKey, today);
 
         if (activeTab === 'hangman') {

@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 const footerLinks = [
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms of Service', href: '/terms' },
-  { label: 'Contact', href: 'mailto:support@speakeasyapp.in' },
+  { label: 'Contact', href: 'mailto:support@bandupapp.com' },
 ];
 
 export default function Footer() {
@@ -22,8 +22,8 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Brand */}
           <div className="text-center sm:text-left">
-            <span className="text-lg font-bold text-indigo-600">SpeakEasy</span>
-            <p className="text-xs text-gray-400 mt-1">Learn English step by step</p>
+            <span className="text-lg font-bold text-indigo-600">BandUp</span>
+            <p className="text-xs text-gray-400 mt-1">Ace the IELTS, band by band</p>
           </div>
 
           {/* Links */}
@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-6 pt-4 border-t border-gray-100 text-center text-xs text-gray-400">
-          © {new Date().getFullYear()} SpeakEasy. All rights reserved.
+          © {new Date().getFullYear()} BandUp. All rights reserved.
         </div>
       </div>
     </footer>

@@ -21,6 +21,26 @@ import { db } from './firebase';
 
 export type CEFRLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
 
+/** Display-friendly IELTS band labels for each internal level */
+export const IELTS_BAND_LABELS: Record<CEFRLevel, string> = {
+  A1: 'Band 3',
+  A2: 'Band 4',
+  B1: 'Band 5',
+  B2: 'Band 6',
+  C1: 'Band 7',
+  C2: 'Band 7.5+',
+};
+
+/** Short numeric band value for display */
+export const IELTS_BAND_NUMBER: Record<CEFRLevel, string> = {
+  A1: '3',
+  A2: '4',
+  B1: '5',
+  B2: '6',
+  C1: '7',
+  C2: '7.5+',
+};
+
 export type SkillType = 'vocabulary' | 'grammar' | 'reading' | 'listening' | 'writing' | 'speaking';
 
 export type SupportedLanguage =

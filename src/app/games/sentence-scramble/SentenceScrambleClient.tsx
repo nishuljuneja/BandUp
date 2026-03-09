@@ -129,7 +129,7 @@ function tokenize(sentence: string): string[] {
 }
 
 // ─── Local Leaderboard ───────────────────────────────────────────────
-const LB_KEY = 'speakeasy-scramble-lb';
+const LB_KEY = 'bandup-scramble-lb';
 
 interface LocalScore {
   displayName: string;
@@ -168,7 +168,7 @@ function saveLocalScore(score: LocalScore) {
 }
 
 // ─── Streak tracking ────────────────────────────────────────────────
-const STREAK_KEY = 'speakeasy-scramble-streak';
+const STREAK_KEY = 'bandup-scramble-streak';
 
 function getStreak(): { count: number; lastDate: string } {
   if (typeof window === 'undefined') return { count: 0, lastDate: '' };

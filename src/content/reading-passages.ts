@@ -1,7 +1,7 @@
 import { type ReadingPassage } from '../lib/firestore';
 
-// Reading passages set in Indian contexts, organized by CEFR level
-// Topics are relevant to Indian daily life, culture, and current affairs
+// Reading passages organized by IELTS band level
+// Topics cover a range of general-interest and academic subjects
 
 export const readingPassages: ReadingPassage[] = [
   // ==================== A1 ====================

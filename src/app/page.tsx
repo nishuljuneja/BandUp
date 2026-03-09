@@ -2,14 +2,14 @@
 import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
-  title: "Learn English Online — Free Vocabulary, Grammar & Exam Prep",
+  title: "BandUp — IELTS Prep App | Raise Your Band Score",
   description:
-    "SpeakEasy helps you learn English step by step with interactive vocabulary, grammar, reading, listening, speaking and writing exercises. Prepare for IELTS, CELPIP, PTE & TOEFL exams. CEFR levels A1–C1.",
+    "BandUp helps you ace the IELTS with interactive vocabulary, grammar, reading, listening, speaking and writing practice. Band 3 to 7.5+ preparation.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "SpeakEasy — Learn English Online | Free Lessons & Exam Prep",
+    title: "BandUp — IELTS Prep App | Raise Your Band Score",
     description:
-      "Interactive English lessons for vocabulary, grammar, reading, listening, speaking & writing. Prepare for IELTS, CELPIP, PTE & TOEFL.",
+      "Interactive IELTS preparation for vocabulary, grammar, reading, listening, speaking & writing. Band 3 to 7.5+.",
   },
 };
 

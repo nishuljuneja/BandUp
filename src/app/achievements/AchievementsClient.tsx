@@ -472,7 +472,7 @@ const BADGES: Badge[] = [
     requirement: '1K XP, 500 words, B2+, 50 lessons', category: 'mastery',
   },
   {
-    id: 'mastery-ultimate', title: 'SpeakEasy Champion', description: 'C1+ level, 5000+ XP, 1000+ words, 100+ lessons, 60+ streak',
+    id: 'mastery-ultimate', title: 'BandUp Champion', description: 'Band 7+, 5000+ XP, 1000+ words, 100+ lessons, 60+ streak',
     icon: Crown, color: 'text-yellow-700', bg: 'bg-yellow-100', border: 'border-yellow-400',
     check: (p) => atOrAbove(p.currentLevel, 'C1') && p.xp >= 5000 && p.wordsLearned >= 1000 && p.lessonsCompleted >= 100 && p.streak >= 60,
     progress: (p) => {

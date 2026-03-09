@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/dashboard", "/profile", "/onboarding", "/analytics", "/progress"],
       },
     ],
-    sitemap: "https://speakeasyapp.in/sitemap.xml",
+    sitemap: "https://bandup-ebon.vercel.app/sitemap.xml",
   };
 }

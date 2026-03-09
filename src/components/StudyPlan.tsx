@@ -14,12 +14,12 @@ import type { CEFRLevel, SkillType, UserProfile } from '@/lib/firestore';
 
 // ─── Level descriptors ───────────────────────────────────────────────────
 const levelInfo: Record<CEFRLevel, { name: string; description: string }> = {
-  A1: { name: 'Beginner', description: 'Basic words, simple sentences, introductions' },
-  A2: { name: 'Elementary', description: 'Everyday topics, short conversations, simple texts' },
-  B1: { name: 'Intermediate', description: 'Opinions, plans, connected paragraphs' },
-  B2: { name: 'Upper Intermediate', description: 'Abstract topics, fluent discussions, detailed texts' },
-  C1: { name: 'Advanced', description: 'Complex texts, nuanced arguments, flexible language' },
-  C2: { name: 'Mastery', description: 'Near-native fluency, subtle nuances, academic proficiency' },
+  A1: { name: 'Band 3', description: 'Basic IELTS vocabulary, simple sentences' },
+  A2: { name: 'Band 4', description: 'Everyday topics, short listening tasks' },
+  B1: { name: 'Band 5', description: 'Common IELTS task types, connected paragraphs' },
+  B2: { name: 'Band 6', description: 'All four IELTS sections with competence' },
+  C1: { name: 'Band 7', description: 'Fluent, flexible language across IELTS tasks' },
+  C2: { name: 'Band 7.5+', description: 'Expert-level IELTS performance' },
 };
 
 const allLevels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { grammarLessons } from "@/content/grammar-lessons";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://speakeasyapp.in";
+  const baseUrl = "https://bandup-ebon.vercel.app";
 
   const staticRoutes = [
     "",

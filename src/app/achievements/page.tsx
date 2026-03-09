@@ -4,7 +4,7 @@ import PageClient from "./AchievementsClient";
 export const metadata: Metadata = {
   title: "Achievements",
   description:
-    "View your SpeakEasy achievements, badges and milestones as you master English.",
+    "View your BandUp achievements, badges and milestones as you improve your IELTS band score.",
   alternates: { canonical: "/achievements" },
 };
 

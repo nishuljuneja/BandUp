@@ -5,6 +5,7 @@ import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { CheckCircle, XCircle, ArrowRight, RotateCcw, Shuffle, Volume2 } from 'lucide-react';
 import { useIndianVoice } from '@/lib/useIndianVoice';
+import { IELTS_BAND_LABELS, type CEFRLevel } from '@/lib/firestore';
 
 // ==================== Flashcard Component ====================
 interface FlashcardProps {
@@ -373,7 +374,7 @@ export function LevelBadge({ level, size = 'md' }: LevelBadgeProps) {
 
   return (
     <span className={`inline-block font-bold rounded-full border ${colors[level] || colors.A1} ${sizes[size]}`}>
-      {level}
+      {IELTS_BAND_LABELS[level as CEFRLevel] || level}
     </span>
   );
 }

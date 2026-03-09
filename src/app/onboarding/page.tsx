@@ -4,7 +4,7 @@ import PageClient from "./OnboardingClient";
 export const metadata: Metadata = {
   title: "Get Started",
   description:
-    "Set up your SpeakEasy profile and start your English learning journey.",
+    "Set up your BandUp profile and start your IELTS preparation journey.",
   alternates: { canonical: "/onboarding" },
 };
 

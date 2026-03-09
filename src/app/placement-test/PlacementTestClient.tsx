@@ -5,7 +5,7 @@ import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { placementQuestions, calculatePlacementLevel } from '@/content/placement-test';
 import { MultipleChoice, ScoreCard, ProgressBar, LevelBadge } from '@/components/Exercises';
-import { savePlacementResult, updateUserProfile } from '@/lib/firestore';
+import { savePlacementResult, updateUserProfile, IELTS_BAND_LABELS, type CEFRLevel } from '@/lib/firestore';
 import { Timestamp } from 'firebase/firestore';
 import { ArrowRight, SkipForward } from 'lucide-react';
 import Link from 'next/link';
@@ -95,10 +95,10 @@ export default function PlacementTestPage() {
         <div className="bg-white rounded-2xl shadow-md p-6 mb-8 text-left max-w-md mx-auto">
           <h3 className="font-semibold text-gray-800 mb-3">What to expect from this diagnostic:</h3>
           <ul className="space-y-2 text-sm text-gray-600">
-            <li>📝 25 questions across 5 difficulty levels</li>
+            <li>📝 25 questions across 5 IELTS band levels</li>
             <li>⏱️ Takes about 8-12 minutes</li>
             <li>⏭️ You can skip questions you don&apos;t know</li>
-            <li>🎯 We&apos;ll recommend the best starting level for you</li>
+            <li>🎯 We&apos;ll estimate your IELTS band level</li>
             <li>🔓 No sign-up required to take the test</li>
           </ul>
         </div>
@@ -129,7 +129,7 @@ export default function PlacementTestPage() {
             }}
             className="text-gray-400 hover:text-indigo-600 text-sm font-medium transition-colors"
           >
-            Skip for now — start at A1
+            Skip for now — start at Band 3
           </button>
         </div>
       </div>
@@ -149,7 +149,7 @@ export default function PlacementTestPage() {
         <div className="my-8">
           <LevelBadge level={assignedLevel} size="lg" />
           <h2 className="text-2xl font-bold text-gray-800 mt-4">
-            {t(`level.${assignedLevel}`, uiLanguage)}
+            {IELTS_BAND_LABELS[assignedLevel as CEFRLevel]}
           </h2>
           <p className="text-gray-500 mt-2">
             {t(`level.${assignedLevel}.desc`, uiLanguage)}
@@ -158,7 +158,7 @@ export default function PlacementTestPage() {
 
         <div className="bg-white rounded-2xl shadow-md p-6 mb-8 max-w-md mx-auto">
           <p className="text-gray-600 mb-4">
-            {t('placement.resultMessage', uiLanguage)}: <strong>{assignedLevel}</strong>
+            {t('placement.resultMessage', uiLanguage)}: <strong>{IELTS_BAND_LABELS[assignedLevel as CEFRLevel]}</strong>
           </p>
           <p className="text-sm text-gray-400">
             Score: {score} / {totalQuestions} correct

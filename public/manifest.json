@@ -1,14 +1,14 @@
 {
-  "name": "SpeakEasy - Learn English",
-  "short_name": "SpeakEasy",
-  "description": "Master English step by step with lessons in your language. Built for India.",
+  "name": "BandUp - IELTS Prep",
+  "short_name": "BandUp",
+  "description": "Ace the IELTS, band by band. Interactive practice for all four skills.",
   "start_url": "/dashboard",
   "display": "standalone",
   "background_color": "#f9fafb",
   "theme_color": "#4f46e5",
   "orientation": "portrait-primary",
   "categories": ["education", "language"],
-  "lang": "en-IN",
+  "lang": "en",
   "icons": [
     {
       "src": "/icons/icon-192.svg",

@@ -4,7 +4,7 @@ import PageClient from "./ProfileClient";
 export const metadata: Metadata = {
   title: "My Profile",
   description:
-    "Manage your SpeakEasy profile, preferences and learning settings.",
+    "Manage your BandUp profile, preferences and IELTS study settings.",
   alternates: { canonical: "/profile" },
 };
 

@@ -4,7 +4,7 @@ import PageClient from "./DashboardClient";
 export const metadata: Metadata = {
   title: "Dashboard",
   description:
-    "Your personalised SpeakEasy dashboard. Track progress, continue lessons and access all learning tools.",
+    "Your personalised BandUp dashboard. Track IELTS progress, continue lessons and access all prep tools.",
   alternates: { canonical: "/dashboard" },
 };
 

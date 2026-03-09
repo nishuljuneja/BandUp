@@ -9,8 +9,8 @@ import { Bell, BellOff, X, Clock } from 'lucide-react';
  * (Web Push with VAPID keys requires a backend — this is a client-only solution.)
  */
 
-const NOTIF_PREF_KEY = 'speakeasy-notif-enabled';
-const NOTIF_TIME_KEY = 'speakeasy-notif-time';
+const NOTIF_PREF_KEY = 'bandup-notif-enabled';
+const NOTIF_TIME_KEY = 'bandup-notif-time';
 const DEFAULT_TIME = '09:00'; // 9 AM
 
 function getStoredPref(): boolean {
@@ -62,8 +62,8 @@ export default function NotificationPrompt() {
 
       const timer = setTimeout(() => {
         if (Notification.permission === 'granted') {
-          new Notification('SpeakEasy', {
-            body: "Time for your daily English practice! Keep your streak alive 🔥",
+          new Notification('BandUp', {
+            body: "Time for your daily IELTS practice! Keep your streak alive 🔥",
             icon: '/icons/icon-192.svg',
             tag: 'daily-reminder',
           });
@@ -91,8 +91,8 @@ export default function NotificationPrompt() {
       localStorage.setItem(NOTIF_TIME_KEY, time);
 
       // Show confirmation notification
-      new Notification('SpeakEasy', {
-        body: `Daily reminders enabled at ${time}! Keep learning English every day.`,
+      new Notification('BandUp', {
+        body: `Daily reminders enabled at ${time}! Keep practising for IELTS every day.`,
         icon: '/icons/icon-192.svg',
       });
     }

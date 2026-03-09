@@ -5,7 +5,7 @@ import wordDefsRaw from './word-definitions.json';
 
 // ------------------------------------------------------------------
 // Oxford 3000 (A1-B2) + Oxford 5000 extra (B2-C1) word lists
-// Combined: ~5300 unique words across all CEFR levels
+// Combined: ~5300 unique words across all IELTS band levels
 // ------------------------------------------------------------------
 
 interface OxfordEntry {

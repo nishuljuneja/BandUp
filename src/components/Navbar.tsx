@@ -46,7 +46,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-indigo-600">SpeakEasy</span>
+              <span className="text-2xl font-bold text-indigo-600">BandUp</span>
             </Link>
           </div>
 
@@ -143,7 +143,7 @@ export default function Navbar() {
                   className="text-gray-600 hover:text-indigo-600 px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium whitespace-nowrap flex items-center gap-1"
                 >
                   <ClipboardCheck className="w-4 h-4" />
-                  <span className="hidden sm:inline">Level Test</span>
+                  <span className="hidden sm:inline">Band Test</span>
                 </Link>
                 <Link
                   href="/login"

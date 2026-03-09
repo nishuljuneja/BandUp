@@ -41,14 +41,14 @@ export default function ProGate({ feature, compact, className }: ProGateProps) {
         {feature ? `${feature} — ` : ''}Pro Feature
       </h3>
       <p className="text-gray-500 mb-6 max-w-md mx-auto">
-        Upgrade to SpeakEasy Pro to unlock {feature ? feature.toLowerCase() : 'this feature'} and all content at B2 and C1 levels.
+        Upgrade to BandUp Pro to unlock {feature ? feature.toLowerCase() : 'this feature'} and all content at Band 6 and Band 7 levels.
       </p>
       <Link
         href="/pricing"
         className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-purple-700 transition shadow-md"
       >
         <Crown className="w-5 h-5" />
-        Upgrade to Pro — ₹499/year
+        Upgrade to Pro — $1.99/month
       </Link>
     </div>
   );

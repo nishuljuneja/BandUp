@@ -194,7 +194,7 @@ export default function ProfilePage() {
             { emoji: '🎯', name: 'First Lesson', desc: 'Complete your first lesson' },
             { emoji: '🔥', name: '7-Day Streak', desc: 'Practice 7 days in a row' },
             { emoji: '📚', name: '100 Words', desc: 'Learn 100 vocabulary words' },
-            { emoji: '🏆', name: 'Level Up', desc: 'Advance to the next CEFR level' },
+            { emoji: '🏆', name: 'Level Up', desc: 'Advance to the next IELTS band' },
             { emoji: '🌟', name: 'Perfect Score', desc: 'Score 100% on any quiz' },
             { emoji: '💪', name: 'Grammar Master', desc: 'Complete all grammar lessons' },
             { emoji: '📖', name: 'Bookworm', desc: 'Read 10 passages' },

@@ -5,6 +5,7 @@ import { useAppStore } from '@/lib/store';
 import { t } from '@/lib/i18n';
 import { BookOpen, Brain, Headphones, MessageSquare, PenTool, Globe, Gamepad2, LetterText, Skull, Shuffle, Layers, Volume2 } from 'lucide-react';
 import definitions from '@/content/word-definitions.json';
+import { IELTS_BAND_LABELS, type CEFRLevel } from '@/lib/firestore';
 
 // Deterministic Word of the Day — 6+ letters, changes daily
 function getWordOfTheDay() {
@@ -23,43 +24,43 @@ export default function Home() {
   const features = [
     {
       icon: BookOpen,
-      title: 'Reading',
-      description: 'Graded passages from beginner to advanced. Build comprehension with real-world articles and stories.',
+      title: 'IELTS Reading',
+      description: 'Practice passages matching real IELTS test difficulty. Build speed and comprehension for Academic and General Training.',
     },
     {
       icon: Brain,
-      title: 'Grammar',
-      description: 'Master tenses, articles, prepositions and sentence structure with clear rules and instant practice.',
+      title: 'Grammar for IELTS',
+      description: 'Master the grammar patterns tested in IELTS — complex sentences, conditionals, passive voice and reported speech.',
     },
     {
       icon: PenTool,
-      title: 'Writing',
-      description: 'Structured prompts for essays, emails and reports. Improve clarity, coherence and formal tone.',
+      title: 'IELTS Writing',
+      description: 'Task 1 and Task 2 practice with structured prompts. Improve coherence, task response and lexical resource.',
     },
     {
       icon: MessageSquare,
-      title: 'Speaking',
-      description: 'Practice conversations with an AI partner tuned to your level. No judgment, unlimited patience.',
+      title: 'IELTS Speaking',
+      description: 'Practice all three parts of the IELTS speaking test with an AI examiner. Get feedback on fluency and vocabulary.',
     },
     {
       icon: Headphones,
-      title: 'Listening',
-      description: 'Audio exercises at every CEFR level. Train your ear with dialogues, lectures and everyday speech.',
+      title: 'IELTS Listening',
+      description: 'Audio exercises modelled on the IELTS listening test. Train your ear with conversations, lectures and monologues.',
     },
     {
       icon: Globe,
-      title: 'Vocabulary',
-      description: 'Oxford 5000 words with spaced repetition. Learn meanings, usage and pronunciation — level by level.',
+      title: 'IELTS Vocabulary',
+      description: 'Band-level word lists with spaced repetition. Learn high-frequency IELTS words, collocations and academic vocabulary.',
     },
   ];
 
-  const levels = [
-    { id: 'A1', color: 'from-emerald-400 to-emerald-600' },
-    { id: 'A2', color: 'from-green-400 to-green-600' },
-    { id: 'B1', color: 'from-blue-400 to-blue-600' },
-    { id: 'B2', color: 'from-purple-400 to-purple-600' },
-    { id: 'C1', color: 'from-orange-400 to-orange-600' },
-    { id: 'C2', color: 'from-red-400 to-red-600' },
+  const levels: { id: CEFRLevel; band: string; color: string }[] = [
+    { id: 'A1', band: 'Band 3', color: 'from-emerald-400 to-emerald-600' },
+    { id: 'A2', band: 'Band 4', color: 'from-green-400 to-green-600' },
+    { id: 'B1', band: 'Band 5', color: 'from-blue-400 to-blue-600' },
+    { id: 'B2', band: 'Band 6', color: 'from-purple-400 to-purple-600' },
+    { id: 'C1', band: 'Band 7', color: 'from-orange-400 to-orange-600' },
+    { id: 'C2', band: 'Band 7.5+', color: 'from-red-400 to-red-600' },
   ];
 
   return (
@@ -69,40 +70,40 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 relative">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
-              {t('hero.title', uiLanguage)}
+              Ace the IELTS, Band by Band
             </h1>
             <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              {t('hero.subtitle', uiLanguage)}
+              Targeted practice for Reading, Writing, Listening and Speaking. Know your band. Raise your band.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={user ? '/dashboard' : '/signup'}
                 className="px-8 py-4 bg-white text-indigo-700 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
               >
-                {t('hero.cta', uiLanguage)}
+                Start Free IELTS Prep
               </Link>
               <Link
                 href="/placement-test"
                 className="px-8 py-4 bg-white/10 text-white rounded-xl font-bold text-lg hover:bg-white/20 transition-colors backdrop-blur-sm border border-white/20"
               >
-                Free Diagnostic Test
+                Free Band Diagnostic Test
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CEFR Levels */}
+      {/* IELTS Band Levels */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">6 Levels, One Clear Path</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">6 IELTS Bands, One Clear Path</h2>
           <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
-            Based on the internationally recognised CEFR framework. Take a diagnostic test to find your starting point.
+            Content structured by IELTS band level. Take a free diagnostic test to find your starting band.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {levels.map((level) => (
               <div key={level.id} className={`bg-gradient-to-br ${level.color} rounded-2xl p-6 text-white text-center shadow-lg hover:scale-105 transition-transform cursor-pointer`}>
-                <div className="text-3xl font-black mb-2">{level.id}</div>
+                <div className="text-3xl font-black mb-2">{level.band}</div>
                 <div className="text-sm font-medium opacity-90">{t(`level.${level.id}`, uiLanguage)}</div>
                 <div className="text-xs opacity-70 mt-1">{t(`level.${level.id}.desc`, uiLanguage)}</div>
               </div>
@@ -114,7 +115,7 @@ export default function Home() {
       {/* Features */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Everything you need to master English</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Everything you need to ace the IELTS</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -195,26 +196,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why SpeakEasy */}
+      {/* Why BandUp */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Why SpeakEasy?</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Why BandUp?</h2>
           <div className="grid sm:grid-cols-2 gap-6 text-left">
             <div className="bg-amber-50 rounded-xl p-5 border border-amber-100">
-              <h3 className="font-semibold text-amber-800 mb-2">🎯 Common Mistakes Addressed</h3>
-              <p className="text-sm text-amber-700">We target the specific errors English learners make — article usage, tense confusion, subject-verb agreement, and preposition mix-ups.</p>
+              <h3 className="font-semibold text-amber-800 mb-2">🎯 IELTS-Specific Practice</h3>
+              <p className="text-sm text-amber-700">Every lesson, exercise and test is designed around the IELTS format — Task 1, Task 2, Part 1–3 Speaking, and real listening question types.</p>
             </div>
             <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
-              <h3 className="font-semibold text-blue-800 mb-2">📚 Real-World Examples</h3>
-              <p className="text-sm text-blue-700">All examples use familiar, relatable situations — from everyday conversations to professional settings.</p>
+              <h3 className="font-semibold text-blue-800 mb-2">📊 Band-Level Content</h3>
+              <p className="text-sm text-blue-700">Content is organised by IELTS band level. Start where you are and work your way up to your target band score.</p>
             </div>
             <div className="bg-green-50 rounded-xl p-5 border border-green-100">
-              <h3 className="font-semibold text-green-800 mb-2">🗣️ Multi-Language Support</h3>
-              <p className="text-sm text-green-700">Instructions and translations in 10 languages. At beginner levels, everything is explained in your mother tongue.</p>
+              <h3 className="font-semibold text-green-800 mb-2">🗓️ Daily Practice Plans</h3>
+              <p className="text-sm text-green-700">Structured 5-minute daily sessions covering all four IELTS sections. Build consistency with streak tracking.</p>
             </div>
             <div className="bg-purple-50 rounded-xl p-5 border border-purple-100">
-              <h3 className="font-semibold text-purple-800 mb-2">💼 Career-Focused</h3>
-              <p className="text-sm text-purple-700">Special content for job interviews, business emails, presentations, and professional communication.</p>
+              <h3 className="font-semibold text-purple-800 mb-2">💰 Affordable</h3>
+              <p className="text-sm text-purple-700">Free Band 3–5 content forever. Unlock everything with Pro for just $1.99/month — cheaper than a coffee.</p>
             </div>
           </div>
         </div>
@@ -223,10 +224,10 @@ export default function Home() {
       {/* CTA */}
       <section className="py-16 bg-indigo-600">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to improve your English?</h2>
-          <p className="text-indigo-200 mb-8">Take a free diagnostic test to find your level. No sign-up required.</p>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to raise your IELTS band?</h2>
+          <p className="text-indigo-200 mb-8">Take a free diagnostic test to find your current band level. No sign-up required.</p>
           <Link href="/placement-test" className="inline-block px-8 py-4 bg-white text-indigo-700 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg">
-            Start Free Diagnostic Test →
+            Start Free Band Test →
           </Link>
         </div>
       </section>

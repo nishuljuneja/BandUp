@@ -101,7 +101,7 @@ export default function PricingPage() {
           Choose Your Plan
         </h1>
         <p className="text-gray-500 max-w-xl mx-auto">
-          Start learning for free. Upgrade to Pro to unlock all levels, skills, and unlimited practice.
+          Start your IELTS prep for free. Upgrade to Pro to unlock all band levels, skills, and unlimited practice.
         </p>
         {status === 'canceled' && (
           <p className="text-amber-600 mt-3 text-sm">
@@ -122,19 +122,19 @@ export default function PricingPage() {
           <h2 className="text-xl font-bold text-gray-800 mb-1">Free</h2>
           <p className="text-gray-400 text-sm mb-6">Get started with the basics</p>
           <div className="mb-8">
-            <span className="text-4xl font-bold text-gray-800">₹0</span>
+            <span className="text-4xl font-bold text-gray-800">$0</span>
             <span className="text-gray-400 ml-1">/ forever</span>
           </div>
 
           <ul className="space-y-3 mb-8">
-            <FeatureRow included icon={BookOpen}>A1–B1 Vocabulary</FeatureRow>
-            <FeatureRow included icon={Brain}>A1–B1 Grammar</FeatureRow>
+            <FeatureRow included icon={BookOpen}>Band 3–5 Vocabulary</FeatureRow>
+            <FeatureRow included icon={Brain}>Band 3–5 Grammar</FeatureRow>
             <FeatureRow included icon={Gamepad2}>4 Daily Games</FeatureRow>
             <FeatureRow included icon={Target}>1 Daily Practice / day</FeatureRow>
             <FeatureRow included icon={BarChart3}>Progress & Streaks</FeatureRow>
-            <FeatureRow icon={BookOpenCheck}>B2 & C1 Content</FeatureRow>
-            <FeatureRow icon={Headphones}>Listening Exercises</FeatureRow>
-            <FeatureRow icon={BookOpenCheck}>Reading Passages</FeatureRow>
+            <FeatureRow icon={BookOpenCheck}>Band 6 & 7 Content</FeatureRow>
+            <FeatureRow icon={Headphones}>IELTS Listening Practice</FeatureRow>
+            <FeatureRow icon={BookOpenCheck}>IELTS Reading Passages</FeatureRow>
             <FeatureRow icon={Gamepad2}>Unlimited Practice Mode</FeatureRow>
             <FeatureRow icon={Target}>Unlimited Daily Practice</FeatureRow>
           </ul>
@@ -164,20 +164,19 @@ export default function PricingPage() {
           <h2 className="text-xl font-bold text-gray-800 mb-1">Pro</h2>
           <p className="text-gray-400 text-sm mb-6">Everything unlocked</p>
           <div className="mb-8">
-            <span className="text-4xl font-bold text-gray-800">₹499</span>
-            <span className="text-gray-400 ml-1">/ year</span>
-            <p className="text-xs text-gray-400 mt-1">That&apos;s less than ₹42/month</p>
+            <span className="text-4xl font-bold text-gray-800">$1.99</span>
+            <span className="text-gray-400 ml-1">/ month</span>
           </div>
 
           <ul className="space-y-3 mb-8">
-            <FeatureRow included icon={BookOpen}>A1–B1 Vocabulary</FeatureRow>
-            <FeatureRow included icon={Brain}>A1–B1 Grammar</FeatureRow>
+            <FeatureRow included icon={BookOpen}>Band 3–5 Vocabulary</FeatureRow>
+            <FeatureRow included icon={Brain}>Band 3–5 Grammar</FeatureRow>
             <FeatureRow included icon={Gamepad2}>4 Daily Games</FeatureRow>
             <FeatureRow included icon={Target}>1 Daily Practice / day</FeatureRow>
             <FeatureRow included icon={BarChart3}>Progress & Streaks</FeatureRow>
-            <FeatureRow included icon={BookOpenCheck}>B2 & C1 Content</FeatureRow>
-            <FeatureRow included icon={Headphones}>Listening Exercises</FeatureRow>
-            <FeatureRow included icon={BookOpenCheck}>Reading Passages</FeatureRow>
+            <FeatureRow included icon={BookOpenCheck}>Band 6 & 7 Content</FeatureRow>
+            <FeatureRow included icon={Headphones}>IELTS Listening Practice</FeatureRow>
+            <FeatureRow included icon={BookOpenCheck}>IELTS Reading Passages</FeatureRow>
             <FeatureRow included icon={Gamepad2}>Unlimited Practice Mode</FeatureRow>
             <FeatureRow included icon={Target}>Unlimited Daily Practice</FeatureRow>
           </ul>
@@ -223,13 +222,13 @@ export default function PricingPage() {
             Yes! You can cancel your Pro subscription at any time. You&apos;ll keep Pro access until the end of your billing period.
           </FaqItem>
           <FaqItem q="Is there a free trial?">
-            The Free tier itself is your trial — use all A1, A2 & B1 content and daily games at no cost, forever. Upgrade when you&apos;re ready for more.
+            The Free tier itself is your trial — use all Band 3, 4 & 5 content and daily games at no cost, forever. Upgrade when you&apos;re ready for higher bands.
           </FaqItem>
           <FaqItem q="What payment methods do you accept?">
-            We accept all major credit/debit cards and UPI through our secure payment partner, Stripe.
+            We accept all major credit/debit cards through our secure payment partner, Stripe.
           </FaqItem>
           <FaqItem q="Will there be ads?">
-            No. SpeakEasy is 100% ad-free on both Free and Pro tiers.
+            No. BandUp is 100% ad-free on both Free and Pro tiers.
           </FaqItem>
         </div>
       </div>

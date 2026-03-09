@@ -12,7 +12,7 @@ export function isPro(profile: UserProfile | null): boolean {
 }
 
 /**
- * CEFR levels available for free tier
+ * IELTS bands available for free tier (Band 3–5)
  */
 export const FREE_LEVELS = new Set(['A1', 'A2', 'B1']);
 
@@ -49,7 +49,7 @@ export function getDailyPracticeCount(): number {
   if (typeof window === 'undefined') return 0;
   try {
     const today = new Date().toISOString().split('T')[0];
-    const raw = localStorage.getItem('speakeasy-daily-practice');
+    const raw = localStorage.getItem('bandup-daily-practice');
     if (!raw) return 0;
     const data = JSON.parse(raw);
     return data.date === today ? data.count : 0;
@@ -65,7 +65,7 @@ export function incrementDailyPracticeCount(): void {
   if (typeof window === 'undefined') return;
   const today = new Date().toISOString().split('T')[0];
   try {
-    const raw = localStorage.getItem('speakeasy-daily-practice');
+    const raw = localStorage.getItem('bandup-daily-practice');
     const data = raw ? JSON.parse(raw) : { date: '', count: 0 };
     if (data.date !== today) {
       data.date = today;
@@ -73,6 +73,6 @@ export function incrementDailyPracticeCount(): void {
     } else {
       data.count += 1;
     }
-    localStorage.setItem('speakeasy-daily-practice', JSON.stringify(data));
+    localStorage.setItem('bandup-daily-practice', JSON.stringify(data));
   } catch {}
 }

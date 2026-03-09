@@ -1,5 +1,5 @@
 /**
- * Email HTML templates for SpeakEasy streak reminders.
+ * Email HTML templates for BandUp streak reminders.
  */
 
 export interface StreakEmailData {
@@ -41,7 +41,7 @@ export function buildStreakReminderEmail(data: StreakEmailData): {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SpeakEasy Streak Reminder</title>
+  <title>BandUp Streak Reminder</title>
 </head>
 <body style="margin:0;padding:0;background:#f3f4f6;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f3f4f6;padding:32px 16px;">
@@ -51,8 +51,8 @@ export function buildStreakReminderEmail(data: StreakEmailData): {
           <!-- Header -->
           <tr>
             <td style="background:linear-gradient(135deg,#6366f1,#8b5cf6);padding:32px 24px;text-align:center;">
-              <h1 style="margin:0;color:#ffffff;font-size:28px;font-weight:700;">SpeakEasy</h1>
-              <p style="margin:8px 0 0;color:rgba(255,255,255,0.8);font-size:14px;">Your English Learning Journey</p>
+              <h1 style="margin:0;color:#ffffff;font-size:28px;font-weight:700;">BandUp</h1>
+              <p style="margin:8px 0 0;color:rgba(255,255,255,0.8);font-size:14px;">Your IELTS Prep Journey</p>
             </td>
           </tr>
 
@@ -117,7 +117,7 @@ export function buildStreakReminderEmail(data: StreakEmailData): {
           <tr>
             <td style="border-top:1px solid #e5e7eb;padding:20px 24px;text-align:center;">
               <p style="margin:0 0 8px;color:#9ca3af;font-size:12px;">
-                You're receiving this because you enabled streak reminders on SpeakEasy.
+                You're receiving this because you enabled streak reminders on BandUp.
               </p>
               <a href="${appUrl}/profile"
                  style="color:#9ca3af;text-decoration:underline;font-size:12px;">

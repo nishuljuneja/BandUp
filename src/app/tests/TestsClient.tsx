@@ -12,7 +12,7 @@ import {
 import type { CEFRLevel } from '@/lib/firestore';
 
 const LEVEL_ORDER: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
-const STORAGE_KEY = 'speakeasy-practice-tests';
+const STORAGE_KEY = 'bandup-practice-tests';
 
 const LEVEL_COLORS: Record<string, { bg: string; text: string; border: string; gradient: string }> = {
   A1: { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200', gradient: 'from-emerald-400 to-emerald-600' },

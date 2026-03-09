@@ -1,9 +1,9 @@
 import { type GrammarLesson } from '../lib/firestore';
 import { additionalGrammarLessons } from './grammar-lessons-extra';
 
-// Comprehensive grammar lessons organized by CEFR level
+// Comprehensive grammar lessons organized by IELTS band level
 // Each level has structured lessons progressing from simple to complex
-// Indian context examples used throughout
+// Neutral context examples used throughout
 
 export const grammarLessons: GrammarLesson[] = [
   // ==================== A1 GRAMMAR ====================

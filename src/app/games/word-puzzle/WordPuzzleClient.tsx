@@ -119,7 +119,7 @@ function formatTime(seconds: number): string {
 }
 
 // ─── Local leaderboard storage ───────────────────────────────────────
-const LB_KEY = 'speakeasy-word-puzzle-lb';
+const LB_KEY = 'bandup-word-puzzle-lb';
 
 interface LocalScore {
   displayName: string;

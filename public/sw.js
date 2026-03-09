@@ -1,5 +1,5 @@
-// SpeakEasy Service Worker — cache-first for app shell, network-first for API/data
-const CACHE_NAME = 'speakeasy-v12';
+// BandUp Service Worker — cache-first for app shell, network-first for API/data
+const CACHE_NAME = 'bandup-v1';
 const SHELL_ASSETS = [
   '/',
   '/dashboard',
@@ -88,12 +88,12 @@ self.addEventListener('fetch', (event) => {
 // Push notification handler
 self.addEventListener('push', (event) => {
   const data = event.data ? event.data.json() : {};
-  const title = data.title || 'SpeakEasy';
+  const title = data.title || 'BandUp';
   const options = {
     body: data.body || "Time for your daily English practice!",
     icon: '/icons/icon-192.png',
     badge: '/icons/icon-192.png',
-    tag: 'speakeasy-reminder',
+    tag: 'bandup-reminder',
     data: { url: data.url || '/daily-practice' },
     actions: [
       { action: 'practice', title: 'Start Practice' },

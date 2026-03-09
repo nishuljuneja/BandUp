@@ -128,7 +128,7 @@ function HangmanDrawing({ wrongCount }: { wrongCount: number }) {
 }
 
 // ─── Local Leaderboard ───────────────────────────────────────────────
-const LB_KEY = 'speakeasy-hangman-lb';
+const LB_KEY = 'bandup-hangman-lb';
 
 interface LocalScore {
   displayName: string;
@@ -167,7 +167,7 @@ function saveLocalScore(score: LocalScore) {
 }
 
 // ─── Streak tracking ────────────────────────────────────────────────
-const STREAK_KEY = 'speakeasy-hangman-streak';
+const STREAK_KEY = 'bandup-hangman-streak';
 
 function getStreak(): { count: number; lastWord: string } {
   if (typeof window === 'undefined') return { count: 0, lastWord: '' };

@@ -20,64 +20,58 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default:
-      "SpeakEasy — Learn English Online | IELTS, CELPIP, PTE & TOEFL Prep",
-    template: "%s | SpeakEasy",
+      "BandUp — IELTS Prep App | Boost Your IELTS Band Score",
+    template: "%s | BandUp",
   },
   description:
-    "Master English with interactive vocabulary, grammar, reading, listening, speaking and writing lessons. Prepare for IELTS, CELPIP, PTE & TOEFL exams. CEFR-aligned levels A1–C1.",
+    "Ace the IELTS with targeted practice for Reading, Writing, Listening and Speaking. Band-level lessons from Band 3 to 7.5+. Free diagnostic test.",
   keywords: [
-    "learn english online",
-    "english learning app",
     "IELTS preparation",
     "IELTS practice test",
-    "CELPIP preparation",
-    "CELPIP practice",
-    "PTE preparation",
-    "PTE practice test",
-    "TOEFL preparation",
-    "TOEFL practice",
-    "english vocabulary builder",
-    "english grammar practice",
-    "english reading comprehension",
-    "english listening practice",
-    "english speaking practice",
-    "english writing practice",
-    "CEFR english levels",
-    "ESL online",
-    "english for beginners",
-    "spoken english course",
-    "free english course online",
-    "english exam preparation",
-    "improve english skills",
+    "IELTS band score",
+    "IELTS reading practice",
+    "IELTS writing practice",
+    "IELTS listening practice",
+    "IELTS speaking practice",
+    "IELTS vocabulary",
+    "IELTS grammar",
+    "IELTS band 7",
+    "IELTS band 6",
+    "IELTS prep app",
+    "IELTS online course",
+    "IELTS study plan",
+    "IELTS exam preparation",
+    "improve IELTS score",
+    "IELTS test prep free",
   ],
-  authors: [{ name: "SpeakEasy" }],
-  creator: "SpeakEasy",
-  metadataBase: new URL("https://speakeasyapp.in"),
+  authors: [{ name: "BandUp" }],
+  creator: "BandUp",
+  metadataBase: new URL("https://bandup-ebon.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    locale: "en_IN",
-    url: "https://speakeasyapp.in",
-    siteName: "SpeakEasy",
-    title: "SpeakEasy — Learn English Online | IELTS, CELPIP, PTE & TOEFL Prep",
+    locale: "en_US",
+    url: "https://bandup-ebon.vercel.app",
+    siteName: "BandUp",
+    title: "BandUp — IELTS Prep App | Boost Your IELTS Band Score",
     description:
-      "Master English with interactive lessons and exam prep for IELTS, CELPIP, PTE & TOEFL. CEFR-aligned levels A1–C1.",
+      "Ace the IELTS with targeted practice for Reading, Writing, Listening and Speaking. Band-level lessons from Band 3 to 7.5+.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SpeakEasy — Learn English Online",
+        alt: "BandUp — IELTS Prep App",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SpeakEasy — Learn English Online | Exam Prep",
+    title: "BandUp — IELTS Prep App | Boost Your Band Score",
     description:
-      "Master English with interactive lessons. Prepare for IELTS, CELPIP, PTE & TOEFL exams.",
+      "Ace the IELTS with targeted practice. Band-level lessons from Band 3 to 7.5+.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -103,18 +97,18 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "WebApplication",
-        name: "SpeakEasy",
-        url: "https://speakeasyapp.in",
+        name: "BandUp",
+        url: "https://bandup-ebon.vercel.app",
         applicationCategory: "EducationalApplication",
         operatingSystem: "Web",
         offers: {
           "@type": "Offer",
           price: "0",
-          priceCurrency: "INR",
-          description: "Free tier with vocabulary & grammar",
+          priceCurrency: "USD",
+          description: "Free tier with Band 3–5 content",
         },
         description:
-          "Interactive English learning app with vocabulary, grammar, reading, listening, speaking and writing lessons. Prepare for IELTS, CELPIP, PTE & TOEFL exams.",
+          "IELTS prep app with band-level lessons for Reading, Writing, Listening and Speaking. Diagnostic test, vocabulary, grammar and practice tests.",
         inLanguage: "en",
         audience: {
           "@type": "EducationalAudience",
@@ -123,20 +117,20 @@ export default function RootLayout({
       },
       {
         "@type": "EducationalOrganization",
-        name: "SpeakEasy",
-        url: "https://speakeasyapp.in",
+        name: "BandUp",
+        url: "https://bandup-ebon.vercel.app",
         description:
-          "Online English learning platform offering CEFR-aligned courses for learners at all levels, with exam preparation for IELTS, CELPIP, PTE and TOEFL.",
+          "Online IELTS preparation platform with band-level courses from Band 3 to 7.5+.",
       },
       {
         "@type": "Course",
-        name: "English Proficiency Course",
+        name: "IELTS Preparation Course",
         description:
-          "Comprehensive English course covering vocabulary, grammar, reading, listening, speaking and writing skills. CEFR-aligned levels A1 to C1.",
+          "Comprehensive IELTS prep covering vocabulary, grammar, reading, listening, speaking and writing. Band-level content from Band 3 to 7.5+.",
         provider: {
           "@type": "Organization",
-          name: "SpeakEasy",
-          url: "https://speakeasyapp.in",
+          name: "BandUp",
+          url: "https://bandup-ebon.vercel.app",
         },
         hasCourseInstance: [
           {
@@ -147,25 +141,23 @@ export default function RootLayout({
           },
         ],
         about: [
-          "English vocabulary",
-          "English grammar",
           "IELTS preparation",
-          "CELPIP preparation",
-          "PTE preparation",
-          "TOEFL preparation",
-          "English reading comprehension",
-          "English listening skills",
-          "English speaking practice",
-          "English writing skills",
+          "IELTS reading",
+          "IELTS writing",
+          "IELTS listening",
+          "IELTS speaking",
+          "IELTS vocabulary",
+          "IELTS grammar",
+          "IELTS band score improvement",
         ],
       },
       {
         "@type": "WebSite",
-        name: "SpeakEasy",
-        url: "https://speakeasyapp.in",
+        name: "BandUp",
+        url: "https://bandup-ebon.vercel.app",
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://speakeasyapp.in/learning?q={search_term_string}",
+          target: "https://bandup-ebon.vercel.app/learning?q={search_term_string}",
           "query-input": "required name=search_term_string",
         },
       },
@@ -179,7 +171,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#4f46e5" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="SpeakEasy" />
+        <meta name="apple-mobile-web-app-title" content="BandUp" />
         <link rel="apple-touch-icon" href="/icons/icon-192.svg" />
         <script
           type="application/ld+json"

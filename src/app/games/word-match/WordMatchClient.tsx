@@ -152,7 +152,7 @@ function formatTime(seconds: number): string {
 
 // ─── Local storage helpers ───────────────────────────────────────────
 
-const LB_KEY = 'speakeasy-wordmatch-lb';
+const LB_KEY = 'bandup-wordmatch-lb';
 
 function getLocalLeaderboard(date: string): LocalScore[] {
   if (typeof window === 'undefined') return [];

@@ -20,5 +20,5 @@ export const stripe = {
   get webhooks() { return getStripe().webhooks; },
 } as unknown as Stripe;
 
-// ₹499/year Pro plan — set this to your actual Stripe Price ID
+// $1.99/month Pro plan — set this to your actual Stripe Price ID
 export const PRO_PRICE_ID = process.env.STRIPE_PRO_PRICE_ID || '';

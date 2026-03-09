@@ -1,5 +1,5 @@
 /**
- * Rule-based writing grader for SpeakEasy.
+ * Rule-based writing grader for BandUp.
  * Evaluates grammar, spelling, punctuation, structure, vocabulary, and task adherence.
  * Returns score 0-10 with detailed feedback and highlighted mistakes.
  */

@@ -1,4 +1,4 @@
-import { type CEFRLevel } from '@/lib/firestore';
+import { type CEFRLevel, IELTS_BAND_LABELS } from '@/lib/firestore';
 
 export interface PlacementQuestion {
   id: string;
@@ -9,14 +9,14 @@ export interface PlacementQuestion {
   correctAnswer: string;
 }
 
-// 30 questions, 5 per level, progressive difficulty
-// Designed with Indian English context
+// 25 questions, 5 per level, progressive difficulty
+// IELTS-focused — no regional context
 export const placementQuestions: PlacementQuestion[] = [
-  // ===== A1 - Beginner =====
+  // ===== Band 3 (A1) - Beginner =====
   {
     id: 'p-a1-1',
     level: 'A1',
-    question: 'My name _____ Priya.',
+    question: 'My name _____ Sarah.',
     type: 'multiple-choice',
     options: ['am', 'is', 'are', 'be'],
     correctAnswer: 'is',
@@ -32,7 +32,7 @@ export const placementQuestions: PlacementQuestion[] = [
   {
     id: 'p-a1-3',
     level: 'A1',
-    question: 'I _____ from Mumbai.',
+    question: 'I _____ from Canada.',
     type: 'multiple-choice',
     options: ['is', 'am', 'are', 'be'],
     correctAnswer: 'am',
@@ -54,11 +54,11 @@ export const placementQuestions: PlacementQuestion[] = [
     correctAnswer: 'brothers',
   },
 
-  // ===== A2 - Elementary =====
+  // ===== Band 4 (A2) - Elementary =====
   {
     id: 'p-a2-1',
     level: 'A2',
-    question: 'She _____ to the market every Sunday.',
+    question: 'She _____ to the supermarket every Sunday.',
     type: 'multiple-choice',
     options: ['go', 'goes', 'going', 'gone'],
     correctAnswer: 'goes',
@@ -66,7 +66,7 @@ export const placementQuestions: PlacementQuestion[] = [
   {
     id: 'p-a2-2',
     level: 'A2',
-    question: 'We _____ cricket yesterday.',
+    question: 'We _____ football yesterday.',
     type: 'multiple-choice',
     options: ['play', 'plays', 'played', 'playing'],
     correctAnswer: 'played',
@@ -74,7 +74,7 @@ export const placementQuestions: PlacementQuestion[] = [
   {
     id: 'p-a2-3',
     level: 'A2',
-    question: 'There are _____ mangoes on the table.',
+    question: 'There are _____ apples on the table.',
     type: 'multiple-choice',
     options: ['some', 'a', 'an', 'much'],
     correctAnswer: 'some',
@@ -90,17 +90,17 @@ export const placementQuestions: PlacementQuestion[] = [
   {
     id: 'p-a2-5',
     level: 'A2',
-    question: 'I _____ like to have some chai, please.',
+    question: 'I _____ like to have some coffee, please.',
     type: 'multiple-choice',
     options: ['will', 'would', 'can', 'shall'],
     correctAnswer: 'would',
   },
 
-  // ===== B1 - Intermediate =====
+  // ===== Band 5 (B1) - Intermediate =====
   {
     id: 'p-b1-1',
     level: 'B1',
-    question: 'If it _____ tomorrow, we will cancel the trip to Goa.',
+    question: 'If it _____ tomorrow, we will cancel the trip.',
     type: 'multiple-choice',
     options: ['rains', 'will rain', 'rained', 'raining'],
     correctAnswer: 'rains',
@@ -138,7 +138,7 @@ export const placementQuestions: PlacementQuestion[] = [
     correctAnswer: 'lived',
   },
 
-  // ===== B2 - Upper Intermediate =====
+  // ===== Band 6 (B2) - Upper Intermediate =====
   {
     id: 'p-b2-1',
     level: 'B2',
@@ -166,7 +166,7 @@ export const placementQuestions: PlacementQuestion[] = [
   {
     id: 'p-b2-4',
     level: 'B2',
-    question: 'The government has _____ new regulations regarding pollution.',
+    question: 'The government has _____ new regulations regarding emissions.',
     type: 'multiple-choice',
     options: ['implemented', 'implementing', 'implement', 'implements'],
     correctAnswer: 'implemented',
@@ -180,11 +180,11 @@ export const placementQuestions: PlacementQuestion[] = [
     correctAnswer: 'barely',
   },
 
-  // ===== C1 - Advanced =====
+  // ===== Band 7 (C1) - Advanced =====
   {
     id: 'p-c1-1',
     level: 'C1',
-    question: 'The manuscript, _____ authenticity has been questioned, dates back to the Mughal era.',
+    question: 'The manuscript, _____ authenticity has been questioned, dates back centuries.',
     type: 'multiple-choice',
     options: ['whose', 'which', 'that', 'of whom'],
     correctAnswer: 'whose',
@@ -192,15 +192,15 @@ export const placementQuestions: PlacementQuestion[] = [
   {
     id: 'p-c1-2',
     level: 'C1',
-    question: 'Were it not for the monsoon, the crops _____.',
+    question: 'Were it not for the heavy rainfall, the reservoirs _____.',
     type: 'multiple-choice',
-    options: ['would have failed', 'will fail', 'had failed', 'would fail'],
-    correctAnswer: 'would have failed',
+    options: ['would have dried up', 'will dry up', 'had dried up', 'would dry up'],
+    correctAnswer: 'would have dried up',
   },
   {
     id: 'p-c1-3',
     level: 'C1',
-    question: 'The economist argued that inflation could be _____ by reducing fiscal deficit.',
+    question: 'The economist argued that inflation could be _____ by reducing the fiscal deficit.',
     type: 'multiple-choice',
     options: ['curbed', 'curved', 'cured', 'culled'],
     correctAnswer: 'curbed',
@@ -216,14 +216,18 @@ export const placementQuestions: PlacementQuestion[] = [
   {
     id: 'p-c1-5',
     level: 'C1',
-    question: 'The novel provides a nuanced _____ of post-independence India.',
+    question: 'The novel provides a nuanced _____ of post-war society.',
     type: 'multiple-choice',
     options: ['portrayal', 'display', 'depiction', 'exhibition'],
     correctAnswer: 'portrayal',
   },
 ];
 
-// Scoring: assign level based on highest level where user got 3+ of 5 correct
+/**
+ * IELTS-style scoring:
+ * - Assign highest band where user got 3+/5 correct
+ * - Cap at Band 7 (C1) unless EVERY answer is correct → Band 7.5+ (C2)
+ */
 export function calculatePlacementLevel(
   answers: { questionId: string; correct: boolean }[]
 ): CEFRLevel {
@@ -238,6 +242,14 @@ export function calculatePlacementLevel(
       if (question) scoreByLevel[question.level]++;
     }
   });
+
+  const totalCorrect = answers.filter((a) => a.correct).length;
+  const totalQuestions = placementQuestions.length;
+
+  // Perfect score → Band 7.5+ (C2)
+  if (totalCorrect === totalQuestions) {
+    return 'C2';
+  }
 
   // Find highest level where user scored >= 3/5
   let assignedLevel: CEFRLevel = 'A1';

@@ -46,12 +46,12 @@ export async function POST(request: NextRequest) {
   const resend = new Resend(resendKey);
 
   const fromEmail =
-    process.env.EMAIL_FROM || 'SpeakEasy <reminders@speakeasy.app>';
+    process.env.EMAIL_FROM || 'BandUp <reminders@bandupapp.com>';
   const appUrl =
     process.env.NEXT_PUBLIC_APP_URL ||
     process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : 'https://speakeasy.app';
+      : 'https://bandup-ebon.vercel.app';
 
   // ── Find users who need a reminder ─────────────────────────────────
   const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD

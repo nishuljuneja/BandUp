@@ -88,23 +88,23 @@ export const translations: Record<SupportedLanguage, Record<string, string>> = {
     'placement.resultMessage': 'Based on your answers, we recommend starting at level',
 
     // Levels
-    'level.A1': 'Beginner',
-    'level.A1.desc': 'Basic words and simple sentences',
-    'level.A2': 'Elementary',
-    'level.A2.desc': 'Simple conversations about familiar topics',
-    'level.B1': 'Intermediate',
-    'level.B1.desc': 'Can handle most travel and work situations',
-    'level.B2': 'Upper Intermediate',
-    'level.B2.desc': 'Can interact fluently with native speakers',
-    'level.C1': 'Advanced',
-    'level.C1.desc': 'Can express complex ideas effectively',
-    'level.C2': 'Proficient',
-    'level.C2.desc': 'Near-native level of expression',
+    'level.A1': 'Band 3',
+    'level.A1.desc': 'Basic IELTS vocabulary and simple sentence structures',
+    'level.A2': 'Band 4',
+    'level.A2.desc': 'Simple conversations about familiar IELTS topics',
+    'level.B1': 'Band 5',
+    'level.B1.desc': 'Can handle most IELTS task types with some effort',
+    'level.B2': 'Band 6',
+    'level.B2.desc': 'Competent language use across all IELTS sections',
+    'level.C1': 'Band 7',
+    'level.C1.desc': 'Fluent and flexible use of English in IELTS tasks',
+    'level.C2': 'Band 7.5+',
+    'level.C2.desc': 'Expert-level performance on IELTS',
 
     // Hero
-    'hero.title': 'Learn English, Your Way',
-    'hero.subtitle': 'Master English step by step, with lessons in your language.',
-    'hero.cta': 'Start Learning Free',
+    'hero.title': 'Ace the IELTS, Band by Band',
+    'hero.subtitle': 'Master every IELTS section with focused, band-level practice.',
+    'hero.cta': 'Start Practising Free',
 
     // Dashboard
     'dashboard.welcome': 'Welcome back',

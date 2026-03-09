@@ -89,7 +89,7 @@ const DRILL_SIZE = 10; // questions per round
 const REVIEW_SIZE = 15; // flashcards per review session
 
 // ── Studied-words tracking via localStorage ──
-const STUDIED_KEY_PREFIX = 'speakeasy-studied-';
+const STUDIED_KEY_PREFIX = 'bandup-studied-';
 
 function getStudiedWordIds(uid: string): string[] {
   if (typeof window === 'undefined') return [];
